@@ -1,0 +1,9 @@
+*.pyc
+.svn
+.idea
+*~
+.*.lock
+/dist
+/txt
+/misc
+/GamePath.txt
