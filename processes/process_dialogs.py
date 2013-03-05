@@ -159,11 +159,48 @@ def create_auto_id2(sentence,auto_ids):
       auto_id = new_auto_id
     auto_ids[auto_id] = text
     return auto_id
- 
+
+## happy begin ##
+def upgrade_sentences(sentences):
+  lfile = open("data/languages/cns/dialogs.csv", "r")
+  csv = {"a":"b"}
+  for line in lfile:
+    dialog_id = ""
+    part = 1
+    for i in xrange(len(line)):
+      if part == 1:
+        if line[i] == '|':
+          part = 2
+          csv[dialog_id] = ""
+        else:
+          dialog_id += line[i]
+      else:
+        if line[i] != '\r' and line[i] != '\n':
+          csv[dialog_id] += line[i]
+  lfile.close()
+  file = open("upgrade_dialogs.sh", "w")
+  auto_ids = {}
+  for i in xrange(len(sentences)):
+    sentence = sentences[i]
+    try:
+      dialog_id = create_auto_id2(sentence,auto_ids)
+      if csv[dialog_id] != '':
+        file.write("sed -i \"s/\\\"%s\\\"/\\\"-%s\\\"/\" ./module_dialogs.py\n"%(string.replace(sentence[text_pos],"'","\\'"),string.replace(csv[dialog_id]," ","")))
+    except:
+      print "Error in dialog line:"
+      print sentence
+      #print dialog_id
+      #print csv[dialog_id]
+  file.close()
+
+## happy end ##
+
 def save_sentences(variable_list,variable_uses,sentences,tag_uses,quick_strings,input_states,output_states):
   file = open(export_dir + "conversation.txt","w")
   file.write("dialogsfile version 2\n")
   file.write("%d\n"%len(sentences))
+  #upgrade_sentences(sentences)
+  cnfile = open("data/languages/cns/dialogs.csv", "w")
   # Create an empty dictionary
   auto_ids = {}
   for i in xrange(len(sentences)):
@@ -173,7 +210,33 @@ def save_sentences(variable_list,variable_uses,sentences,tag_uses,quick_strings,
       file.write("%s %d %d "%(dialog_id,sentence[speaker_pos],input_states[i]))
       save_statement_block(file, 0, 1, sentence[sentence_conditions_pos], variable_list,variable_uses,tag_uses,quick_strings)
 
-      file.write("%s "%(string.replace(sentence[text_pos]," ","_")))
+      ## iNad begin ##
+      if sentence[text_pos][0] == '-':
+        file.write("Chinese_Only")
+        cnfile.write("%s|"%(dialog_id))
+        k = 0
+        for j in xrange(1, len(sentence[text_pos])):
+          char = sentence[text_pos][j]
+          cnfile.write("%s"%(char))
+          if (ord(char) & 128 == 128):
+            if (ord(char) & 192 == 128):
+              if j == k:
+                cnfile.write(" ")
+            elif (ord(char) & 224 == 192):
+              k = j + 1
+            elif (ord(char) & 240 == 224):
+              k = j + 2
+            elif (ord(char) & 248 == 240):
+              k = j + 3
+            elif (ord(char) & 252 == 248):
+              k = j + 4
+            elif (ord(char) & 254 == 252):
+              k = j + 5
+        cnfile.write("\n")
+      else:
+        file.write("%s "%(string.replace(sentence[text_pos]," ","_")))
+      ## iNad end ##
+
       if (len(sentence[text_pos]) == 0):
         file.write("NO_TEXT ")
       file.write(" %d "%(output_states[i]))
@@ -187,6 +250,7 @@ def save_sentences(variable_list,variable_uses,sentences,tag_uses,quick_strings,
       print "Error in dialog line:"
       print sentence
   file.close()
+  cnfile.close()
 
 # Registered cookies is a list which enables the order of cookies to remain fixed across changes.
 # In order to remove cookies not used anymore, edit the cookies_registery.py and remove all entries.
