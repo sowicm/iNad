@@ -25,6 +25,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 include GamePath.txt
+include PublishPath.txt
 
 all: \
 txt \
@@ -61,6 +62,9 @@ txt/troops.txt
 
 zip: dist
 	cd dist && zip -ru latest.zip iNad
+
+publish: zip
+	mv -f dist/latest.zip $(PublishPath)
 
 install: dist
 	cp -ru dist/iNad $(GamePath)
@@ -161,10 +165,13 @@ txt/troops.txt: processes/process_troops.py src/modules/module_troops.py
 	python $<
 
 clean:
-	-del /s *.pyc
-	-rd /s /q txt
+	# -del /s *.pyc
+	# -rd /s /q txt
+	-/usr/bin/find . -name "*.pyc" -exec rm {} \;
+	-/usr/bin/rm -rf txt
 
 distclean: clean
-	-rd /s /q dist
+	# -rd /s /q dist
+	-/usr/bin/rm -rf dist
 
 .PHONY: all zip clean distclean

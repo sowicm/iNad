@@ -928,3 +928,4 @@ trp_looter_leader = 926
 trp_bandit_leaders_end = 927
 trp_relative_of_merchant = 928
 trp_relative_of_merchants_end = 929
+trp_s_array_owned_tavern = 930

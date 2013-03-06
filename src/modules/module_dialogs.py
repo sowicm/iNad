@@ -19898,6 +19898,31 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 ##   [(assign, reg(2), 28),(val_sub,reg(2),reg(1)),(assign, "$g_town_visit_after_rest", 1),(rest_for_hours, reg(2)),(troop_remove_gold, "trp_player","$tavern_rest_cost"),(call_script, "script_change_player_party_morale", 2)]],
 ##  [anyone|plyr,"tavernkeeper_rest_2", [], "-算了。", "close_window",[]],
 
+  ## iNad begin ##
+  ## buy tavern
+  [anyone|plyr, "tavernkeeper_talk", [
+            (neg|troop_slot_eq, "trp_s_array_owned_tavern", "$current_town", 1),
+            ],
+  "-我能成为这里的老板吗？", "tavernkeeper_buy_tavern", []],
+  [anyone, "tavernkeeper_buy_tavern", [],
+  "-当然！只要50000第纳尔，如何？", "tavernkeeper_buy_tavern_confirm", []],
+  [anyone|plyr, "tavernkeeper_buy_tavern_confirm", [
+            (store_troop_gold, ":gold", "trp_player"),
+            (ge, ":gold", 50000),
+            (str_store_string, s0, "str_yes"),
+            ],
+  "{s0}", "tavernkeeper_pretalk", [
+            (troop_set_slot, "trp_s_array_owned_tavern", "$current_town", 1),
+            (str_store_party_name, s0, "$current_town"),
+            (display_message, "str_s_buy_tavern", 0xffff00),
+            (troop_remove_gold, "trp_player", 50000),
+            ]],
+  [anyone|plyr, "tavernkeeper_buy_tavern_confirm", [
+            (str_store_string, s0, "str_no"),
+            ],
+    "{s0}", "tavernkeeper_pretalk", []],
+  ## iNad end ##
+  
   [anyone|plyr,"tavernkeeper_talk", [
       (store_current_hours,":cur_hours"),
       (val_sub, ":cur_hours", 24),
@@ -25292,14 +25317,26 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "-再见。", "close_window",
    [
      ]],
-# Ryan END  
+# Ryan END
+
+## iNad begin ##
+## Attack town dweller
+  [anyone|plyr, "town_dweller_talk", [],
+  "-[攻击]", "close_window", [
+    (call_script, "script_activate_town_guard"),
+    (agent_set_team, "$g_talk_agent", 1),
+  ]],
+#  [anyone|plyr, "town_dweller_talk", [],
+#  "-你叫什么名字？",
+## iNad end ##
 
   [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_village),
                                      (eq, "$info_inquired", 0)], "-你能告诉我这个村子的相关情况吗？", "town_dweller_ask_info",[(assign, "$info_inquired", 1)]],
   [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_town),
                                      (eq, "$info_inquired", 0)], "-你能告诉我这个城镇的相关情况吗？", "town_dweller_ask_info",[(assign, "$info_inquired", 1)]],
 
-									 
+
+  
   [anyone,"town_dweller_ask_info", [(str_store_party_name, s5, "$current_town"),
                                     (assign, reg4, 0),
                                     (try_begin),
@@ -25426,7 +25463,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
   [anyone,"town_dweller_ask_rumor", [], "-最近没什么特别的情况。", "town_dweller_talk",[]],
 
-  [anyone|plyr,"town_dweller_talk", [], "[Leave]", "close_window",[]],
+  [anyone|plyr,"town_dweller_talk", [], "[离开]", "close_window",[]],
 
   [anyone,"start", [(eq, "$talk_context", 0),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),

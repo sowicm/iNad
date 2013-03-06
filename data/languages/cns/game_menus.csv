@@ -1,5 +1,6 @@
 mno_continue|继 续 
-mno_go_back|后 退 。 
+mno_go_back|后 退 
+menu_start_phase_2|你 听 说 过 卡 拉 迪 亚 ， 这 里 是 一 片 被 互 相 竞 争 着 的 国 家 所 割 裂 开 来 的 土 地 ， 是 争 夺 霸 权 者 的 避 难 所 ， 所 有 追 逐 着 财 富 ， 权 力 抑 或 是 荣 誉 的 人 们 皆 聚 集 于 此 ， 骑 士 ， 雇 佣 兵 ， 杀 手 ， 探 险 家 们 在 这 片 土 地 上 四 散 奔 走 … … 机 会 与 危 险 并 存 于 此 ， 你 相 信 你 将 放 弃 过 去 的 一 切 ， 开 始 一 段 新 的 旅 程 。 你 觉 得 最 终 ， 命 运 掌 握 在 你 自 己 的 手 中 ， 你 可 以 随 心 所 欲 ， 无 论 过 程 怎 样 ， 一 次 伟 大 的 冒 险 将 就 此 展 开 。 你 被 你 所 听 说 的 卡 拉 迪 亚 神 奇 的 传 说 和 王 国 所 吸 引 ， 你 … … 
 mno_town_1|加 入 一 支 商 队 前 往 斯 瓦 迪 亚 王 国 的 帕 拉 汶 。 
 mno_town_2|加 入 一 支 商 队 前 往 维 吉 亚 王 国 的 日 瓦 丁 。 
 mno_town_3|加 入 一 支 商 队 前 往 库 吉 特 汗 国 的 图 尔 加 。 
@@ -27,37 +28,6 @@ mno_continue|继 续
 menu_start_game_1|选 择 你 的 角 色 性 别 。 
 mno_start_male|男 
 mno_start_female|女 
-mno_go_back|后 退 。 
-menu_start_character_1|当 你 很 多 年 前 出 生 在 一 片 遥 远 的 大 陆 时 ， 你 的 父 亲 是 … … 
-mno_start_noble|一 位 没 落 的 贵 族 。 
-mno_start_merchant|一 位 旅 行 商 人 。 
-mno_start_guard|一 位 老 兵 。 
-mno_start_forester|一 位 猎 人 。 
-mno_start_nomad|一 位 游 牧 民 。 
-mno_start_thief|一 位 盗 贼 。 
-mno_go_back|后 退 。 
-menu_start_character_2|{s10}^^后 来 ， 你 在 少 年 时 期 做 过 … … 
-mno_page|贵 族 的 侍 从 。 
-mno_apprentice|手 工 匠 的 学 徒 。 
-mno_stockboy|商 人 们 的 帮 手 。 
-mno_urchin|大 街 上 的 顽 童 。 
-mno_nomad|大 草 原 上 的 孩 子 。 
-mno_go_back|后 退 。 
-menu_start_character_3|{s11}^^后 来 ， 在 你 的 少 年 时 期 ， 你 的 生 活 理 所 应 当 的 改 变 了 。 你 成 为 了 一 个 … … 
-mno_squire|骑 士 的 扈 从 。 
-mno_lady|贵 族 的 侍 女 。 
-mno_troubadour|吟 游 诗 人 。 
-mno_student|学 徒 。 
-mno_peddler|小 商 贩 。 
-mno_craftsman|铁 匠 。 
-mno_poacher|偷 猎 者 。 
-mno_go_back|后 退 。 
-menu_start_character_4|{s12}^^不 过 在 一 段 时 间 以 后 ， 一 切 都 发 生 了 变 化 ， 你 决 定 孤 身 一 人 去 远 方 冒 险 。 让 你 做 出 这 个 举 动 的 原 因 是 … … 
-mno_revenge|私 人 恩 怨 。 
-mno_death|失 去 恋 人 的 痛 苦 。 
-mno_wanderlust|对 于 探 险 的 爱 好 。 
-mno_disown|从 家 中 被 驱 赶 了 出 来 。 
-mno_greed|对 于 权 力 与 财 富 的 渴 望 。 
 mno_go_back|后 退 。 
 menu_choose_skill|{s13}
 mno_begin_adventuring|你 成 为 了 一 名 冒 险 者 追 寻 自 己 的 命 运 。 
@@ -616,12 +586,6 @@ mno_continue|继 续
 menu_notification_player_faction_political_issue_resolved_for_player|经 过 和 王 国 贵 族 们 的 商 议 ， {s10}已 经 决 定 授 予 你 {s11}。 你 可 以 拒 绝 这 项 任 命 ， 但 是 这 也 许 意 味 着 短 时 间 内 你 不 会 再 收 到 其 它 任 何 授 予 。 {s12}
 mno_accept|接 受 任 命 
 mno_decline|拒 绝 任 命 
-mno_continue|继 续 
-menu_start_phase_3|{s16}^^当 来 到 {s1}的 旅 馆 的 时 候 ， 你 已 经 疲 惫 不 堪 ， 很 快 就 睡 着 了 。 然 而 ， 在 黎 明 来 临 之 前 你 就 醒 来 了 ， 迫 不 及 待 地 打 量 着 四 周 的 环 境 。 你 大 胆 地 走 上 了 无 人 的 街 头 。 突 然 ， 你 听 到 了 一 个 声 音 ， 脖 子 上 的 汗 毛 不 由 得 全 竖 了 起 来 — — 那 是 刀 剑 出 鞘 的 刺 耳 的 声 音 … … 
-mno_continue|继 续 
-menu_start_phase_4|{s11}
-mno_continue|继 续 
-mno_continue|继 续 
 menu_lost_tavern_duel|{s11}
 mno_continue|继 续 
 menu_establish_court|要 将 {s4}建 为 你 的 都 城 需 要 重 新 翻 修 一 番 。 具 体 来 说 ， 你 需 要 一 套 工 具 以 及 一 卷 天 鹅 绒 。 也 许 还 需 要 花 点 时 间 来 让 你 的 一 些 部 下 重 新 部 署 一 下 这 里 。 你 要 继 续 吗 ？ 

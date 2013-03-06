@@ -1499,6 +1499,8 @@ dlga_tavernkeeper_pretalk:tavernkeeper_talk|还 有 什 么 事 吗 ？
 dlga_tavernkeeper_talk:tavernkeeper_deliver_wine|有 人 叫 我 带 {reg9}单 位 的 {s4}给 你 。 
 dlga_tavernkeeper_talk:tavernkeeper_deliver_wine_incomplete|我 本 要 带 {reg9}单 位 的 {s4}给 你 ， 可 是 我 在 路 上 损 失 了 一 些 货 物 。 
 dlga_tavernkeeper_talk:tavernkeeper_deliver_wine_lost|我 本 要 带 {reg9}单 位 的 {s4}给 你 ， 可 是 在 路 上 货 物 全 丢 了 。 
+dlga_tavernkeeper_talk:tavernkeeper_buy_tavern|我 能 成 为 这 里 的 老 板 吗 ？ 
+dlga_tavernkeeper_buy_tavern:tavernkeeper_buy_tavern_confirm|当 然 ！ 只 要 50000第 纳 尔 ， 如 何 ？ 
 dlga_tavernkeeper_talk:tavernkeeper_buy_drinks|我 想 给 今 晚 每 个 到 这 里 来 的 人 买 一 罐 你 这 里 最 好 的 酒 。 
 dlga_tavernkeeper_buy_drinks_2:tavernkeeper_buy_drinks_end|让 每 个 人 都 知 道 我 {playername}对 {s10}人 的 慷 慨 。 
 dlga_tavernkeeper_buy_drinks_2:tavernkeeper_pretalk|其 实 ， 还 是 取 消 这 单 消 费 吧 。 
@@ -1984,6 +1986,7 @@ dlga_town_dweller_quest_meet_spy_in_enemy_town_dont_know:close_window|没 事 �
 dlga_town_dweller_quest_meet_spy_in_enemy_town_know:town_dweller_quest_meet_spy_in_enemy_town_chat|{s4}派 我 来 拿 你 的 报 告 。 你 有 带 在 身 上 吗 ？ 
 dlga_town_dweller_quest_meet_spy_in_enemy_town_chat:town_dweller_quest_meet_spy_in_enemy_town_chat_2|我 正 在 等 你 呢 。 拿 好 了 ， 你 要 确 保 它 们 安 全 按 时 到 达 {s4}， 绝 不 能 有 任 何 延 误 。 
 dlga_town_dweller_quest_meet_spy_in_enemy_town_chat_2:close_window|再 见 。 
+dlga_town_dweller_talk:close_window|[攻 击 ]
 dlga_town_dweller_talk:town_dweller_ask_info|你 能 告 诉 我 这 个 村 子 的 相 关 情 况 吗 ？ 
 dlga_town_dweller_talk:town_dweller_ask_info.1|你 能 告 诉 我 这 个 城 镇 的 相 关 情 况 吗 ？ 
 dlga_town_dweller_ask_info:close_window|{s10}{s11}

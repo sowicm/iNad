@@ -637,6 +637,25 @@ common_battle_mission_start = (
     (call_script, "script_change_banners_and_chest"),
     ])
 
+## iNad begin ##
+common_battle_on_agent_killed_or_wounded = (
+   ti_on_agent_killed_or_wounded, 0, 0, [],
+   [
+     (store_trigger_param_1, ":dead_agent_no"),
+     (store_trigger_param_2, ":killer_agent_no"),
+     #(store_trigger_param_3, ":is_wounded"),
+
+     (agent_is_human, ":dead_agent_no"),
+     (agent_get_troop_id, ":dead_agent_troop_no", ":dead_agent_no"),
+     (agent_get_troop_id, ":killer_agent_troop_no", ":killer_agent_no"),
+
+     (try_begin),
+       (eq, ":killer_agent_troop_no", "trp_player"),
+       (troop_raise_attribute, "trp_player", ca_strength, 1),
+     (try_end),
+   ])
+## iNad end ##
+
 common_battle_tab_press = (
   ti_tab_pressed, 0, 0, [],
   [
@@ -1767,6 +1786,9 @@ mission_templates = [
 	   (finish_mission, 0),
 	 (else_try),  
 	   (set_trigger_result,1),
+           ## iNad begin ##
+           (finish_mission, 0),
+           ## iNad end ##
 	 (try_end),	 	 
    ]),
 		
@@ -1776,7 +1798,7 @@ mission_templates = [
 	 (neg|main_hero_fallen,0),
      (store_mission_timer_a, ":time"),
      (ge, ":time", 10),
-		
+
      (all_enemies_defeated), #1 is default enemy team for in-town battles
    ],	  
    [
@@ -1792,20 +1814,20 @@ mission_templates = [
        (try_end),
      (try_end),
      (jump_to_menu,"mnu_sneak_into_town_caught_ran_away"),
-     
+
      (mission_enable_talk),
      (finish_mission,0)
    ]),
-   
+
    (ti_on_agent_killed_or_wounded, 0, 0, [],
    [
      (store_trigger_param_1, ":dead_agent_no"),
      (store_trigger_param_2, ":killer_agent_no"),
      #(store_trigger_param_3, ":is_wounded"),
-        
+
      (agent_get_troop_id, ":dead_agent_troop_no", ":dead_agent_no"),
      (agent_get_troop_id, ":killer_agent_troop_no", ":killer_agent_no"),
-                
+
      (try_begin), 
        (this_or_next|eq, ":dead_agent_troop_no", "trp_swadian_prison_guard"),
        (this_or_next|eq, ":dead_agent_troop_no", "trp_vaegir_prison_guard"),
@@ -1813,12 +1835,18 @@ mission_templates = [
        (this_or_next|eq, ":dead_agent_troop_no", "trp_nord_prison_guard"),
        (this_or_next|eq, ":dead_agent_troop_no", "trp_rhodok_prison_guard"),
        (eq, ":dead_agent_troop_no", "trp_sarranid_prison_guard"),
-          
+
        (eq, ":killer_agent_troop_no", "trp_player"),
-          
+
        (display_message, "@You got keys of dungeon."),
+     ## iNad begin ##
+     (else_try),
+       (eq, ":killer_agent_troop_no", "trp_player"),
+       (store_random_in_range, reg0, 30, 1000),
+       (troop_add_gold, "trp_player", reg0),
+     ## iNad end ##
      (try_end),
-   ]),     
+   ]),
   ]),
 
   (
@@ -1893,6 +1921,25 @@ mission_templates = [
           (call_script, "script_succeed_quest", "qst_hunt_down_fugitive"),
         (try_end),
         ]),
+
+      ## iNad begin ##
+         (ti_on_agent_killed_or_wounded, 0, 0, [],
+     [
+     (store_trigger_param_1, ":dead_agent_no"),
+     (store_trigger_param_2, ":killer_agent_no"),
+     #(store_trigger_param_3, ":is_wounded"),
+
+     (agent_get_troop_id, ":dead_agent_troop_no", ":dead_agent_no"),
+     (agent_get_troop_id, ":killer_agent_troop_no", ":killer_agent_no"),
+
+     (try_begin), 
+       (eq, ":killer_agent_troop_no", "trp_player"),
+       (store_random_in_range, reg0, 30, 1000),
+       (troop_add_gold, "trp_player", reg0),
+       (try_end),
+   ]),
+   ## iNad end ##
+
     ],
   ),
 
@@ -2250,11 +2297,28 @@ mission_templates = [
         (store_trigger_param_2, ":killer_agent_no"),
         (store_trigger_param_3, ":is_wounded"),
 
+     (store_trigger_param_1, ":dead_agent_no"),
+     (store_trigger_param_2, ":killer_agent_no"),
+     #(store_trigger_param_3, ":is_wounded"),
+
+     (agent_is_human, ":dead_agent_no"),
+     (agent_get_troop_id, ":dead_agent_troop_no", ":dead_agent_no"),
+     (agent_get_troop_id, ":killer_agent_troop_no", ":killer_agent_no"),
+
+
+        
         (try_begin),
           (ge, ":dead_agent_no", 0),
           (neg|agent_is_ally, ":dead_agent_no"),
           (agent_is_human, ":dead_agent_no"),
           (agent_get_troop_id, ":dead_agent_troop_id", ":dead_agent_no"),
+          ## iNad begin ##
+          (try_begin),
+            (eq, ":killer_agent_troop_no", "trp_player"), ## todo: all npcs
+            (troop_raise_attribute, "trp_player", ca_strength, 1),
+            (display_message, "@Strength Up"),
+          (try_end),
+          ## iNad end ##
 ##          (str_store_troop_name, s6, ":dead_agent_troop_id"),
 ##          (assign, reg0, ":dead_agent_no"),
 ##          (assign, reg1, ":killer_agent_no"),
