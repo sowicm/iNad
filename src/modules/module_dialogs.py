@@ -564,7 +564,7 @@ dialogs = [
 
   [anyone|plyr, "fighter_talk",
    [],
-   "Let's do some sparring practice.", "fighter_talk_train_combat", []],
+   "-我们来点对战练习吧。", "fighter_talk_train_combat", []],
 
   [anyone|plyr, "fighter_talk",
    [(eq,1,0)],
@@ -586,7 +586,7 @@ dialogs = [
    []],
 
   [anyone|plyr, "fighter_talk_train_attack_2",  [],
-   "Let's begin then. I am ready.", "close_window",
+   "-让我们开始吧，我已经准备好了。", "close_window",
    [
      (assign, "$g_tutorial_training_ground_melee_trainer_attack", "$g_talk_troop"),
      (assign, "$g_tutorial_training_ground_melee_state", 0),
@@ -622,7 +622,7 @@ dialogs = [
    []],
 	 
   [anyone|plyr, "fighter_talk_train_parry_3",  [],
-   "Let's begin then. I am ready.", "close_window",
+   "-让我们开始吧，我已经准备好了。", "close_window",
    [
      (assign, "$g_tutorial_training_ground_melee_trainer_parry", "$g_talk_troop"),
      (assign, "$g_tutorial_training_ground_melee_state", 0),
@@ -669,7 +669,7 @@ dialogs = [
    []],
 
   [anyone|plyr, "fighter_talk_train_combat_2",  [],
-   "Let's begin then. I am ready.", "close_window", [
+   "-让我们开始吧，我已经准备好了。", "close_window", [
      (assign, "$g_tutorial_training_ground_melee_trainer_combat", "$g_talk_troop"),
      (assign, "$g_tutorial_training_ground_melee_state", 0),
      (assign, "$g_tutorial_training_ground_melee_trainer_action_state", 0),
@@ -694,14 +694,14 @@ dialogs = [
   [anyone, "start",
    [(is_between, "$g_talk_troop", tutorial_fighters_begin, tutorial_fighters_end),
    (eq, "$g_tutorial_training_ground_conversation_state", 2)], #player knocked down in parry
-   "Well that didn't go too well, did it? (Remember, you must press and hold down the right mouse button to keep your block effective.) Do you want to try again?", "fighter_parry_try_again",
+   "-练习进行得不太顺利，是吧？(记住，你必须按住鼠标右键才能有效格挡)还要来一次吗？", "fighter_parry_try_again",
    [
      (assign, "$g_tutorial_training_ground_conversation_state", 0),
      ]],
 	 
   [anyone|plyr, "fighter_parry_try_again",
    [],
-   "Yes. Let's try again.", "fighter_talk_train_parry", []],
+   "-是的，我们再来一次。", "fighter_talk_train_parry", []],
 
   [anyone|plyr, "fighter_parry_try_again",
    [],
@@ -717,7 +717,7 @@ dialogs = [
 	 
   [anyone|plyr, "fighter_parry_warn",
    [],
-   "I am sorry. Let's try once again.", "fighter_talk_train_parry", []],
+   "-我很抱歉，再来一次吧。", "fighter_talk_train_parry", []],
 
   [anyone|plyr, "fighter_parry_warn",
    [],
@@ -730,14 +730,14 @@ dialogs = [
   [anyone, "start",
    [(is_between, "$g_talk_troop", tutorial_fighters_begin, tutorial_fighters_end),
    (eq, "$g_tutorial_training_ground_conversation_state", 4)], #player knocked down in combat
-   "Well that didn't go too well, did it?  Don't feel bad, and try not to do same mistakes next time. Do you want to have a go again?", "fighter_combat_try_again",
+   "-练习进行得不太顺利，是吧？别灰心，下次别犯同样的错误就是了。想再来一次吗？", "fighter_combat_try_again",
    [
      (assign, "$g_tutorial_training_ground_conversation_state", 0),
      ]],
 	 
   [anyone|plyr, "fighter_combat_try_again",
    [],
-   "Yes. Let's do another round.", "fighter_talk_train_combat", []],
+   "-是的，我们再来一次。", "fighter_talk_train_combat", []],
 
   [anyone|plyr, "fighter_combat_try_again",
    [],
@@ -750,7 +750,7 @@ dialogs = [
   [anyone, "start",
    [(is_between, "$g_talk_troop", tutorial_fighters_begin, tutorial_fighters_end),
    (eq, "$g_tutorial_training_ground_conversation_state", 5)], #trainer knocked down in combat
-   "Hey, that was good sparring. You defeated me, but next time I'll be more careful. Do you want to have a go again?", "fighter_combat_try_again",
+   "-嘿，这场对战真不赖，你打败我了。不过下一次我会更小心的。想再来一次吗？", "fighter_combat_try_again",
    [
      (assign, "$g_tutorial_training_ground_conversation_state", 0),
      ]],
@@ -837,7 +837,7 @@ dialogs = [
    "ranged_end", []],
 	 
 	 [trp_tutorial_master_archer, "ranged_end", [],
-   "Now, you can go talk with the melee fighters or the horsemanship trainer if you haven't already done so. They can teach you important skills too.", 
+   "-现在，如果你还没跟格斗士们和骑术教练见过面的话，那么去跟他们谈谈。他们也能教给你一些重要的技能。", 
    "close_window", []],
 
   [trp_tutorial_master_archer, "start",
@@ -925,7 +925,7 @@ dialogs = [
    [
      (eq, "$g_tutorial_training_ground_horseman_trainer_completed_chapters", 2),
      ],
-   "Good! You have been able to hit all targets on horseback. That's no easy feat for a starter. Your next challange will be using a bow and arrows to shoot at the archery targets by the road. You need to put an arrow to each target to consider yourself successful.", 
+   "-很好！你已经能在马背上击中所有的目标了。那对于新手来说可不简单。你的下一项挑战将是使用弓和箭去射击沿路的箭靶。你要在每个靶子上都留下一支箭来证明你成功命中了。", 
    "horseman_melee_challenge_2", []],
 
   [trp_tutorial_master_horseman, "start",
@@ -939,7 +939,7 @@ dialogs = [
 	 [trp_tutorial_master_horseman, "horsemanship_end",
    [
      ],
-   "Now, you can go talk with the melee fighters or the archery trainer if you haven't already done so. You need to learn everything you can to be prepared when you have to defend yourself.", "close_window",
+   "-现在，如果你还没跟格斗士们和箭术教练见过面的话，那么去跟他们谈谈。你得尽你的最大努力学习任何你能学到的东西，以使你能在不得不进行自卫的时候有所准备。", "close_window",
    []],
 	 
 
@@ -1065,7 +1065,7 @@ dialogs = [
      (try_end),
      (troop_slot_eq, "$g_talk_troop", slot_troop_prisoner_of_party, "$g_encountered_party"),
    ],
-   "What's going on?", "lord_prison_break",[]],
+   "-怎么样了？", "lord_prison_break",[]],
    
    
    #TAVERN DRUNK DIALOGS
@@ -1189,7 +1189,7 @@ dialogs = [
 
    
   [anyone|plyr, "drunk_response", [],
-   "I'm not sure... Some sort of animal, clearly", "drunk_fight_start", [
+   "-我不肯定……但明显是某种动物。", "drunk_fight_start", [
    ]],
    
   [anyone|plyr, "drunk_response", [],
@@ -1255,37 +1255,37 @@ dialogs = [
    ]],
    
   [anyone|plyr, "fistfight_response", [],
-   "How's that?", "fistfight_response_2", [
+   "-那个怎么样？", "fistfight_response_2", [
    ]],
 
   [anyone, "fistfight_response_2", [
   ],
-   "Good -- I'm glad you're interested. Here's the plan... It's a little complicated, so listen well. ", "fistfight_response_2a", [
+   "-很好，我非常高兴你感兴趣。这笔交易说起来有点复杂，所以你得听好了……", "fistfight_response_2a", [
    ]],
 
   [anyone, "fistfight_response_2a", [
   ],
-	"You and this other fellow will start up a fight here. No weapons, no armor -- I'll sit back and take bets, and split the profits with the winner. If we make a loss, then I'll cover it. You've got nothing to lose -- except a bit of blood, of course.", "fistfight_response_3", [
+	"-你和这个家伙在这来一场决斗，不能用武器，不能穿戴防具。我在旁边坐庄，赢得的钱会分一部分给胜利者。如果我们亏了，就由我来埋单。你就算失败了也没什么损失，当然，除了流点血。", "fistfight_response_3", [
    ]],
 
   [anyone, "fistfight_response_3", [
   ],
-   "However, we can't organize this like one of those nice arena bouts, where everyone places their bets beforehand. People will walk in, drawn by the noise, and put a denar or two on whichever one of your two they think is winning. I'll give 'em even odds -- anything else is going to be too tricky for someone who's already on his third flagon of ale.", "fistfight_response_4", [
+   "-然而我们不能把这场比赛搞得像那些优秀的竞技场比赛那样给大家预先下注。观众先走进来，陶醉在热闹的比赛中，再给他们心目中胜利者下1或2第纳尔。我会给他们平等的机会，而别的事情对于三杯黄汤下肚的家伙来说就太微妙了。", "fistfight_response_4", [
    ]],
    
   [anyone, "fistfight_response_4", [
   ],
-   "So, as you can see, the trick is to stretch things out for as long as possible where it looks like you're losing, and people bet against you -- and then come back fast, and win, before the betting can turn. The best way to make money is for you to be battered almost to the floor, and then jump back off your feet and take the other guy down. However, you have to win in the end in order for me, and you, to make money. ", "fistfight_response_4a", [
+   "-如你所见，这个诡计就是尽可能的让大家认为你会输掉这场决斗，他们就会给你的对手下注。然后你要尽快恢复状态，在下注的局势改变之前赢下这场决斗。让对手猛打并且倒地，然后再跳起来把他打倒，这就是赢钱的最好办法。无论如何，为了我，为了你自己，为了赚钱，你最后都得赢。", "fistfight_response_4a", [
    ]],
    
   [anyone, "fistfight_response_4a", [
   ],
-   "Also, you can't stretch the fight out too long, or people will suspect a fix. So, one of you has to take a punch every so often. I don't care whose blood is spilled, but there has to be some blood.", "fistfight_response_5", [
+   "-另外，你不能把比赛拖得太久，否则观众会怀疑我们使诈。因此，你们其中一个要偶尔给对方来一次重击。谁会流血我不在乎，但必须有人要流点血。", "fistfight_response_5", [
    ]],
 
   [anyone, "fistfight_response_5", [
   ],
-   "And one other thing -- my mate, your opponent, he doesn't take to well to complexity. So he's just going to come straight at you. It's up to you to supply the artistry.", "fistfight_response_5a", [
+   "-还有件事，我的伙计，你的对手不会去处理好复杂的局面，他只管跟你硬拼。现在是到你发挥技艺才华的时候了。", "fistfight_response_5a", [
    ]],
    
   [anyone, "fistfight_response_5a", [
@@ -1330,7 +1330,7 @@ dialogs = [
  you're going to cross swords with someone sooner or later. And, God willing, you'll come out on top.\
  Why not make some extra money off the whole thing? Take them alive, bring them back to me, and I'll pay you fifty denars for each head.\
  Don't much care who they are or where they come from.", "ramun_introduce_11",[]],
-  [trp_ramun_the_slave_trader|plyr, "ramun_introduce_11", [], "Hmm. I'll think about it.", "ramun_introduce_12",[]],
+  [trp_ramun_the_slave_trader|plyr, "ramun_introduce_11", [], "-嗯，我会考虑一下的。", "ramun_introduce_12",[]],
   [trp_ramun_the_slave_trader, "ramun_introduce_12", [], "Do think about it!\
  There's a lot of silver to be made, no mistake. More than enough for the both of us.", "close_window",[]],
 
@@ -1339,7 +1339,7 @@ dialogs = [
 
   [trp_ramun_the_slave_trader|plyr,"ramun_talk",
    [[store_num_regular_prisoners,reg(0)],[ge,reg(0),1]],
-   "I've brought you some prisoners, Ramun. Would you like a look?", "ramun_sell_prisoners",[]],
+   "-拉蒙，我带来了一些俘虏，你想看看吗？", "ramun_sell_prisoners",[]],
   [trp_ramun_the_slave_trader,"ramun_sell_prisoners", [],
   "-让我看一下你带来的“货物”吧……", "ramun_sell_prisoners_2",
    [[change_screen_trade_prisoners]]],
@@ -1356,7 +1356,7 @@ dialogs = [
   [trp_ramun_the_slave_trader|plyr,"ramun_have_blunt_weapon", [],
  "-当然。", "ramun_have_blunt_weapon_yes",[]],
   [trp_ramun_the_slave_trader|plyr,"ramun_have_blunt_weapon", [],
- "As a matter of fact, I don't.", "ramun_have_blunt_weapon_no",[]],
+ "-事实上，我没有。", "ramun_have_blunt_weapon_no",[]],
   [trp_ramun_the_slave_trader,"ramun_have_blunt_weapon_yes", [],
  "Good. Then all you need to do is beat the bugger down with your weapon, and when the fighting's over you clap him in irons.\
  It's a bit different for nobles and such, they tend to be protected enough that it won't matter what kind of weapon you use,\
@@ -1386,10 +1386,10 @@ dialogs = [
  If you want to capture a lot of prisoners, you should try and learn the tricks of it yourself,\
  or you won't be able to hang on to a single man you catch.", "ramun_ask_about_capturing_7",[]],
   [trp_ramun_the_slave_trader|plyr,"ramun_ask_about_capturing_7", [],
- "Thanks, I'll keep it in mind.", "ramun_pre_talk",[]],
+ "-谢谢，我会记住的。", "ramun_pre_talk",[]],
 
-  [trp_ramun_the_slave_trader|plyr,"ramun_talk", [], "I'd better be going.", "ramun_leave",[]],
-  [trp_ramun_the_slave_trader,"ramun_leave", [], "Remember, any prisoners you've got, bring them to me. I'll pay you good silver for every one.", "close_window",[]],
+  [trp_ramun_the_slave_trader|plyr,"ramun_talk", [], "-我该上路了。", "ramun_leave",[]],
+  [trp_ramun_the_slave_trader,"ramun_leave", [], "-记住，把俘虏都带到我这里来，我会给你给你个好价钱。", "close_window",[]],
 
   
 
@@ -1430,7 +1430,7 @@ dialogs = [
 ##
 ##  [trp_tutorial_trainer,"start", [(eq, "$tutorial_quest_taken", 1),
 ##                                  (eq, "$tutorial_quest_succeeded", 1),], "Well done {playername}. Now you earned this knife. There you go.", "tutorial2_1",[]],
-##  [trp_tutorial_trainer|plyr, "tutorial2_1", [], "-谢谢你，教练。", "close_window", [(call_script, "script_end_quest", "qst_destroy_dummies"),(assign, "$tutorial_quest_award_taken", 1),(add_xp_to_troop, 100, "trp_player"),(troop_add_item, "trp_player"-。"itm_knife",imod_chipped),]],
+##  [trp_tutorial_trainer|plyr, "tutorial2_1", [], "-谢谢你，教练。", "close_window", [(call_script, "script_end_quest", "qst_destroy_dummies"),(assign, "$tutorial_quest_award_taken", 1),(add_xp_to_troop, 100, "trp_player"),(troop_add_item, "trp_player","itm_knife",imod_chipped),]],
 ##
 ##  [trp_tutorial_trainer,"start", [(eq, "$tutorial_quest_taken", 1),
 ##                                  (eq, "$tutorial_quest_succeeded", 1),], "Greetings {playername}. Feel free to train with the targets.", "tutorial2_1",[]],
@@ -1455,8 +1455,8 @@ dialogs = [
   [party_tpl|pt_manhunters,"start", [(eq,"$talk_context",tc_party_encounter)], "-嘿！你有没有在附近看到什么不法之徒？", "manhunter_talk_b",[]],
   [party_tpl|pt_manhunters|plyr,"manhunter_talk_b", [], "-是的，他们大约一小时前朝那个方向走了。", "manhunter_talk_b1",[]],
   [party_tpl|pt_manhunters,"manhunter_talk_b1", [], "-我知道了！伙计们，我们该出发了，去干掉那些兔崽子。十分感谢，朋友。", "close_window",[(assign, "$g_leave_encounter",1)]],
-  [party_tpl|pt_manhunters|plyr,"manhunter_talk_b", [], "No, haven't seen any outlaws lately.", "manhunter_talk_b2",[]],
-  [party_tpl|pt_manhunters,"manhunter_talk_b2", [], "Bah. They're holed up in this country like rats, but we'll smoke them out yet. Sooner or later.", "close_window",[(assign, "$g_leave_encounter",1)]],
+  [party_tpl|pt_manhunters|plyr,"manhunter_talk_b", [], "-没有，最近一个都没看到。", "manhunter_talk_b2",[]],
+  [party_tpl|pt_manhunters,"manhunter_talk_b2", [], "-妈的，就算他们藏得再好，总有一天我也要把他们都找出来。", "close_window",[(assign, "$g_leave_encounter",1)]],
 
   [party_tpl|pt_looters|auto_proceed,"start", [(eq,"$talk_context",tc_party_encounter),(encountered_party_is_attacker),], "{!}Warning: This line should never be displayed.", "looters_1",[
 	(str_store_string, s11, "@It's your money or your life, {mate/girlie}. No sudden moves or we'll run you through."),
@@ -1469,7 +1469,7 @@ dialogs = [
   [party_tpl|pt_looters,"looters_1", [], "-{s4}", "looters_2",[]],
   [party_tpl|pt_looters|plyr,"looters_2", [[store_character_level,reg(1),"trp_player"],[lt,reg(1),4]], "I'm not afraid of you lot. Fight me if you dare!", "close_window",
    [[encounter_attack]]],
-  [party_tpl|pt_looters|plyr,"looters_2", [[store_character_level,reg(1),"trp_player"],[ge,reg(1),4]], "You'll have nothing of mine but cold steel, scum.", "close_window",
+  [party_tpl|pt_looters|plyr,"looters_2", [[store_character_level,reg(1),"trp_player"],[ge,reg(1),4]], "-你从我这里什么都拿不到，哦，说错了，你会拿到我的剑……当它插在你胸膛里的时候。", "close_window",
    [[encounter_attack]]],
 
   [party_tpl|pt_village_farmers,"start", [(eq,"$talk_context",tc_party_encounter),
@@ -1558,17 +1558,17 @@ dialogs = [
   [anyone,"member_review_castle_garrison", [], "-没问题。这是人员的清单，如果你打算做些变动的话，请告诉我。", "member_castellan_pretalk",[(change_screen_exchange_members,0)]],
   [anyone|plyr,"member_castellan_talk", [],
    "-让我看看你的装备。", "member_review_castellan_equipment",[]],
-  [anyone,"member_review_castellan_equipment", [], "Very well, it's all here...", "member_castellan_pretalk",[(change_screen_equip_other)]],
+  [anyone,"member_review_castellan_equipment", [], "-好的，全部都在这了。", "member_castellan_pretalk",[(change_screen_equip_other)]],
   [anyone|plyr,"member_castellan_talk", [],
    "-我想要你放弃城堡，然后加入我的队伍。", "member_castellan_join",[]],
   [anyone,"member_castellan_join", [(party_can_join_party,"$g_encountered_party","p_main_party")],
-   "I've grown quite fond of the place... But if it is your wish, {playername}, I'll come with you.", "close_window", [
+   "-我已经有点喜欢这个地方了，但如果这是你的愿望，{playername}，我会跟你走。", "close_window", [
        (assign, "$g_move_heroes", 1),
        (call_script, "script_party_add_party", "p_main_party", "$g_encountered_party"),
        (party_clear, "$g_encountered_party"),
        ]],
   [anyone,"member_castellan_join", [],
-   "And where would we sleep? You're dragging a whole army with you, {playername}, there's no more room for all of us.", "member_castellan_pretalk",[]],
+   "-我们睡在哪里？你可是带着一整支军队，{playername}，没有足够的地方让所有人住下。", "member_castellan_pretalk",[]],
   
   [anyone|plyr,"member_castellan_talk", [], "[Leave]", "close_window",[]],
 
@@ -1586,14 +1586,14 @@ dialogs = [
 
   [trp_kidnapped_girl,"member_chat", [], "-我们到家了吗？", "kidnapped_girl_chat_1",[]],
   [trp_kidnapped_girl|plyr,"kidnapped_girl_chat_1", [], "-还没有。", "kidnapped_girl_chat_2",[]],
-  [trp_kidnapped_girl,"kidnapped_girl_chat_2", [], "I can't wait to get back. I've missed my family so much, I'd give anything to see them again.", "close_window",[]],
+  [trp_kidnapped_girl,"kidnapped_girl_chat_2", [], "-我已经等不及要回家了，我无比思念我的家人，我现在愿意做任何事情以与他们重逢。", "close_window",[]],
 
   [anyone,"member_chat",
    [
     (troop_slot_eq, "$g_talk_troop", slot_troop_occupation, slto_kingdom_lady),
     ], "-{playername}，你认为我们什么时候能到达目的地？", "member_lady_1",[]],
   [anyone|plyr, "member_lady_1", [],  "-我们还有很长的一段路要走。", "member_lady_2a", []],
-  [anyone|plyr, "member_lady_1", [],  "Very soon. We're almost there.", "member_lady_2b", []],
+  [anyone|plyr, "member_lady_1", [],  "-很快。我们就要到了。", "member_lady_2b", []],
 
   [anyone ,"member_lady_2a", [],  "Ah, I am going to enjoy the road for a while longer then. I won't complain.\
  I find riding out in the open so much more pleasant than sitting in the castle all day.\
@@ -1697,10 +1697,10 @@ dialogs = [
    "-似乎这场叛乱不可能再继续下去了。我们现在必须放弃了。", "pretender_quit_rebel_confirm",[]],
   
   [anyone,"pretender_quit_rebel_confirm", [],
-   "{playername}, you can't abandon me now. Are you serious?", "pretender_quit_rebel_confirm_2",[]],
+   "-{playername}，你现在不能背弃我，你是认真的吗？", "pretender_quit_rebel_confirm_2",[]],
   
   [anyone|plyr,"pretender_quit_rebel_confirm_2", [],
-   "Indeed, I am. I can't support you any longer.", "pretender_quit_rebel_confirm_3",[]],
+   "-我很确定。我再也不能支持你了。", "pretender_quit_rebel_confirm_3",[]],
   
   [anyone|plyr,"pretender_quit_rebel_confirm_2", [],
    "-开个玩笑而已。我会为你而战直到胜利。", "supported_pretender_pretalk",[]],
@@ -1759,7 +1759,7 @@ dialogs = [
 
   [anyone|plyr,"supported_pretender_talk", [],
    "-{reg65?尊敬的女士:我的大人}，可以允许我看看你的装备么？", "supported_pretender_equip",[]],
-  [anyone,"supported_pretender_equip", [], "Very well, it's all here...", "supported_pretender_pretalk",[
+  [anyone,"supported_pretender_equip", [], "-好的，全部都在这了。", "supported_pretender_pretalk",[
       (change_screen_equip_other),
       ]],
 
@@ -1844,7 +1844,7 @@ dialogs = [
   [anyone|plyr,"member_talk", [],
 
    "-让我看看你的装备。", "member_trade",[]],
-  [anyone,"member_trade", [], "Very well, it's all here...", "do_member_trade",[
+  [anyone,"member_trade", [], "-好的，全部都在这了。", "do_member_trade",[
 #      (change_screen_trade)
       (change_screen_equip_other),
       ]],
@@ -1861,7 +1861,7 @@ dialogs = [
 
   [anyone,"member_separate", [
             (gt, "$npc_quit_morale", 30),
-      ], "Oh really? Well, I'm not just going to wait around here. I'm going to go to the towns to look for other work. Is that what you want?", "member_separate_confirm",
+      ], "-真的？那么，我不会就这样等的。我会去城里找找别的工作。你真的想这样做吗？", "member_separate_confirm",
    []],
 
   [anyone,"member_separate", [
@@ -1872,11 +1872,11 @@ dialogs = [
        ]],
 
 
-  [anyone|plyr,"member_separate_confirm", [], "That's right. We need to part ways.", "member_separate_yes",[]],
-  [anyone|plyr,"member_separate_confirm", [], "No, I'd rather have you at my side.", "do_member_trade",[]],
+  [anyone|plyr,"member_separate_confirm", [], "-没错，我们需要分开了。", "member_separate_yes",[]],
+  [anyone|plyr,"member_separate_confirm", [], "-不，我更想要你站在我这一边。", "do_member_trade",[]],
 
   [anyone,"member_separate_yes", [
-      ], "Well. I'll be off, then. Look me up if you need me.", "close_window",
+      ], "-好吧，我会离开，如果你需要的话就再来找我。", "close_window",
    [
             (troop_set_slot, "$g_talk_troop", slot_troop_occupation, 0),
             (troop_set_slot, "$g_talk_troop", slot_troop_playerparty_history, pp_history_dismissed),
@@ -1884,7 +1884,7 @@ dialogs = [
        ]],
 
 
-  [anyone|plyr,"member_talk", [], "I'd like to ask you something.", "member_question",[]],
+  [anyone|plyr,"member_talk", [], "-我想要问你一些事。", "member_question",[]],
 
   [anyone|plyr,"member_talk", [], "-没事。", "close_window",[]],
 
@@ -2027,7 +2027,7 @@ dialogs = [
 		
   [anyone,"member_intelgathering_3", [ #change back to member_intelgathering_2 if this will be used
 		(eq, 1, 0),
-  ], "Of course, as few people should know of this as possible. If you want to collect the information, or pull me out, then don't send a messenger. Come and get me yourself -- even if that means you have to sneak through the gates.", "member_intelgathering_3",[]],
+  ], "-当然，越少人知道越好。如果你想收集情报，或者让我离队，请亲自过来，不要派遣信使，即使那样意味着你必须偷偷地溜进城门。", "member_intelgathering_3",[]],
 		
   [anyone|plyr,"member_intelgathering_3", [
 		 ], "-你这主意真是绝了！", "member_intelgathering_4",[]],
@@ -2132,7 +2132,7 @@ dialogs = [
   [
     (is_between, "$g_talk_troop", "trp_sea_raider_leader", "trp_bandit_leaders_end"),
   ],  
-  "I'll spare your life -- but in exchange, I want information. Either you or your mates kidnapped the brother of a prominent merchant in town. Tell me where you're hiding him, and give me your word that you'll stop troubling the people of these parts, and you can go free.", "bandit_leader_1b", 
+  "-我会饶了你的小命——但作为交换，我需要情报。你和你的帮凶绑架了城里最出名的商人的兄弟。告诉我你把他藏在哪里了，并且保证你以后不会骚扰这些人，然后你就可以滚了。", "bandit_leader_1b", 
   []],
 
 
@@ -2172,12 +2172,12 @@ dialogs = [
     
     (str_store_troop_name, s9, ":troop_of_merchant"),
   ],
-   "I've been looking for you. Tell me where you keep your prisoners, and I'll let you go.", "looter_leader_2", 
+   "-我一直在找你。告诉我你把俘虏关在哪里了，我就让你走。", "looter_leader_2", 
   []],
 
 [anyone|plyr,"looter_leader_1", 
   [],
-   "Nothing. We'll leave you in peace.", "close_window", 
+   "-没什么，我们不会打你的。", "close_window", 
    [
      (assign, "$g_leave_encounter", 1),     
    ]],
@@ -2286,7 +2286,7 @@ dialogs = [
 
   [anyone, "start_up_quest_1_next", 
   [],  
-  "Are you all right? Well.... I guess you're alive, at any rate. I'm not sure that we can say the same for the other fellow. That's one less thief to trouble our streets at night, although Heaven knows he won't be the last.... Anyway, maybe you can help me with something. Let's talk more inside. Out here, we don't know who's listening", "close_window", 
+  "-你还好吗？好……我想你至少还活着。我不确信别的家伙是不是也像你一样。少了一个在晚上让我们的街道不得安宁的贼了，尽管天知道他是不是最后一个……总之，也许你可以帮我做些事情。让我们悄悄地商量一下。走吧，小心隔墙有耳。", "close_window", 
   [    
     (assign, "$talked_with_merchant", 1),
     (mission_disable_talk),
@@ -2375,7 +2375,7 @@ dialogs = [
     (check_quest_active, "qst_save_relative_of_merchant"),
     (check_quest_succeeded, "qst_save_relative_of_merchant"),
   ],
-  "Well... My brother is home safe. I'm not sure what to do with him -- maybe pack him off to a university outside Calradia. That way, if he gets knocked on the head in a street brawl, no one can say it's my fault. But that's not your problem. Here's the rest of your reward. It was well-earned.", "merchant_quest_3b", 
+  "-好吧……我的兄弟已经安全回家了。我都不知道该怎么处置他——我也许该把他安排去卡拉迪亚以外的地方去读大学。那样的话，如果他在一次街头争吵中被打破脑袋，就没有人会说是我的过失了。不过这些都不是你的问题。这是你余下的报酬。够丰厚了。", "merchant_quest_3b", 
   [    
     (call_script, "script_finish_quest", "qst_save_relative_of_merchant", 100),
     (troop_add_gold, "trp_player", 200),
@@ -2410,7 +2410,7 @@ dialogs = [
   
   [anyone, "merchant_quest_4b2", 
   [],
-  "As a consequence, it seems, our captain turned to villainy to recoup his fortune. I supposed I'd do the same if, the Heavens forbid, I ever faced indebtedness and ruination. Now, any watch captain worth his salary will have a few thieves and robbers on his payroll, to inform on the rest, but our captain decides to employ these bastards wholesale. He brings them into the town, lets them do as they will, and takes a share of their take. You've heard of poachers turning gamekeepers? Well, in the unfortunate land of Calradia, sometimes gamekeepers will turn poacher. Luckily, there's are still a few brave, honest souls in the watch who've told me how he works.", "merchant_quest_4b3", 
+  "-结果，似乎我们的队长为了挽回他的损失而道德败坏了。我想如果面对同样的情况我也会做同样的事情，但愿这不会发生在我身上，我也面对过亏本和破产。虽说现在这世道，任何一个城镇哨兵队长都会有些小偷和盗贼为他的薪水买单，以期望他能够通风报信，但是我们的队长决定大规模的雇佣这些杂种们。他把他们带进城镇，让他们为所欲为，并且和他们分享赃物。你听说过猫鼠一窝吗？好吧，在卡拉迪亚这片不幸的大陆上，有时候家猫会变成硕鼠。幸运的是，仍然还有一些勇敢，正直的灵魂留在守卫的队伍里，让我知道了他是怎么干这些下作勾当的。", "merchant_quest_4b3", 
   []],
 
   [anyone, "merchant_quest_4b3", 
@@ -2418,20 +2418,20 @@ dialogs = [
   (faction_get_slot, ":local_ruler", "$g_encountered_party_faction", slot_faction_leader),
   (str_store_troop_name, s4, ":local_ruler"),
   ],
-  "Now -- here's my plan. I could bring this to the attention of {s4}, lord of the city, but that would mean an inquiry, my word against the captain's, and witnesses can be bought and evidence destroyed, or maybe the whole thing will be forgotten if the enemy comes across the border again, and all I'll get for my trouble is a knife in the ribs. In time of war, you see, a king's eye wanders far from his domain, and his subjects suffer. So I've got another idea. I've got a small group of townsfolk together, some men in my employ and some others who've lost relatives to these bandits, and we'll storm the captain's home and bring him in chains before {s4}, hopefully with a few captured bandits to explain how things stack up.", "merchant_quest_4b4", 
+  "-现在——这是我的计划。我可以让{s4}，这座城的领主，关注这个，但是那将意味着一次质询，我和那个队长的对质，而证人可以收买，证物则可能被销毁，或者如果敌人这时再次入境的话也许整个事件就都会被忘记，而我因为这件事唯一能得到就是一次暗杀。在战时，你知道，国王的目光远离他的领地，而他的臣民遭殃。所以我有另一个主意。我聚集了一小群市民，一些是我的雇员而另一些因为这些强盗失去过亲人，我们会冲进队长的家把他绑到{s4}面前，希望到时能抓获一些强盗来证明这一切。", "merchant_quest_4b4", 
   []],
 
   [anyone, "merchant_quest_4b4", 
   [
   ],
-  "All I need now is someone to lead my little army into battle -- and I can't think of anyone better than you. So, what do you say?", "merchant_quest_4b5", 
+  "-我现在需要的是一个能率领我的小军队去打仗的人——而我认为你是最好的人选。怎么样，你干不干？", "merchant_quest_4b5", 
   [ 
   ]],
 
    [anyone|plyr, "merchant_quest_4b5", 
   [
   ],
-  "How do I know that you're telling me the truth?", "merchant_quest_4b6", 
+  "-我怎样才能知道你对我说的是实话？", "merchant_quest_4b6", 
   [ 
   ]], 
   
@@ -2439,7 +2439,7 @@ dialogs = [
   [
   (str_store_party_name, s4, "$g_encountered_party"),
   ],
-  "Oh, well, I suppose it's possible that I found a dozen bandits who were willing to give their lives to give a passing stranger a false impression of life in old {s4}... Well, I guess you can't really know if my word is good, but I reckon you've learned by now that my money is good, and there's another 100 denars, or maybe a bit more, that's waiting for you if you'll do me this last little favor. So what do you say?", "merchant_quest_4b7", 
+  "-哦，好吧，我猜想我可以找到十来个愿意献身于给过路的陌生人一个错误的在老{s4}生活的印象的强盗……好吧，我猜想也许我表达的不好你听不太明白，但是我估计现在你已经知道我这里报酬很好，这里还有一百个第纳尔，或者更多，在等着你如果你能帮我这最后一个小忙的话。怎么样，你干不干？", "merchant_quest_4b7", 
   [ 
   ]], 
   
@@ -2447,21 +2447,21 @@ dialogs = [
   [anyone|plyr, "merchant_quest_4b7", 
   [
   ],
-  "All right. I'll lead your men.", "merchant_quest_4b8", 
+  "-好的。我会率领你的部下。", "merchant_quest_4b8", 
   [ 
   ]],
   
   [anyone|plyr, "merchant_quest_4b7", 
   [
   ],
-  "I'm sorry. This is too much, too fast. I need time to think.", "merchant_quest_4_decline", 
+  "-对不起。这太快太突然了。我需要时间想一想。", "merchant_quest_4_decline", 
   [  
   ]],
 
   [anyone, "merchant_quest_4b8", 
   [
   ],
-  "Splendid. It's been a long time since I staked so much on a single throw of the dice, and frankly I find it exhilarating. My men are ready to move on your word. Are you ready?", "merchant_quest_4b9", 
+  "-好极了。这也许是我因为一件事情上要冒的风险而最犹豫不决的一次了，坦白地说我觉得这真令人振奋。我的人就等你的命令了。你准备好了吗？", "merchant_quest_4b9", 
   [  
   ]],
  
@@ -2520,14 +2520,14 @@ dialogs = [
   [anyone|plyr, "merchant_quest_2a", 
   [
   ],
-  "Why don't you come with us?", "merchant_quest_2a_whynotcome", 
+  "-为什么你不和我们一起来？", "merchant_quest_2a_whynotcome", 
   [  
   ]],
   
   [anyone, "merchant_quest_2a_whynotcome", 
   [
   ],
-  "Because I'm paying you to go take care of it. That's the short answer. The long answer is that I've got some leads to follow up here in town, and I have just as much chance of getting knocked on my head as you, if that's what you're asking. But I respect your question. Now, what do you say?", "merchant_quest_2a", 
+  "-因为我付钱让你去对付这件事。简单点说是这样。说复杂点就是我在镇子里被一些人盯上了，我和你都冒着一样的风险，如果那就是你要问的话。但是我尊重你的疑问。现在，你还干不干？", "merchant_quest_2a", 
   [  
   ]],
   
@@ -2688,7 +2688,7 @@ dialogs = [
     (faction_get_slot, ":faction_leader", "$g_encountered_party_faction", slot_faction_leader),
     (str_store_troop_name, s5, ":faction_leader"),
   ], 
-  "Ah... {playername}. Things didn't go quite so well as I had hoped. {s5} couldn't quite find it in him to overlook my little breach of the peace. Oh, he's grateful enough that I got rid of his crooked captain -- a guard who'll let in bandits will let in an enemy army, if the price is right -- but he can't exactly have me running around here as a lasting reminder of his failure to take care of things himself.", "merchant_closing_statement_2",
+  "-哈……{playername}。事情发展得不如我希望的那样好。由于他疏忽了我的小小暴动，{s5}没能彻底发现。哦，他非常感激我除掉了他不老实的队长——如果价钱合适，一个会放强盗进来的守卫同样会放敌军进来——但是他容不得我继续留在这里，因为我就像是一个不断提醒他曾经何等疏忽大意的标志。", "merchant_closing_statement_2",
   []],  
   
   [anyone|plyr,"merchant_closing_statement_2", 
@@ -2703,7 +2703,7 @@ dialogs = [
   
   [anyone,"merchant_closing_statement_4", 
   [],   
-  "Anyway, I wouldn't go rubbing your part in this affair in {s5}'s face -- but he's taken note of you, and decided that you're not worth hanging, and that's something to which I'll raise a glass any day of the week. He might even have work for you, further down the road. Or, you can sell your sword to one of his competitors. Anyway, I hope you've learned a bit about what it will take to stay alive in this troubled land, and I suspect that the money you've earned won't go to waste. Good luck.", "close_window",
+  "-总之，我不会在{s5}面前说出你参与了这件事——但是他注意到你了，并且认为你还不适合被绞死，而有些事情我以后得每天小心对付。长远来看，他甚至会有事情给你做。或者，你可以给他的一个对手卖力。总之，我希望你学会了一些可以用来在这片麻烦的大陆安身立命的东西，并且我想你挣的那些钱不会浪费。祝你好运。", "close_window",
   [
     (assign, "$g_do_one_more_meeting_with_merchant", 2),
   ]], 
@@ -2720,7 +2720,7 @@ dialogs = [
   [anyone,"merchant_quests_last_word", 
   [
   ],   
-  "I am preparing to leave town in a short while. It's been an honor to know you. Good luck.", "close_window",
+  "-我准备要马上离开镇子。很荣幸认识你。祝你好运。", "close_window",
   [
   ]], 
   
@@ -2744,12 +2744,12 @@ dialogs = [
    "-你发现了什么？", "member_intel_liaison_results", []],
 
   [anyone|plyr, "member_intel_liaison", [],
-   "It's time to pull you out. Let's leave town separately, but join me soon after", "close_window", [
+   "-你该走了，我们就此分道扬镳，不过请尽快归队。", "close_window", [
    (assign, "$npc_to_rejoin_party", "$g_talk_troop"),
    ]],
    
   [anyone|plyr, "member_intel_liaison", [],
-   "You're doing good work. Stay here for a little longer", "close_window", []],
+   "-你干得不错，在这多呆上一会儿。", "close_window", []],
 
 
    
@@ -2975,7 +2975,7 @@ dialogs = [
    ],
    "-{s5}", "companion_recruit_signup_response", []],
 
-  [anyone|plyr, "companion_recruit_signup_response", [(neg|hero_can_join, "p_main_party"),], "Unfortunately, I can't take on any more hands in my party right now.", "close_window", [
+  [anyone|plyr, "companion_recruit_signup_response", [(neg|hero_can_join, "p_main_party"),], "-很不巧，现在我没法再往队伍里加人了。", "close_window", [
      ]],
 
   [anyone|plyr, "companion_recruit_signup_response", [
@@ -2994,7 +2994,7 @@ dialogs = [
   [anyone|auto_proceed, "companion_recruit_payment", [
       (troop_slot_eq, "$g_talk_troop", slot_troop_payment_request, 0),
    ],
-   "-。", "companion_recruit_signup_confirm", []],
+   ",", "companion_recruit_signup_confirm", []],
   
   [anyone, "companion_recruit_payment", [
       (store_sub, ":npc_offset", "$g_talk_troop", "trp_npc1"),
@@ -3024,7 +3024,7 @@ dialogs = [
   [anyone|plyr, "companion_recruit_payment_response", [
                      (troop_get_slot, ":signup_response", "$g_talk_troop", slot_troop_signup_response_2),
                      (str_store_string, s7, ":signup_response")
-      ],  "Sorry. I can't afford that at the moment.", "close_window", [
+      ],  "-对不起。我现在付不起那么多钱。", "close_window", [
           ]],
 
   [anyone, "start", [(is_between, "$g_talk_troop", companions_begin, companions_end),
@@ -3073,10 +3073,10 @@ dialogs = [
           ]],
 
   [anyone|plyr, "companion_recruit_backstory_delayed_response", [
-      ],  "I'll let you know if I hear of anything.", "close_window", [
+      ],  "-我会让你知道的，如果我有听到的话。", "close_window", [
           ]],
 
-  [anyone, "companion_recruit_signup_confirm", [], "Good! Give me a few moments to prepare and I'll be ready to move.", "close_window",
+  [anyone, "companion_recruit_signup_confirm", [], "-好！给我一点时间来准备，然后我就可以出发了。", "close_window",
    [(call_script, "script_recruit_troop_as_companion", "$g_talk_troop")]],
 
 
@@ -3089,7 +3089,7 @@ dialogs = [
                      (troop_get_slot, ":prison_center", "$g_talk_troop", slot_troop_prisoner_of_party),
                      (lt, ":prison_center", centers_begin),
    ],
-   "My offer to rejoin you still stands, if you'll have me.", "companion_rehire", []],
+   "-我请求你再次让我加入，如果你还想要我的话。", "companion_rehire", []],
 
 ### If the companion and the player were separated in battle
   [anyone, "start", 
@@ -3110,7 +3110,7 @@ dialogs = [
     (troop_get_slot, ":honorific", "$g_talk_troop", slot_troop_honorific),
     (str_store_string, s5, ":honorific"),
   ],
-  "It is good to see you alive, {s5}! {s6}, and I did not know whether you had been captured, or slain, or got away. I've been roaming around since then, looking for you. Shall I get my gear together and rejoin your company?","companion_rehire", 
+  "-真高兴你还活着，{s5}！{s6}，我不知道你是被捕了，被杀了，还是逃走了。从那之后我一直在找你。能让我重新收拾下家伙再次加入你的队伍吗？","companion_rehire", 
   [
     (troop_set_slot, "$g_talk_troop", slot_troop_playerparty_history, pp_history_indeterminate),
     (troop_set_slot, "$g_talk_troop", slot_troop_prisoner_of_party, -1),
@@ -3133,10 +3133,10 @@ dialogs = [
     (troop_get_slot, ":honorific", "$g_talk_troop", slot_troop_honorific),
     (str_store_string, s5, ":honorific"),
   ],
-  "I've come to break you out of here.", "companion_prison_break_chains",[]],
+  "-我是来带你逃离这的。", "companion_prison_break_chains",[]],
 
   [anyone,"companion_prison_break_chains", [],   
-  "Thank the heavens you came! However, I'm not going anywhere with these chains on my legs. You'll need to get the key away from the guard somehow.", "close_window",[]],			
+  "-谢天谢地你终于来了！但是，戴着我的脚镣我哪也去不了，你需要想办法从卫兵那儿弄到钥匙。", "close_window",[]],			
 
 
 
@@ -3184,7 +3184,7 @@ dialogs = [
 
   [anyone|plyr, "companion_rehire", 
   [],  
-  "Sorry, I can't take on anyone else right now.", "companion_rehire_refused", []],
+  "-对不起，我不能再带任何其他的人走了。", "companion_rehire_refused", []],
 
   [anyone, "companion_rehire_refused", [], "-那么，如果你改变了主意就来找我。好吧？", "close_window",
    [
@@ -3298,7 +3298,7 @@ dialogs = [
    [
    (is_between, "$g_player_minister", active_npcs_begin, kingdom_ladies_end),
    ],
-   "Do you have any ideas to strengthen our kingdom's unity?", "combined_political_quests",[
+   "-你对于加强我们王国的凝聚力方面有什么建议？", "combined_political_quests",[
    (call_script, "script_get_political_quest", "$g_talk_troop"),
    (assign, "$political_quest_found", reg0),
    (assign, "$political_quest_target_troop", reg1),
@@ -3323,7 +3323,7 @@ dialogs = [
    (try_end),	
    (gt, "$political_quest_to_cancel", 0),
    ],
-   "Let's abandon our plan to {s10}.", "minister_cancel_political_quest",[
+   "-让我们放弃对{s10}的计划。", "minister_cancel_political_quest",[
  ]],
  
   [anyone,"minister_cancel_political_quest",
@@ -3333,7 +3333,7 @@ dialogs = [
  
   [anyone|plyr,"minister_cancel_political_quest_confirm",
    [],
-   "Yes, I am sure. Let's abandon that idea.", "minister_pretalk",[
+   "-是的，我确定。让我们放弃那个主意。", "minister_pretalk",[
    (call_script, "script_abort_quest", "$political_quest_to_cancel", 1),
  ]],
  
@@ -3696,7 +3696,7 @@ dialogs = [
   ]],
    
   [anyone|plyr, "minister_emissary_select",[
-  ], "Actually, I can't think of anyone.", "minister_pretalk",[]],
+  ], "-事实上，我想不出合适的人选。", "minister_pretalk",[]],
 
   [anyone, "minister_emissary_dispatch",
    [
@@ -4167,7 +4167,7 @@ dialogs = [
 
   [anyone, "companion_quitting_persuasion", [
                      ],
-   "I'm sorry, but I don't see your point. I am leaving whether you like it or not.", "companion_quitting_response",
+   "-对不起，我不明白你的意思，我已经决意要离开了。不管你喜欢还是不喜欢。", "companion_quitting_response",
    [
        ]],
 
@@ -4186,19 +4186,19 @@ dialogs = [
        ]],
 
   [anyone|plyr, "companion_quitting_no_confirm", [],
-   "No, actually I don't mean that. You are free to leave.", "companion_quitting_yes", [
+   "-不，其实我不是那个意思。你随时可以走。", "companion_quitting_yes", [
        ]],
 
   [anyone, "companion_quitting_yes", [
                      ],
-   "Then this is goodbye. Perhaps I'll see you around, {playername}.", "close_window", [
+   "-这次就告别了。也许我们还会再见的。", "close_window", [
           (troop_set_slot, "$map_talk_troop", slot_troop_playerparty_history, pp_history_quit), 
           (call_script, "script_retire_companion", "$map_talk_troop", 100),
        ]],
 
   [anyone, "companion_quitting_no_confirmed", [
       ],
-   "Hm. I suppose I'm staying, then.", "close_window", [
+   "-嗯。那么，我要留下。", "close_window", [
        ]],
 
 
@@ -4234,7 +4234,7 @@ dialogs = [
 
   [anyone|plyr, "companion_objection_response", [
                     (eq, "$npc_praise_not_complaint", 0),
-      ], "Hopefully it won't happen again.", "close_window", [
+      ], "-希望那不要再发生了。", "close_window", [
                     (troop_set_slot, "$map_talk_troop", "$npc_grievance_slot", tms_acknowledged),
           ]],
 
@@ -4296,7 +4296,7 @@ dialogs = [
       (troop_get_slot, ":object", "$map_talk_troop", slot_troop_personalityclash2_object),
       (str_store_troop_name, s11, ":object"),
       (troop_get_type, reg11, ":object"),
-      ],  "{s11} is a valuable member of this company. I don't want you picking any more fights with {reg11?her:him}.", "close_window", [
+      ],  "-对于我们的队伍来说，{s11}是一个非常有价值的队员。我不想你再找{reg11?她:他}吵架了。", "close_window", [
                     (troop_set_slot, "$map_talk_troop", slot_troop_personalityclash2_state, pclash_penalty_to_self),
           ]],
 
@@ -4309,7 +4309,7 @@ dialogs = [
           ]],
   
   [anyone|plyr, "companion_personalityclash2_response", [
-      ],  "I don't have time for your petty dispute. Do not bother me with this again.", "close_window", [
+      ],  "-我没时间和你说这些。", "close_window", [
                     (troop_set_slot, "$map_talk_troop", slot_troop_personalityclash2_state, pclash_penalty_to_both),
           ]],
 
@@ -4365,7 +4365,7 @@ dialogs = [
       (troop_get_slot, ":object", "$map_talk_troop", slot_troop_personalityclash_object),
       (str_store_troop_name, s11, ":object"),
       (troop_get_type, reg11, ":object"),
-      ],  "{s11} is a capable member of this company. I don't want you picking any more fights with {reg11?her:him}.", "close_window", [
+      ],  "-{s11}在这个队伍里是一个很有能力的队员。我不想你再和{reg11?她:他}吵架了。", "close_window", [
                     (troop_set_slot, "$map_talk_troop", slot_troop_personalityclash_state, pclash_penalty_to_self),
           ]],
 
@@ -4378,7 +4378,7 @@ dialogs = [
           ]],
   
   [anyone|plyr, "companion_personalityclash_response", [
-      ],  "I don't have time for your petty dispute. Do not bother me with this again.", "close_window", [
+      ],  "-我没时间和你说这些。", "close_window", [
                     (troop_set_slot, "$map_talk_troop", slot_troop_personalityclash_state, pclash_penalty_to_both),
           ]],
 
@@ -4487,7 +4487,7 @@ dialogs = [
           ]],
 
   [anyone|plyr, "companion_home_description", [
-      ],  "We don't have time to chat just now.", "close_window", [
+      ],  "-我们现在没有时间闲聊。", "close_window", [
           ]],
 
   [anyone|plyr, "companion_home_description", [
@@ -4605,7 +4605,7 @@ dialogs = [
 					 (troop_get_slot, ":string", "$map_talk_troop", slot_troop_honorific),
                      (str_store_string, 21, ":string"),
                      ],
-   "Well, {s21}, at last I've found you. I've been out spreading the word about your claim, and am now ready to rejoin the company.", "companion_rejoin_response", [
+   "-好啊，{s21}，我终于找到你了。我已经在这个世界上到处传播了你的宣言，现在我已经准备好归队了。", "companion_rejoin_response", [
                     (assign, "$npc_to_rejoin_party", 0),
 					(call_script, "script_change_player_right_to_rule", 3),
 					(troop_set_slot, "$g_talk_troop", slot_troop_kingsupport_state, 1),
@@ -4661,7 +4661,7 @@ dialogs = [
 		(try_end),		
 		
 	    ],
-	   "Well, {s21}, at last I've found you. {s11}. The rest of my report I submit to you in writing.", "companion_rejoin_response", [
+	   "-好啊，{s21}，我终于找到你了。{s11}，余下的报告还在撰写当中。", "companion_rejoin_response", [
 		]],
 					
 
@@ -4689,7 +4689,7 @@ dialogs = [
 
 					 
                      ],
-   "Well, {s21}, at last I've found you. I have returned from my mission to {s31}. In general, I would say, {s14}.","companion_embassy_results", [
+   "-好啊，{s21}，我终于找到你了。我完成了在{s31}的任务。大致上，我要说，{s14}。","companion_embassy_results", [
 					]],
 
   [anyone, "companion_embassy_results", [
@@ -5039,7 +5039,7 @@ dialogs = [
    (check_quest_succeeded, "qst_denounce_lord"),
    (quest_slot_eq, "qst_denounce_lord", slot_quest_target_troop, "$g_talk_troop"),
   ],
-   "Very well. You've made your point. I have nothing more to say.", "close_window", [
+   "-哈哈！我们现在也不是很勇敢，不是吗？以后别再来烦我了。", "close_window", [
    (call_script, "script_change_troop_renown", "trp_player", 10),
    (assign, "$g_leave_encounter", 1),
    ]],
@@ -5073,7 +5073,7 @@ dialogs = [
    (try_end),
    (gt, "$temp", 0),
   ],
-   "Very well. You've made your point. I retract what I said. I hope you have obtained satisfaction.", "close_window", [
+   "-起来。让今天所有在场的人证明我打败了你，而你现在必须放弃对{s10}的求爱。我将允许你最后再见她一次，告诉她你们永不再见。而那之后，如果你依然试图去见她，那么每个人都将知道你是个不知羞耻的家伙。", "close_window", [
    (try_begin),
      (eq, "$temp", 1),
      (call_script, "script_change_troop_renown", "trp_player", 10),
@@ -5140,13 +5140,13 @@ dialogs = [
    "-你想干什么？", "player_siege_castle_commander_1", []],
   [anyone|plyr,"player_siege_castle_commander_1", [],
    "Surrender! Your situation is hopeless!", "player_siege_ask_surrender", []],
-  [anyone|plyr,"player_siege_castle_commander_1", [], "Nothing. I'll leave you now.", "close_window", []],
+  [anyone|plyr,"player_siege_castle_commander_1", [], "-没什么。我现在就离开你。", "close_window", []],
 
   
   [anyone,"player_siege_ask_surrender", [(lt, "$g_enemy_strength", 100), (store_mul,":required_str","$g_enemy_strength",5),(ge, "$g_ally_strength", ":required_str")],
-   "Perhaps... Do you give your word of honour that we'll be treated well?", "player_siege_ask_surrender_treatment", []],
+   "-也许……如果你用你的名誉担保？我们可以相处的很融洽。", "player_siege_ask_surrender_treatment", []],
   [anyone,"player_siege_ask_surrender", [(lt, "$g_enemy_strength", 200), (store_mul,":required_str","$g_enemy_strength",3),(ge, "$g_ally_strength", ":required_str")],
-   "We are ready to leave this castle to you and march away if you give me your word of honour that you'll let us leave unmolested.", "player_siege_ask_leave_unmolested", []],
+   "-我们已经准备好把这座城堡让给你，并且离开，如果你可以用你的名誉担保我们可以平安离开的话。", "player_siege_ask_leave_unmolested", []],
   [anyone,"player_siege_ask_surrender", [],
    "-投降？哈！我们可以守住这道墙直到我们老死。", "close_window", []],
 
@@ -5163,7 +5163,7 @@ dialogs = [
   [anyone|plyr,"player_siege_ask_leave_unmolested", [],
    "-我向你保证。你不会在离开城堡的时候遭到任何攻击。", "player_siege_ask_leave_unmolested_accept", []],
   [anyone,"player_siege_ask_leave_unmolested_accept", [],
-   "Very well. Then we leave this castle to you. You have won this day. But we'll meet again.", "close_window", [(assign,"$g_castle_left_to_player",1)]],
+   "-那么。这座城堡我们会让给你，你今天赢了，但是我们会再见的。", "close_window", [(assign,"$g_castle_left_to_player",1)]],
   [anyone|plyr,"player_siege_ask_leave_unmolested", [],
    "-我不接受。我想要俘虏。", "player_siege_ask_leave_unmolested_reject", []],
   [anyone,"player_siege_ask_leave_unmolested_reject", [],
@@ -5173,7 +5173,7 @@ dialogs = [
 #Prison break
 
   [anyone|plyr,"lord_prison_break", [],
-   "I've come to get you out of here", "lord_prison_break_confirm",
+   "-我来带你离开这里。", "lord_prison_break_confirm",
    []],
    
   [anyone|plyr,"lord_prison_break", [],
@@ -5184,11 +5184,11 @@ dialogs = [
    ]],
    
   [anyone,"lord_prison_break_confirm", [],
-   "Thank the heavens! I don't know how long I could have lasted in here", "lord_prison_break_confirm_2",
+   "-感谢上帝！否则我还真不知道要在这里呆多久。", "lord_prison_break_confirm_2",
    []],
 
   [anyone,"lord_prison_break_confirm_2", [],
-   "But wait -- how will we escape? We'll be rushed by the garrison the moment we step out that door. I can help you hold them off -- but I'll tell you now, they have fed me nothing but watery porridge and a few scraps, and I'm not as strong as I could be.", "lord_prison_break_confirm_3",
+   "-慢着，我们将怎么逃出去呢？我们一走出那个门就会被卫戍队抓住，我可以帮你拖住他们。但我现在要告诉你，他们只给我吃稀粥和剩饭，我没有当年那么强壮。", "lord_prison_break_confirm_3",
    []],
 
   [anyone|plyr,"lord_prison_break_confirm_3", [],
@@ -5200,7 +5200,7 @@ dialogs = [
    ]],
 
   [anyone|plyr,"lord_prison_break_confirm_3", [],
-   "I'll need you to grab a weapon and help me, despite your weakness.", "lord_prison_break_confirm_4",
+   "-尽管你很虚弱，但我还是要你去拿一把武器并帮助我。", "lord_prison_break_confirm_4",
    [
    (troop_set_slot, "$g_talk_troop", slot_troop_mission_participation, mp_prison_break_fight),
    (assign, "$g_reset_mission_participation", 1),
@@ -5208,7 +5208,7 @@ dialogs = [
    ]],
    
   [anyone|plyr,"lord_prison_break_confirm_3", [],
-   "Actually, don't get involved in this.", "close_window",
+   "-事实上，不要插手这件事情。", "close_window",
    [
    (troop_set_slot, "$g_talk_troop", slot_troop_mission_participation, mp_stay_out),
    (assign, "$g_reset_mission_participation", 1),
@@ -5269,7 +5269,7 @@ dialogs = [
    ]],
 
   [anyone|plyr,"freed_lord_answer", [(lt, "$g_talk_troop_faction_relation", 0)],
-   "You're not going anywhere, 'friend'. You're my prisoner now.", "freed_lord_answer_1",
+   "-你哪也不用去“朋友”，你现在是我的俘虏了！", "freed_lord_answer_1",
    [#(troop_set_slot, "$g_talk_troop", slot_troop_is_prisoner, 1),
     (troop_set_slot, "$g_talk_troop", slot_troop_prisoner_of_party, "p_main_party"),
     (party_force_add_prisoners, "p_main_party", "$g_talk_troop", 1),
@@ -5398,17 +5398,17 @@ dialogs = [
 
   [anyone|plyr,"party_encounter_lord_hostile_attacker_2", [
                     ],
-   "Is there no way to avoid this battle? I don't want to fight with you.", "party_encounter_offer_dont_fight", []],
+   "-非打不可吗？我不想和你打。", "party_encounter_offer_dont_fight", []],
   
 #TODO: Add a verification step.
   [anyone|plyr,"party_encounter_lord_hostile_attacker_2", [
                     ],
-   "Don't attack! We surrender.", "close_window", [(assign,"$g_player_surrenders",1)]],
+   "-别攻击！我们投降。", "close_window", [(assign,"$g_player_surrenders",1)]],
 
   [anyone, "party_encounter_offer_dont_fight", [(gt, "$g_talk_troop_effective_relation", 30),
 #TODO: Add adition conditions, lord personalities, battle advantage, etc...                                                
                     ],
-   "I owe you a favor, don't I. Well... all right then. I will let you go just this once.", "close_window", [
+   "-我欠你一个人情，不是吗？嗯……好吧。就这次我放了你。", "close_window", [
     (call_script, "script_change_player_relation_with_troop","$g_talk_troop", -7),
     (store_current_hours,":protected_until"),
     (val_add, ":protected_until", 72),
@@ -5432,7 +5432,7 @@ dialogs = [
 
 
 #  [anyone|plyr,"party_encounter_lord_hostile_defender", [],
-#   "Nothing. We'll leave you in peace.", "close_window", [(assign, "$g_leave_encounter",1)]],
+#   "-没什么，我们不会打你的。", "close_window", [(assign, "$g_leave_encounter",1)]],
 
 
 
@@ -5808,7 +5808,7 @@ dialogs = [
   [anyone ,"lord_event_choose_friend_renounce", [],  "Glad news, {playername}. I would fear for your safety otherwise.\
  If you do encounter {s6}, be on your guard and don't believe a word.", "lord_pretalk", []],
   
-  [anyone|plyr ,"lord_event_choose_friend", [],  "{s6} is an honourable man, you've no right to speak of him thus.", "lord_event_choose_friend_defend", [
+  [anyone|plyr ,"lord_event_choose_friend", [],  "-{s6}令人尊敬，你没有权利那样说他。", "lord_event_choose_friend_defend", [
       (call_script, "script_change_player_relation_with_troop","$g_talk_troop",-10),
       (call_script, "script_change_player_relation_with_troop","$temp",5),
       ]],
@@ -5816,7 +5816,7 @@ dialogs = [
  A fool you might be, but a loyal fool at the least. {s6}'s loyalty may not be so steadfast, however...", "lord_pretalk", []],
 #Post 0907 changes end
   
-  [anyone|plyr ,"lord_event_choose_friend", [],  "I don't want to be involved in your quarrel with {s6}.", "lord_event_choose_friend_neutral", [
+  [anyone|plyr ,"lord_event_choose_friend", [],  "-我可不想卷入你和{s6}的纷争。", "lord_event_choose_friend_neutral", [
       (call_script, "script_change_player_relation_with_troop","$g_talk_troop",-2),
       (call_script, "script_change_player_relation_with_troop","$temp",-3),
       ]],
@@ -5961,7 +5961,7 @@ dialogs = [
                      (gt, "$g_talk_troop_faction_relation", 10),
                      (le,"$talk_context",tc_siege_commander),
                      ],
-   "If it isn't my brave champion, {playername}...", "lord_start",  []],
+   "-如果不是我勇敢的捍卫者，{playername}……", "lord_start",  []],
   
   [anyone ,"start", [(troop_slot_eq,"$g_talk_troop",slot_troop_occupation, slto_kingdom_hero),
                      (neq, "$g_talk_troop_met", 0),
@@ -6238,7 +6238,7 @@ dialogs = [
    []],
 
   [anyone, "lord_return_dower", [],
-   "Well, that is your right, if you indeed have no confidence in our family's commitments. Take your money.", "close_window",
+   "-好吧，那是你的权利，如果你确实对我们家庭的承诺没有信心的话。请拿走你的钱。", "close_window",
    [
    (quest_get_slot, ":bride", "qst_wed_betrothed", slot_quest_target_troop),
    (fail_quest, "qst_wed_betrothed"),
@@ -6374,7 +6374,7 @@ dialogs = [
      (call_script, "script_end_quest", "qst_collect_debt")
      ]],
   
-  [anyone|plyr,"lord_collect_debt_completed", [], "I am afraid I don't have the money with me sir.", "lord_collect_debt_no_pay",[]],
+  [anyone|plyr,"lord_collect_debt_completed", [], "-我很抱歉我没有那么多钱。", "lord_collect_debt_no_pay",[]],
   [anyone,"lord_collect_debt_no_pay", [], "Is this a joke?\
  I know full well that {s7} gave you the money, and I want every denar owed to me, {sir/madam}.\
  As far as I'm concerned, I hold you personally in my debt until I see that silver.", "close_window",[
@@ -6722,7 +6722,7 @@ dialogs = [
   [anyone|plyr, "lord_deal_with_bandits_completed", [],
    "-为你服务我感到很荣幸。", "lord_pretalk",[]],
   [anyone|plyr, "lord_deal_with_bandits_completed", [],
-   "It was mere child's play.", "lord_pretalk",[]],
+   "-真的是小意思。", "lord_pretalk",[]],
 
   [anyone,"lord_start", [(store_partner_quest,":lords_quest"),
                          (eq,":lords_quest","qst_deal_with_bandits_at_lords_village"),
@@ -6742,7 +6742,7 @@ dialogs = [
                          (check_quest_succeeded, "qst_deliver_cattle_to_army"),
                          (quest_get_slot, reg13, "qst_deliver_cattle_to_army", slot_quest_target_amount),
                          ],
-   "Ah, {playername}. My quartermaster has informed me of your delivery, {reg13} heads of cattle, as I requested. I'm impressed.", "lord_deliver_cattle_to_army_thank",
+   "-啊，{playername}。我的军需官告知我关于你赶牛的情况，{reg13}头牛，和我要求的数量一样多。你给了我很深的印象。", "lord_deliver_cattle_to_army_thank",
    [
      (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 2),
      (quest_get_slot, ":quest_target_amount", "qst_deliver_cattle_to_army", slot_quest_target_amount),
@@ -6765,7 +6765,7 @@ dialogs = [
   [anyone|plyr, "lord_deliver_cattle_to_army_thank", [],
    "-为你服务我感到很荣幸。", "lord_pretalk",[]],
   [anyone|plyr, "lord_deliver_cattle_to_army_thank", [],
-   "Mere child's play.", "lord_pretalk",[]],
+   "-小意思。", "lord_pretalk",[]],
 
   [anyone,"lord_start", [(store_partner_quest,":lords_quest"),
                          (eq, ":lords_quest", "qst_scout_waypoints"),
@@ -6792,7 +6792,7 @@ dialogs = [
   [anyone|plyr, "lord_scout_waypoints_thank", [],
    "-这只是个简单的任务，{s65}。", "lord_pretalk",[]],
   [anyone|plyr, "lord_scout_waypoints_thank", [],
-   "Nothing I couldn't handle.", "lord_pretalk",[]],
+   "-没有我做不到的。", "lord_pretalk",[]],
   [anyone|plyr, "lord_scout_waypoints_thank", [],
    "-我很乐意，{s65}。", "lord_pretalk",[]],
   
@@ -6806,7 +6806,7 @@ dialogs = [
      (quest_get_slot, ":quest_target_amount", "$g_random_army_quest", slot_quest_target_amount),
      (assign, reg3, ":quest_target_amount"),
      ],
-   "The army's supplies are dwindling too quickly, {playername}. I need you to bring me {reg3} heads of cattle so I can keep the troops fed. I care very little about where you get them, just bring them to me as soon as you can.", "lord_mission_told_deliver_cattle_to_army",
+   "-部队的补给品消耗太快了，{playername}。我需要你给我弄来{reg3}头牛以便我能保证部队的口粮。我不关心你在哪里能弄到，只要尽快帮我弄到就行。", "lord_mission_told_deliver_cattle_to_army",
    [
    ]
    ],
@@ -6828,7 +6828,7 @@ dialogs = [
      (assign, "$g_leave_encounter",1),
     ]],
 
-  [anyone, "lord_mission_told_deliver_cattle_to_army_rejected", [], "That . . . is unfortunate, {playername}. I shall have to find someone else who's up to the task. Please go now, I've work to do.", "close_window",
+  [anyone, "lord_mission_told_deliver_cattle_to_army_rejected", [], "-很，很不幸……{playername}。我得另外找人去干这个任务。现在你走吧，我还有事要做。", "close_window",
    [(troop_set_slot, "$g_talk_troop", slot_troop_does_not_give_quest, 1),
     (assign, "$g_leave_encounter",1),]],
   
@@ -6855,7 +6855,7 @@ dialogs = [
 					    (check_quest_active,"qst_report_to_army"),
                         (quest_slot_eq, "qst_report_to_army", slot_quest_target_troop, "$g_talk_troop"),
                         ],
-   "Ah, you have arrived at last, {playername}. We've been expecting you. I hope you have brought with you troops of sufficient number and experience.", "lord_report_to_army_asked",
+   "-啊，你终于来了，{playername}。我们一直期盼着你的到来。我希望你带来了足够数量且经验丰富的士兵。", "lord_report_to_army_asked",
    []],
 
   [anyone|plyr,"lord_report_to_army_asked", [(quest_get_slot, ":quest_target_amount", "qst_report_to_army", slot_quest_target_amount),
@@ -6866,7 +6866,7 @@ dialogs = [
    []],
 
   [anyone|plyr,"lord_report_to_army_asked", [],
-   "I don't have the sufficient number of troops yet. I will need some more time.", "lord_report_to_army_continue",
+   "-我现在还没有足够的士兵，我需要多一些的时间。", "lord_report_to_army_continue",
    []],
 
   [anyone,"lord_report_to_army_completed", [], "Excellent. We'll be moving soon. Now -- you are a {man/warrior} of sound judgement, and we trust that you will do what is necessary to support our campaign. I do not require you to remain close at hand, and I will not count it against you if you believe that your forces would be of better use elsewhere. But if you do choose to remain with me, to support me in battle, that would be appreciated. I may also have additional tasks for you to perform.", "close_window",[
@@ -6883,7 +6883,7 @@ dialogs = [
      (assign, "$g_leave_encounter", 1),
    ]],
 
-  [anyone,"lord_report_to_army_continue", [], "Then you'd better hurry. We'll be moving out soon against the enemy and I need every able hand we can muster.", "close_window",
+  [anyone,"lord_report_to_army_continue", [], "-那你最好快点。我们马上就要动身与敌人作战了，我们需要召集一切可以利用的人手。", "close_window",
    [(assign, "$g_leave_encounter",1),
     #Must be closed because of not letting player to terminate this quest on the general conversation
     ]],
@@ -6904,7 +6904,7 @@ dialogs = [
    [
    ]],
 
-  [anyone|plyr, "lord_mission_told_scout_waypoints", [], "You've found your volunteer, sir.", "lord_mission_told_scout_waypoints_accepted",[]],
+  [anyone|plyr, "lord_mission_told_scout_waypoints", [], "-你找到你要的志愿者了，大人。", "lord_mission_told_scout_waypoints_accepted",[]],
   [anyone|plyr, "lord_mission_told_scout_waypoints", [], "-我恐怕我得拒绝了。", "lord_mission_told_scout_waypoints_rejected",[]],
 
   [anyone,"lord_mission_told_scout_waypoints_accepted", [], "Good {man/lass}! Simply pass near {s13}, {s14} and {s15} and check out what's there. Make a note of anything you find and return to me as soon as possible.", "close_window",
@@ -6922,7 +6922,7 @@ dialogs = [
      (assign, "$g_leave_encounter",1),
     ]],
 
-  [anyone,"lord_mission_told_scout_waypoints_rejected", [], "Hm. I'm disappointed, {playername}. Very disappointed. We'll talk later, I need to go and find somebody to scout for us.", "lord_pretalk",
+  [anyone,"lord_mission_told_scout_waypoints_rejected", [], "-啊，我很失望，{playername}，非常地失望。我们一会再谈，我现在得马上另外派人去侦察。", "lord_pretalk",
    [(troop_set_slot, "$g_talk_troop", slot_troop_does_not_give_quest, 1)]],
 
 
@@ -6978,13 +6978,13 @@ dialogs = [
                                                    (troop_set_slot, "$g_talk_troop", slot_troop_player_debt, 0)]],
 
   [anyone|plyr, "lord_pay_debt_2", [],
-   "Alas, I don't have sufficient funds, {s65}. But I'll pay you soon enough.", "lord_pay_debt_3_2", []],
+   "-哎呀，我没有足够的现钱，{s65}。但是我会尽快还给你的。", "lord_pay_debt_3_2", []],
 
   [anyone, "lord_pay_debt_3_1", [],
    "Ah, excellent. You are a {man/woman} of honour, {playername}. I am satisfied. Your debt to me has been paid in full.", "lord_pretalk", []],
 
   [anyone, "lord_pay_debt_3_2", [],
-   "Well, don't keep me waiting much longer.", "lord_pretalk", []],
+   "-可以，但你可别让我等的太久了。", "lord_pretalk", []],
 
 ##  [anyone,"lord_start", [(troop_slot_eq, "$g_talk_troop", slot_troop_is_prisoner, 0),
 ##                         (is_between,"$g_talk_troop_faction_relation",0,3),
@@ -7196,9 +7196,9 @@ dialogs = [
 ", "lord_buy_prisoner", []],
 
   [anyone|plyr,"lord_buy_prisoner", [],
-   "I accept your offer. I'll leave {s3} to you for {reg6} denars.", "lord_buy_prisoner_accept", []],
+   "-我接受你的提议。我将留下{s3}换取{reg6}第纳尔。", "lord_buy_prisoner_accept", []],
   [anyone|plyr,"lord_buy_prisoner", [],
-   "I fear I can't accept your offer.", "lord_buy_prisoner_deny", [(assign, "$g_ransom_offer_rejected", 1),]],
+   "-我恐怕不能接受你的提议。", "lord_buy_prisoner_deny", [(assign, "$g_ransom_offer_rejected", 1),]],
 
   [anyone,"lord_buy_prisoner_accept", [],
    "Excellent! Here's your {reg6} denars.\
@@ -7211,7 +7211,7 @@ dialogs = [
      ]],
 
   [anyone,"lord_buy_prisoner_deny", [],
-   "Mmm. As you wish, {playername}, but you'll not get a better offer. Take it from me.", "lord_pretalk", []],
+   "-嗯。随你了，{playername}，但是你将很难再从我这里接到一个这么好的任务。", "lord_pretalk", []],
 
 
    
@@ -7345,7 +7345,7 @@ dialogs = [
 	(player_has_item, "itm_furs"),
 	(player_has_item, "itm_velvet"),
    ],
-   "I have the materials for {s4}'s gift.", "offer_gift_quest_complete",[
+   "-我这有给{s4}做礼物的原料。", "offer_gift_quest_complete",[
    ]],
 
    [anyone,"offer_gift_quest_complete", [
@@ -7489,7 +7489,7 @@ dialogs = [
    
    [anyone,"lord_denounce_1", [
    ],
-   "I'm sorry... What did you say?", "lord_denounce_2",[
+   "-对不起……你说什么？", "lord_denounce_2",[
    ]],
    
    [anyone|plyr,"lord_denounce_2", [
@@ -7558,7 +7558,7 @@ dialogs = [
    
    [anyone,"lord_denounce_3", [
    ],
-   "Is that so? Well, hear this -- you're a snake, and a knave, and -- if you don't meet me on the duelling ground -- a coward. What say you to that? Do you retract your words, or shall we cross swords?", "lord_denounce_4",[
+   "-是那样吗？那么，听着——你是条毒蛇，也是个流氓，还是个——如果你不和我上决斗场的话——胆小鬼。听上去如何？你是打算收回你的话呢，还是和我比划比划？", "lord_denounce_4",[
    ]],
    
    [anyone|plyr,"lord_denounce_4", [
@@ -7781,7 +7781,7 @@ dialogs = [
    
   [anyone|plyr,"lord_talk",[(eq, "$cheat_mode", 1),
                             ],
-   "CHEAT -- Let's duel (insult)", "lord_respond_to_insult_challenge_duel",
+   "-作弊——我们决斗（侮辱）", "lord_respond_to_insult_challenge_duel",
    [
    ]],
 
@@ -7952,7 +7952,7 @@ dialogs = [
    
    
   [anyone|plyr,"lord_quarrel_intervention_2",[],
-   "Ah, well. It sounds like you're in the right, then.", "lord_quarrel_intervention_3a",
+   "-呃，好吧，听起来是你在理。", "lord_quarrel_intervention_3a",
    [
 	(call_script, "script_troop_change_relation_with_troop", "trp_player", "$g_other_lord", -20), 
 	(call_script, "script_troop_change_relation_with_troop", "trp_player", "$g_talk_troop", 10), 
@@ -7985,7 +7985,7 @@ dialogs = [
    ]],
    
   [anyone,"lord_quarrel_intervention_3a", [
-  ], "I'm glad that you think so.", "lord_pretalk",
+  ], "-我很高兴你这么想。", "lord_pretalk",
 	[]],
    
   [anyone,"lord_quarrel_intervention_3b", [
@@ -8417,7 +8417,7 @@ dialogs = [
 
   [anyone|plyr,"lord_recruit_pretender", [
   ],
-   "No, that's not it. There's another issue I wish to discuss.", "lord_recruit_1_relation",[
+   "-不，不是这件事。我要讨论的是另外一个问题。", "lord_recruit_1_relation",[
    (assign, "$skip_lord_assumes_argument", 1),
    ]],
    
@@ -8669,7 +8669,7 @@ dialogs = [
 	(gt, "$supported_pretender", 0),
 	(str_store_troop_name, s4, "$supported_pretender"),
   ],
-   "Perhaps, but I would need your full support to press that claim. You would want to resolve {s4}'s rebellion before pushing this any further.", "lord_pretalk",[]],
+   "-也许吧，但是我需要你的全力协助来争取那个王位。在进一步行动之前你应该把{s4}的叛乱剿灭。", "lord_pretalk",[]],
 
   [anyone,"lord_spouse_leave_faction_husband_king", [
   (faction_get_slot, ":talk_troop_liege", "$g_talk_troop_faction", slot_faction_leader),
@@ -8906,7 +8906,7 @@ dialogs = [
   [
     (eq, "$lord_might_open_up", 1),
   ],
-   "Can't I persuade you to say a little more?", "lord_recruit_hesitant_persuade",[
+   "-你不能再多说一点么？", "lord_recruit_hesitant_persuade",[
    ]],
 
   [anyone|plyr,"lord_recruit_hesitant", [],
@@ -8946,7 +8946,7 @@ dialogs = [
 
   [anyone|plyr,"lord_recruit_3", [
 				],
-   "Well, that's interesting to know. But enough about politics.", "lord_pretalk",[
+   "-嗯，我很高兴听到这些，但还是别再谈政治了。", "lord_pretalk",[
    ]],
    
 
@@ -8987,7 +8987,7 @@ dialogs = [
 
 
    [anyone|plyr, "lord_recruit_3_reset_claim", [  ],
-   "Yes, that's it.", "lord_recruit_3_claim", [
+   "-是的，没错。", "lord_recruit_3_claim", [
   
    ]],
 
@@ -9100,7 +9100,7 @@ dialogs = [
 	(eq, ":one_fortress_found", 0),
 	
    ],
-   "Neither of us has so much as a single fortress to our name. Would you rule your kingdom from an outlaw's den in the woods?", "lord_pretalk",
+   "-我们两个都是一座名下的要塞也没有。你难道打算占山为王统治你的王国吗？", "lord_pretalk",
    [   
     ]],
 
@@ -9908,7 +9908,7 @@ dialogs = [
    []],
 
   [anyone,"lord_lend_companion_end",[(neg|hero_can_join, "p_main_party")],
-   "You've too many men in your company already, {playername}. You could not lead any more at the moment.", "lord_pretalk",
+   "-你的队伍满员了，{playername}。你现在不能带更多的人了。", "lord_pretalk",
    []],
 
   [anyone,"lord_lend_companion_end",[],
@@ -9928,7 +9928,7 @@ dialogs = [
                             (eq,"$g_talk_troop",":quest_target_troop"),
                             (quest_get_slot, ":quest_giver_troop", "qst_collect_debt", slot_quest_giver_troop),
                             (str_store_troop_name,1,":quest_giver_troop")],
-   "I've come to collect the debt you owe to {s1}.", "lord_ask_to_collect_debt",
+   "-我来这里是想收回你欠{s1}的钱。", "lord_ask_to_collect_debt",
    [(assign, "$g_convince_quest", "qst_collect_debt")]],
 
   [anyone,"lord_ask_to_collect_debt", [],  "Oh. Well, {s1} did lend me some silver a ways back,\
@@ -9962,7 +9962,7 @@ dialogs = [
                             (str_store_faction_name, s12, ":quest_target_faction"),
                             (str_store_faction_name, s13, ":quest_object_faction"),
                             ],
-   "Please, {s64}, it's time to end this war between {s12} and {s13}.", "lord_ask_to_make_peace",
+   "-我请求你，{s64}，是时候结束{s12}与{s13}之间的战争了。", "lord_ask_to_make_peace",
    [(assign, "$g_convince_quest", "qst_persuade_lords_to_make_peace")]],
 
   [anyone,"lord_ask_to_make_peace", [], "Eh? I'm not sure I heard you right, {playername}.\
@@ -9986,7 +9986,7 @@ dialogs = [
                                (str_store_faction_name, s14, ":quest_object_faction"),
                              (try_end),
                              ],
-   "You... have convinced me, {playername}. Very well then, you've my blessing to bring a peace offer to {s14}. I cannot guarantee they will accept it, but on the off-chance they do, I will stand by it.", "close_window",
+   "-你说服我了，{playername}。非常好，接受我的祝福，并把我的和平提议给{s14}。我不保证他们会接受，但是哪怕极小的可能他们接受了，我会支持的。", "close_window",
    [(store_mul, ":new_value", "$g_talk_troop", -1),
     (try_begin),
       (quest_slot_eq, "qst_persuade_lords_to_make_peace", slot_quest_target_troop, "$g_talk_troop"),
@@ -10102,7 +10102,7 @@ dialogs = [
                             (str_store_troop_name, s5, ":quest_giver_troop")],
    "Relinquish your suit of {s5}!", "lord_challenge_courtship_rival", []],
    
-  [anyone,"lord_challenge_courtship_rival",[], "Or what? Do you intend to duel over a lady? I'll let you know -- our liege frowns on this sort of hot-headed challenge, when every man must stand together against the foreign foe.", "lord_challenge_courtship_rival_2",[]],
+  [anyone,"lord_challenge_courtship_rival",[], "-否则怎样？你想为了一位女士而决斗？我会让你知道——我们的君主不喜欢看到这种头脑发热的挑战，特别是当每个人必须团结起来对抗国外的敌人时。", "lord_challenge_courtship_rival_2",[]],
 
   [anyone|plyr,"lord_challenge_courtship_rival_2", [], "-你怕和我打吗？", "lord_challenge_duel",[]],
   [anyone|plyr,"lord_challenge_courtship_rival_2", [], "-我为我刚才的无礼道歉……", "lord_pretalk",[
@@ -10164,9 +10164,9 @@ dialogs = [
   [anyone,"lord_deliver_message_prisoner", [], "Can it be true?\
  Oh, thank you kindly, {playername}! You have brought hope and some small ray of light to these bleak walls.\
  Perhaps one day I will be able to repay you.", "lord_deliver_message_prisoner_2",[]],
-  [anyone|plyr,"lord_deliver_message_prisoner_2", [], " 'Twas the least I could do, {s65}.", "lord_deliver_message_prisoner_2a",[]],
-  [anyone,"lord_deliver_message_prisoner_2a", [], "You've no idea how grateful I am, {playername}. A thousand thanks and more.", "close_window",[]],
-  [anyone|plyr,"lord_deliver_message_prisoner_2", [], "Worry not, {s65}. You'll have ample opportunity once you are free again.", "lord_deliver_message_prisoner_2b",[]],
+  [anyone|plyr,"lord_deliver_message_prisoner_2", [], "-这点小事，不值一提，{s65}。", "lord_deliver_message_prisoner_2a",[]],
+  [anyone,"lord_deliver_message_prisoner_2a", [], "-你不知道我有多感激你，{playername}。真是千恩万谢也不够。", "close_window",[]],
+  [anyone|plyr,"lord_deliver_message_prisoner_2", [], "-不用担心，{s65}。一旦你重获自由，你将有大量的机会。", "lord_deliver_message_prisoner_2b",[]],
   [anyone,"lord_deliver_message_prisoner_2b", [], "-哈，当然，{playername}。我将一辈子都感谢你。", "close_window",[]],
 
   [anyone|plyr,"lord_talk", [#(troop_slot_eq, "$g_talk_troop", slot_troop_is_prisoner, 1),
@@ -10193,7 +10193,7 @@ dialogs = [
   [anyone|plyr,"lord_rescue_by_replace_offer_4", [],
    "-我一定会坚持下去的，有一笔丰厚的报酬在等着我呢。", "lord_rescue_by_replace_offer_5b",[]],
   [anyone,"lord_rescue_by_replace_offer_5a",[],
-   "You are a brave soul indeed. I won't forget this.", "lord_rescue_by_replace_offer_6",[]],
+   "-你真是一个有胆识的人。我不会忘记你的。", "lord_rescue_by_replace_offer_6",[]],
   [anyone,"lord_rescue_by_replace_offer_5b",[],
    "Of course, my {friend/lady}, of course! Come to me when you have regained your freedom,\
  and perhaps I shall be able to repay the debt I owe you.", "lord_rescue_by_replace_offer_6",[]],
@@ -10365,7 +10365,7 @@ dialogs = [
   [anyone|plyr,"lord_ask_pardon_terms",
    [(eq, "$players_oath_renounced_terms_state", 1),
     ],
-   "On second thought, no. I don't wish to be in your service again.", "lord_ask_pardon_terms_rejected",[]],
+   "-我又考虑了一下。不，我不愿意再次为你效劳了。", "lord_ask_pardon_terms_rejected",[]],
 
   [anyone|plyr,"lord_ask_pardon_terms",
    [(eq, "$players_oath_renounced_terms_state", 2),
@@ -10579,7 +10579,7 @@ dialogs = [
      (assign, "$g_leave_encounter", 1),
      ]],
 
-  [anyone,"lord_ask_pardon_tribue_deny", [], "Then there's nothing I can do for you, {playername}. No silver, no pardon.", "lord_pretalk",[]],
+  [anyone,"lord_ask_pardon_tribue_deny", [], "-那么我也没有办法可以帮你了，{playername}。没有钱就没有宽恕。", "lord_pretalk",[]],
 
 
   [anyone|plyr,"lord_talk", [(store_partner_quest,":lords_quest"),
@@ -10826,7 +10826,7 @@ dialogs = [
   [anyone,"lord_give_suggestion_ask", [
 	 (lt, "$g_talk_troop_effective_relation", 5), #was five
   ], 
-   "My apologies. I don't know you well enough to take your advice.", "lord_pretalk",[]],
+   "-不好意思。我还不了解你，所以不能接受你的建议。", "lord_pretalk",[]],
    
   [anyone,"lord_give_suggestion_ask", [
   ],
@@ -11003,7 +11003,7 @@ dialogs = [
 	(faction_slot_eq, "$players_kingdom", slot_faction_marshall, "trp_player"),
 #    (neg|troop_slot_eq, "$g_talk_troop", slot_troop_player_order_state, spai_undefined),
      ],
-   "I won't need you for some time. You are free to do as you like.", "lord_give_order_stop",
+   "-我暂时不需要你。你可以去做任何你想做的事情。", "lord_give_order_stop",
    []],
 
   [anyone|plyr,"lord_give_order",
@@ -11220,7 +11220,7 @@ dialogs = [
    "-你要召集所有的领主来发动这场战役吗？", "lord_give_order_call_to_arms_verify_2",[]],
 
   [anyone|plyr,"lord_give_order_call_to_arms_verify_2", [], "-是的。在进攻敌人之前，我们必须集中我们所有的力量。", "lord_give_order_call_to_arms",[]],
-  [anyone|plyr,"lord_give_order_call_to_arms_verify_2", [], "On second thought, it won't be necessary to summon everyone.", "lord_pretalk",[]],
+  [anyone|plyr,"lord_give_order_call_to_arms_verify_2", [], "-仔细想想，似乎没有必要召集所有的领主。", "lord_pretalk",[]],
 
   [anyone,"lord_give_order_call_to_arms",
    [],
@@ -11363,7 +11363,7 @@ dialogs = [
   [anyone,"lord_marriage_permission", [
 	(neg|troop_slot_eq, "$g_talk_troop", slot_lord_granted_courtship_permission, 1),
   ],
-   "Great heaven, man -- if I haven't given you permission to see her, do you think I'm going to give you permission to marry her?", "lord_pretalk",[
+   "-老天啊，小崽子——如果我都不允许你见她，你认为我会允许你娶她么？", "lord_pretalk",[
    (call_script, "script_fail_quest", "qst_formal_marriage_proposal"),
    (call_script, "script_end_quest", "qst_formal_marriage_proposal"),
    ]],
@@ -11408,7 +11408,7 @@ dialogs = [
 	(call_script, "script_troop_get_family_relation_to_troop",  ":bride", "$g_talk_troop"),
 	
   ],
-   "Sorry, lad -- I'm not going to make my {s11} marry you, when I'd rather see her married to {s12}", "lord_pretalk",[
+   "-对不起，孩子——我不打算让我的{s11}嫁给你，我准备让她和{s12}结婚。", "lord_pretalk",[
    (call_script, "script_fail_quest", "qst_formal_marriage_proposal"),
    (call_script, "script_end_quest", "qst_formal_marriage_proposal"),
    ]],
@@ -11435,7 +11435,7 @@ dialogs = [
 	(assign, reg3, "$marriage_dower"),
 	(assign, reg4, "$marriage_dowry"),
   ],
-   "I would say that, taking into consideration the prestige of our two houses, that you can provide a dower of {reg3} denars, while I will supply a dowry of {reg4} denars. This shall be her ladyship's property, as a security, lest for any reason you are unable to provide for her. What say you to that?", "lord_marriage_permission_endowment_answer",[
+   "-我得说，考虑到我们两家的声望地位，我觉得你提供{reg3}第纳尔的彩礼，而我提供{reg4}第纳尔的嫁妆。这些储备将在你落难或者因为其他什么意外而无法养活她的情况下用来维持她作为一个体面的夫人的必要消费，你觉得怎样？", "lord_marriage_permission_endowment_answer",[
    ]],
 
   [anyone|plyr,"lord_marriage_permission_endowment_answer", [
@@ -11696,7 +11696,7 @@ dialogs = [
                                                                      (str_store_faction_name, s1, ":faction_no")],
    "-告诉我更多关于对{s1}的战事的情况。", "lord_talk_ask_about_war_details",[(store_repeat_object, "$faction_requested_to_learn_more_details_about_the_war_against")]],
 
-  [anyone|plyr,"lord_talk_ask_about_war_2", [], "That's all I wanted to know. Thank you.", "lord_pretalk",[]],
+  [anyone|plyr,"lord_talk_ask_about_war_2", [], "-我了解够多了，谢谢。", "lord_pretalk",[]],
 
   [anyone,"lord_talk_ask_about_war_details", [],
 #   "We have {reg5?{reg5}:no} {reg3?armies:army} and they have {reg6?{reg6}:none}. Overall, {s9}.",
@@ -12075,7 +12075,7 @@ dialogs = [
   (this_or_next|faction_slot_eq, "$g_talk_troop_faction", slot_faction_ai_state, sfai_attacking_center),
 	(faction_slot_eq, "$g_talk_troop_faction", slot_faction_ai_state, sfai_raiding_village),
   ],
-   "If you're attacking, why aren't you...",
+   "-如果你要进攻，为什么不……",
    "lord_strategy_why_not",[
    ]],
 
@@ -12713,7 +12713,7 @@ dialogs = [
 	
       ]],
   
-  [anyone|plyr,"lord_attack_verify", [], "Forgive me sir. I don't know what I was thinking.", "lord_attack_verify_cancel",[]],
+  [anyone|plyr,"lord_attack_verify", [], "-对不起先生。我刚刚昏头了。", "lord_attack_verify_cancel",[]],
   [anyone,"lord_attack_verify_cancel", [], "-那就滚开。", "close_window",[(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -1),(assign, "$g_leave_encounter",1)]],
   [anyone|plyr,"lord_attack_verify", [], "That is none of your business. Prepare to fight!", "lord_attack_verify_commit",[
   ]],
@@ -12729,7 +12729,7 @@ dialogs = [
     (assign,"$encountered_party_friendly",0),
     ]],
 
-  [anyone|plyr,"lord_attack_verify_b", [], "Forgive me sir. I don't know what I was thinking.", "lord_attack_verify_cancel",[]],
+  [anyone|plyr,"lord_attack_verify_b", [], "-对不起先生。我刚刚昏头了。", "lord_attack_verify_cancel",[]],
   [anyone|plyr,"lord_attack_verify_b", [], "I stand my ground. Prepare to fight!", "lord_attack_verify_commit",[]],
 
   [anyone,"lord_attack_verify_commit", [], "-{s43}", "close_window",
@@ -12755,7 +12755,7 @@ dialogs = [
     ]],
 #Post 0907 changes end
   
-  [anyone|plyr,"lord_demand", [], "Forgive me. It's nothing.", "lord_pretalk",[]],
+  [anyone|plyr,"lord_demand", [], "-不好意思。没事。", "lord_pretalk",[]],
 
 
 ##  [anyone|plyr,"lord_talk", [(troop_slot_eq, "$g_talk_troop", slot_troop_is_prisoner, 0),
@@ -12889,10 +12889,10 @@ dialogs = [
     (neg|party_slot_eq, ":prison_location", slot_town_lord, "trp_player"),
     (neq, "$talk_context", tc_prison_break),
   ],
-  "I've come to break you out of here.", "lord_prison_break_chains",[]],
+  "-我是来带你逃离这的。", "lord_prison_break_chains",[]],
 
   [anyone,"lord_prison_break_chains", [],   
-  "Thank the heavens you came! However, I'm not going anywhere with these chains on my legs. You'll need to get the key away from the guard somehow.", "close_window",[]],			
+  "-谢天谢地你终于来了！但是，戴着我的脚镣我哪也去不了，你需要想办法从卫兵那儿弄到钥匙。", "close_window",[]],			
 				
   [anyone|plyr,"lord_talk", 
   [
@@ -13000,7 +13000,7 @@ dialogs = [
 
   [anyone,"lord_tell_objective", [
   (party_slot_eq, "$g_talk_troop_party", slot_party_ai_state, spai_screening_army)],
-   "I am screening {s1}'s advance. {s14}{s15}", "lord_pretalk",[
+   "-我正在掩护{s1}进军。{s14}{s15}", "lord_pretalk",[
     (party_get_slot, ":ai_object", "$g_talk_troop_party", slot_party_ai_object),
 	(party_stack_get_troop_id, ":ai_object_commander", ":ai_object", 0),
     (str_store_troop_name, s1, ":ai_object_commander")
@@ -13038,7 +13038,7 @@ dialogs = [
    "-我们在考虑下一个目标。", "lord_pretalk",[]],
 
   [anyone,"lord_tell_objective", [],
-   "I don't know: {reg1} {s1} (ERROR)", "lord_pretalk",[(party_get_slot, reg1, "$g_talk_troop_party", slot_party_ai_state),
+   "-我不知道：{reg1}{s1}。（错误）", "lord_pretalk",[(party_get_slot, reg1, "$g_talk_troop_party", slot_party_ai_state),
                                                 (party_get_slot, ":ai_object", "$g_talk_troop_party", slot_party_ai_object),
                                                                (str_store_party_name, s1, ":ai_object")]],
 
@@ -13064,7 +13064,7 @@ dialogs = [
                               (val_div, ":troop_renown", 4),
                               (lt, ":player_renown", ":troop_renown"),
                               ],
-   "That would hardly be proper, {playername}. Why don't you follow me instead?", "close_window",
+   "-那完全不合适吧，{playername}。恐怕应该你跟着我吧？", "close_window",
    [(assign, "$g_leave_encounter",1)]],
 
   [anyone,"lord_ask_follow", [(lt, "$g_talk_troop_effective_relation", 25)],
@@ -13108,7 +13108,7 @@ dialogs = [
   [anyone|plyr,"lord_talk_offer", [], "-没事。", "lord_pretalk",[]],
 
   [anyone ,"knight_offer_join", [(call_script, "script_cf_is_quest_troop", "$g_talk_troop")],
-   "I fear I cannot join you at the moment, {playername}, I've important business to attend to and it cannot wait.", "hero_pretalk",[]],
+   "-我现在不能跟着你，{playername}。我还有一些非常重要的事情要处理，而且还很紧急。", "hero_pretalk",[]],
 
   [anyone ,"knight_offer_join", [(lt, "$g_talk_troop_relation", 5),
                                  (store_character_level,":player_level","trp_player"),
@@ -13133,31 +13133,31 @@ dialogs = [
  and I am honour-bound to return every coin. Unless you've got {reg6} denars with you that you can spare,\
  I've to keep my mind on getting this weight off my neck.", "knight_offer_join_2",[]],
   [anyone ,"knight_offer_join", [(gt,reg6, 100000)], "-加入你的队伍？我可不愿意。", "close_window",[]],
-  [anyone ,"knight_offer_join", [], "Aye, my friend, I'll be happy to join you.", "knight_offer_join_2",[]],
+  [anyone ,"knight_offer_join", [], "-啊，我的朋友，能加入你我很高兴。", "knight_offer_join_2",[]],
 
   [anyone|plyr,"knight_offer_join_2", [(gt, reg6,0),(store_troop_gold, ":gold", "trp_player"),(gt,":gold",reg6)],
-   "Here, take it, all {reg6} denars you need. 'Tis only money.", "knight_offer_join_accept",[(troop_remove_gold, "trp_player",reg6)]],
+   "-给你，拿去吧，这是你要的{reg6}第纳尔。", "knight_offer_join_accept",[(troop_remove_gold, "trp_player",reg6)]],
   [anyone|plyr,"knight_offer_join_2", [(le, reg6,0)], "-那我们以后就是战友了。", "knight_offer_join_accept",[]],
    
-  [anyone|plyr,"knight_offer_join_2", [(eq, "$talk_context", tc_hero_freed)], "That's good to know. I will think on it.", "close_window",[]],
-  [anyone|plyr,"knight_offer_join_2", [(neq, "$talk_context", tc_hero_freed)], "That's good to know. I will think on it.", "hero_pretalk",[]],
+  [anyone|plyr,"knight_offer_join_2", [(eq, "$talk_context", tc_hero_freed)], "-说的好，我会考虑一下的。", "close_window",[]],
+  [anyone|plyr,"knight_offer_join_2", [(neq, "$talk_context", tc_hero_freed)], "-说的好，我会考虑一下的。", "hero_pretalk",[]],
   
   
   [anyone ,"knight_offer_join_accept", [(troop_slot_ge, "$g_talk_troop", slot_troop_leaded_party, 1)],
-   "I've some trusted men in my band who could be of use to you. What do you wish to do with them?", "knight_offer_join_accept_party",[
+   "-我有些可靠的人手说不定你用得着，你需要他们做什么？", "knight_offer_join_accept_party",[
       ]],
   [anyone ,"knight_offer_join_accept", [], "Ah, certainly, it might be fun!", "close_window",[
       (call_script, "script_recruit_troop_as_companion", "$g_talk_troop"),
       (assign, "$g_leave_encounter",1)
       ]],
   
-  [anyone|plyr,"knight_offer_join_accept_party", [], "You may disband your men. I've no need for other troops.", "knight_join_party_disband",[]],
+  [anyone|plyr,"knight_offer_join_accept_party", [], "-你可以解散你的手下。我不需要别的部队了。", "knight_join_party_disband",[]],
   [anyone|plyr,"knight_offer_join_accept_party", [(troop_get_slot, ":companions_party","$g_talk_troop", slot_troop_leaded_party),
                                        (party_can_join_party,":companions_party","p_main_party"),
       ], "-你们的人也可以加入我的部队，我们需要一切可以召集的人。", "knight_join_party_join",[]],
   [anyone|plyr,"knight_offer_join_accept_party", [(is_between,"$g_encountered_party",centers_begin, centers_end)], "-你先带你的人出城，我随后就到。", "knight_join_party_lead_out",[]],
   [anyone|plyr,"knight_offer_join_accept_party", [(neg|is_between,"$g_encountered_party",centers_begin, centers_end)],
-   "Keep doing what you were doing. I'll catch up with you later.", "knight_join_party_lead_out",[]],
+   "-继续做你刚才做的事情，我一会儿会赶来。", "knight_join_party_lead_out",[]],
 
 
   [anyone ,"knight_join_party_disband", [], "Ah . . . Very well, {playername}. Much as I dislike losing good men,\
@@ -13256,7 +13256,7 @@ dialogs = [
   ], "-然而，我从来没有听过哪个国王仅仅因为需要一个封臣而给了一个女人一片封地，无论她多么的勇敢无畏。如果我给了一片封地给女人，那么整个卡拉迪亚大陆的人都会用异样的眼神看着我。男人们将会说我疯了，中邪了，或者说我要和传统习惯对着干。所以我不能给你一片封地，我真的很遗憾。", "lord_ask_enter_service_female_response",[]],
 
   [anyone|plyr, "lord_ask_enter_service_female_response", [],
-  "What if I were to take one of your enemy's castles by force?", "lord_ask_enter_service_female_solution_capture", []],
+  "-要是我要用武力夺取你其中一个敌人的城堡呢？", "lord_ask_enter_service_female_solution_capture", []],
   
   [anyone|plyr, "lord_ask_enter_service_female_response", [
   (neg|troop_slot_ge, "trp_player", slot_troop_spouse, active_npcs_begin),
@@ -13273,7 +13273,7 @@ dialogs = [
   "-没事。", "lord_pretalk", []],
 
   [anyone,"lord_ask_enter_service_female_solution_marriage", [
-  ], "Well, I still would not be willing to grant you any fiefs. However, you would no doubt have the use of your husband's properties, which would allow you to act as one of my vassals in all but name. Did you have an other questions?", "lord_ask_enter_service_female_response",[]],
+  ], "-这么说吧，我还是不愿意给你任何封地。然而，毫无疑问你可以使用你丈夫的任何财产，作为我实质上的封臣，唯独不能享有封臣的名义。你还有什么其他的问题么？", "lord_ask_enter_service_female_response",[]],
   
   [anyone,"lord_ask_enter_service_female_solution_competitor", [
   ], "-噢，也许你能找到某个不顾一切的疯子——但我觉得，他可能不会有太多的封地可以用来赐予了，哈哈。你还有什么其他的问题么？", "lord_ask_enter_service_female_response",[]],
@@ -13667,11 +13667,11 @@ dialogs = [
      (eq, ":has_prisoner", 1),
      (str_store_faction_name, s13, ":quest_target_faction")
      ],
-   "Oh, indeed. I've captured a lord from {s13} for you.", "capture_enemy_hero_thank",
+   "-哦，当然。我为你抓获了一名{s13}的领主。", "capture_enemy_hero_thank",
    []],
 
   [anyone,"capture_enemy_hero_thank", [],
-   "Many thanks, my friend. He will serve very well for a bargain. You've done a fine work here. Please accept these {reg5} denars for your help.", "capture_enemy_hero_thank_2",
+   "-非常感谢，我的朋友。他会是很有分量的谈判筹码。你做得很好，我将铭记在心。", "capture_enemy_hero_thank_2",
    [(quest_get_slot, ":quest_target_troop", "qst_capture_enemy_hero", slot_quest_target_troop),
      (quest_get_slot, ":quest_target_faction", "qst_capture_enemy_hero", slot_quest_target_faction),
      (party_remove_prisoners, "p_main_party", ":quest_target_troop", 1),
@@ -13737,7 +13737,7 @@ dialogs = [
                                                                                          ]],
 
   [anyone,"lord_raise_troops_thank", [],
-   "These men may well turn the tide in my plans, {playername}. I am confident you've trained them well. My thanks and my compliments to you.", "lord_raise_troops_thank_2",[]],
+   "-照我的计划，他们能为我扭转局面，{playername}。我相信你把他们训练得非常好。向你致以感激和赞赏。", "lord_raise_troops_thank_2",[]],
 
   [anyone|plyr,"lord_raise_troops_thank_2", [],
    "-这些小伙子现在由你指挥了，大人。我确信你会管教好他们的。", "lord_pretalk",[]],
@@ -13866,7 +13866,7 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
   
                                          (check_quest_failed, "qst_hunt_down_fugitive"),
                                          ],
-   "I'm afraid he got away.", "lord_hunt_down_fugitive_fail",
+   "-我很抱歉他逃走了。", "lord_hunt_down_fugitive_fail",
    []],
 
   [anyone,"lord_hunt_down_fugitive_success", [],
@@ -13881,11 +13881,11 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
   [anyone|plyr,"lord_hunt_down_fugitive_success_2", [],
    "-我接受这笔钱，{s65}，谢谢。", "lord_hunt_down_fugitive_reward_accept",[]],
   [anyone|plyr,"lord_hunt_down_fugitive_success_2", [],
-   "This is blood money. I can't accept it.", "lord_hunt_down_fugitive_reward_reject",[]],
+   "-这是带血的钱，我不能接受。", "lord_hunt_down_fugitive_reward_reject",[]],
 
 #Post 0907 changes begin
   [anyone,"lord_hunt_down_fugitive_reward_accept", [],
-   "Of course, {playername}. Here you are. Once again, you've my thanks for ridding me of that {s43}.", "lord_pretalk",[
+   "-当然，{playername}。给你。再一次感谢你替我除掉{s43}。", "lord_pretalk",[
 		(call_script, "script_lord_comment_to_s43", "$g_talk_troop", "str_lord_insult_default"),
 
 		(call_script, "script_troop_add_gold", "trp_player", 300),
@@ -13943,7 +13943,7 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
 ##
 ##### TODO: QUESTS COMMENT OUT END
   [anyone|plyr,"lord_active_mission_2", [], "-我正在忙这件事，大人。", "lord_active_mission_3",[]],
-  [anyone|plyr,"lord_active_mission_2", [], "I am afraid I won't be able to do this quest.", "lord_mission_failed",[]],
+  [anyone|plyr,"lord_active_mission_2", [], "-很抱歉，大人。我没有能力完成这个任务。", "lord_mission_failed",[]],
                                                                                                                                                    
   [anyone,"lord_active_mission_3", [], "-很好。记住，我就看你的了。", "lord_pretalk",[]],
   
@@ -14197,7 +14197,7 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
    "{!}CHEAT: Never mind my lord.", "lord_pretalk",[]],
 
   [anyone,"lord_suggets_attack_enemy_castle3", [(str_store_party_name, 1, "$suggested_to_attack_center")],
-   "That should be possible. Very well, we'll attack {s1}.", "lord_pretalk",
+   "-应该可行。很好，我们将进攻{s1}。", "lord_pretalk",
    [
        (call_script, "script_party_set_ai_state", "$g_talk_troop_party", spai_besieging_center, "$suggested_to_attack_center"),
        
@@ -14324,9 +14324,9 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
   
    "As it happens, {playername}, I promised {s10} that I would hire a company of mercenaries for an upcoming campaign.\
 ","lord_mercenary_service", []],
-  [anyone|plyr,"lord_mercenary_service", [], "I'm not interested, thank you.", "lord_mercenary_service_reject", []],
-  [anyone|plyr,"lord_mercenary_service", [], "Aye, I'll join {s9}.", "lord_mercenary_service_accept", []],
-  [anyone|plyr,"lord_mercenary_service", [], "I'm interested. Please tell me more.", "lord_mercenary_elaborate_pay", []],
+  [anyone|plyr,"lord_mercenary_service", [], "-谢谢，我没兴趣。", "lord_mercenary_service_reject", []],
+  [anyone|plyr,"lord_mercenary_service", [], "-好，我加入{s9}。", "lord_mercenary_service_accept", []],
+  [anyone|plyr,"lord_mercenary_service", [], "-我有兴趣。请说详细些。", "lord_mercenary_elaborate_pay", []],
 
   [anyone,"lord_mercenary_service_accept", [(str_store_faction_name, s9, "$g_talk_troop_faction")],
    "Perfect. Of course you shall have to make a formal declaration of allegiance,\
@@ -14347,7 +14347,7 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
  Train and equip your soldiers as best you can in the meantime, and respond quickly when you are summoned for duty.", "lord_pretalk", []],
 
   [anyone,"lord_mercenary_service_reject", [(str_store_faction_name, s9, "$g_talk_troop_faction")],
-   "I'm very sorry to hear that. You'll find no better place than {s9}, be sure of that.", "lord_pretalk", []],
+   "-听到这个我很遗憾。你要相信你找不到比{s9}更好的地方了。", "lord_pretalk", []],
 
   [anyone,"lord_mercenary_elaborate_pay", [(assign, reg12, "$temp")],
    "I can offer you a contract for one month. At the end of this period, it can be extended on a monthly basis.\
@@ -14413,11 +14413,11 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
  gaining the right to choose a banner of your own and fight under it in battle.", "lord_mercenary_elaborate_1", []],
 
   [anyone,"lord_request_mission_ask", [(store_partner_quest,":lords_quest"),(ge,":lords_quest",0)],
-   "You still haven't finished the last job I gave you, {playername}. You should be working on that, not asking me for other things to do.", "lord_pretalk",[]],
+   "-你还没有完成我上次交给你的任务，{playername}。你应该继续做那件事，而不是要求做别的事情。", "lord_pretalk",[]],
 
    
   [anyone,"lord_request_mission_ask", [(troop_slot_eq, "$g_talk_troop", slot_troop_does_not_give_quest, 1)],
-   "I don't have any other jobs for you right now.", "lord_pretalk",[]],
+   "-我现在没有什么工作让你做。", "lord_pretalk",[]],
 
 
 
@@ -14570,7 +14570,7 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
   [anyone|plyr,"lord_mission_rescue_prisoner_confirm", [],
   "-我可以试试。", "lord_mission_rescue_prisoner_accepted",[]],
   
-  [anyone|plyr,"lord_mission_rescue_prisoner_confirm", [], "I don't think that I can help you.", "lord_mission_rescue_prisoner_rejected",[]],
+  [anyone|plyr,"lord_mission_rescue_prisoner_confirm", [], "-我认为我帮不了你们。", "lord_mission_rescue_prisoner_rejected",[]],
   [anyone,"lord_mission_rescue_prisoner_rejected", [], "-这不是一项简单的任务，也许我们应该想其他的办法。", "close_window",[
     (assign, "$g_leave_encounter",1),
   ]],
@@ -14647,7 +14647,7 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
    ]],
 
   [anyone|plyr,"lord_mission_deliver_message", [], "-当然，我正打算经过{s4}，应该没有问题。", "lord_mission_deliver_message_accepted",[]],
-  [anyone|plyr,"lord_mission_deliver_message", [], "I doubt I'll be seeing {s13} anytime soon, {s65}. You'd best send it with someone else.", "lord_mission_deliver_message_rejected",[]],
+  [anyone|plyr,"lord_mission_deliver_message", [], "-我恐怕最近不会见到{s13}，{s65}。你最好另外找人去送。", "lord_mission_deliver_message_rejected",[]],
   [anyone|plyr,"lord_mission_deliver_message", [], "-我不是一个跑腿的，大人。雇个送信的去做这点小事吧。", "lord_mission_deliver_message_rejected_rudely",[]],
 
   [anyone,"lord_mission_deliver_message_accepted", [], "I appreciate it, {playername}. Here's the letter,\
@@ -14663,7 +14663,7 @@ Hand over my {reg19} denars, if you please, and end our business together.", "lo
  for a small favor? A poor show, {playername}. I didn't know you would take offence.", "lord_mission_deliver_message_rejected_rudely_2",[]],
     
   [anyone|plyr,"lord_mission_deliver_message_rejected_rudely_2", [], "-那你以后该知道了吧。", "lord_mission_deliver_message_rejected_rudely_3",[]],
-  [anyone|plyr,"lord_mission_deliver_message_rejected_rudely_2", [], "Forgive my temper, {s65}. I'll deliver your letter.", "lord_mission_deliver_message_accepted",[]],
+  [anyone|plyr,"lord_mission_deliver_message_rejected_rudely_2", [], "-请原谅我的失礼，{s65}。我会替你送这封信的。", "lord_mission_deliver_message_accepted",[]],
 
   [anyone,"lord_mission_deliver_message_rejected_rudely_3", [], "-很好，我会记着的。", "close_window",[
     (call_script, "script_change_player_relation_with_troop","$g_talk_troop",-4),
@@ -14913,7 +14913,7 @@ I'd like nothing better than to go out there and teach them a lesson,\
    ]],
 
   [anyone|plyr,"lord_mission_raise_troops_told", [(quest_get_slot, reg1, "$random_quest_no", slot_quest_target_amount)],
-   "Of course, {s65}. Give me {reg1} fresh recruits and I'll train them to be {s14}.", "lord_mission_raise_troops_accepted",[]],
+   "-没问题，{s65}。给我{reg1}名未训练的新兵，我会帮你把他们培养成{s14}的。", "lord_mission_raise_troops_accepted",[]],
   [anyone|plyr,"lord_mission_raise_troops_told", [], "-这些天我太忙了，没时间训练新兵。", "lord_mission_raise_troops_rejected",[]],
 
   [anyone,"lord_mission_raise_troops_accepted", [], "You've taken a weight off my shoulders, {playername}.\
@@ -14956,7 +14956,7 @@ I'd like nothing better than to go out there and teach them a lesson,\
 
   [anyone|plyr,"lord_mission_collect_taxes_told", [],
    "-不错的差事，{s65}。成交。", "lord_mission_collect_taxes_accepted",[]],
-  [anyone|plyr,"lord_mission_collect_taxes_told", [], "Forgive me, I don't have the time.", "lord_mission_collect_taxes_rejected",[]],
+  [anyone|plyr,"lord_mission_collect_taxes_told", [], "-很抱歉，我没有时间干这个。", "lord_mission_collect_taxes_rejected",[]],
 
   [anyone,"lord_mission_collect_taxes_accepted", [], "Welcome news, {playername}.\
  I will entrust this matter to you.\
@@ -15044,8 +15044,8 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
        (str_store_string, s2, "@{s9} asked you to assassinate a local merchant at {s3}."),
    ]],
   
-  [anyone|plyr,"lord_mission_told_kill_local_merchant", [], "Worry not, he shan't breathe a word.", "lord_mission_accepted_kill_local_merchant",[]],
-  [anyone|plyr,"lord_mission_told_kill_local_merchant", [], "I'm no common murderer, sir. Find someone else for your dirty job.", "lord_mission_rejected",[]],
+  [anyone|plyr,"lord_mission_told_kill_local_merchant", [], "-放心，他将再也说不出一个字。", "lord_mission_accepted_kill_local_merchant",[]],
+  [anyone|plyr,"lord_mission_told_kill_local_merchant", [], "-我不会做低级的杀手的。去另外找人干那卑鄙的工作。", "lord_mission_rejected",[]],
 
   [anyone,"lord_mission_accepted_kill_local_merchant", [], "Very good. I trust in your skill and discretion,\
  {playername}. Do not disappoint me.\
@@ -15064,12 +15064,12 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                 (store_faction_of_party,":quest_target_center_faction",),
                                 (str_store_faction_name, s14, ":quest_target_center_faction"),
                                 ],
-   "I have a sensitive matter which needs tending to, {playername}, and no trustworthy retainers to take care of it. The fact is that I have a spy in {s13} to keep an eye on things for me, and report anything that might warrant my attention. Every week I send someone to collect the spy's reports and bring them back to me. The job's yours if you wish it.", "lord_mission_told_meet_spy_in_enemy_town",
+   "-我有一件精密的事务需要处理，{playername}。除了你以外我没办法相信任何人。我在{s13}安插了一个眼线，向我报告所有值得关注的事件。每周，我都会派人去约定的地点取回他的情报。如果你愿意可以去执行这个任务。", "lord_mission_told_meet_spy_in_enemy_town",
    [
    ]],
 
-  [anyone|plyr,"lord_mission_told_meet_spy_in_enemy_town", [], "I don't mind a bit of skullduggery. Count me in.", "quest_meet_spy_in_enemy_town_accepted",[]],
-  [anyone|plyr,"lord_mission_told_meet_spy_in_enemy_town", [], "I must decline. This cloak-and-dagger work isn't fit for me.", "quest_meet_spy_in_enemy_town_rejected",[]],
+  [anyone|plyr,"lord_mission_told_meet_spy_in_enemy_town", [], "-我不介意耍点小伎俩，包在我身上。", "quest_meet_spy_in_enemy_town_accepted",[]],
+  [anyone|plyr,"lord_mission_told_meet_spy_in_enemy_town", [], "-我必须拒绝。我对间谍行动一窍不通，力不能及。", "quest_meet_spy_in_enemy_town_rejected",[]],
 
   [anyone,"quest_meet_spy_in_enemy_town_accepted", [], "-太棒了！马上动身去{s13}吧，我的眼线会在那里等候你的。", "quest_meet_spy_in_enemy_town_accepted_response",
    [
@@ -15095,7 +15095,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                                                   (str_store_party_name_link, s13, ":quest_target_center")],
    "-{s13}可是守卫森严，我怎么才能不被发现地潜入？", "quest_meet_spy_in_enemy_town_accepted_2",
    []],
-  [anyone,"quest_meet_spy_in_enemy_town_accepted_2", [], "You shall have to use stealth. Take care to avoid enemy strongholds, villages and patrols, and don't bring too many men with you. If you fail to sneak in the first time, give it a while for the garrison to lower its guard again, or you may have a difficult time infiltrating the town.", "quest_meet_spy_in_enemy_town_accepted_response",
+  [anyone,"quest_meet_spy_in_enemy_town_accepted_2", [], "-你必须保持隐秘行动，带上一少部分值得信赖的手下，小心地躲开敌人的要塞，村庄以及巡逻队。如果第一次不幸被敌人发现，你得等一段时间直到守军再度松懈。否则你很难潜入城里。", "quest_meet_spy_in_enemy_town_accepted_response",
    []],
   [anyone|plyr,"quest_meet_spy_in_enemy_town_accepted_response", [], "-我怎么才能找到你的眼线呢？", "quest_meet_spy_in_enemy_town_accepted_3",
    []],
@@ -15107,7 +15107,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                                       (val_add, ":countersign", countersigns_begin),
                                                       (str_store_string, s11, ":secret_sign"),
                                                       (str_store_string, s12, ":countersign"),],
-   "Once you get to {s13} you must talk to the locals, the spy will be one of them. If you think you've found the spy, say the phrase '{s11}' The spy will respond with the phrase '{s12}' Thus you will know the other, and {reg7?she:he} will give you any information {reg7?she:he}'s gathered in my service.", "quest_meet_spy_in_enemy_town_accepted_response",
+   "-抵达{s13}后，你要和当地人攀谈，我的眼线就混在他们中间，你看谁像眼线，对他说暗号“{s11}”，他会回应“{s12}”，之后{reg7?她:他}会把{reg7?她:他}为我收集的所有情报都交给你。", "quest_meet_spy_in_enemy_town_accepted_response",
    []],
   [anyone|plyr,"quest_meet_spy_in_enemy_town_accepted_response", [], "-你会付我报酬吗？", "quest_meet_spy_in_enemy_town_accepted_4",
    []],
@@ -15120,7 +15120,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                                         (val_add, ":countersign", countersigns_begin),
                                                         (str_store_string, s11, ":secret_sign"),
                                                         (str_store_string, s12, ":countersign")],
-   "Good luck, {playername}. Remember, the secret phrase is '{s11}' The counterphrase is '{s12}' Bring any reports back to me, and I'll compensate you for your trouble.", "lord_pretalk",
+   "-祝你好运，{playername}。记住，你的暗号是“{s11}”，接头人的暗号是“{s12}”，把所有的情报都带回来，我会为你的辛劳做出相应的补偿的。", "lord_pretalk",
    []],
 
   [anyone,"quest_meet_spy_in_enemy_town_rejected", [], "-好吧，如果你不愿意的话。但是，{playername}，我强烈建议你忘记你刚才听到的一切，根本没有什么间谍和眼线，从前没有，将来也没有。记住了。", "lord_pretalk",
@@ -15155,7 +15155,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  So what do you say? Are you interested?", "lord_mission_tell_raid_caravan_to_start_war_3",[]],
 
   [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_3", [], "-这真是个个好主意，算我一个。", "quest_raid_caravan_to_start_war_accepted",[]],
-  [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_3", [], "Why don't you do that yourself?", "lord_mission_tell_raid_caravan_to_start_war_4",[]],
+  [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_3", [], "-为什么你自己不去干？", "lord_mission_tell_raid_caravan_to_start_war_4",[]],
 
   [anyone,"lord_mission_tell_raid_caravan_to_start_war_4", [
   	], "Well, {playername}, some of the lords in our kingdom\
@@ -15166,7 +15166,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  All in all, a few lords might be upset at your endeavour, but I am sure you won't be bothered with that.", "lord_mission_tell_raid_caravan_to_start_war_5",[]],
 
   [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_5", [], "-有道理，我愿意去做。", "quest_raid_caravan_to_start_war_accepted",[]],
-  [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_5", [], "I don't like this. Find yourself someone else to take the blame for your schemes.", "quest_raid_caravan_to_start_war_rejected_2",[]],
+  [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_5", [], "-我不喜欢这样的方案，让别的人为你的阴谋当替罪羊吧。", "quest_raid_caravan_to_start_war_rejected_2",[]],
 
   [anyone,"quest_raid_caravan_to_start_war_accepted", [], "Very good!\
  A raid on a caravan, or, if you can't manage that, an attack on one of their villages, should do the trick.\
@@ -15228,7 +15228,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     ]],
 
   [anyone|plyr, "lord_tell_mission_follow_spy_2", [],
- "I'll do it, {s65}.", "lord_tell_mission_follow_spy_accepted", []],
+ "-交给我吧，{s65}。", "lord_tell_mission_follow_spy_accepted", []],
   [anyone|plyr, "lord_tell_mission_follow_spy_2", [],
  "-抱歉，我不能做这种偷偷摸摸的工作。", "lord_tell_mission_follow_spy_rejected", []],
 
@@ -15371,13 +15371,13 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"lord_tell_mission_collect_debt_3", [], "-那我就去代你同{s3}谈一下。", "lord_tell_mission_collect_debt_accepted", []],
   [anyone|plyr,"lord_tell_mission_collect_debt_3", [], "-很抱歉，{s65}，我去恐怕不会比你亲自去更有效。", "lord_tell_mission_collect_debt_rejected", []],
 
-  [anyone,"lord_tell_mission_collect_debt_accepted", [], "You made me very happy by accepting this {playername}. Please, talk to {s3} and don't leave him without my money.", "close_window",
+  [anyone,"lord_tell_mission_collect_debt_accepted", [], "-你愿意帮这个忙我很高兴，{playername}。就麻烦你同{s3}交涉，没有拿到钱就不要离开他。", "close_window",
    [(call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
     (call_script, "script_change_player_relation_with_troop","$g_talk_troop", 1),
     (assign, "$g_leave_encounter",1),
    ]],
 
-  [anyone,"lord_tell_mission_collect_debt_rejected", [], "Perhaps not, {playername}. I suppose I'm never getting that money back...", "lord_pretalk",
+  [anyone,"lord_tell_mission_collect_debt_rejected", [], "-大概吧，{playername}。看来我应该打消把钱拿回来的念头。", "lord_pretalk",
    [(troop_set_slot, "$g_talk_troop", slot_troop_does_not_give_quest, 1)]],
  
 ##
@@ -15430,7 +15430,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  With your help, naturally.", "lord_tell_mission_incriminate_commander",[]],
 
   [anyone|plyr,"lord_tell_mission_incriminate_commander", [], "-{s66}，我听你的吩咐。", "lord_tell_mission_incriminate_commander_2",[]],
-  [anyone|plyr,"lord_tell_mission_incriminate_commander", [], "I don't wish to involve myself in anything dishonourable against {s15}.", "lord_tell_mission_incriminate_commander_rejected",[]],
+  [anyone|plyr,"lord_tell_mission_incriminate_commander", [], "-我不会参与任何反对{s15}的不光彩的行动", "lord_tell_mission_incriminate_commander_rejected",[]],
 
   [anyone,"lord_tell_mission_incriminate_commander_rejected", [], "Dishonourable? Bah!\
  I was hoping I could count on you, {playername}, but you've shown me what a fool I was.\
@@ -15467,7 +15467,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  There is a place for sentimentality, but this is not it. Believe me, you shall be generously compensated,\
  and what is the purpose of soldiers if not to die at our say-so?", "lord_tell_mission_incriminate_commander_10",[]],
   [anyone|plyr,"lord_tell_mission_incriminate_commander_10", [], "-我会派出一名{s8}的。", "lord_tell_mission_incriminate_commander_fin",[]],
-  [anyone|plyr,"lord_tell_mission_incriminate_commander_10", [], "No, I'll not sacrifice one of my chosen men.", "lord_tell_mission_incriminate_commander_rejected",[]],
+  [anyone|plyr,"lord_tell_mission_incriminate_commander_10", [], "-不，我绝不会牺牲那些我挑选出来的战士！", "lord_tell_mission_incriminate_commander_rejected",[]],
    
  [anyone,"lord_tell_mission_incriminate_commander_fin", [], "I can't tell you how pleased I am to hear that,\
  {playername}. You are removing one of the greatest obstacles in my path.\
@@ -15637,7 +15637,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    []],
 
   [anyone,"lord_leave_prison", [],
-   "We'll meet again.", "close_window",[]],
+   "-后会有期。", "close_window",[]],
 
  [anyone|auto_proceed,"lord_leave", [
 	(troop_get_type, ":type", "trp_player"),
@@ -15710,7 +15710,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    (try_end),	
    (gt, "$political_quest_to_cancel", 0),
    ],
-   "Let's abandon our plan to {s10}.", "spouse_cancel_political_quest",[
+   "-让我们放弃对{s10}的计划。", "spouse_cancel_political_quest",[
  ]],
  
   [anyone,"spouse_cancel_political_quest",
@@ -15719,7 +15719,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  ]],
   [anyone|plyr,"spouse_cancel_political_quest_confirm",
    [],
-   "Yes, I am sure. Let's abandon that idea.", "spouse_pretalk",[
+   "-是的，我确定。让我们放弃那个主意。", "spouse_pretalk",[
    (call_script, "script_abort_quest", "$political_quest_to_cancel", 1),
  ]],
   [anyone|plyr,"spouse_cancel_political_quest_confirm",
@@ -15789,7 +15789,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  
   [anyone|plyr,"wedding_ceremony_player_vow",
    [],
-   "Wait -- hold on... I'm not quite ready for this.", "close_window",[
+   "-慢——等等……我还没有完全准备好。", "close_window",[
  ]],
  
   [anyone,"wedding_ceremony_vows_complete",
@@ -16525,7 +16525,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                      (eq, "$g_talk_troop_met", 0),
                      (le,"$talk_context",tc_siege_commander),
                      ],
-   "I say, you don't look familiar...", "lady_premeet", []],
+   "-我想说，你看起来并不是很面熟……", "lady_premeet", []],
 
    #default greet
   [anyone,"start",
@@ -16728,7 +16728,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	(call_script, "script_get_kingdom_lady_social_determinants", "$g_talk_troop"),
 	(call_script, "script_troop_get_family_relation_to_troop", reg0, "$g_talk_troop"),
 	],
-    "Perhaps I may still be able to change your {s11}'s mind", "lady_pretalk",[]],
+    "-或许我还有机会说服你的{s11}。", "lady_pretalk",[]],
 
 	[anyone|plyr,"lady_betrothed", [],
     "-算了吧——我们就此分手吧。", "lady_conclude_relationship",[
@@ -16773,7 +16773,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	(troop_slot_eq, "$g_talk_troop", slot_lord_reputation_type, lrep_moralist),
 	(lt, "$player_honor", 20)
 	],
-    "Ah {playername}, although you are kind to me, I am not certain enough of your moral fiber to risk such a thing. Although I bare little affection for my husband, it would be a weighty thing to go against my family's wishes, and I am not certain enough of you to take that step.", "lady_conclude_relationship",[]],
+    "-{playername}，我知道你对我很好，可是仅靠这个我还不能确定你的人品和操守是否值得我冒险。尽管我不爱我的丈夫，但要和我的家庭对立事关重大，我也不确定你是否真的会为了我而选择和我的家族对立。", "lady_conclude_relationship",[]],
 	
 	[anyone,"lady_suggest_elope", [(le, "$g_talk_troop_effective_relation", 20),],
     "-我亲爱的{playername}——私奔出逃会断绝我和我家族的一切联系，而它就是我的一切！我的确对你非常有好感，但我没法确定这份好感真的值得我冒与家族决裂的风险。", "lady_conclude_relationship",[]],
@@ -16797,7 +16797,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	(call_script, "script_get_kingdom_lady_social_determinants", "$g_talk_troop"),
 	(call_script, "script_troop_get_family_relation_to_troop", reg0, "$g_talk_troop"),
 	],
-    "Elope with you? Yes -- we could do that. It is a great step to defy my family -- but a loveless marriage, and life without you, might be a far worse thing! But be warned -- this will be a terrible blow to my {s11}'s prestige, and he will do everything in his power to bring you down.", "lady_elope_agree",[]],
+    "-和你一起私奔？是的——我们是可以这样做，我明白这将是对我家族的一个巨大的侮辱——但是，一场缺少爱情的婚姻和没有你的生活会比与我的家族决裂更糟！但是我要先警告你，我们这样做会严重损害我的{s11}的声望，他一定会用尽所有手段取你性命的。", "lady_elope_agree",[]],
 
 	[anyone|plyr,"lady_elope_agree", [],
     "-那就立刻行动吧，我们没有时间可以浪费了！", "lady_elope_agree_nurse",[
@@ -16874,7 +16874,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   (troop_slot_ge, "trp_player", slot_troop_renown, 200),
   ],  "-当然，无论如何，能够认识你真的很荣幸。", "lady_meet_end", []],
   
-  [anyone, "lady_meet", [],  "{playername}? I do not believe I've heard of you before.", "lady_meet_end", []],
+  [anyone, "lady_meet", [],  "-{playername}？我们见过面么？", "lady_meet_end", []],
 
   [anyone, "lady_meet_end", [
 	(eq, "$lady_flirtation_location", "$g_encountered_party"),
@@ -17102,7 +17102,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   
   [anyone,"lady_profess_admiration", [
   ],
-   "Ah... You are too kind... My, the hour is getting rather late, isn't it? I really must be going.", "lady_pretalk",
+   "-呵呵，你真是个有趣的人……天啊，居然已经这么晚了！很抱歉，我必须离开了。", "lady_pretalk",
    [(troop_set_slot, "$g_talk_troop", slot_troop_met, 2),
    ]],
   
@@ -17183,7 +17183,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
    
   [anyone|plyr,"lady_recite_poetry",
-   [],"Actually, I can't think of any that I would care to recite...", "lady_pretalk",[]],   
+   [],"-实际上，我没想到什么适合背诵的……", "lady_pretalk",[]],   
    
    [anyone,"lady_recite_poetry_response",
    [
@@ -17589,7 +17589,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [        
     (troop_slot_eq, "$g_talk_troop", slot_troop_does_not_give_quest, 1),
   ],
-   "I don't have anything else for you to do right now.", "lady_pretalk", []],
+   "-现在我没有什么事情需要你做。", "lady_pretalk", []],
   
   [anyone,"lady_ask_for_quest", 
   [   
@@ -17681,7 +17681,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 3),
      ]],
 
-  [anyone|plyr,"lady_quest_duel_for_lady_3", [], "If he's that dangerous, perhaps maybe it would be better to ignore him...", "lady_quest_duel_for_lady_3_rejected",[]],
+  [anyone|plyr,"lady_quest_duel_for_lady_3", [], "-如果他真的那么危险的话，还是不要管他比较好……", "lady_quest_duel_for_lady_3_rejected",[]],
   [anyone,"lady_quest_duel_for_lady_3_rejected", [], "Oh... Perhaps you're right, {playername}.\
  I should let go of these silly childhood ideas of chivalry and courage. {Men/People} are not like that,\
  not anymore. Good day to you.", "close_window",
@@ -17690,7 +17690,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     ]],
 
 
-  [anyone,"lady_ask_for_quest", [], "No, {playername}, I've no need for a champion right now.", "lady_pretalk",[]],
+  [anyone,"lady_ask_for_quest", [], "-不用，{playername}，我现在不需要追随者。", "lady_pretalk",[]],
 
   [anyone|plyr,"lady_mission_told", [], "-如你所愿，{s65}。这件事会解决的。", "lady_mission_accepted",[]],
   [anyone|plyr,"lady_mission_told", [], "-{s66}，很抱歉我现在没办法帮助你。", "lady_mission_rejected",[]],
@@ -17715,7 +17715,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"lady_talk", [
   (troop_slot_ge, "$g_talk_troop", slot_troop_spouse, 0),
   ], "-我想改善一下我和某个领主的关系，你能帮我吗？", "lady_restore_relation",[]],
-  [anyone,"lady_restore_relation", [(le, "$g_talk_troop_relation", 0)], "{playername}, I don't know you well enough to act on your behalf. I am sorry.", "lady_pretalk",[]],
+  [anyone,"lady_restore_relation", [(le, "$g_talk_troop_relation", 0)], "-{playername}，我跟你并不熟识，我不能替你出面。我只能说很抱歉。", "lady_pretalk",[]],
   [anyone,"lady_restore_relation", [], "-嗯。我猜你与某人在某些方面有过节。那好，你想和谁和解？", "lady_restore_relation_2",[]],
 
   [anyone|plyr|repeat_for_troops,"lady_restore_relation_2", [(store_repeat_object, ":troop_no"),
@@ -17757,7 +17757,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                            (assign, reg12, "$lady_restore_cost_3")],
    "-如果真是那样的话，我准备出{reg12}第纳尔。", "lady_restore_relation_5",[(assign, "$temp", 3), (assign, "$temp_2", "$lady_restore_cost_3")]],
   
-  [anyone|plyr,"lady_restore_relation_4", [], "I don't think I can afford a gift at the moment.", "lady_restore_relation_cant_afford",[]],
+  [anyone|plyr,"lady_restore_relation_4", [], "-我想我目前还买不起礼物。", "lady_restore_relation_cant_afford",[]],
   
   [anyone,"lady_restore_relation_5", [], "Excellent. Then I'll choose an appropriate gift for you and send it to {s10} with your compliments.\
  I am sure {reg4?she:he} will appreciate the gesture.", "lady_restore_relation_6",[
@@ -17768,7 +17768,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
   [anyone|plyr,"lady_restore_relation_6", [], "-多谢你帮忙，夫人。", "lady_pretalk",[]],
 
-  [anyone,"lady_restore_relation_cant_afford", [], "I am afraid, I can't be of much help in that case, {playername}. I am sorry.", "lady_pretalk",[]],
+  [anyone,"lady_restore_relation_cant_afford", [], "-如果那样的话，恐怕我也无能为力了，{playername}。很抱歉。", "lady_pretalk",[]],
  
   [anyone|plyr,"lady_talk", [], "-请让我离开。", "lady_leave",[]],
   
@@ -17785,11 +17785,11 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
 
 #Convincing bargaining
-  [anyone,"convince_begin", [], "I still don't see why I should accept what you're asking of me.", "convince_options",
+  [anyone,"convince_begin", [], "-我还是不明白为什么我要照你说的做。", "convince_options",
    [(quest_get_slot, "$convince_value", "$g_convince_quest", slot_quest_convince_value),
     ]],
     
-  [anyone|plyr,"convince_options", [(assign, reg8, "$convince_value")], "Then I'll make it worth your while. ({reg8} denars)", "convince_bribe",[]],
+  [anyone|plyr,"convince_options", [(assign, reg8, "$convince_value")], "-我不会让你白做的。（{reg8}第纳尔）", "convince_bribe",[]],
   [anyone|plyr,"convince_options", 
   [(store_div, "$convince_relation_penalty", "$convince_value", 300),
    (val_add, "$convince_relation_penalty", 1),
@@ -17803,7 +17803,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
   [anyone|plyr,"convince_bribe_verify", [(store_troop_gold, ":gold", "trp_player"),
                                          (lt, ":gold", "$convince_value")],
-   "I'm afraid my finances will not allow for such a gift.", "convince_bribe_cant_afford",[]],
+   "-恐怕我的资金不足以支付这份礼物。", "convince_bribe_cant_afford",[]],
   [anyone|plyr,"convince_bribe_verify", [(store_troop_gold, ":gold", "trp_player"),
                                          (ge, ":gold", "$convince_value")],
   "-很好，请收下这{reg8}第纳尔和我的谢意。", "convince_bribe_goon",[]],
@@ -17820,7 +17820,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  and for that I will go along with your request, but know that I do not like you using our relationship this way.", "convince_friendship_verify",[]],
 
   [anyone|plyr,"convince_friendship_verify", [], "-非常抱歉，我的朋友，但现在我确实十分需要你的帮助。", "convince_friendship_go_on",[]],
-  [anyone|plyr,"convince_friendship_verify", [], "If it will not please you, then I'll try something else.", "lord_pretalk",[]],
+  [anyone|plyr,"convince_friendship_verify", [], "-如果这个你不满意，我还有别的。", "lord_pretalk",[]],
 
   [anyone,"convince_friendship_go_on", [], "-那么好吧，{playername}。看在你的份上我答应这件事，不过记住，你欠我一个人情。", "convince_accept",
    [(store_sub, ":relation_change", 0, "$convince_relation_penalty"),
@@ -17923,7 +17923,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"siege_won_seneschal_5", [], "-我会把它卖给别的领主。", "siege_won_seneschal_6",[]],
   [anyone|plyr,"siege_won_seneschal_5", [], "-我将让它归我所有，成为这儿的领主。", "siege_won_seneschal_6",[]],
   
-  [anyone|plyr,"siege_won_seneschal_5", [], "I haven't given it much thought. What are my options?", "siege_won_seneschal_list_options",[]],
+  [anyone|plyr,"siege_won_seneschal_5", [], "-我还没有考虑，我有哪些选择？", "siege_won_seneschal_list_options",[]],
 
   [anyone,"siege_won_seneschal_list_options", [], "According to our laws and traditions,\
  you can do one of several things.\
@@ -17940,7 +17940,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  However, no lord in the land will recognize your claim to the castle unless it is verified by royal decree.\
  They would call {s1} an outlaw stronghold and take it from you at the earliest opportunity.\
  Surely not even you could stand against a whole army.", "siege_won_seneschal_list_options_4",[]],
-  [anyone|plyr,"siege_won_seneschal_list_options_4", [], "Hmm. I'll give it some thought.", "siege_won_seneschal_6",[]],
+  [anyone|plyr,"siege_won_seneschal_list_options_4", [], "-嗯。我要考虑考虑。", "siege_won_seneschal_6",[]],
 
   [anyone,"siege_won_seneschal_6", [], "I am very pleased to hear it, my {lord/lady}.\
  I am only trying to serve you to the best of my ability. Now,\
@@ -18095,7 +18095,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
 
   [anyone,"seneschal_ask_something", [],
-   "I'll do what I can to help, of course. What did you wish to ask?", "seneschal_ask_something_2",[]],
+   "-当然，我将尽力帮助你。你想问些什么？", "seneschal_ask_something_2",[]],
 
   [anyone|plyr,"seneschal_ask_something_2", [],
    "-也许你知道可以上哪儿找到某个人……", "seneschal_ask_location",[]],
@@ -18141,15 +18141,15 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     (eq, "$g_encountered_party", "$caravan_escort_party_id"),
     (eq, "$talk_context", tc_party_encounter),
     ],
-   "We've made it this far... Is everything clear up ahead?", "talk_caravan_escort",[]],
+   "-我们已经走了这么远了……前方安全吗？", "talk_caravan_escort",[]],
   [anyone|plyr,"talk_caravan_escort", [],
    "-周围也许有强盗。跟紧我。", "talk_caravan_escort_2a",[]],
   [anyone,"talk_caravan_escort_2a", [],
-   "Trust me, {playername}, we're already staying as close to you as we can. Lead the way.", "close_window",[(assign, "$g_leave_encounter",1)]],
+   "-相信我，{playername}，我们已经跟的够紧了。开路吧。", "close_window",[(assign, "$g_leave_encounter",1)]],
   [anyone|plyr,"talk_caravan_escort", [],
    "-看起来没什么麻烦，我们可以松口气了。", "talk_caravan_escort_2b",[]],
   [anyone,"talk_caravan_escort_2b", [],
-   "I'll breathe easy when we reach {s1} and not a moment sooner. Let's keep moving.", "close_window",[[str_store_party_name,s1,"$caravan_escort_destination_town"],(assign, "$g_leave_encounter",1)]],
+   "-不到{s1}我没法安心，继续走吧。", "close_window",[[str_store_party_name,s1,"$caravan_escort_destination_town"],(assign, "$g_leave_encounter",1)]],
 
   [anyone,"start", [(eq,"$talk_context", tc_party_encounter),
                     (eq, "$g_encountered_party_type", spt_kingdom_caravan),
@@ -18165,7 +18165,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                     (lt,"$g_encountered_party_relation",0),
                     (eq, "$g_encountered_party_faction", "fac_merchants"),
                     ],
-   "What do you want? We are but simple merchants, we've no quarrel with you, so leave us alone.", "merchant_talk",[]],
+   "-你想要什么？我们是做正经生意的商人。我们和你没有过节，别找我们麻烦。", "merchant_talk",[]],
 
   [anyone,"start", [(eq,"$talk_context", tc_party_encounter),
                     (eq, "$g_encountered_party_type", spt_kingdom_caravan),
@@ -18275,14 +18275,14 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                         (store_div, reg6, "$g_ally_strength", 2),
                                         (val_add, reg6, 40),
                                         (assign, "$temp", reg6),
-                                        ], "Please, I don't want any trouble. I can give you {reg6} denars, just let us go.", "merchant_demand_toll_2",[]],
+                                        ], "-拜托，我不想惹麻烦。我可以付给你{reg6}第纳尔，让我们走吧。", "merchant_demand_toll_2",[]],
   [anyone,"merchant_demand_toll", [(store_div, reg6, "$g_ally_strength", 4),
                                         (val_add, reg6, 10),
                                         (assign, "$temp", reg6),
-                                        ], "I don't want any trouble. I can give you {reg6} denars if you'll let us go.", "merchant_demand_toll_2",[]],
+                                        ], "-我不想惹麻烦。我会付给你{reg6}第纳尔，让我们走吧。", "merchant_demand_toll_2",[]],
   
   [anyone|plyr,"merchant_demand_toll_2", [], "-成交，交上钱你们就可以走了。", "merchant_demand_toll_accept",[]],
-  [anyone,"merchant_demand_toll_accept", [(assign, reg6, "$temp")], "Very well then. Here's {reg6} denars. ", "close_window",
+  [anyone,"merchant_demand_toll_accept", [(assign, reg6, "$temp")], "-那太好了。这是{reg6}第纳尔。", "close_window",
    [(assign, "$g_leave_encounter",1),
     (call_script, "script_troop_add_gold", "trp_player", "$temp"),
     (store_add, ":toll_finish_time", "$g_current_hours", merchant_toll_duration),
@@ -18303,7 +18303,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     (assign, reg6, "$temp"),
     ]],
   
-  [anyone|plyr,"merchant_demand_toll_2", [], "I changed my mind, I can't take your money.", "merchant_pretalk",[]],
+  [anyone|plyr,"merchant_demand_toll_2", [], "-我改变主意了，我不能收你的钱。", "merchant_pretalk",[]],
   
   [anyone|plyr,"merchant_demand_toll_2", [], "No, I want everything you have! [Attack]", "merchant_attack",[]],
   
@@ -18320,7 +18320,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   ]],
   [anyone|plyr,"merchant_attack_verify", [], "-抢劫你们？哦，不，我只是开个玩笑。", "merchant_attack_verify_norob",[]],
   [anyone,"merchant_attack_verify_norob", [], "God, don't joke about that, {lad/lass}. For a moment I thought we were in real trouble.", "close_window",[(assign, "$g_leave_encounter",1)]],
-  [anyone|plyr,"merchant_attack_verify", [], "Of course I'm robbing you. Now hand over your goods.", "merchant_attack",[
+  [anyone|plyr,"merchant_attack_verify", [], "-太对了，这是一次抢劫，现在把货物交出来。", "merchant_attack",[
 	(call_script, "script_diplomacy_party_attacks_neutral", "p_main_party", "$g_encountered_party"), 
   ]],
   
@@ -18352,7 +18352,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     (val_max, "$caravan_escort_offer", 5),
     ]],
   [anyone,"caravan_offer_protection_2", [[lt,"$caravan_distance_to_target",10]],
-   "An escort? We're almost there already! Thank you for the offer, though.", "close_window",[(assign, "$g_leave_encounter",1)]],
+   "-保护？不过我们马上就要到了，不管怎么说，多谢你的好意。", "close_window",[(assign, "$g_leave_encounter",1)]],
   [anyone,"caravan_offer_protection_2", [(get_party_ai_object,":caravan_destination","$g_encountered_party"),
     (str_store_party_name,1,":caravan_destination"),
     (assign,reg(2),"$caravan_escort_offer")],
@@ -18364,10 +18364,10 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "I want you to stay close to us along the way.\
  We'll need your help if we get ambushed by bandits.", "caravan_offer_protection_5",[]],
   [anyone|plyr,"caravan_offer_protection_5", [],
-   "Don't worry, you can trust me.", "caravan_offer_protection_6",[]],
+   "-别担心，包在我身上了。", "caravan_offer_protection_6",[]],
   [anyone,"caravan_offer_protection_6", [(get_party_ai_object,":caravan_destination","$g_encountered_party"),
     (str_store_party_name,1,":caravan_destination")],
-   "Good. Come and collect your money when we're within sight of {s1}. For now, let's just get underway.", "close_window",
+   "-很好，到{s1}我们会付你报酬的，让我们上路吧。", "close_window",
    [(get_party_ai_object,":caravan_destination","$g_encountered_party"),
     (assign, "$caravan_escort_destination_town", ":caravan_destination"),
     (assign, "$caravan_escort_party_id", "$g_encountered_party"),
@@ -18497,18 +18497,18 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
   [anyone, "prison_guard_visit_prison", [], "-里面没有人，你可以进去随便看看。", "prison_guard_visit_prison_nobody", []],   
   
-  [anyone|plyr,"prison_guard_visit_prison_nobody", [], "All right then. I'll take a look at the prison.", "close_window",
+  [anyone|plyr,"prison_guard_visit_prison_nobody", [], "-那么好吧。我进去看看。", "close_window",
   [
     (call_script, "script_enter_dungeon", "$current_town", "mt_visit_town_castle"),
   ]],
   
   [anyone|plyr,"prison_guard_visit_prison_nobody", [], "-我还有别的要紧事要做。", "close_window",[]],
 
-  [anyone|plyr,"prison_guard_visit_prison_2", [], "All right then. I'll try that.", "close_window",[]],
+  [anyone|plyr,"prison_guard_visit_prison_2", [], "-好的。我试试看。", "close_window",[]],
   [anyone|plyr,"prison_guard_visit_prison_2", [], "-快过来。你是这儿的头儿吧？", "prison_guard_visit_prison_3",[]],
-  [anyone,"prison_guard_visit_prison_3", [], "He-heh. You got that right. Still, I can't let you into the prison.", "prison_guard_visit_prison_4",[]],
+  [anyone,"prison_guard_visit_prison_3", [], "-嘿——嗨。你猜对了。不过，我还是不能让你进这个监狱。", "prison_guard_visit_prison_4",[]],
   
-  [anyone|plyr,"prison_guard_visit_prison_4", [], "All right then. I'll leave now.", "close_window",[]],
+  [anyone|plyr,"prison_guard_visit_prison_4", [], "-那好的。我这就走。", "close_window",[]],
   [anyone|plyr,"prison_guard_visit_prison_4", [(store_troop_gold,":gold","trp_player"),(ge,":gold",100)],
    "-我在不远处发现一个钱包里面有100第纳尔。我想应该是你的。", "prison_guard_visit_prison_5",[]],
 
@@ -18549,7 +18549,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                     ],
    "Your orders, {Lord/Lady}?", "castle_guard_players",[]],
   [anyone|plyr,"castle_guard_players", [],
-   "Open the door. I'll go in.", "close_window",[(call_script, "script_enter_court", "$current_town")]],
+   "-把门打开。我要进去。", "close_window",[(call_script, "script_enter_court", "$current_town")]],
   [anyone|plyr,"castle_guard_players", [],
    "-没事。", "close_window",[]],
 
@@ -18587,17 +18587,17 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 			 
 	(neg|troop_slot_ge, "trp_player", slot_troop_spouse, 1), #Married players always make the cut
 	
-   ], "I'm afraid there is a feast in progress, and you are not invited.", "close_window",
+   ], "-里面正在举行宴会，而你没有被邀请。", "close_window",
    []],
 
 
-   [anyone,"castle_guard_intro_2", [], "You can go in after leaving your weapons with me. No one is allowed to carry arms into the lord's hall.", "castle_guard_intro_3",
+   [anyone,"castle_guard_intro_2", [], "-卸下武器交给我之后才可以进去。没有人可以带着兵器进入领主的大厅。", "castle_guard_intro_3",
    []],
    
-  [anyone|plyr,"castle_guard_intro_3", [], "Here, take my arms. I'll go in.", "close_window", [(call_script, "script_enter_court", "$current_town")]],
+  [anyone|plyr,"castle_guard_intro_3", [], "-给，拿着我的兵器。我要进去了。", "close_window", [(call_script, "script_enter_court", "$current_town")]],
   
   [anyone|plyr,"castle_guard_intro_3", [], "-不行，我人在剑在。", "castle_guard_intro_2b", []],
-  [anyone,"castle_guard_intro_2b", [], "Then you can't go in.", "close_window", []],
+  [anyone,"castle_guard_intro_2b", [], "-那你不能进去。", "close_window", []],
   
 ##  [anyone|plyr,"castle_guard_intro_1", [],
 ##   "-没事。", "close_window",[]],
@@ -18717,9 +18717,9 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
   [anyone|plyr,"request_meeting_3", [], "-没事。", "close_window",[(assign, "$lord_requested_to_talk_to", 0)]],
 
-  [anyone,"request_meeting_4", [], "Wait there. I'll send him your request.", "request_meeting_5",[]],
+  [anyone,"request_meeting_4", [], "-在这等一下。我会向他禀报你的求见。", "request_meeting_5",[]],
 
-  [anyone|plyr,"request_meeting_5", [], "I'm waiting...", "request_meeting_6",[]],
+  [anyone|plyr,"request_meeting_5", [], "-我等着……", "request_meeting_6",[]],
 
   [anyone,"request_meeting_6",
    [
@@ -18925,7 +18925,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                     (eq, "$g_talk_troop_met", 0),
                     (ge, "$g_talk_troop_relation", 17),
                     ],
-   "I don't think we have met properly my friend. You just saved my life out there, and I still don't know your name...", "ally_thanks_meet", []],
+   "-我想我们还没有正式认识，我的朋友。你刚刚救了我的命，但我还不知道你的名字。", "ally_thanks_meet", []],
 
 
   [anyone,"start", [(eq,"$talk_context",tc_ally_thanks),
@@ -18942,7 +18942,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                     (ge, "$g_talk_troop_relation", 0),
                     (str_store_troop_name, s1, "$g_talk_troop"),
                     ],
-   "Thanks for your help, stranger. We haven't met properly yet, have we? What is your name?", "ally_thanks_meet", []],
+   "-多谢相助，陌生人。我们还没互相介绍过，不是吗？你叫什么名字？", "ally_thanks_meet", []],
 
   [anyone|plyr,"ally_thanks_meet", [], "-我的名字是{playername}。", "ally_thanks_meet_2", []],
 
@@ -19070,7 +19070,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    []],
 
   [anyone|plyr,"freed_hero_answer", [],
-   "You're free to go, {s65}.", "freed_hero_answer_2",
+   "-你可以走了，{s65}。", "freed_hero_answer_2",
    [
     ]],
 
@@ -19095,7 +19095,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     ]],
 
   [anyone,"start", [(eq,"$talk_context",tc_hero_defeated)],
-   "You'll not live long to enjoy your victory. My kinsmen will soon wipe out the stain of this defeat.", "defeat_hero_answer",
+   "-你不会为这次胜利高兴太久的。我的卫兵们很快将会抹去这次失败的污点。", "defeat_hero_answer",
    [
     ]],
 
@@ -19113,7 +19113,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    []],
 
   [anyone|plyr,"defeat_hero_answer", [],
-   "You're free to go this time, but don't cross my path again.", "defeat_hero_answer_2",
+   "-这次就放你走吧，但是下次可别挡着我的路。", "defeat_hero_answer_2",
    []],
 
   [anyone,"defeat_hero_answer_2", [],
@@ -19439,12 +19439,12 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"local_merchant_mercy", [(quest_get_slot, ":quest_giver_troop", "qst_kill_local_merchant", slot_quest_giver_troop),(str_store_troop_name, s2, ":quest_giver_troop")],
    "-我跟你没有仇，但是{s2}想要你死。对不起了。", "local_merchant_mercy_no",[]],
   [anyone,"local_merchant_mercy_no", [], "Damn you! May you burn in Hell!", "close_window",[]],
-  [anyone|plyr,"local_merchant_mercy", [], "I'll let you live, if you promise me...", "local_merchant_mercy_yes",[]],
+  [anyone|plyr,"local_merchant_mercy", [], "-我将给你一条生路，如果你答应我……", "local_merchant_mercy_yes",[]],
 
-  [anyone,"local_merchant_mercy_yes", [], "Of course, I promise, I'll do anything. Just spare my life... ", "local_merchant_mercy_yes_2",[]],
+  [anyone,"local_merchant_mercy_yes", [], "-当然，我答应，我将为你做任何事情。就是请不要杀我……", "local_merchant_mercy_yes_2",[]],
   [anyone|plyr,"local_merchant_mercy_yes_2", [], "You are going to forget about {s2}'s debt to you.\
  And you will sign a paper stating that he owes you nothing.", "local_merchant_mercy_yes_3",[]],
-  [anyone,"local_merchant_mercy_yes_3", [], "Yes, of course. I'll do as you say.", "local_merchant_mercy_yes_4",[]],
+  [anyone,"local_merchant_mercy_yes_3", [], "-好的，当然。我会照你说的做的。", "local_merchant_mercy_yes_4",[]],
   [anyone|plyr,"local_merchant_mercy_yes_4", [], "And if my lord hears so much of a hint of a complaint about this issue, then I'll come back for you,\
  and it won't matter how much you scream for mercy then.\
  Do you understand me?", "local_merchant_mercy_yes_5",[]],
@@ -19468,7 +19468,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  I never killed anyone. I think you've got the wrong man.", "fugitive_3",[]],
   [trp_fugitive|plyr,"fugitive_3", [], "Then drop your sword. If you are innocent, you have nothing to fear.\
  We'll go now and talk to your neighbours, and if they verify your story, I'll go on my way.", "fugitive_4",[]],
-  [anyone,"fugitive_4", [], "I'm not going anywhere, friend. You're going to have to fight for your silver, today.", "fugitive_5",
+  [anyone,"fugitive_4", [], "-我哪儿也不去，朋友。你想要钱就得跟我打。", "fugitive_5",
    []],
 
   [trp_fugitive|plyr,"fugitive_5", [], "-没关系。反正，我只是要你的脑袋。", "fugitive_fight_start",[]],
@@ -19597,7 +19597,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    [(quest_get_slot, ":quest_object_center", "qst_bring_back_runaway_serfs", slot_quest_object_center),
     (call_script, "script_change_player_relation_with_center", ":quest_object_center", -1)]],
 
-  [anyone|plyr,"runaway_serf_intro_3", [], "Well, maybe you are right. All right then. If anyone asks, I haven't seen you.", "runaway_serf_let_go",
+  [anyone|plyr,"runaway_serf_intro_3", [], "-好吧。也许你是对的。那么这样，如果谁问起，我就说没看到你们。", "runaway_serf_let_go",
    [(quest_get_slot, ":quest_object_center", "qst_bring_back_runaway_serfs", slot_quest_object_center),
     (call_script, "script_change_player_relation_with_center", ":quest_object_center", 1)]],
 
@@ -19653,7 +19653,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   (quest_slot_eq, "qst_track_down_bandits", slot_quest_target_party, "$g_encountered_party"),
   (neg|is_between, "$g_encountered_party_faction", kingdoms_begin, kingdoms_end), #ie, the party has not respawned as a non-bandit
   ],
-   "This must be your unlucky day, mate. We're just about the worst people you could run into, in these parts.", "troublesome_bandits_intro_1",[
+   "-你今天一定不走运，伙计。我们正是这里你能碰到的最坏的坏蛋。", "troublesome_bandits_intro_1",[
    ]],
  
  [anyone|plyr,"troublesome_bandits_intro_1", [],
@@ -19674,10 +19674,10 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                      (store_sub, ":protection_remaining",":protected_until_hours",":cur_hours"),
                                      (gt, ":protection_remaining", 0)], "What do you want?\
  You want to pay us some more money?", "deserter_paid_talk",[]],
-  [anyone|plyr,"deserter_paid_talk", [], "Sorry to trouble you. I'll be on my way now.", "deserter_paid_talk_2a",[]],
+  [anyone|plyr,"deserter_paid_talk", [], "-抱歉打搅了，我这就走。", "deserter_paid_talk_2a",[]],
   [anyone,"deserter_paid_talk_2a", [], "Yeah. Stop fooling around and go make some money.\
  I want to see that purse full next time I see you.", "close_window",[(assign, "$g_leave_encounter",1)]],
-  [anyone|plyr,"deserter_paid_talk", [], "No. It's your turn to pay me this time.", "deserter_paid_talk_2b",[]],
+  [anyone|plyr,"deserter_paid_talk", [], "-不，这次该你付钱给我了。", "deserter_paid_talk_2b",[]],
   [anyone,"deserter_paid_talk_2b", [], "-你在胡说八道些什么？你要找麻烦？你找到了。", "close_window",[
        (party_set_slot,"$g_encountered_party",slot_party_ignore_player_until,0),
        (party_ignore_player, "$g_encountered_party", 0),
@@ -19694,8 +19694,8 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 ##                                 (party_count_members_of_type, ":num_deserters", "$g_encountered_party",":target_deserter_troop"),
 ##                                 (gt, ":num_deserters", 1)],
 ##   "If you surrender to me now, you will rejoin the army of your kingdom without being punished. Otherwise you'll get a taste of my sword.", "deserter_join_as_prisoner",[]],
-  [anyone|plyr,"deserter_talk", [], "When I'm done with you, you'll regret ever leaving your army.", "close_window",[]],
-  [anyone|plyr,"deserter_talk", [], "There's no need to fight. I am ready to pay for free passage.", "deserter_barter",[]],
+  [anyone|plyr,"deserter_talk", [], "-等我了结了你们，你们会后悔离开军队的。", "close_window",[]],
+  [anyone|plyr,"deserter_talk", [], "-没必要动手，我已经打算付过路费了。", "deserter_barter",[]],
 
 ##  [anyone,"deserter_join_as_prisoner", [(call_script, "script_party_calculate_strength", "p_main_party"),
 ##                                        (assign, ":player_strength", reg0),
@@ -19707,7 +19707,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 ##   "All right we join you then.", "close_window",[(assign, "$g_enemy_surrenders", 1)]],
 ##  [anyone,"deserter_join_as_prisoner", [], "TODO: We will never surrender!", "close_window",[(encounter_attack)]],
 
-  [anyone,"deserter_barter", [], "Good. You are clever. Now, having a look at your baggage, I reckon a fellow like you could pretty easily afford {reg5} denars. We wouldn't want to be too greedy, now would we? Pay us, and then you can go.", "deserter_barter_2",[
+  [anyone,"deserter_barter", [], "-很好，你很聪明。看你的行李，我猜像你这样的家伙应该能很容易拿出{reg5}第纳尔。我们不打算太贪心，是这样的吧？付给我们钱，你就可以走了。", "deserter_barter_2",[
     (store_troop_gold, ":total_value", "trp_player"),
     (troop_get_inventory_capacity, ":inv_size", "trp_player"),
     (try_for_range, ":i_slot", 0, ":inv_size"),
@@ -19723,14 +19723,14 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     (val_max, "$g_tribute_amount", 10),
     (assign,reg(5),"$g_tribute_amount")]],
   [anyone|plyr,"deserter_barter_2", [(store_troop_gold,reg(2)),(ge,reg(2),"$g_tribute_amount"),(assign,reg(5),"$g_tribute_amount")],
-   "All right here's your {reg5} denars.", "deserter_barter_3a",[(troop_remove_gold, "trp_player","$g_tribute_amount")]],
+   "-好吧，这里是你的{reg5}第纳尔。", "deserter_barter_3a",[(troop_remove_gold, "trp_player","$g_tribute_amount")]],
   [anyone|plyr,"deserter_barter_2", [],
-   "I don't have that much money with me", "deserter_barter_3b",[]],
+   "-我没带那么多钱。", "deserter_barter_3b",[]],
   [anyone,"deserter_barter_3b", [],
-   "Too bad. Then we'll have to sell you to the slavers.", "close_window",[]],
+   "-太糟了，我们只好把你卖给奴隶贩子了。", "close_window",[]],
 
 
-  [anyone,"deserter_barter_3a", [], "Heh. That wasn't difficult, now, was it? All right. Go now.", "close_window",[
+  [anyone,"deserter_barter_3a", [], "-嘿，现在看来，那样做并不难，不是吗？好了，滚吧。", "close_window",[
     (store_current_hours,":protected_until"),
     (val_add, ":protected_until", 72),
     (party_set_slot,"$g_encountered_party",slot_party_ignore_player_until,":protected_until"),
@@ -19902,7 +19902,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
       (store_current_hours,":cur_hours"),
       (val_sub, ":cur_hours", 24),
       (gt, ":cur_hours", "$buy_drinks_last_time"),
-      ], "I'd like to buy every man who comes in here tonight a jar of your best wine.", "tavernkeeper_buy_drinks",[]],
+      ], "-我想给今晚每个到这里来的人买一罐你这里最好的酒。", "tavernkeeper_buy_drinks",[]],
 
   [anyone,"tavernkeeper_buy_drinks",
    [
@@ -20031,11 +20031,11 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone, "tavernkeeper_job_result", [
   (store_sub, ":last_troop", mayors_end, 1),
   (ge, "$g_troop_list_no", ":last_troop"),
-  ], "There may be other work, of course -- lords and guildmasters often have other tasks which we don't hear about. Also, the villages around here frequently need help, although they'd be more likely to pay you with a wedge of cheese and goodwill than with cold hard denars.", "tavernkeeper_job_result_2",
+  ], "-你还可以试试别的工作，领主和镇长们常常有一些活我们不知道。周围的村庄也常常需要帮助，不过村民们大多是用温热的奶酪和善意，而不是又冷又硬的第纳尔来表示感谢。", "tavernkeeper_job_result_2",
    [
        ]],
 
-  [anyone,"tavernkeeper_job_result_2", [], "I'll keep my ears open for other opportunities. You may want to ask again from time to time.", "close_window",[]],
+  [anyone,"tavernkeeper_job_result_2", [], "-我会留意是否有其他机遇的，你可以常常来问我。", "close_window",[]],
 
   
   
@@ -20065,7 +20065,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                                                                             (assign, "$ransom_broker_ransom_me_told",0),
                                                                                             ]],
 
-  [anyone|plyr,"ransom_broker_info_talk",[(eq, "$ransom_broker_families_told",0)], "What if their families can't pay?", "ransom_broker_families",[]],
+  [anyone|plyr,"ransom_broker_info_talk",[(eq, "$ransom_broker_families_told",0)], "-如果他们的家人不肯付钱呢？", "ransom_broker_families",[]],
   [anyone, "ransom_broker_families", [], "Oh, then I spin them a few heartwarming tales of life on the galleys.\
  You'd be surprised what sorts of treasures a peasant can dig out of his cowshed or wheedle out of his cousins,\
  assuming he's got the proper motivation!\
@@ -20080,7 +20080,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone, "ransom_broker_ransom_me", [], "Of course. I'm welcome in every court in Calradia.\
  There's not many who can say that! So always be sure to keep a pot of denars buried somewhere,\
  and a loyal servant who can find it in a hurry.", "ransom_broker_info_talk",[(assign, "$ransom_broker_ransom_me_told",1)]],
-  [anyone|plyr,"ransom_broker_info_talk",[], "That's all I need to know. Thank you.", "ransom_broker_pretalk",[]],
+  [anyone|plyr,"ransom_broker_info_talk",[], "-我明白了。谢谢你。", "ransom_broker_pretalk",[]],
 
   [anyone,"start", [(is_between, "$g_talk_troop", ransom_brokers_begin, ransom_brokers_end),
   ],
@@ -20090,7 +20090,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
   [anyone|plyr,"ransom_broker_talk",
    [[store_num_regular_prisoners,reg(0)],[ge,reg(0),1]],
-   "Then you'd better bring your purse. I have got prisoners to sell.", "ransom_broker_sell_prisoners",[]],
+   "-那你最好准备好你的钱包，因为我带了一些俘虏过来。", "ransom_broker_sell_prisoners",[]],
   [anyone|plyr,"ransom_broker_talk", [], "-再给我说一遍你是做什么的。", "ransom_broker_intro_2",[]],
   
   
@@ -20132,7 +20132,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   (store_troop_gold, ":player_gold", "trp_player"),
   (ge, ":player_gold", "$companion_ransom_amount"),
   
-  ], "Here's your money.", "ransom_broker_ransom_companion_accept",[
+  ], "-这是给你的钱。", "ransom_broker_ransom_companion_accept",[
   (troop_remove_gold, "trp_player", "$companion_ransom_amount"),
   
   
@@ -20156,7 +20156,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   ]],  
 
   [anyone|plyr,"ransom_broker_ransom_companion_verify",[
-  ], "I can't afford that right now.", "ransom_broker_ransom_companion_refuse",[]],  
+  ], "-我现在付不起那么多钱。", "ransom_broker_ransom_companion_refuse",[]],  
   
   
   [anyone,"ransom_broker_ransom_companion_accept",[], "-好极了！我想，过不了几天，你会看到{s5}赶来重新归队，神采飞扬并且无疑非常感激你！还有什么别的能帮到你的吗？", "ransom_broker_talk",[
@@ -20164,7 +20164,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   
   ]],
   
-  [anyone,"ransom_broker_ransom_companion_refuse",[], "Of course, of course... Never mind what they say about the rats, by the way -- I've never actually seen one myself, on account of the pitch-black darkness. Anyway, I'm sure that {s5} will understand why it's important for you to control expenditures. Now... Was there anything else?", "ransom_broker_talk",[
+  [anyone,"ransom_broker_ransom_companion_refuse",[], "-当然，当然……不用担心我提到的那些老鼠什么的，顺便说一下——实际上由于那种地方一片漆黑，我自己也从来没有亲眼看到过。不管怎样，我确信{s5}会明白你为什么要对开销进行控制的重要性。那么……还有什么事吗？", "ransom_broker_talk",[
   (str_store_troop_name, s5, "$companion_to_be_ransomed"),
   ]],
   
@@ -20199,8 +20199,8 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "-欢迎，{playername}。我前些天在{s11}的酒馆见到了你的同伴{s10}。我想你也许有兴趣了解这个。", "tavern_traveler_lost_companion_thanks",
    [(assign, "$last_lost_companion", 0)]],
 
-  [anyone|plyr, "tavern_traveler_lost_companion_thanks", [(troop_get_type, reg3, "$last_lost_companion")], "Thanks. I'll go and find {reg3?her:him} there.", "tavern_traveler_pretalk", []],
-  [anyone|plyr, "tavern_traveler_lost_companion_thanks", [], "Thanks, but I don't really care.", "tavern_traveler_pretalk", []],
+  [anyone|plyr, "tavern_traveler_lost_companion_thanks", [(troop_get_type, reg3, "$last_lost_companion")], "-谢谢。我将去那里找{reg3?她:他}。", "tavern_traveler_pretalk", []],
+  [anyone|plyr, "tavern_traveler_lost_companion_thanks", [], "-谢谢，但是我真的不在乎。", "tavern_traveler_pretalk", []],
 
   [anyone, "start", [(is_between, "$g_talk_troop", tavern_travelers_begin, tavern_travelers_end),
                      ],
@@ -20269,7 +20269,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    [],  "-没事。", "tavern_traveler_pretalk", []],
 
 
-  [anyone, "tavern_traveler_pretender_location_ask_2", [], "I can reveal this information to you for a small price, let's say 30 denars.", "tavern_traveler_pretender_location_ask_money", []],
+  [anyone, "tavern_traveler_pretender_location_ask_2", [], "-你需要花点小费，我才能把这个信息透露给你。这么说吧，30第纳尔。", "tavern_traveler_pretender_location_ask_money", []],
   
   [anyone|plyr, "tavern_traveler_pretender_location_ask_money",
    [
@@ -20323,7 +20323,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "tavern_traveler_companion_location_ask",
    [],  "-没事。", "tavern_traveler_pretalk", []],
 
-  [anyone, "tavern_traveler_companion_location_ask_2", [(str_store_troop_name, s15, "$temp")], "I guess I know where {s15} is. For 30 denars, I'll tell you.", "tavern_traveler_companion_location_ask_money", []],
+  [anyone, "tavern_traveler_companion_location_ask_2", [(str_store_troop_name, s15, "$temp")], "-我猜我知道{s15}在哪里。付我30第纳尔，我就告诉你。", "tavern_traveler_companion_location_ask_money", []],
 
   [anyone|plyr, "tavern_traveler_companion_location_ask_money",
    [
@@ -20376,7 +20376,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
   [anyone|plyr, "tavern_traveler_answer", [(store_troop_gold, ":cur_gold", "trp_player"),
                                             (ge, ":cur_gold", 100)],
-   "Here's 100 denars. Tell me what you know.", "tavern_traveler_continue", [(party_get_slot, ":info_faction", "$g_encountered_party", slot_center_traveler_info_faction),
+   "-这是100第纳尔。告诉我你都知道些什么。", "tavern_traveler_continue", [(party_get_slot, ":info_faction", "$g_encountered_party", slot_center_traveler_info_faction),
                                            (call_script, "script_update_faction_traveler_notes", ":info_faction"),
                                            (change_screen_notes, 2, ":info_faction"),
                                            ]],
@@ -20385,7 +20385,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "-抱歉朋友。我没兴趣。", "close_window", []],
 
   [anyone, "tavern_traveler_continue", [],
-   "Well, that's all I can tell you. Good bye.", "close_window", [(troop_remove_gold, "trp_player", 100),]],
+   "-好了，那就是我所能告诉你的了。再见。", "close_window", [(troop_remove_gold, "trp_player", 100),]],
 
 #Tavern Talk (with book sellers)
   [anyone, "start", [(is_between, "$g_talk_troop", tavern_booksellers_begin, tavern_booksellers_end),
@@ -20423,7 +20423,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	(this_or_next|eq, "$g_talk_troop", "trp_tavern_minstrel_1"),
 		(eq, "$g_talk_troop", "trp_tavern_minstrel_5"),
   ],  
-   "I can teach you the poem, 'The Storming of the Castle of Love.' It is short enough to be easily learned. It is an allegoric poem, replete with symbols and metaphor. It describes how a brave but rough warrior wins the heart of his lady by learning the virtues of chivalry, becoming a true and noble knight. Its theme -- that the role of a woman is to inspire but also civilize a man -- is appreciated by some noble ladies, but not all.", 
+   "-我可以教你《爱情城堡之风暴》这首诗，它并不长，因此很容易学。而且它还是一首寓言诗，充满了象征和比喻。记述了一个勇敢但青涩的战士是如何通过学习骑士精神，成为了一个真正高尚的贵族骑士而抱得美人归的故事。它的主题就是女性能够激励并开化男人，因此不少贵族小姐们很喜欢这首诗，当然，并不是所有人都喜欢。", 
    "minstrel_courtship_poem_teach", [
     (assign, "$poem_selected", courtship_poem_allegoric),
    ]],
@@ -20433,7 +20433,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	(this_or_next|eq, "$g_talk_troop", "trp_tavern_minstrel_3"),
 		(eq, "$g_talk_troop", "trp_tavern_minstrel_1"),
   ],  
-   "I can teach you the poem, 'The Heart's Desire.' It is a lyrical poem, which can be interpreted either erotically or spiritually. The lover realizes the majesty of the divine by gazing upon the body of his beloved. I believe that it appeals to women of a certain romantic temperament, but you risk scandalizing or boring others.", 
+   "-我可以教你《心中的渴望》这首诗，它是一首非常好的抒情诗，可以很巧妙地从肉体之爱和精神之爱双角度来解释。爱人通过看到他心爱之人的身体感受到神般的伟大。我确信这首诗能够打动那些充满少女情怀的小姐们，不过你得知道，这首诗也可能让其他人感到反感和枯燥。", 
    "minstrel_courtship_poem_teach", [
    (assign, "$poem_selected", courtship_poem_mystic),
    ]],
@@ -20443,7 +20443,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   	(eq, "$tragic_poem_recitations", 0),
 	(this_or_next|eq, "$g_talk_troop", "trp_tavern_minstrel_3"),
 		(eq, "$g_talk_troop", "trp_tavern_minstrel_2"),  ],  
-   "I can teach you the tale of Kais and Layala. It is a sad and simple story -- the shepherd boy Kais and the nobleman's daughter Layala love each other, but they can never marry. The poem is Kais' lament as he wanders alone, unwilling to forget his true love, driving himself mad with longing. Some ladies melt at the sweetness of his sorrows; others glaze over at his self-pity.", 
+   "-我可以教你有关凯斯和莱亚拉的故事，它简单而悲伤——年轻的羊倌凯斯和贵族少女莱亚拉彼此相爱，但是他们永远不可能结合。这首诗就是凯斯独自流浪时的悲叹与恸哭，他不愿意忘记自己的一生所爱，这份冲动和激情在漫长的孤独中几乎让他发狂。他的悲伤所透出的纯情让许多女士们黯然泪下，但是有些女士仅仅是轻蔑他的自怨自艾。", 
    "minstrel_courtship_poem_teach", [
    (assign, "$poem_selected", courtship_poem_tragic),
    
@@ -20457,7 +20457,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 		(eq, "$g_talk_troop", "trp_tavern_minstrel_2"),
  
   ],  
-   "I can teach you part of the saga of Helgerad and Kara. It is a heroic tale, full of blood and battle. The shieldmaiden Kara chooses the warrior Helgered as her lover, as he is the only man who can defeat her in combat. Her father, who pledged her to another, comes with his sons and his huscarls to kill Helgered. They fight, and Helgered and Kara slaughter the entire host except for Kara's beloved younger brother -- who, alas, grows up to avenge his father by slaying Helgered. The depiction of warrior and shieldmaiden as equals will appeal to some women, but a mail-wearing, blood-spattered heroine will shock and repulse others.",
+   "-我可以教你一部分海格雷德和凯拉的传说，这是一个充满血腥和战斗的英雄故事。少女盾手凯拉选择了唯一能打败她的战士海格雷德作她的爱人。但她的父亲已经把她许配给了另一个男人，于是带着他的儿子们和部下们准备杀掉海格雷德。海格雷德和凯拉英勇地作战，屠杀了所有的不速之客——除了凯拉最喜欢的弟弟，而他在多年后为了替自己的父亲复仇杀死了海格雷德。这个传说中战士和少女盾手间平等的描写能够打动不少女士，但是一个全副武装，所到之处血流成河的女英雄形象很可能让一部分女士们感到厌恶。",
    "minstrel_courtship_poem_teach", [
    (assign, "$poem_selected", courtship_poem_heroic),
    ]],
@@ -20468,7 +20468,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	(this_or_next|eq, "$g_talk_troop", "trp_tavern_minstrel_5"),
 		(eq, "$g_talk_troop", "trp_tavern_minstrel_4"),
   ],  
-   "I can teach you the poem, 'An Argument in the Garden.' It is a comic poem, which satirizes the conventions of courtly love. A lover steals into a garden in Veluca, and plies her with lots of witty lines to persuade his lover to submit to his embraces. She shoots down all of his advances one by one, then when he is downcast, she takes him in her arms and tells him that she wanted him all along, except on her terms, not his. A lady with a sense of humor may find it amusing, but others might feel that they are the ones who are being mocked.", 
+   "-我可以教你《花园中的争论》这首诗，这首欢乐的诗巧妙的讽刺了传统的宫廷式婚姻延续下来的习俗。一个恋爱中的小伙子偷偷潜入了维鲁加的一座花园，费尽口舌，说遍了所有诙谐机智的恭维，但还是没办法说服他的爱人给他一个拥抱。正当口干舌燥的他气馁不已时，他的女友紧紧地抱住了他，深情地对他说，她会永远爱他，她也很想拥抱他，只是她有自己的理由，而不是他罗列的那些。一位拥有幽默感的女士很容易被其中幽默所感染，不过那些死板严肃的姑娘们则会认为她们也是那些被嘲笑的女士中的一员。", 
    "minstrel_courtship_poem_teach", [
    (assign, "$poem_selected", courtship_poem_comic),
    ]],
@@ -20559,7 +20559,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "minstrel_courtship_poem_teach_4", [
   (eq, "$poem_selected", courtship_poem_allegoric),
   ],
-  "'I deflected her skeptical questioning darts...'",
+  "-“红颜本多疑……”",
   "minstrel_learn_poem_continue", [
     (troop_remove_gold, "trp_player", 300),
     (val_add, "$allegoric_poem_recitations", 1),
@@ -20569,7 +20569,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "minstrel_courtship_poem_teach_4", [
   (eq, "$poem_selected", courtship_poem_mystic),
   ],
-  "'You are the first and the last..'",
+  "-“你是终，你是始……”",
   "minstrel_learn_poem_continue", [
     (troop_remove_gold, "trp_player", 300),
     (val_add, "$mystic_poem_recitations", 1),
@@ -20581,7 +20581,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "minstrel_courtship_poem_teach_4", [
   (eq, "$poem_selected", courtship_poem_tragic),
   ],
-  "'The wind that blows the dry steppe dust...'",
+  "-“风吹起草原上的尘埃……”",
   "minstrel_learn_poem_continue", [
     (troop_remove_gold, "trp_player", 300),
 	(val_add, "$tragic_poem_recitations", 1),
@@ -20591,7 +20591,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "minstrel_courtship_poem_teach_4", [
   (eq, "$poem_selected", courtship_poem_heroic),
   ],
-  "'A light pierced the gloom over Wercheg cliffs...'",
+  "-“窝车则的悬崖上，火光刺破黑暗……”",
   "minstrel_learn_poem_continue", [
     (troop_remove_gold, "trp_player", 300),
 	(val_add, "$heroic_poem_recitations", 1),
@@ -20601,7 +20601,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "minstrel_courtship_poem_teach_4", [
   (eq, "$poem_selected", courtship_poem_comic),
   ],
-  "'All the silks of Veluca...'",
+  "-“全维鲁加城的绸锻……”",
   "minstrel_learn_poem_continue", [
     (troop_remove_gold, "trp_player", 300),
 	(val_add, "$comic_poem_recitations", 1),
@@ -20973,7 +20973,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   (neg|check_quest_active, "qst_duel_courtship_rival"),
   (neg|troop_slot_ge, "trp_player", slot_troop_spouse, kingdom_ladies_begin),
   ],  
-   "What? I'll make that miscreant face my sword", 
+   "-什么？我会让这个无赖尝尝我手中宝剑的滋味。", 
    "minstrel_duel_confirm", []],
    
   [anyone, "minstrel_duel_confirm", [
@@ -20996,7 +20996,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    
   [anyone, "minstrel_duel_issued", [
   ],  
-   "As you wish. I'll spead the word of your intentions, so that {s13} does not try to back out...", 
+   "-如你所愿，我将宣扬你决斗的意图，让{s13}无法退出。", 
    "minstrel_pretalk", [
 	(str_store_troop_name, s11, "$lady_selected"),
     (str_store_troop_name_link, s13, "$romantic_rival"),
@@ -21100,14 +21100,14 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    ]],
    
   [anyone, "minstrel_nobles", [],    
-   "Nobles are an odd lot. In Calradia, a daughter is a political asset, to be given away to a lord with whom her father wishes to make an alliance. Yet the great families of this land idealize pure love between man and woman, and I have seen many a hardened warrior weep copious tears at the doomed ardour of Sahira and Janun in the songs -- even as he made plans to break his own daughter's heart.",
+   "-贵族们都是些古怪的家伙，在卡拉迪亚，女儿是一件拿来向有意结盟的人示好的政治工具。可是与此同时，那些最为尊贵的家族又不断地向世人昭示男女间纯真美好爱情的可贵，我曾经见过许多坚强如钢铁的战士们因为歌谣中萨辛拉和简乌的故事而泪流满面——尽管他那为了牟利的联姻计划会把他女儿的心毫不留情地撕成碎片。",
 "minstrel_nobles_2", []],
    
   [anyone, "minstrel_nobles_2", [],    
    "-当然，并不是所有人都是这样。有些卡拉迪亚的贵族会让他们的女儿选择那些讨她们喜欢的人作为结婚的对象。可是，有那么一些人，认为让自己的女儿进行任何选择都是对自己权威的损害，他们坚持自行决定女儿的归属，完全不在乎女儿们是否喜欢他们选择的新郎。",
 "minstrel_nobles_3", []],
 
-  [anyone, "minstrel_nobles_3", [], "But the majority will steer a middle course -- they will want to make the final decision about a groom, but will weigh their daughter's preferences heavily. Among other factors, a happy marriage is more likely to produce heirs. So, there is a place for courtship, and for the use of skill and passion to win a lady's heart.",
+  [anyone, "minstrel_nobles_3", [], "-不过，大多数人会选择一种折中的方式，他们会为自己的女儿决定新郎的最终人选，但也考虑到了那些小姐们的喜好。说到底，幸福的婚姻更容易诞生继承人，不是吗？所以，只要有能力，你仍然有机会用你的双手和激情去收获某位贵族小姐的芳心。",
 "minstrel_prequestions", []],
    
   [anyone|plyr, "minstrel_courtship_questions_2", [
@@ -21116,10 +21116,10 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "-当一位女士和她父亲的意见不一致时会出现什么情况？",
    "minstrel_daughter_father", []],
    
-  [anyone, "minstrel_daughter_father", [], "It happens sometimes that a bride elopes. This is a major blow to the father's prestige, leading to lasting enmities. Indeed, it is possible that a war may be fought over a woman. Now, that is a fine topic for a song.",
+  [anyone, "minstrel_daughter_father", [], "-的确有些新娘会私奔。这对她父亲的名望是个沉重的打击，将产生长久的仇视。而且有可能爆发一场战争，仅仅是因为一个女人。这种事倒是很适合作为一首歌的主题。",
    "minstrel_daughter_father_2", []],
 
-  [anyone, "minstrel_daughter_father_2", [], "In the end, however, most brides will submit to their parents' choice. A noblewoman's family is everything to her, and few are brave enough to risk its disapproval for the sake of man she barely knows. She may pine for her lover, but still accept the groom -- and without tragic love, what would we have to sing about?",
+  [anyone, "minstrel_daughter_father_2", [], "-不过最终，大部分的贵族小姐在最后都会屈服于她们父亲的决定。毕竟对一位贵族女性来说，家族和血缘就是她们的一切，而很少有勇敢的姑娘会因为不中意那个她根本不了解的男人而抗争。她们也许会倾心的男子发愁，消瘦，但是正如我所说的，最后她们还是只能接受命运——话说回来，假如没有了那些悲惨的爱情，我还有什么可以用来歌唱？",
    "minstrel_prequestions", []],
    
 
@@ -21127,7 +21127,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    [anyone, "minstrel_player_role", [
    (troop_get_type, ":is_female", "trp_player"),
    (eq, ":is_female", 0),   
-   ], "Of course! Calradian lords make a great deal of lineage, but in the end, lands and money speak louder than one's ancestors. Even though you are a foreigner, if you are coming up in the world, then many parents will consider you a fine catch.",
+   ], "-卡拉迪亚的贵族们当然很重视出身和血统，但是最终决定他们选择的还是实实在在的土地和财富而非你虚无的先祖。哪怕你是一个外来人，只要你的钱包够鼓，你仍然是许多父母心中女婿的上上之选。",
    "minstrel_player_role_2", []],
 
    [anyone, "minstrel_player_role_2", [
@@ -21135,7 +21135,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "minstrel_player_role_3", []],
    
    [anyone, "minstrel_player_role_3", [
-   ], "So know this -- you may have your heart broken. But to enter the arena of love fearing heartbreak is like entering the battlefield fearing the enemy's arrows. Be brave, and shrug off the sting of rejection, and victory may yet be yours.",
+   ], "-所以你应该了解，你很可能会为情所伤，但是在情场上忧惧为爱情所伤就好比在战场上惧怕被流矢射中一样。勇敢些，不要太在意一时的失败，那么你还是很有可能赢得爱情的",
    "minstrel_prequestions", []],
    
    
@@ -21159,19 +21159,19 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   (troop_get_type, ":is_female", "trp_player"),
   (eq, ":is_female", 0),
   ],  
-   "Ah! You are quite the romantic, I see! Well, aside from the obvious benefits of love, companionship and other, em, domestic matters, to marry among the nobility brings great assets. You may forge a strong alliance with the bride's family, and a wife may also assist you in manipulating the politics of the realm to your advantage.",
+   "-啊，你真是一个“浪漫”的人。撇开爱情，伴侣，以及别的一些“家务事”带来的明显好处不谈，和一位贵族结为伴侣能带来许多益处，你不仅可以和配偶的家族结为盟友，你的妻子还能为你在王国的政治斗争中谋取不小的利益。",
    "minstrel_wife_benefits_2", []],
 
   [anyone, "minstrel_wife_benefits_2", [
   ],  
-   "What's more, most of the great families of Calradia have at some point intermarried with royalty, which would boost your own claim to rule -- should you ever choose to assert it...",
+   "-不仅如此，大部分显贵的家族都曾和王室通婚，如果和他们联姻，可以加强你称王的正当理由——呃，假如你想要称王的话。",
    "minstrel_prequestions", []],
    
   [anyone, "minstrel_spouse_benefits", [
   (troop_get_type, ":is_female", "trp_player"),
   (eq, ":is_female", 1),
   ],  
-   "Ah! You are quite the romantic, I see! Well, aside from the obvious benefits of love, companionship and other, em, domestic matters, to marry among the nobility brings great assets. You may have access to the groom's castles and properties, and be able to work with him to advance both of your standings in the realm.",
+   "-哈！我看出来了，你可真浪漫！那么，除了爱情，友谊以及别的显而易见的好处，唔，家庭问题，和贵族结婚会带来大量的财产。你可以分享新郎的城堡和财产，还可以和他一起共事来提升你们共同的地位。",
    "minstrel_wife_benefits_2", []],
   
    
@@ -21202,7 +21202,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "minstrel_player_advice_woo_5", []],
    
   [anyone, "minstrel_player_advice_woo_5", [
-   ], "At any rate, it is a challenging business -- and do not forget, you may find that your suit prospers with a lady, only to have it falter on a father's political ambitions. So you must ask yourself: are you willing to risk disappointment and heartbreak? Alternately, are you willing to throw away your standing in society, to make enemies of allies, in pursuit of a forbidden love? Because if you are, then perhaps some day we will write poems about you.",
+   ], "-不管怎么说，这件事都充满了挑战性——但是别忘记，即使你得到了某位女士的芳心，却很可能在她父亲策划的政治联姻下被踢到一旁。所以你要问问你自己：你是否真的愿意冒着失望和为情所伤的风险？你是否愿意为了一场禁断之恋抛弃你原有的政治立场，去树敌和结盟？因为如果你选择这样做，很有可能我会在某一天为你的事迹写一首悲伤的叙事长诗。",
    "minstrel_prequestions", []],
 
    
@@ -21263,17 +21263,17 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  If one of us so much as breathes a word of protest, they kill the poor soul on the spot right away.\
  Our lives have become unbearable. I risked my skin and ran away to find someone who can help us.", "farmer_from_bandit_village_3", []],
   [anyone|plyr, "farmer_from_bandit_village_3", [],
-   "Why don't you go to the lord of your village? He should take care of the vermin.", "farmer_from_bandit_village_4", []],
+   "-为什么你不去找拥有这个村子的领主？他应该会收拾那些害虫。", "farmer_from_bandit_village_4", []],
   [anyone, "farmer_from_bandit_village_4", [],
    "I did, {sir/madam}, but our lord's men did not let me see him and said he was occupied with more important matters and that we should deal with our own problem ourselves.\
  Please {sir/madam}, you look like a {man/lady} of valor and a fearsome warrior, and you have no doubt many friends and soldiers at your service.\
  If there is anyone who can help us, it's you.", "farmer_from_bandit_village_5", [(assign, "$temp", 0)]],
   [anyone|plyr, "farmer_from_bandit_village_5", [],
-   "Very well, I'll help you. Where is this village?", "farmer_from_bandit_village_accepted", []],
+   "-好吧，我会帮你们解决这个问题的。你们的村子在哪里？", "farmer_from_bandit_village_accepted", []],
   [anyone|plyr, "farmer_from_bandit_village_5", [],
-   "I can't be bothered with this right now.", "farmer_from_bandit_village_denied", []],
+   "-我现在不想管这个麻烦事。", "farmer_from_bandit_village_denied", []],
   [anyone|plyr, "farmer_from_bandit_village_5", [(eq, "$temp", 0)],
-   "Why would I fight these bandits? What's in it for me?", "farmer_from_bandit_village_barter", []],
+   "-为什么我们要与这些强盗作战？我能得到什么？", "farmer_from_bandit_village_barter", []],
 
   
   [anyone, "farmer_from_bandit_village_accepted", [],
@@ -21334,9 +21334,9 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "Any orders, {sir/madam}?", "mercenary_after_recruited", []],
 
   [anyone|plyr, "mercenary_after_recruited", [],
-   "Make your preparations. We'll be moving at dawn.", "mercenary_after_recruited_2", []],
+   "-做好准备。我们要开拔了。", "mercenary_after_recruited_2", []],
   [anyone|plyr, "mercenary_after_recruited", [],
-   "Take your time. We'll be staying in this town for a while.", "mercenary_after_recruited_2", []],
+   "-别急，我们还要在这个镇子呆上一段时间。", "mercenary_after_recruited_2", []],
 
   [anyone, "mercenary_after_recruited_2", [], "Yes {sir/madam}. We'll be ready when you tell us to leave.", "close_window", []],
 
@@ -21389,7 +21389,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "mercenary_tavern_talk", [(eq, "$temp", 0),
                                           (party_get_free_companions_capacity, ":free_capacity", "p_main_party"),
                                           (ge, ":free_capacity", 1)],
-   "That sounds good. But I can't afford to hire any more men right now.", "tavern_mercenary_cant_lead", []],
+   "-你的话听上去不错。但是我现在没有足够的佣金去雇佣更多的人了。", "tavern_mercenary_cant_lead", []],
   
   [anyone, "tavern_mercenary_cant_lead", [], "That's a pity. Well, {reg3?we will:I will} be lingering around here for a while,\
  if you need to hire anyone.", "close_window", []],
@@ -21397,11 +21397,11 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "mercenary_tavern_talk", [(eq, "$temp", 0),
                                           (party_get_free_companions_capacity, ":free_capacity", "p_main_party"),
                                           (eq, ":free_capacity", 0)],
-   "That sounds good. But I can't lead any more men right now.", "tavern_mercenary_cant_lead", []],
+   "-你的话听上去不错。但是我现在无法带上更多的人了。", "tavern_mercenary_cant_lead", []],
 
 
   [anyone|plyr, "mercenary_tavern_talk", [],
-   "Sorry. I don't need any other men right now.", "close_window", []],
+   "-抱歉。我现在不需要人手。", "close_window", []],
 
 #Trainers
   [anyone,"start", [(is_between, "$g_talk_troop", training_gound_trainers_begin, training_gound_trainers_end),
@@ -21424,7 +21424,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone, "trainer_intro_4a", [],
    "-那好，你想问什么就说吧。", "trainer_talk_combat", []],
   [anyone, "trainer_intro_4b", [],
-   "Good. It's good to find someone eager for practice. Let's see what you will do.", "trainer_practice_1", []],
+   "-好，很高兴见到渴望训练的人。那我就看看你的表现了。", "trainer_practice_1", []],
 
  [anyone,"start", [(is_between, "$g_talk_troop", training_gound_trainers_begin, training_gound_trainers_end),
                    (neq,"$waiting_for_training_fight_result", 0),
@@ -21435,7 +21435,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    ]],
   [anyone,"start", [(is_between, "$g_talk_troop", training_gound_trainers_begin, training_gound_trainers_end),
                     (neq, "$waiting_for_training_fight_result", 0)],
- "Ha! Looks like you've developed a bit of a limp there. Don't worry, even losses have their value, provided you learn from them. Shake the stars out of your eyes and get back in there. There's no other way to win.", "trainer_practice_1",
+ "-哈！看起来你好像有点走不了路了。别难过，失败也有它的价值，如果吸取教训的话。揉揉你的眼睛，回去继续打吧，除此之外没有其它的取胜办法。", "trainer_practice_1",
    [(assign,"$num_opponents_to_beat_in_a_row",3),(assign,"$waiting_for_training_fight_result",0)]],
 
     [anyone,"start", [(is_between, "$g_talk_troop", training_gound_trainers_begin, training_gound_trainers_end)],
@@ -21467,7 +21467,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     [anyone|plyr,"trainer_talk_combat", [], "-告诉我如何在马上战斗。", "trainer_explain_horseback",[]],
 #    [anyone|plyr,"trainer_talk_combat", [], "Tell me about using ranged weapons.", "trainer_explain_ranged",[]],
 #    [anyone|plyr,"trainer_talk_combat", [], "Tell me about weapon types.", "trainer_explain_weapon_types",[]],
-    [anyone|plyr,"trainer_talk_combat", [], "I guess I know all the theory I need. Let's talk about something else.", "trainer_pretalk",[]],
+    [anyone|plyr,"trainer_talk_combat", [], "-我想我学会了需要的知识，让我们谈点其他的。", "trainer_pretalk",[]],
 
    [anyone,"trainer_explain_defense", [], "Good question. The first thing you should know as a fighter is how to defend yourself.\
  Keeping yourself out of harm's way is the first rule of combat, and it is much more important than giving harm to others.\
@@ -21475,7 +21475,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	"trainer_explain_defense_2",[]],
   [anyone,"trainer_explain_defense_2", [], "Now. Defending yourself is easiest if you are equipped with a shield.\
  Just block with your shield. [Hold down the right mouse button to defend yourself with the shield.] In this state, you will be able to deflect all attacks that come from your front. However, you will still be open to strikes from your sides or your back.", "trainer_explain_defense_3",[]],
-  [anyone|plyr,"trainer_explain_defense_3", [], "What if I don't have a shield?", "trainer_explain_defense_4",[]],
+  [anyone|plyr,"trainer_explain_defense_3", [], "-如果我没有盾呢？", "trainer_explain_defense_4",[]],
   [anyone,"trainer_explain_defense_4", [], "Then you will have to use your weapon to block your opponent.\
  This is a bit more difficult than defending with a shield.\
  Defending with a weapon, you can block against only ONE attack direction.\
@@ -21575,7 +21575,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      ]],
 
   [anyone|plyr,"novicemaster_are_you_ready", [], "-等一下，我还没准备好。", "novicemaster_not_ready",[]],
-  [anyone,"novicemaster_not_ready", [], "Hey, You will never make it if you don't practice.", "close_window",[]],
+  [anyone,"novicemaster_not_ready", [], "-嘿，不练习你就永远没法提高。", "close_window",[]],
 
 
 #Crooks
@@ -21772,24 +21772,24 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "Very good, my {lord/lady}. Do you require anything else?", "master_craftsman_talk",[]],
    
   [anyone|plyr,"master_craftsman_talk", [],
-   "Let's go over the accounts.", "master_craftsman_accounts",[]],
+   "-让我们检查一下账簿。", "master_craftsman_accounts",[]],
    
   [anyone|plyr,"master_craftsman_talk", [],
-   "Let's check the inventories.", "master_craftsman_pretalk",[
+   "-让我们盘点一下存货。", "master_craftsman_pretalk",[
    (change_screen_loot, "$g_talk_troop"),
    ]],
    
   [anyone|plyr,"master_craftsman_talk", [
   (party_slot_eq, "$g_encountered_party", slot_center_player_enterprise_production_order, 1),
   ],
-   "I'd like you to sell goods as they are produced.", "master_craftsman_pretalk",[
+   "-如果有生产出来的商品我打算卖掉它们。", "master_craftsman_pretalk",[
   (party_set_slot, "$g_encountered_party", slot_center_player_enterprise_production_order, 0),
    ]],
 
   [anyone|plyr,"master_craftsman_talk", [
   (party_slot_eq, "$g_encountered_party", slot_center_player_enterprise_production_order, 0),
   ],
-   "I'd like you to keep all goods in the warehouse until I arrive.", "master_craftsman_pretalk",[
+   "-我希望在我到来之前你将所有的商品都存在仓库里。", "master_craftsman_pretalk",[
   (party_set_slot, "$g_encountered_party", slot_center_player_enterprise_production_order, 1),
    ]],
 
@@ -21879,7 +21879,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   ]],
   
   [anyone|plyr,"master_craftsman_auction_decide", [
-  ], "Hmm. Let's hold off on that.", "master_craftsman_pretalk",[]],
+  ], "-嗯。这事先拖一拖再说吧。", "master_craftsman_pretalk",[]],
   
   [anyone,"master_craftsman_liquidation", [
   ], "-如你所愿。很荣幸成为你雇员。", "close_window",[
@@ -22013,10 +22013,10 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (quest_get_slot,":looters_paid_for","qst_deal_with_looters",slot_quest_current_state),
      (lt,":looters_paid_for",":num_looters_destroyed"),
      ],
-   "I've killed some looters.", "mayor_looters_quest_destroyed",[]],
+   "-我杀掉了一些劫匪。", "mayor_looters_quest_destroyed",[]],
   [anyone|plyr,"mayor_looters_quest_response", [(eq,1,0)
   ],
-   "I've brought you some goods.", "mayor_looters_quest_goods",[]],
+   "-我带了一些货物给你。", "mayor_looters_quest_goods",[]],
   [anyone|plyr,"mayor_looters_quest_response", [
   ],
    "-没什么，先生。告辞。", "close_window",[]],
@@ -22102,7 +22102,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
       (quest_slot_ge,"qst_deal_with_looters",slot_quest_target_item,1),
       (quest_get_slot,reg1,"qst_deal_with_looters",slot_quest_target_item),
   ],
-   "Excellent, here is the money for your {s6}. Do you have any more goods to give me? I still need {reg1} denars' worth of goods.",
+   "-好极了，这是给你{s6}的钱。你还有别的东西给我吗？我还需要{reg1}第纳尔的东西。",
    "mayor_looters_quest_goods_response",[
       ]],
   [anyone,"mayor_looters_quest_goods_2", [
@@ -22229,11 +22229,11 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "According to my accounts, you owe the merchants guild {reg1} denars.\
  I'd better collect that now.", "merchant_ask_for_debts",[(assign,reg(1),"$debt_to_merchants_guild")]],
   [anyone|plyr,"merchant_ask_for_debts", [[store_troop_gold,reg(5),"trp_player"],[ge,reg(5),"$debt_to_merchants_guild"]],
-   "Alright. I'll pay my debt to you.", "merchant_debts_paid",[[troop_remove_gold, "trp_player","$debt_to_merchants_guild"],
+   "-好的。我会付你钱的。", "merchant_debts_paid",[[troop_remove_gold, "trp_player","$debt_to_merchants_guild"],
                                                                 [assign,"$debt_to_merchants_guild",0]]],
-  [anyone, "merchant_debts_paid", [], "Excellent. I'll let my fellow merchants know that you are clear of any debts.", "mayor_pretalk",[]],
+  [anyone, "merchant_debts_paid", [], "-很好，我会让其他商会成员知道你已经付清欠款了。", "mayor_pretalk",[]],
 
-  [anyone|plyr, "merchant_ask_for_debts", [], "I'm afraid I can't pay that sum now.", "merchant_debts_not_paid",[]],
+  [anyone|plyr, "merchant_ask_for_debts", [], "-我很抱歉我付不起那么多钱。", "merchant_debts_not_paid",[]],
   [anyone, "merchant_debts_not_paid", [(assign,reg(1),"$debt_to_merchants_guild")], "In that case, I am afraid, I can't deal with you. Guild rules...\
  Come back when you can pay the {reg1} denars.\
  And know that we'll be charging an interest to your debt.\
@@ -22291,7 +22291,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   (party_get_slot, ":item_produced", "$g_encountered_party", slot_center_player_enterprise),
   (call_script, "script_get_enterprise_name", ":item_produced"),
   (str_store_string, s4, reg0),
-  ], "You already operate a {s4} here. There probably aren't enough skilled tradesmen to start a second enterprise.", "mayor_pretalk",[
+  ], "-你已经在这里开办了{s4}。也许没有足够的工匠来开第二家工厂。", "mayor_pretalk",[
   ]],
 
   [anyone,"mayor_investment_possible",[
@@ -22448,7 +22448,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   (try_end),
   ]],
   
-  [anyone|plyr,"mayor_investment_confirm",[], "No -- that's not economical for me at the moment.", "mayor_pretalk",[
+  [anyone|plyr,"mayor_investment_confirm",[], "-不——现在对我来说那样的投资不合适。", "mayor_pretalk",[
   ]],
   
   [anyone,"mayor_investment_purchase",[], "-很好。你的工厂会在大约一个星期之内开工。下次你来的时候，以及那以后，你可以和你的{s4}交谈关于这个的操作。", "mayor_pretalk",[
@@ -22490,7 +22490,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
        (assign, "$mayor_info_lord_told",1)
     ]],
   
-  [anyone|plyr,"mayor_info_talk",[], "That's all I need to know. Thanks.", "mayor_pretalk",[]],
+  [anyone|plyr,"mayor_info_talk",[], "-我明白了。谢谢。", "mayor_pretalk",[]],
 
 
   [anyone, "mayor_political_talk", [(faction_get_slot, ":faction_leader","$g_encountered_party_faction",slot_faction_leader),
@@ -22507,7 +22507,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 										(str_store_string, s10, "str_s10_and_s11"),
 									(try_end),	
 									],
-   "Politics? Good heaven, the guild has nothing to do with politics. We are loyal servants of {s10}. We merely govern our own affairs, and pass on the townspeople's concerns to our lords and masters, and maybe warn them from time to time against evil advice. Anyway, what did you wish to ask?", "mayor_political_questions",[]],
+   "-政治？我的天啊，我们和政治毫无交集，我们都是{s10}忠诚的仆人。我们仅仅做我们该做的，或者将市民们的意愿上呈给我们尊贵的主人，并不时警告市民们远离邪恶的诱惑而已。你最好问点别的，明白吗？", "mayor_political_questions",[]],
 
   [anyone,"mayor_prepolitics",[ (faction_get_slot, ":faction_leader","$g_encountered_party_faction",slot_faction_leader),
 								(try_begin),
@@ -22517,7 +22517,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 									(str_store_troop_name, s10, ":faction_leader"),
 									(str_store_string, s9, "str_loyal_subjects_of_s10"),
 								(try_end),	
-  ], "Did I mention that we here are all {s9}? Because I can't stress that enough... Anyway... Is there anything else?", "mayor_political_questions",[]],
+  ], "-我没有说起我们都是{s9}吗？也许是我强调的还不够？你还有什么问题？", "mayor_political_questions",[]],
    
    [anyone|plyr,"mayor_political_questions",[], "-我想知道卡拉迪亚上的战火都是如何燃起的？", "mayor_war_description_1",[
   ]],
@@ -22531,12 +22531,12 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 								(try_end),
 								(val_max, "$g_mayor_given_political_dialog", 1),
 								
-  ], "Well, to answer your question generally, each monarch claims to be the rightful heir to the old Calradic emperors. Some of these claims are based on forgotten dynastic marriages and others are based on obscure promises, while {s22} Rhodoks invoke the empire's unwritten constitution. So in theory, any one realm has the right to declare war on any other realm at any time.", "mayor_war_description_2",[]],
+  ], "-总的来说，每一个国家的统治者都宣称自己才是古卡拉德帝国的正统继承人。有的声称自己的继承权来自被遗忘的政治联姻，还有些人的主张则建立在他们含糊不明的契约上，比如罗多克的{s22}。所以在理论上，大陆上的任何一个国家都有权在任何时候向其他国家宣战。", "mayor_war_description_2",[]],
   
   [anyone,"mayor_war_description_2",[ (faction_get_slot, ":faction_leader","$g_encountered_party_faction",slot_faction_leader),
 								(str_store_troop_name, s10, ":faction_leader"),
 								(troop_get_type, reg4, ":faction_leader"),
-  ], "In practice, to make war is exhausting work. It is easy enough to lay waste to the enemy's farmland, but crops will grow back, and it is a far different matter to capture an enemy stronghold and to hold it. So the monarchs of Calradia will fight a little, sign a truce, fight a little more, and so on and so forth. Often, a monarch will go to war when another realm provokes them. At such times, some bad influences who look to enrich themselves with ransoms and pillage will clamor for retribution, and thus the damage caused by war to a monarch's treasury is less than the damage caused by doing nothing would be to his authority... I'm of course not talking about {s10}, as no one would ever question {reg4?her:his} authority", "mayor_war_description_3",[]],
+  ], "-实际上，战争是一件劳民伤财的事，你可以把敌人的田地化为灰烬，但农作物还是会重新生长，如果要夺取敌人的一座城堡就更为艰难了。所以卡拉迪亚上的国王间仅仅发生小规模的冲突，然后就缔结停战协定，不久后再发动一次小小的冲突，就这样不断继续下去。当别国进行骚扰和挑拨时，迫于国内那些渴望在战争中通过勒索赎金和抢劫而致富的领主们要求报复的呼声，国王常常会亲自出征。说到底，战争对国库造成的损失在避免战争给国王的威信和权威造成的损害面前简直不值一提……我绝对不是在谈论{s10}，你明白的，过去，现在以及将来都没有人可以质疑{reg4?她:他}的权威。", "mayor_war_description_3",[]],
   
   [anyone,"mayor_war_description_3",[
  	(faction_get_slot, ":faction_leader","$g_encountered_party_faction",slot_faction_leader),	
@@ -22549,7 +22549,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	(faction_get_slot, ":faction_leader","$g_encountered_party_faction",slot_faction_leader),	
 	(troop_get_type, reg4, ":faction_leader"),
    
-  ], "You may tell {s10} this if you see {reg4?her:him}. Don't mention my name specifically -- just say 'the people of {s4}' told you this. Our personal opinion, of course, as to what would be in {s10}'s best interests. None of us would ever dream of questioning a monarch's sovereign right to push {reg4?her:his} legitimate claims.", "mayor_prepolitics",[
+  ], "-如果你有幸见到{s10}的话，别在{reg4?她:他}面前提到我的名字，只要说是{s4}的人民这样告诉你的就可以了，在我们看来，这样确实对{s10}最有利，但即使如此，我们中也没有一个人想过质疑一位帝王追求霸业的权利。", "mayor_prepolitics",[
   ]],
   
   [anyone|plyr,"mayor_political_questions",[
@@ -22563,7 +22563,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	  (assign, ":continue", 1), #at least 1 faction is active
 	(try_end),
 	(eq, ":continue", 1),
-  ], "What is {s10}'s policy in regards to the other realms of Calradia?", "mayor_politics_assess",[
+  ], "-{s10}对卡拉迪亚上其他的王国采取什么样的政策？", "mayor_politics_assess",[
   ]],
 
   [anyone,"mayor_politics_assess",[], "-你想知道对哪个国家的政策？", "mayor_politics_assess_realm",[
@@ -22594,11 +22594,11 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   ], "-这么说吧，在{s4}，我们团结在对{s5}的敬爱和忠诚之下，我们主张{reg4?她:他}对整个卡拉迪亚的合法统治权。而在其他的国家，内部的不和却是家常便饭。", "mayor_internal_politics_2",[
   ]],  
 
-  [anyone,"mayor_internal_politics_2",[], "The lords of a realm often have very different ideas about honor, strategy, and the way a nobleman should behave. In addition, they compete with each other for the ruler's favor, and are constantly weighing up their position -- how they stand, how their friends and family stand, and how their enemies stand.", "mayor_internal_politics_3", []],
+  [anyone,"mayor_internal_politics_2",[], "-同一个国家的领主们常常在荣誉观念，战略以及贵族应有的行为上产生巨大的分歧，除此以外，他们也彼此竞争，不仅通过自己的良好表现获得他们主君的青睐，还在不断地审视盘算所有人的立场——包括他们自己的立场，他们的朋友和家人的立场，还有他们敌人的立场。", "mayor_internal_politics_3", []],
 
   [anyone,"mayor_internal_politics_3",[], "-在这些压力之下，一个领主很可能会离弃他的主君并向另一位国王宣誓效忠，理论上说，每位领主都立下过对主君忠实的誓言，但实际上他们总能找到理由来为自己的改换门庭开脱。他可能宣称自己的主君没有按约定给予他保护或公平地对待他。更有甚者，他们宣称自己的主君是一个可耻的篡位者，王冠应该戴在它真正的主人头上。", "mayor_internal_politics_4", []],
 
-  [anyone,"mayor_internal_politics_4",[], "Lieges and vassals still watch each other carefully. If a king believes that his vassal is going to change sides or rebel, he may indict the vassal for treason and seize his properties. Likewise, if a vassal fears that he will be indicted, he may rebel. Usually, whoever makes the first move will be able to control the vassal's fortresses.", "mayor_internal_politics_5", []],
+  [anyone,"mayor_internal_politics_4",[], "-国王和领主们始终对彼此抱有戒心。当一位国王确信他的某位封臣将要投敌或者叛乱的时候，他会以叛国罪指控这位领主并剥夺他的所有财产。同样，当一位领主有足够的理由担忧他将被国王提出指控的时候，他将会叛乱以保全自己。一般来说，先下手为强，后下手遭殃啊。", "mayor_internal_politics_5", []],
   
   [anyone,"mayor_internal_politics_5",[], "-如今，人们不会相信一个朝秦暮楚的领主，也不相信那种兔死狗烹，将一个又一个领主定为叛国贼的国王。国王和领主，这两个阵营构成了整个国家，但当两个阵营彼此间的关系恶化时，整个国家的局势都将变得一触即发……不过这些事只会发生在别的国家，绝不会发生在{s4}。", "mayor_prepolitics", []],
   
@@ -22606,9 +22606,9 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   
 
   [anyone,"merchant_quest_about_job", [], "-怎么了？", "merchant_quest_about_job_2",[]],
-  [anyone|plyr,"merchant_quest_about_job_2", [], "What if I can't finish it?", "merchant_quest_what_if_fail",[]],
-  [anyone|plyr,"merchant_quest_about_job_2", [], "Well, I'm still working on it.", "merchant_quest_about_job_working",[]],
-  [anyone,"merchant_quest_about_job_working", [], "Good. I'm sure you will handle it.", "mayor_pretalk",[]],
+  [anyone|plyr,"merchant_quest_about_job_2", [], "-如果我无法完成任务怎么办？", "merchant_quest_what_if_fail",[]],
+  [anyone|plyr,"merchant_quest_about_job_2", [], "-嗯，我还在做。", "merchant_quest_about_job_working",[]],
+  [anyone,"merchant_quest_about_job_working", [], "-很好，我相信你是能完成的。", "mayor_pretalk",[]],
 
 
   [anyone,"merchant_quest_last_offered_job", [], "-呃，你会再考虑一下，很好……", "merchant_quest_brief",
@@ -22616,7 +22616,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
 
   [anyone,"merchant_quest_what_if_fail", [(store_partner_quest,":partner_quest"),(eq,":partner_quest","qst_deliver_wine")],
-   "I hope you don't fail. In that case, I'll have to ask for the price of the cargo you were carrying.", "mayor_pretalk",[]],
+   "-我希望你不要失败，否则你就得替那些货物赔钱。", "mayor_pretalk",[]],
   [anyone,"merchant_quest_what_if_fail", [], "-好吧，尽你的力去做吧。", "mayor_pretalk",[]],
 
   [anyone,"merchant_quest_taken", [], "-太棒了，全靠你了。祝你好运。", "mayor_pretalk",
@@ -22663,9 +22663,9 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  A lot of valuable goods were taken. I need somebody to teach those bastards a lesson.\
  Sound like your kind of work?", "merchant_quest_looters_choice", []],
 
-  [anyone|plyr,"merchant_quest_looters_choice", [], "Aye, I'll do it.", "merchant_quest_looters_brief", []],
+  [anyone|plyr,"merchant_quest_looters_choice", [], "-是，我会去做这个。", "merchant_quest_looters_brief", []],
 
-  [anyone|plyr,"merchant_quest_looters_choice", [], "I'm afraid I can't take the job at the moment.", "merchant_quest_stall",[]],
+  [anyone|plyr,"merchant_quest_looters_choice", [], "-恐怕我现在不能帮你的忙。", "merchant_quest_stall",[]],
 
   [anyone,"merchant_quest_looters_brief", [
    (try_begin),
@@ -22805,7 +22805,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 	"-像那样的强盗一般把他们的营地建立在森林深处。要发现那个位置的最好办法就是找到一群归巢补给的雪原强盗，然后跟踪他们。", "merchant_quest_track_bandit_lair_choice",
    []],
 
-  [anyone|plyr,"merchant_quest_track_bandit_lair_choice", [], "Aye, I'll do it.", "merchant_quest_destroy_lair_brief", [
+  [anyone|plyr,"merchant_quest_track_bandit_lair_choice", [], "-是，我会去做这个。", "merchant_quest_destroy_lair_brief", [
 	
     (quest_get_slot, ":target_party", "qst_destroy_bandit_lair", slot_quest_target_party),
     (party_set_flags, ":target_party", pf_quest_party, 1),
@@ -22820,7 +22820,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     (call_script, "script_start_quest", "qst_destroy_bandit_lair", "$g_talk_troop"),
   ]],
    
-  [anyone|plyr,"merchant_quest_track_bandit_lair_choice", [], "I'm afraid I can't take the job at the moment.", "lord_pretalk",[
+  [anyone|plyr,"merchant_quest_track_bandit_lair_choice", [], "-恐怕我现在不能帮你的忙。", "lord_pretalk",[
   (quest_set_slot, "qst_destroy_bandit_lair", slot_quest_dont_give_again_remaining_days, 1),
   ]],   
    
@@ -22878,10 +22878,10 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (quest_get_slot, ":target_party", "qst_track_down_bandits", slot_quest_target_party), 
 	 (str_store_party_name, s4, ":target_party"),
 	 ],
-	"We would like you to track these {s4} down. The merchants of the town were able to get a description of their leader, and have put together a bounty. If you can hunt them down and destroy them, we'll make it worth your while...", "merchant_quest_track_bandits_choice",
+	"-我们希望你能追捕那些{s4}，镇子里的商队会对他们首领的特征做出一些描述，并拿出一笔赏金给予消灭他们的人。", "merchant_quest_track_bandits_choice",
    []],
 
-  [anyone|plyr,"merchant_quest_track_bandits_choice", [], "Aye, I'll do it.", "merchant_quest_track_bandits_brief", [
+  [anyone|plyr,"merchant_quest_track_bandits_choice", [], "-是，我会去做这个。", "merchant_quest_track_bandits_brief", [
     (assign, "$merchant_offered_quest", 0),
 	(assign,"$merchant_quest_last_offerer", "$g_talk_troop"),
 	
@@ -22905,7 +22905,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    (assign, "$g_leave_encounter", 1),
    ]], 
   
-  [anyone|plyr,"merchant_quest_track_bandits_choice", [], "I'm afraid I can't take the job at the moment.", "merchant_quest_stall",[
+  [anyone|plyr,"merchant_quest_track_bandits_choice", [], "-恐怕我现在不能帮你的忙。", "merchant_quest_stall",[
   (quest_set_slot, "qst_track_down_bandits", slot_quest_dont_give_again_remaining_days, 1),
   ]],
    
@@ -22947,7 +22947,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     (call_script, "script_start_quest", "qst_deliver_wine", "$g_talk_troop"),
     ]],
 
-  [anyone|plyr,"merchant_quest_brief_deliver_wine", [], "I am afraid I can't carry all that cargo now.", "merchant_quest_stall",[]],
+  [anyone|plyr,"merchant_quest_brief_deliver_wine", [], "-恐怕我现在带不了这么多货物。", "merchant_quest_stall",[]],
 
 #escort merchant caravan:
   [anyone,"merchant_quest_requested", [(eq,"$random_merchant_quest_no","qst_escort_merchant_caravan")], "You're looking for a job?\
@@ -22989,11 +22989,11 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"escort_merchant_caravan_quest_brief", [(store_party_size_wo_prisoners, ":party_size", "p_main_party"),
                                                        (quest_get_slot, ":quest_target_amount", "qst_escort_merchant_caravan", slot_quest_target_amount),
                                                        (lt,":party_size",":quest_target_amount"),],
-   "I am afraid I don't have that many soldiers with me.", "merchant_quest_stall",[]],
+   "-我很抱歉我没有那么多人。", "merchant_quest_stall",[]],
   [anyone|plyr,"escort_merchant_caravan_quest_brief", [(store_party_size_wo_prisoners, ":party_size", "p_main_party"),
                                                        (quest_get_slot, ":quest_target_amount", "qst_escort_merchant_caravan", slot_quest_target_amount),
                                                        (ge,":party_size",":quest_target_amount"),],
-   "Sorry. I can't do that right now", "merchant_quest_stall",[]],
+   "-对不起，我现在不能做这件事。", "merchant_quest_stall",[]],
 
   [party_tpl|pt_merchant_caravan,"start", [(quest_get_slot, ":quest_target_party", "qst_escort_merchant_caravan", slot_quest_target_party),
                                            (eq,"$g_encountered_party",":quest_target_party"),
@@ -23042,18 +23042,18 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                (str_store_party_name, s1, ":quest_target_center"),
                                ]],
   
-  [anyone,"merchant_caravan_intro_2", [], "Well, It is good to know we won't travel alone. What do you want us to do now?", "escort_merchant_caravan_talk",[]],
+  [anyone,"merchant_caravan_intro_2", [], "-那么，我很高兴我们不再是孤独的旅行了。你现在想要我们做什么？", "escort_merchant_caravan_talk",[]],
   
   [party_tpl|pt_merchant_caravan,"start", [(quest_get_slot, ":quest_target_party", "qst_escort_merchant_caravan", slot_quest_target_party),
                                            (eq, "$g_encountered_party", ":quest_target_party"),
                                            ],
-   "Eh. We've made it this far... What do you want us to do?", "escort_merchant_caravan_talk",[]],
+   "-呃，我们已经走了这么远了。你想要我们做什么？", "escort_merchant_caravan_talk",[]],
   
-  [anyone|plyr,"escort_merchant_caravan_talk", [], "You follow my lead. I'll take you through a safe route.", "merchant_caravan_follow_lead",[]],
-  [anyone,"merchant_caravan_follow_lead", [], "Alright. We'll be right behind you.", "close_window",[(assign, "$escort_merchant_caravan_mode", 0),
+  [anyone|plyr,"escort_merchant_caravan_talk", [], "-你跟着我，我将带你们走一条安全的路线。", "merchant_caravan_follow_lead",[]],
+  [anyone,"merchant_caravan_follow_lead", [], "-好吧，我们将紧紧跟着你。", "close_window",[(assign, "$escort_merchant_caravan_mode", 0),
                                                                                                      (assign, "$g_leave_encounter", 1)]],
-  [anyone|plyr,"escort_merchant_caravan_talk", [], "You stay here for a while. I'll go ahead and check the road.", "merchant_caravan_stay_here",[]],
-  [anyone,"merchant_caravan_stay_here", [], "Alright. We'll be waiting here for you.", "close_window",[(assign, "$escort_merchant_caravan_mode", 1),
+  [anyone|plyr,"escort_merchant_caravan_talk", [], "-你在这等一会儿，我去前方侦察一下。", "merchant_caravan_stay_here",[]],
+  [anyone,"merchant_caravan_stay_here", [], "-好吧，我们在这里等你。", "close_window",[(assign, "$escort_merchant_caravan_mode", 1),
                                                                                                        (assign, "$g_leave_encounter", 1)]],
 #  [anyone|plyr,"escort_merchant_caravan_talk", [], "You go ahead to {s1}. I'll catch up with you.", "merchant_caravan_go_to_destination",[]],
 #  [anyone,"merchant_caravan_go_to_destination", [], "Alright. But stay close.", "close_window",[[assign,"escort_merchant_caravan_mode",2]]],
@@ -23092,7 +23092,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    []],
   
   [anyone|plyr,"troublesome_bandits_quest_brief", [],
-   "Sorry. I don't have time for this right now.", "merchant_quest_stall",[]],
+   "-对不起，我现在没时间。", "merchant_quest_stall",[]],
 
 # Kidnapped girl:
   [anyone,"merchant_quest_requested", [(eq, "$random_merchant_quest_no", "qst_kidnapped_girl")],
@@ -23145,7 +23145,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    []],
   
   [anyone|plyr,"kidnapped_girl_quest_brief", [],
-   "Sorry. I don't have time for this right now.", "merchant_quest_stall",[]],
+   "-对不起，我现在没时间。", "merchant_quest_stall",[]],
 
 
   [trp_kidnapped_girl,"start",
@@ -23167,7 +23167,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "close_window", [(party_join),
                     (quest_set_slot, "qst_kidnapped_girl", slot_quest_current_state, 3),
                     (assign, "$g_leave_encounter",1)]],
-  [trp_kidnapped_girl|plyr,"kidnapped_girl_liberated_map", [], "Wait here a while longer. I'll come back for you.", "kidnapped_girl_liberated_map_2b",[]],
+  [trp_kidnapped_girl|plyr,"kidnapped_girl_liberated_map", [], "-在这里等会，我马上就会回来。", "kidnapped_girl_liberated_map_2b",[]],
   [trp_kidnapped_girl,"kidnapped_girl_liberated_map_2b", [], "Oh, please {sir/madam}, do not leave me here all alone!", "close_window",[(assign, "$g_leave_encounter",1)]],
 
 
@@ -23180,7 +23180,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "close_window",[(party_add_members, "p_main_party","trp_kidnapped_girl",1),
                    (quest_set_slot, "qst_kidnapped_girl", slot_quest_current_state, 3),
                    ]],
-  [trp_kidnapped_girl|plyr,"kidnapped_girl_liberated_battle", [], "Wait here a while longer. I'll come back for you.", "kidnapped_girl_liberated_battle_2b",[]],
+  [trp_kidnapped_girl|plyr,"kidnapped_girl_liberated_battle", [], "-在这里等会，我马上就会回来。", "kidnapped_girl_liberated_battle_2b",[]],
   [trp_kidnapped_girl,"kidnapped_girl_liberated_battle_2b", [], "Oh, please {sir/madam}, do not leave me here all alone!",
    "close_window", [(add_companion_party,"trp_kidnapped_girl"),
                     (assign, "$g_leave_encounter",1)]],
@@ -23228,7 +23228,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "bandits_awaiting_ransom_b2", [(store_troop_gold, ":cur_gold"),
                                                (quest_get_slot, ":quest_target_amount", "qst_kidnapped_girl", slot_quest_target_amount),
                                                (ge, ":cur_gold", ":quest_target_amount")],
-   "All right. Here's your money. Let the girl go now.", "bandits_awaiting_ransom_pay",[]],
+   "-好吧，这里是你的钱，让女孩走吧。", "bandits_awaiting_ransom_pay",[]],
   [anyone|plyr, "bandits_awaiting_ransom_b2", [],
    "-我把钱放在一个安全的地方了，让我去拿。", "bandits_awaiting_ransom_no_money",[]],
   [anyone, "bandits_awaiting_ransom_no_money", [],
@@ -23236,26 +23236,26 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr, "bandits_awaiting_ransom_b2", [],
    "I have no intention to pay you anything. I demand that you release the girl now!", "bandits_awaiting_ransom_fight",[]],
   [anyone, "bandits_awaiting_ransom_fight", [],
-   "You won't be demanding anything when you're dead.", "close_window",[(encounter_attack),]],
+   "-等你死了再给我们下命令吧。", "close_window",[(encounter_attack),]],
 
   [party_tpl|pt_bandits_awaiting_ransom,"start", [(quest_slot_ge, "qst_kidnapped_girl", slot_quest_current_state, 2),],
-   "What's it? You have given us the money. We have no more business.", "bandits_awaiting_remeet",[]],
+   "-干嘛？你已经给了我们钱，我们已经两清了。", "bandits_awaiting_remeet",[]],
   [anyone|plyr,"bandits_awaiting_remeet", [],
-   "Sorry to bother you. I'll be on my way now.", "close_window",[(assign, "$g_leave_encounter",1)]],
+   "-对不起打扰了，我想我该走了。", "close_window",[(assign, "$g_leave_encounter",1)]],
   [anyone|plyr,"bandits_awaiting_remeet", [],
-   "We have one more business. You'll give the money back to me.", "bandits_awaiting_remeet_2",[]],
+   "-我们还有一件事没解决，把钱还给我！", "bandits_awaiting_remeet_2",[]],
   [anyone,"bandits_awaiting_remeet_2", [],
    "-哦！好吧，让我们现在来解决它吧。", "close_window",[(encounter_attack)]],
 
   [party_tpl|pt_kidnapped_girl,"start", [],
    "Oh {sir/madam}. Thank you so much for rescuing me. Will you take me to my family now?", "kidnapped_girl_encounter_1",[]],
-  [anyone|plyr,"kidnapped_girl_encounter_1", [], "Yes. Come with me. I'll take you home.", "kidnapped_girl_join",[]],
+  [anyone|plyr,"kidnapped_girl_encounter_1", [], "-是的，跟我来，我会带你回家。", "kidnapped_girl_join",[]],
   [anyone,"kidnapped_girl_join", [(neg|party_can_join)], "-真不巧，你的队伍已经满了。", "close_window",[(assign, "$g_leave_encounter",1)]],
   [anyone,"kidnapped_girl_join", [], "Oh, thank you so much!",
    "close_window",[(party_join),
                    (quest_set_slot, "qst_kidnapped_girl", slot_quest_current_state, 3),
                    (assign, "$g_leave_encounter",1)]],
-  [anyone|plyr,"kidnapped_girl_encounter_1", [], "Wait here a while longer. I'll come back for you.", "kidnapped_girl_wait",[]],
+  [anyone|plyr,"kidnapped_girl_encounter_1", [], "-在这里等会，我马上就会回来。", "kidnapped_girl_wait",[]],
   [anyone,"kidnapped_girl_wait", [], "Oh, please {sir/madam}, do not leave me here all alone!", "close_window",[(assign, "$g_leave_encounter",1)]],
 
   [anyone|plyr,"merchant_quest_about_job_2", [(store_partner_quest, ":partner_quest"),
@@ -23266,7 +23266,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone,"lost_kidnapped_girl", [],
    "-哦，不！你叫我怎么跟我的朋友讲？", "lost_kidnapped_girl_2",[]],
   [anyone|plyr,"lost_kidnapped_girl_2", [],
-   "I'm sorry. I could do nothing about it.", "lost_kidnapped_girl_3",[]],
+   "-对不起，我对此无能为力。", "lost_kidnapped_girl_3",[]],
   [anyone,"lost_kidnapped_girl_3", [],
    "You let me down {playername}. I had trusted you.\
  I will let people know of your incompetence at this task.\
@@ -23291,7 +23291,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone,"merchant_quest_about_job_5a", [],
    "-至少你还把钱还给了我。", "close_window",[]],
   [anyone|plyr,"lost_kidnapped_girl_4", [],
-   "Sorry. I don't have that amount with me.", "merchant_quest_about_job_5b",[]],
+   "-抱歉，我没带那么多钱。", "merchant_quest_about_job_5b",[]],
   [anyone,"merchant_quest_about_job_5b", [],
    "Do you expect me to believe that? You are going to pay that ransom fee back! Go and bring the money now!",
    "close_window",[(quest_get_slot, ":quest_target_amount", "qst_kidnapped_girl", slot_quest_target_amount),
@@ -23323,7 +23323,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    []],
 
   [anyone|plyr,"merchant_quest_persuade_peace_1", [], "-你是对的。但又有谁能阻止这场愚蠢的战争呢？", "merchant_quest_brief",[]],
-  [anyone|plyr,"merchant_quest_persuade_peace_1", [], "It is your duty to help the nobles in their war effort. You shouldn't complain about it.", "merchant_quest_persuade_peace_reject",[]],
+  [anyone|plyr,"merchant_quest_persuade_peace_1", [], "-帮助为战争而焦头烂额的贵族，这是你的责任。你不应该抱怨。", "merchant_quest_persuade_peace_reject",[]],
 
   [anyone,"merchant_quest_persuade_peace_reject", [], "Hah. The nobles fight their wars for their greed and their dreams of glory.\
  And it is poor honest folk like us who have to bear the real burden.\
@@ -23443,7 +23443,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      ]],
   
   [anyone|plyr, "merchant_quest_deal_with_night_bandits", [],
-   "My apologies, I'm not interested.", "merchant_quest_stall",[]],
+   "-我道歉，我对这个没兴趣。", "merchant_quest_stall",[]],
 
   [anyone,"deal_with_night_bandits_quest_taken", [], "That takes a weight off my shoulders, {playername}.\
  You can expect a fine reward if you come back successful. Just don't get yourself killed, eh?", "mayor_pretalk",[]],
@@ -23491,7 +23491,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 ################################################# 
 #################### Random merchant quests end
 
-  [anyone,"merchant_quest_requested", [], "I am afraid I can't offer you a job right now.", "mayor_pretalk",[]],
+  [anyone,"merchant_quest_requested", [], "-对不起，我没有工作可以给你。", "mayor_pretalk",[]],
 
 
 #Village elders
@@ -23602,7 +23602,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                       ],
    "-我想买些牛。", "village_elder_buy_cattle",[]],
   
-  [anyone|plyr,"village_elder_trade_talk", [], "I changed my mind. I don't need to buy anything.", "village_elder_pretalk",[]],
+  [anyone|plyr,"village_elder_trade_talk", [], "-我改主意了，我什么都不想买了。", "village_elder_pretalk",[]],
 
   [anyone|plyr,"village_elder_talk",
    [
@@ -23811,7 +23811,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (store_troop_gold, ":cur_gold", "trp_player"),
      (ge, ":cur_gold", 200),
    ],
-   "Then let's increase your reward to 200 denars.", "village_elder_ask_set_fire_7", [(assign, "$g_last_money_offer_to_elder", 200),]],
+   "-那我把给你的报酬加到二百第纳尔。", "village_elder_ask_set_fire_7", [(assign, "$g_last_money_offer_to_elder", 200),]],
 
   [anyone|plyr,"village_elder_ask_set_fire_5",
    [
@@ -23819,7 +23819,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (store_troop_gold, ":cur_gold", "trp_player"),
      (ge, ":cur_gold", 300),
    ],
-   "Then let's increase your reward to 300 denars.", "village_elder_ask_set_fire_6",[(assign, "$g_last_money_offer_to_elder", 300),]],
+   "-那我把给你的报酬加到三百第纳尔。", "village_elder_ask_set_fire_6",[(assign, "$g_last_money_offer_to_elder", 300),]],
 
   [anyone|plyr,"village_elder_ask_set_fire_5",
    [
@@ -23827,7 +23827,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (store_troop_gold, ":cur_gold", "trp_player"),
      (ge, ":cur_gold", 300),
    ],
-   "Then let's increase your reward to 300 denars. This is my last offer.", "village_elder_ask_set_fire_6",[(assign, "$g_last_money_offer_to_elder", 300),]],
+   "-那我把给你的报酬加到三百第纳尔。这是我最后的价码了。", "village_elder_ask_set_fire_6",[(assign, "$g_last_money_offer_to_elder", 300),]],
 
   [anyone|plyr,"village_elder_ask_set_fire_5",[],
    "-没事。", "close_window",[]],
@@ -24076,7 +24076,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
 
   [anyone|plyr,"village_elder_active_mission_2", [], "-我正在忙这件事，大人。", "village_elder_active_mission_3",[]],
-  [anyone|plyr,"village_elder_active_mission_2", [], "I am afraid I won't be able to finish it.", "village_elder_mission_failed",[]],
+  [anyone|plyr,"village_elder_active_mission_2", [], "-很抱歉，我无法完成。", "village_elder_mission_failed",[]],
                                                                                                                                                    
   [anyone,"village_elder_active_mission_3", [], "Thank you, {sir/madam}. We are praying for your success everyday.", "village_elder_pretalk",[]],
 
@@ -24127,7 +24127,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"village_elder_tell_deliver_grain_mission", [],
    "-嗯。你们需要多少谷物？", "village_elder_tell_deliver_grain_mission_2",[]],
   [anyone|plyr,"village_elder_tell_deliver_grain_mission", [],
-   "I can't be bothered with this. Ask help from someone else.", "village_elder_deliver_grain_mission_reject",[]],
+   "-我不想为此讨麻烦，去找其他人帮忙吧。", "village_elder_deliver_grain_mission_reject",[]],
   
   [anyone,"village_elder_tell_deliver_grain_mission_2", [(quest_get_slot, reg5, "$random_quest_no", slot_quest_target_amount)],
    "-我想{reg5}袋谷物就足够让我们开始播种。非常希望，我们能找到好心的人们帮我们解决剩下的部分。", "village_elder_tell_deliver_grain_mission_3",[]],
@@ -24135,7 +24135,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"village_elder_tell_deliver_grain_mission_3", [],
    "-好了，我去找你们需要的那些谷物了。", "village_elder_deliver_grain_mission_accept",[]],
   [anyone|plyr,"village_elder_tell_deliver_grain_mission_3", [],
-   "I am afraid I don't have time for this. You'll need to find help elsewhere.", "village_elder_deliver_grain_mission_reject",[]],
+   "-很抱歉，我没有时间干这个。你需要到其他地方寻求帮助。", "village_elder_deliver_grain_mission_reject",[]],
 
   [anyone,"village_elder_deliver_grain_mission_accept", [], "Thank you, {sir/madam}. We'll be praying for you night and day.", "close_window",
    [(assign, "$g_leave_encounter",1),
@@ -24200,7 +24200,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"village_elder_tell_deliver_cattle_mission", [],
    "-你需要多少头？", "village_elder_tell_deliver_cattle_mission_2",[]],
   [anyone|plyr,"village_elder_tell_deliver_cattle_mission", [],
-   "I don't have time for this. Ask help from someone else.", "village_elder_deliver_cattle_mission_reject",[]],
+   "-我没有时间听你华丽的辩解。不要再在这件事情上打扰我了。", "village_elder_deliver_cattle_mission_reject",[]],
   
   [anyone,"village_elder_tell_deliver_cattle_mission_2", [(quest_get_slot, reg5, "$random_quest_no", slot_quest_target_amount)],
    "-我认为{reg5}头牛足够了。", "village_elder_tell_deliver_cattle_mission_3",[]],
@@ -24208,7 +24208,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"village_elder_tell_deliver_cattle_mission_3", [],
    "-那么我将把你需要的牛带回来。", "village_elder_deliver_cattle_mission_accept",[]],
   [anyone|plyr,"village_elder_tell_deliver_cattle_mission_3", [],
-   "I am afraid I don't have time for this. You'll need to find help elsewhere.", "village_elder_deliver_cattle_mission_reject",[]],
+   "-很抱歉，我没有时间干这个。你需要到其他地方寻求帮助。", "village_elder_deliver_cattle_mission_reject",[]],
 
   [anyone,"village_elder_deliver_cattle_mission_accept", [], "Thank you, {sir/madam}. We'll be praying for you night and day.", "close_window",
    [(assign, "$g_leave_encounter",1),
@@ -24269,7 +24269,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  If you spend some time there and listen to the talk,\
  you can learn a lot about what to buy and where to sell it.", "trade_info_request_2",[]],
 
-  [anyone|plyr,"trade_info_request_2", [], "Then I'll go and spend some time with these merchants.", "close_window",
+  [anyone|plyr,"trade_info_request_2", [], "-看来我要马上动身去找那些商人了。", "close_window",
    [
        (jump_to_menu,"mnu_town_trade_assessment_begin"),
        (finish_mission),
@@ -24404,7 +24404,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                      (is_between,reg(1),arena_masters_begin,arena_masters_end),
                      (eq,"$arena_master_first_talk", 0),
                      ],
-   "Good day friend. If you came to watch the tournaments you came in vain. There won't be a tournament here anytime soon.", "arena_intro_1",[(assign,"$arena_master_first_talk", 1)]],
+   "-你好啊。如果你是为了看比赛来的很不巧你白来了。这段时间不会有任何比赛。", "arena_intro_1",[(assign,"$arena_master_first_talk", 1)]],
   [anyone|plyr,"arena_intro_1", [], "-比赛？他们暂停了比赛……", "arena_intro_2",[]],
   [anyone,"arena_intro_2", [], "Yes. You should see this place during one of the tournament fights.\
  Everyone from the town and nearby villages comes here. The crowd becomes mad with excitement.\
@@ -24463,7 +24463,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (eq, "$g_arena_training_won", 0),
      (eq, "$g_arena_training_kills", 0)
      ],
-   "Ha-ha, that's quite the bruise you're sporting. But don't worry; everybody gets trounced once in awhile. The important thing is to pick yourself up, dust yourself off and keep fighting. That's what champions do.", "arena_master_pre_talk",[(assign, "$last_training_fight_town", -1)]],
+   "-哈哈，受了重伤？不要担心，人总会受伤。最重要的是你得站起来，拍掉身上的灰尘，继续打下去，这样才能成为一个冠军。", "arena_master_pre_talk",[(assign, "$last_training_fight_town", -1)]],
 
   [anyone ,"arena_master_fight_result",
    [
@@ -24547,7 +24547,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"arena_master_talk", [(eq, "$arena_tournaments_asked", 0)], "-这段时间这附近的地方会有比赛吗？", "arena_master_ask_tournaments",[(assign, "$arena_tournaments_asked", 1)]],
   [anyone|plyr,"arena_master_talk", [], "-我现在得走了。再见。", "close_window",[]],
 
-  [anyone,"arena_master_ask_tournaments", [], "{reg2?There won't be any tournaments any time soon.:{reg1?Tournaments are:A tournament is} going to be held at {s15}.}", "arena_master_talk",
+  [anyone,"arena_master_ask_tournaments", [], "-{reg2?最近都不会有任何比赛。:在{s15}，{reg1?比赛:一场比赛}要开始了。}", "arena_master_talk",
    [
        (assign, ":num_tournaments", 0),
        (try_for_range_backwards, ":town_no", towns_begin, towns_end),
@@ -24574,7 +24574,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    ]],
 
   [anyone,"arena_master_melee_pretalk", [], "-很快就要有比赛了。你要参加就要快啊。", "arena_master_melee_talk",[]],
-  [anyone|plyr,"arena_master_melee_talk", [], "Good. That's what I am going to do.", "close_window",
+  [anyone|plyr,"arena_master_melee_talk", [], "-好的。我正要这样做呢。", "close_window",
    [
     (assign, "$last_training_fight_town", "$current_town"),
     (store_current_hours,"$training_fight_time"),
@@ -24809,7 +24809,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
   [trp_galeas|plyr,"galeas_talk",
    [[store_num_regular_prisoners,reg(0)],[ge,reg(0),1]],
-   "Then you'd better bring your purse. I have got prisoners to sell.", "galeas_sell_prisoners",[]],
+   "-那你最好准备好你的钱包，因为我带了一些俘虏过来。", "galeas_sell_prisoners",[]],
   [trp_galeas|plyr,"galeas_talk",[], "-下次再说，再见。", "close_window",[]],
   [trp_galeas,"galeas_sell_prisoners", [],
   "-让我看一下你带来的“货物”吧……", "galeas_sell_prisoners_2",
@@ -24907,10 +24907,10 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 ##                                           (ge, ":protection_remaining", 0)], "What do you want?\
 ## You want to pay us some more money?", "bandit_paid_talk",[]],
 ##  
-##  [anyone|plyr,"bandit_paid_talk", [], "Sorry to trouble you. I'll be on my way now.", "bandit_paid_talk_2a",[]],
+##  [anyone|plyr,"bandit_paid_talk", [], "-抱歉打搅了，我这就走。", "bandit_paid_talk_2a",[]],
 ##  [anyone,"bandit_paid_talk_2a", [], "Yeah. Stop fooling around and go make some money.\
 ## I want to see that purse full next time I see you.", "close_window",[(assign, "$g_leave_encounter",1)]],
-##  [anyone|plyr,"bandit_paid_talk", [], "No. It's your turn to pay me this time.", "bandit_paid_talk_2b",[]],
+##  [anyone|plyr,"bandit_paid_talk", [], "-不，这次该你付钱给我了。", "bandit_paid_talk_2b",[]],
 ##  [anyone,"bandit_paid_talk_2b", [], "-你在胡说八道些什么？你要找麻烦？你找到了。", "close_window",[
 ##       (party_set_slot,"$g_encountered_party",slot_party_ignore_player_until,0),
 ##       (party_ignore_player, "$g_encountered_party", 0),
@@ -24939,7 +24939,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     ], "-{s5}", "bandit_talk",[(play_sound,"snd_encounter_bandits")]],
 	
   [anyone|plyr,"bandit_talk", [], "I'll give you nothing but cold steel, you scum!", "close_window",[[encounter_attack]]],
-  [anyone|plyr,"bandit_talk", [], "There's no need to fight. I can pay for free passage.", "bandit_barter",[]],
+  [anyone|plyr,"bandit_talk", [], "-没必要打架，我能付得起过路费。", "bandit_barter",[]],
   [anyone,"bandit_barter",
    [(store_relation, ":bandit_relation", "fac_player_faction", "$g_encountered_party_faction"),
     (ge, ":bandit_relation", -50),
@@ -24957,11 +24957,11 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
     (store_div, "$bandit_tribute", ":total_value", 10), #10000 gold = excellent_target
     (val_max, "$bandit_tribute", 10),
     (assign, reg5, "$bandit_tribute")
-    ], "Silver without blood, that's our favourite kind! Hmm, having a look at you, I reckon you could easily come up with {reg5} denars. Pay it, and we'll let you be on your way.", "bandit_barter_2",[]],
+    ], "-只谋财不害命，这是我们最希望见到的！嗯，看你面相，我估摸着你能很容易整出{reg5}第纳尔来。拿出来，我们就让你继续上路。", "bandit_barter_2",[]],
   [anyone|plyr,"bandit_barter_2", [[store_troop_gold,reg(2)],[ge,reg(2),"$bandit_tribute"],[assign,reg(5),"$bandit_tribute"]],
    "-好吧。这些钱你拿去吧。", "bandit_barter_3a",[[troop_remove_gold, "trp_player","$bandit_tribute"]]],
   [anyone|plyr,"bandit_barter_2", [],
-   "I don't have that much money with me", "bandit_barter_3b",[]],
+   "-我没带那么多钱。", "bandit_barter_3b",[]],
   [anyone,"bandit_barter_3b", [],
    "That's too bad. I guess we'll just have to sell you into slavery. Take {him/her}, lads!", "close_window",[[encounter_attack]]],
 
@@ -24971,7 +24971,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
 
 
-  [anyone,"bandit_barter_3a", [], "Heh, that wasn't so hard, was it? All right, we'll let you go now. Be off.", "close_window",[
+  [anyone,"bandit_barter_3a", [], "-嘿，也没有很难吧，不是吗？好了，你们可以走了。快点滚。", "close_window",[
     (store_current_hours,":protected_until"),
     (val_add, ":protected_until", 72),
     (party_set_slot,"$g_encountered_party",slot_party_ignore_player_until,":protected_until"),
@@ -25013,7 +25013,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone,"disbanded_troop_join", [], "-我们现在听你的指挥。", "close_window",[[party_join],(assign, "$g_leave_encounter",1)]],
    
   [party_tpl|pt_enemy,"start", [(eq,"$talk_context",tc_party_encounter)], "-你不会抓到我的。至少这次不会。", "enemy_talk_1",[]],
-  [party_tpl|pt_enemy|plyr,"enemy_talk_1", [], "You don't have a chance against me. Give up.", "enemy_talk_2",[]],
+  [party_tpl|pt_enemy|plyr,"enemy_talk_1", [], "-你没可能赢得了我的。投降吧。", "enemy_talk_2",[]],
   [party_tpl|pt_enemy,"enemy_talk_2", [], "I will give up when you are dead!", "close_window",[[encounter_attack]]],
 
 
@@ -25030,7 +25030,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    []],
 
   [party_tpl|pt_routed_warriors|plyr,"party_encounter_routed_agents_are_caught", [],
-   "Ok. We'll leave you in peace for this time, do not face with us again.", "close_window", [(assign, "$g_leave_encounter",1)]],
+   "-好吧，这次我们就发善心放过你，但是记住，下一次你就不会有这么好的运气了。", "close_window", [(assign, "$g_leave_encounter",1)]],
 
   [party_tpl|pt_routed_warriors, "party_encounter_routed_agents_are_caught2",
    [
@@ -25144,16 +25144,16 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "-嗯。每一个劫匪我给你10第纳尔，一共就是{reg1}第纳尔，这里的{reg0}个人。", "sell_prisoner_outlaws",
    [[call_script, "script_troop_add_gold", "trp_player", reg(1)],[add_xp_to_troop,reg(2)],[remove_member_from_party,"trp_looter"]]],
   [anyone,"sell_prisoner_outlaws", [[store_troop_kind_count,0,"trp_bandit"],[ge,reg(0),1],[assign,reg(1),reg(0)],[val_mul,reg(1),20],[assign,reg(2),reg(0)],[val_mul,reg(2),20]],
-   "Let me see. You've brought {reg0} bandits, so 20 denars for each comes up to {reg1} denars.", "sell_prisoner_outlaws",
+   "-让我看看。你带来{reg0}个强盗，20第纳尔那么一共{reg1}第纳尔。", "sell_prisoner_outlaws",
    [[call_script, "script_troop_add_gold", "trp_player", reg(1)],[add_xp_to_troop,reg(2)],[remove_member_from_party,"trp_bandit"]]],
   [anyone,"sell_prisoner_outlaws", [[store_troop_kind_count,0,"trp_brigand"],[ge,reg(0),1],[assign,reg(1),reg(0)],[val_mul,reg(1),30],[assign,reg(2),reg(0)],[val_mul,reg(2),30]],
-   "Well well, you've captured {reg0} brigands. Each one is worth 30 denars, so I'll give you {reg1} for them in total.", "sell_prisoner_outlaws",
+   "-嗯嗯，你抓了{reg0}个土匪。他们每个值30第纳尔，所以我给你一共{reg1}第纳尔。", "sell_prisoner_outlaws",
    [[call_script, "script_troop_add_gold", "trp_player", reg(1)],[add_xp_to_troop,reg(2)],[remove_member_from_party,"trp_brigand"]]],
   [anyone,"sell_prisoner_outlaws", [], "I suppose that'll be all, then.", "close_window",[]],
 # Ryan END
 
   [anyone|plyr,"prisoner_chat", [], "-不要想逃跑或是做别的什么蠢事，我盯着你呢。", "prisoner_chat_2",[]],
-  [anyone,"prisoner_chat_2", [], "No, I swear I won't.", "close_window",[]],
+  [anyone,"prisoner_chat_2", [], "-我发誓我不会。", "close_window",[]],
 
 
   [anyone,"start", [(party_slot_eq, "$current_town", slot_town_lord, "trp_player"),
@@ -25221,7 +25221,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (quest_slot_eq, "qst_meet_spy_in_enemy_town", slot_quest_target_center, "$current_town"),
      (str_store_item_name,s5,"$spy_item_worn"),
      ],
-   "Pardon me, but is that a {s5} you're wearing?", "town_dweller_quest_meet_spy_in_enemy_town_ask_item",
+   "-打搅了，你穿的是一件{s5}吗？", "town_dweller_quest_meet_spy_in_enemy_town_ask_item",
    [
      ]],
   [anyone, "town_dweller_quest_meet_spy_in_enemy_town_ask_item", [
@@ -25283,7 +25283,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (quest_get_slot, ":quest_giver", "qst_meet_spy_in_enemy_town", slot_quest_giver_troop),
      (str_store_troop_name, s4, ":quest_giver"),
   ],
-   "I've been expecting you. Here they are, make sure they reach {s4} intact and without delay.", "town_dweller_quest_meet_spy_in_enemy_town_chat_2",[
+   "-我正在等你呢。拿好了，你要确保它们安全按时到达{s4}，绝不能有任何延误。", "town_dweller_quest_meet_spy_in_enemy_town_chat_2",[
      (call_script, "script_succeed_quest", "qst_meet_spy_in_enemy_town"),
      (call_script, "script_center_remove_walker_type_from_walkers", "$current_town", walkert_spy),
    ]],
@@ -25417,14 +25417,14 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    
    
   [anyone|plyr,"town_dweller_talk", [(eq, "$rumors_inquired", 0)], "-有没有什么最新的传言？", "town_dweller_ask_rumor",[(assign, "$rumors_inquired", 1)]],
-  [anyone,"town_dweller_ask_rumor", [(neg|party_slot_ge, "$current_town", slot_center_player_relation, -5)], "I don't know anything that would be of interest to you.", "town_dweller_talk",[]],
+  [anyone,"town_dweller_ask_rumor", [(neg|party_slot_ge, "$current_town", slot_center_player_relation, -5)], "-没什么你会感兴趣的。", "town_dweller_talk",[]],
   
   [anyone,"town_dweller_ask_rumor", [(store_mul, ":rumor_id", "$current_town", 197),
                                      (val_add,  ":rumor_id", "$g_talk_agent"),
                                      (call_script, "script_get_rumor_to_s61", ":rumor_id"),
                                      (gt, reg0, 0)], "-{s61}", "town_dweller_talk",[]],
 
-  [anyone,"town_dweller_ask_rumor", [], "I haven't heard anything interesting lately.", "town_dweller_talk",[]],
+  [anyone,"town_dweller_ask_rumor", [], "-最近没什么特别的情况。", "town_dweller_talk",[]],
 
   [anyone|plyr,"town_dweller_talk", [], "[Leave]", "close_window",[]],
 
@@ -25513,7 +25513,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "We will fight you to the end!", "close_window", []],
   [anyone|plyr,"party_encounter_hostile_attacker", [
                     ],
-   "Don't attack! We surrender.", "close_window", [(assign,"$g_player_surrenders",1)]],
+   "-别攻击！我们投降。", "close_window", [(assign,"$g_player_surrenders",1)]],
   
   [anyone,"start", [(eq,"$talk_context",tc_party_encounter),
                     (neg|encountered_party_is_attacker),
@@ -25534,7 +25534,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 #post 0907 changes end
 
   [anyone|plyr,"party_encounter_hostile_defender", [],
-   "Nothing. We'll leave you in peace.", "close_window", [(assign, "$g_leave_encounter",1)]],
+   "-没什么，我们不会打你的。", "close_window", [(assign, "$g_leave_encounter",1)]],
 
 
 
@@ -25666,7 +25666,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   
   [anyone|plyr,"merchant_quest_4e", 
   [], 
-  "I'm glad to see that you're alive, too.", "merchant_finale",
+  "-我也很高兴看到你还活着。", "merchant_finale",
   [  
     (assign, "$dialog_with_merchant_ended", 1),
   ]],
@@ -25705,17 +25705,17 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone,"merchant_quest_1_prologue_1", 
   [
   ], 
-  "We've always had brigands in the hills, driven to banditry by war, debt, or love of violence. Recently, however, they've been getting bolder -- leaving their camps in the wild and venturing into town, looking for unwary prey. The watch commander tells us it's because of all the fighting on the frontiers -- fewer men to keep an eye on the streets -- but I'm not sure what to make of that. It seems to me that the most logical explanation is that these bandits have an ally inside the walls, who helps them enter unnoticed and helps them identify particularly tempting targets... Last week, you see, they took my brother.", "merchant_quest_1_prologue_2",
+  "-我们这儿的山里总是有土匪，人们总是因为战争，债务或者对暴力的狂热而落草为寇。然而最近他们变得更大胆了——离开他们野外的营地闯入城镇，寻找粗心的猎物。城镇哨兵的队长告诉我们这一切都是因为边境的战斗——导致市镇保安的人手减少——但是我不敢肯定真的仅仅是由于这个原因使得那些强盗如此猖狂。在我看来最符合逻辑的解释是这些强盗在城里有内应，帮助他们悄悄地潜入进来并且帮助他们确定最诱人的目标……知道吗，就在上个星期，他们刚刚绑走了我的兄弟。", "merchant_quest_1_prologue_2",
   []],
   
   [anyone,"merchant_quest_1_prologue_2", 
   [], 
-  "I don't know what my brother was thinking -- a lad from a prominent house, out alone after dark in times like these... Well, I suppose you were too, but you're a stranger here, and didn't know how bad things have become. He had no such excuse. But he's family, so what can you do? If you don't protect your kin, then people will start thinking that you can't protect your investements, either, and I can't have that... No doubt the gang will soon send word about a ransom, but I don't care to pay it.", "merchant_quest_1_prologue_3",[]],
+  "-我不知道我兄弟是怎么想的——一个来自显赫家庭的青年，经常喝醉了之后独自外出，就像这次一样……好吧，我想你也一样，可你是个外来人，并且不知道这里的情况有多糟。而他没有任何借口。但他是我的亲人，换成你又能怎么做？如果你保护不了你的亲人，人们会开始想你也保护不了你的投资，而我绝不能让他们有那种看法……毫无疑问，那些家伙很快会提出赎金的消息，但是我不想付给他们。", "merchant_quest_1_prologue_3",[]],
 
   
   [anyone,"merchant_quest_1_prologue_3", 
   [], 
-  "So here's my proposition. You look like you've had a bit of experience with a blade -- and more importantly, you must have a bit of fire in your belly, or you wouldn't be coming to Calradia to seek your fortune. So here's what I'm asking you to do: gather a small party, track down these bandits to their lair, teach them a lesson they won't forget, and get my brother back safe. In return, you'll earn my lasting gratitude and a bit of silver. What do you say?", "merchant_quest_1a",[]],
+  "-这就是我要说的。你看上去像是个会舞刀弄枪的人——而更重要的，你一定有所抱负，否则你就不会来卡拉迪亚追寻你的命运了。那么，我要你去做的就是：召集一小支部队，跟踪这些强盗到他们的老巢，教训他们一顿，让他们永远记住向我动手会有什么后果，然后把我的兄弟安全地带回来。作为回报，你会得到我永久的感激和一大笔报酬。你有兴趣吗？", "merchant_quest_1a",[]],
   
   [anyone|plyr,"merchant_quest_1a", 
   [
@@ -25733,7 +25733,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone,"merchant_quest_1b", 
   [
   ], 
-  "You won't be able to do this by yourself, though. If you try and take on the whole gang singlehandedly, the hunter will become the hunted, I'll warrant. You'll first want to round up a group of volunteers. There's always a few lads in the villages around here, looking for a bit of work that's more interesting than tilling the soil or hauling water. They'll follow you if you pay. So... Take this purse of 100 denars. Consider it an advance on your reward. Go round to the villages, and use the money to hire some help. I'll reckon that you need at least five men to take on these bandits.", "merchant_quest_1c",
+  "-可是，你没法自己一个人去办这件事情。如果你打算去单枪匹马对付那整伙人，我保证，猎人反而会被猎物杀死。你首先得去召集一群志愿兵。这附近的村庄里总是有些小伙子，希望能找到比耕地捕鱼更有趣的工作去做。如果你付他们钱他们就会跟你走。那么……带上这包一百个第纳尔。就把它当作你报酬的预付款去村子里转转，用这些钱去招些人手。我估计你至少需要五个部下才能去对付那些强盗。", "merchant_quest_1c",
   [
     (call_script, "script_troop_add_gold", "trp_player", 100),
     
@@ -25749,13 +25749,13 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone|plyr,"merchant_quest_1c", 
   [
   ], 
-  "Very good, sir. I'll go collect some men from around the villages.", "merchant_quest_1d",[]],  
+  "-很好，先生。我会去周围的村庄召集人手。", "merchant_quest_1d",[]],  
    
   [anyone,"merchant_quest_1d", 
   [
     (str_store_party_name, s1, "$current_town"),
   ], 
-  "Good. You can find me again in the tavern here in {s1} after you've got your group together. Then we'll speak about what we do next.", "close_window", 
+  "-好的。等你召集到足够的人手之后你可以在{s1}这里的酒馆再次找到我。那时我们再商量下一步怎么做。", "close_window", 
   [
     (assign, "$dialog_with_merchant_ended", 1),  
   ]],
@@ -25886,7 +25886,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "-你要召集所有的领主来发动这场战役吗？", "member_give_order_call_to_arms_verify_2",[]],
 
   [anyone|plyr,"member_give_order_call_to_arms_verify_2", [], "-是的。在进攻敌人之前，我们必须集中我们所有的力量。", "member_give_order_call_to_arms",[]],
-  [anyone|plyr,"member_give_order_call_to_arms_verify_2", [], "On second thought, it won't be necessary to summon everyone.", "member_pretalk",[]],
+  [anyone|plyr,"member_give_order_call_to_arms_verify_2", [], "-仔细想想，似乎没有必要召集所有的领主。", "member_pretalk",[]],
 
   [anyone,"member_give_order_call_to_arms",
    [],
@@ -26072,7 +26072,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   (str_store_party_name, s5, "$g_encountered_party"),
   (str_store_party_name, s4, ":wealthiest_center"),
   
-  ], "In terms of the output of the surrounding villages, the town of {s4} is the richest in Calradia. Here in {s5}, the villages produce less than the hinterland around {reg4} towns, and produce more than {reg5}. The wealth of a town's hinterland, of course, is heavily dependent on the tides of war. Looting and pillage, and shifts in territory, can make a major impact.", "mayor_wealth_comparison_4",[
+  ], "-就城镇的周边村庄产出而言，{s4}周边的物产无疑是卡拉迪亚大陆上最丰富的，至于我们{s5}，有{reg4}个城镇的村庄产出比我们丰富，同时产出少于我们的城镇有{reg5}个。影响城镇村庄产出的最主要因素就是战争。军队的掠夺和洗劫，领土的不断易主，都会对城镇的周边产出造成极大的冲击。", "mayor_wealth_comparison_4",[
   ]],
   
 

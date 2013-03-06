@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from header_game_menus import *
 from header_parties import *
 from header_items import *
@@ -41,11 +42,11 @@ game_menus = [
     "none",
     [],
     [
-     ("continue",[],"Continue...",
+     ("continue",[],"-继续",
        [(jump_to_menu, "mnu_start_game_1"),
         ]
        ),
-      ("go_back",[],"Go back",
+      ("go_back",[],"-后退。",
        [
          (change_screen_quit),
        ]),
@@ -61,7 +62,7 @@ game_menus = [
     "none",
     [],
     [
-      ("town_1",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Praven, in the Kingdom of Swadia.",
+      ("town_1",[(eq, "$current_startup_quest_phase", 0),],"-加入一支商队前往斯瓦迪亚王国的帕拉汶。",
        [
          (assign, "$current_town", "p_town_6"),
          (assign, "$g_starting_town", "$current_town"),
@@ -71,7 +72,7 @@ game_menus = [
 #         (change_screen_return),
        ]),
        
-      ("town_2",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Reyvadin, in the Kingdom of the Vaegirs.",
+      ("town_2",[(eq, "$current_startup_quest_phase", 0),],"-加入一支商队前往维吉亚王国的日瓦丁。",
        [
          (assign, "$current_town", "p_town_8"),
          (assign, "$g_starting_town", "$current_town"),
@@ -81,7 +82,7 @@ game_menus = [
 #         (change_screen_return),
        ]),
        
-      ("town_3",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Tulga, in the Khergit Khanate.",
+      ("town_3",[(eq, "$current_startup_quest_phase", 0),],"-加入一支商队前往库吉特汗国的图尔加。",
        [
          (assign, "$current_town", "p_town_10"),
          (assign, "$g_starting_town", "$current_town"),
@@ -91,7 +92,7 @@ game_menus = [
 #         (change_screen_return),
        ]),
        
-      ("town_4",[(eq, "$current_startup_quest_phase", 0),],"take a ship to Sargoth, in the Kingdom of the Nords.",
+      ("town_4",[(eq, "$current_startup_quest_phase", 0),],"-坐船前往诺德王国的萨哥斯。",
        [
          (assign, "$current_town", "p_town_1"),
          (assign, "$g_starting_town", "$current_town"),
@@ -101,7 +102,7 @@ game_menus = [
 #         (change_screen_return),
        ]),
        
-      ("town_5",[(eq, "$current_startup_quest_phase", 0),],"take a ship to Jelkala, in the Kingdom of the Rhodoks.",
+      ("town_5",[(eq, "$current_startup_quest_phase", 0),],"-坐船前往罗多克王国的杰尔喀拉。",
        [
          (assign, "$current_town", "p_town_5"),
          (assign, "$g_starting_town", "$current_town"),
@@ -111,7 +112,7 @@ game_menus = [
 #         (change_screen_return),
        ]),
        
-      ("town_6",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Shariz, in the Sarranid Sultanate.",
+      ("town_6",[(eq, "$current_startup_quest_phase", 0),],"-加入一支商队前往萨兰德苏丹国的沙瑞兹。",
        [
          (assign, "$current_town", "p_town_19"),
          (assign, "$g_starting_town", "$current_town"),
@@ -196,7 +197,7 @@ game_menus = [
  
   (
     "start_game_3",mnf_disable_all_keys,
-    "Choose your scenario:",
+    "-选择剧本",
     "none",
     [
       (assign, "$g_custom_battle_scenario", 0),
@@ -249,7 +250,7 @@ game_menus = [
 ##
 ##        ]
 ##       ),
-      ("go_back",[],"Go back",
+      ("go_back",[],"-后退。",
        [(change_screen_quit), 
         ]
 		),
@@ -257,7 +258,7 @@ game_menus = [
   ),
 
 ##  ("start_game_3",mnf_disable_all_keys,
-##    "Choose your scenario:",
+##    "-选择剧本",
 ##    "none",
 ##    [
 ##      (assign, "$g_custom_battle_scenario", 0),
@@ -310,7 +311,7 @@ game_menus = [
 ####
 ####        ]
 ####       ),
-##      ("go_back",[],"Go back",
+##      ("go_back",[],"-后退。",
 ##       [(change_screen_quit),
 ##        ]
 ##       ),
@@ -319,7 +320,7 @@ game_menus = [
 
   (
     "tutorial",mnf_disable_all_keys,
-    "You approach a field where the locals are training with weapons. You can practice here to improve your combat skills.",
+    "-你进入了训练场，不少当地人都在里面进行着武器的训练。在这里你可以通过各种训练来提高你的战斗技巧。",
     "none",
     [
       (try_begin),
@@ -471,7 +472,7 @@ game_menus = [
 ##        (jump_to_menu,"mnu_custom_battle_scene"),        
 ##      ]),
 
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
       [
         (modify_visitors_at_site,"scn_tutorial_training_ground"),
         (reset_visitors, 0),
@@ -520,7 +521,7 @@ game_menus = [
 
       ("go_back_dot",
       [],
-      "Go back.",
+      "-后退。",
        [
          (change_screen_quit),
        ]),
@@ -528,7 +529,7 @@ game_menus = [
   ),
 
   ("reports",0,
-   "Character Renown: {reg5}^Honor Rating: {reg6}^Party Morale: {reg8}^Party Size Limit: {reg7}^",
+   "-角色声望：{reg5}^荣誉级别：{reg6}^部队士气：{reg8}^部队上限：{reg7}^",
    "none",
    [(call_script, "script_game_get_party_companion_limit"),
     (assign, ":party_size_limit", reg0),
@@ -546,40 +547,40 @@ game_menus = [
         ]
        ),
 	   
-      ("view_character_report",[],"View character report.",
+      ("view_character_report",[],"-角色状态。",
        [(jump_to_menu, "mnu_character_report"),
         ]
        ),
-      ("view_party_size_report",[],"View party size report.",
+      ("view_party_size_report",[],"-部队上限。",
        [(jump_to_menu, "mnu_party_size_report"),
         ]
        ),
 	   
-      ("view_npc_mission_report",[],"View companion mission report.",
+      ("view_npc_mission_report",[],"-任务简报。",
        [(jump_to_menu, "mnu_companion_report"),
         ]
        ),
 
-      ("view_weekly_budget_report",[],"View weekly budget report.",
+      ("view_weekly_budget_report",[],"-部队收支。",
        [
          (assign, "$g_apply_budget_report_to_gold", 0),
          (start_presentation, "prsnt_budget_report"),
         ]
        ),
 
-      ("view_morale_report",[],"View party morale report.",
+      ("view_morale_report",[],"-部队士气。",
        [(jump_to_menu, "mnu_morale_report"),
         ]
        ),
 
 #NPC companion changes begin
-      ("lord_relations",[],"View list of known lords by relation.",
+      ("lord_relations",[],"-按照关系查看已认识的领主。",
        [
 		(jump_to_menu, "mnu_lord_relations"),
         ]
        ),
 	   
-      ("courtship_relations",[],"View courtship relations.",
+      ("courtship_relations",[],"-个人问题。",
        [
 		(jump_to_menu, "mnu_courtship_relations"),
         ]
@@ -602,11 +603,11 @@ game_menus = [
 
 #NPC companion changes end
 
-      ("view_faction_relations_report",[],"View faction relations report.",
+      ("view_faction_relations_report",[],"-阵营关系。",
        [(jump_to_menu, "mnu_faction_relations_report"),
         ]
        ),
-      ("resume_travelling",[],"Resume travelling.",
+      ("resume_travelling",[],"-继续旅程。",
        [(change_screen_return),
         ]
        ),
@@ -615,7 +616,7 @@ game_menus = [
 
   (
     "custom_battle_scene",menu_text_color(0xFF000000)|mnf_disable_all_keys,
-    "(NO_TRANS)",
+    "-(NOTRANS)",
 	
     "none",
     [],
@@ -887,7 +888,7 @@ game_menus = [
 ##        (change_screen_mission),
 ##        ]
 ##       ),
-##      ("leave_custom_battle_2",[],"Cancel.",
+##      ("leave_custom_battle_2",[],"-后退。",
 ##       [(jump_to_menu, "mnu_start_game_3"),
 ##        ]
 ##       ),
@@ -897,7 +898,7 @@ game_menus = [
 
   (
     "custom_battle_end",mnf_disable_all_keys,
-    "The battle is over. {s1} Your side killed {reg5} enemies and lost {reg6} troops over the battle. You personally slew {reg7} men in the fighting.",
+    "-战斗结束。{s1}你的队伍杀死了{reg5}人，敌人的队伍杀死了{reg6}人。你杀死了{reg7}人。",
     "none",
     [(music_set_situation, 0),
      (assign, reg5, "$g_custom_battle_team2_death_count"),
@@ -918,7 +919,7 @@ game_menus = [
      (try_end),
      ],
     [
-      ("continue",[],"Continue.",
+      ("continue",[],"-继续",
        [(change_screen_quit),
         ]
        ),
@@ -926,25 +927,25 @@ game_menus = [
   ),
   
   ("start_game_1",menu_text_color(0xFF000000)|mnf_disable_all_keys,
-    "Select your character's gender.",
+    "-选择你的角色性别。",
     "none",
     [],
     [
-      ("start_male",[],"Male",
+      ("start_male",[],"-男",
        [
          (troop_set_type,"trp_player", 0),
          (assign,"$character_gender",tf_male),
          (jump_to_menu,"mnu_start_character_1"),
         ]
        ),
-      ("start_female",[],"Female",
+      ("start_female",[],"-女",
        [
          (troop_set_type, "trp_player", 1),
          (assign, "$character_gender", tf_female),
          (jump_to_menu, "mnu_start_character_1"),
        ]
        ),
-	  ("go_back",[],"Go back",
+	  ("go_back",[],"-后退。",
        [
 	     (jump_to_menu,"mnu_start_game_0"),
        ]),
@@ -953,7 +954,7 @@ game_menus = [
 
   (
     "start_character_1",mnf_disable_all_keys,
-    "You were born years ago, in a land far away. Your father was...",
+    "-当你很多年前出生在一片遥远的大陆时，你的父亲是……",
     "none",
     [
     (str_clear,s10),
@@ -964,7 +965,7 @@ game_menus = [
     (str_clear,s15),
     ],
     [
-    ("start_noble",[],"An impoverished noble.",[
+    ("start_noble",[],"-一位没落的贵族。",[
       (assign,"$background_type",cb_noble),
       (assign, reg3, "$character_gender"),
       (str_store_string,s10,"@You came into the world a {reg3?daughter:son} of declining nobility,\
@@ -972,7 +973,7 @@ game_menus = [
  they afforded you a good education and trained you from childhood for the rigors of aristocracy and life at court."),
 	(jump_to_menu,"mnu_start_character_2"),
     ]),
-    ("start_merchant",[],"A travelling merchant.",[
+    ("start_merchant",[],"-一位旅行商人。",[
       (assign,"$background_type",cb_merchant),
       (assign, reg3, "$character_gender"),
       (str_store_string,s10,"@You were born the {reg3?daughter:son} of travelling merchants,\
@@ -981,7 +982,7 @@ game_menus = [
  living mostly for the moments when you could sell something to somebody."),
 	(jump_to_menu,"mnu_start_character_2"),
     ]),
-    ("start_guard",[],"A veteran warrior.",[
+    ("start_guard",[],"-一位老兵。",[
       (assign,"$background_type",cb_guard),
       (assign, reg3, "$character_gender"),
       (str_store_string,s10,"@As a child, your family scrabbled out a meagre living from your father's wages\
@@ -989,7 +990,7 @@ game_menus = [
  education. You learned mainly how to defend yourself on the streets, with or without a weapon in hand."),
 	(jump_to_menu,"mnu_start_character_2"),
     ]),
-    ("start_forester",[],"A hunter.",[
+    ("start_forester",[],"-一位猎人。",[
       (assign,"$background_type",cb_forester),
       (assign, reg3, "$character_gender"),
       (str_store_string,s11,"@{reg3?daughter:son}"),
@@ -1000,7 +1001,7 @@ game_menus = [
  though your brothers and sisters might not be so fortunate."),
 	(jump_to_menu,"mnu_start_character_2"),
     ]),
-    ("start_nomad",[],"A steppe nomad.",[
+    ("start_nomad",[],"-一位游牧民。",[
       (assign,"$background_type",cb_nomad),
       (assign, reg3, "$character_gender"),
       (str_store_string,s11,"@{reg3?daughter:son}"),
@@ -1010,7 +1011,7 @@ game_menus = [
  how to ride almost before you learned how to walk. "),
 	(jump_to_menu,"mnu_start_character_2"),
     ]),
-    ("start_thief",[],"A thief.",[
+    ("start_thief",[],"-一位盗贼。",[
       (assign,"$background_type",cb_thief),
       (assign, reg3, "$character_gender"),
       (str_store_string,s10,"@As the {reg3?daughter:son} of a thief, you had very little 'formal' education.\
@@ -1029,19 +1030,19 @@ game_menus = [
 ## Gradually, faith became such a part of your life that it was no different from the blood coursing through your veins."),
 ##	(jump_to_menu,"mnu_start_character_2"),
 ##    ]),
-    ("go_back",[],"Go back",
+    ("go_back",[],"-后退。",
      [(jump_to_menu,"mnu_start_game_1"),
     ]),
     ]
   ),
   (
     "start_character_2",0,
-    "{s10}^^ You started to learn about the world almost as soon as you could walk and talk. You spent your early life as...",
+    "-{s10}^^后来，你在少年时期做过……",
     "none",
     [],
     [
       ("page",[
-          ],"A page at a nobleman's court.",[
+          ],"-贵族的侍从。",[
       (assign,"$background_answer_2", cb2_page),
       (assign, reg3, "$character_gender"),
       (str_store_string,s11,"@As a {reg3?girl:boy} growing out of childhood,\
@@ -1052,7 +1053,7 @@ game_menus = [
 	(jump_to_menu,"mnu_start_character_3"),
     ]),
       ("apprentice",[
-          ],"A craftsman's apprentice.",[
+          ],"-手工匠的学徒。",[
       (assign,"$background_answer_2", cb2_apprentice),
       (assign, reg3, "$character_gender"),
       (str_store_string,s11,"@As a {reg3?girl:boy} growing out of childhood,\
@@ -1062,7 +1063,7 @@ game_menus = [
 	(jump_to_menu,"mnu_start_character_3"),
     ]),
       ("stockboy",[
-          ],"A shop assistant.",[
+          ],"-商人们的帮手。",[
       (assign,"$background_answer_2",cb2_merchants_helper),
       (assign, reg3, "$character_gender"),
       (str_store_string,s11,"@As a {reg3?girl:boy} growing out of childhood,\
@@ -1072,7 +1073,7 @@ game_menus = [
 	(jump_to_menu,"mnu_start_character_3"),
     ]),
       ("urchin",[
-          ],"A street urchin.",[
+          ],"-大街上的顽童。",[
       (assign,"$background_answer_2",cb2_urchin),
       (assign, reg3, "$character_gender"),
       (str_store_string,s11,"@As a {reg3?girl:boy} growing out of childhood,\
@@ -1082,7 +1083,7 @@ game_menus = [
 	(jump_to_menu,"mnu_start_character_3"),
     ]),
       ("nomad",[
-          ],"A steppe child.",[
+          ],"-大草原上的孩子。",[
       (assign,"$background_answer_2",cb2_steppe_child),
       (assign, reg3, "$character_gender"),
       (str_store_string,s11,"@As a {reg3?girl:boy} growing out of childhood,\
@@ -1146,14 +1147,14 @@ game_menus = [
 ## After that you were no longer an acolyte {s12}, but a {s13} waiting to take your vows into the service of God."),
 ##	(jump_to_menu,"mnu_start_character_3"),
 ##    ]),
-      ("go_back",[],"Go back.",
+      ("go_back",[],"-后退。",
      [(jump_to_menu,"mnu_start_character_1"),
     ]),
     ]
   ),
   (
     "start_character_3",mnf_disable_all_keys,
-    "{s11}^^ Then, as a young adult, life changed as it always does. You became...",
+    "-{s11}^^后来，在你的少年时期，你的生活理所应当的改变了。你成为了一个……",
     "none",
     [(assign, reg3, "$character_gender"),],
     [
@@ -1181,7 +1182,7 @@ game_menus = [
 ##	(jump_to_menu,"mnu_start_character_4"),
 ##        ]),
 
-      ("squire",[(eq,"$character_gender",tf_male)],"A squire.",[
+      ("squire",[(eq,"$character_gender",tf_male)],"-骑士的扈从。",[
         (assign,"$background_answer_3",cb3_squire),
       (str_store_string,s14,"@{reg3?daughter:man}"),
       (str_store_string,s12,"@Though the distinction felt sudden to you,\
@@ -1194,7 +1195,7 @@ game_menus = [
  of men who used guile as well as valor to achieve their aims."),
 	(jump_to_menu,"mnu_start_character_4"),
         ]),
-      ("lady",[(eq,"$character_gender",tf_female)],"A lady-in-waiting.",[
+      ("lady",[(eq,"$character_gender",tf_female)],"-贵族的侍女。",[
         (assign,"$background_answer_3",cb3_lady_in_waiting),
       (str_store_string,s14,"@{reg3?daughter:man}"),
       (str_store_string,s13,"@{reg3?woman:man}"),
@@ -1209,7 +1210,7 @@ game_menus = [
  with a little bit of subtlety."),
 	(jump_to_menu,"mnu_start_character_4"),
         ]),
-      ("troubadour",[],"A troubadour.",[
+      ("troubadour",[],"-吟游诗人。",[
         (assign,"$background_answer_3",cb3_troubadour),
       (str_store_string,s14,"@{reg3?daughter:man}"),
       (str_store_string,s13,"@{reg3?woman:man}"),
@@ -1221,7 +1222,7 @@ game_menus = [
  drunken crowds in your taverns, and even better at talking anyone out of anything you wanted."),
 	(jump_to_menu,"mnu_start_character_4"),
         ]),
-      ("student",[],"A university student.",[
+      ("student",[],"-学徒。",[
         (assign,"$background_answer_3",cb3_student),
       (str_store_string,s12,"@Though the distinction felt sudden to you,\
  somewhere along the way you had become a {reg3?woman:man}, and the whole world seemed to change around you.\
@@ -1233,7 +1234,7 @@ game_menus = [
  or how an angry townsman can be persuaded to set down his club and accept cash compensation for the destruction of his shop."),
 	(jump_to_menu,"mnu_start_character_4"),
         ]),
-      ("peddler",[],"A goods peddler.",[
+      ("peddler",[],"-小商贩。",[
         (assign,"$background_answer_3",cb3_peddler),
       (str_store_string,s14,"@{reg3?daughter:man}"),
       (str_store_string,s13,"@{reg3?woman:man}"),
@@ -1244,7 +1245,7 @@ game_menus = [
  giving you a good price. Soon, you knew, you would be well-placed to start your own trading empire..."),
 	(jump_to_menu,"mnu_start_character_4"),
         ]),
-      ("craftsman",[],"A smith.",[
+      ("craftsman",[],"-铁匠。",[
         (assign,"$background_answer_3", cb3_craftsman),
       (str_store_string,s14,"@{reg3?daughter:man}"),
       (str_store_string,s13,"@{reg3?woman:man}"),
@@ -1255,7 +1256,7 @@ game_menus = [
  With food in your belly and logs on your fire, you could take pride in your work and your growing reputation."),
 	(jump_to_menu,"mnu_start_character_4"),
         ]),
-      ("poacher",[],"A game poacher.",[
+      ("poacher",[],"-偷猎者。",[
         (assign,"$background_answer_3", cb3_poacher),
       (str_store_string,s14,"@{reg3?daughter:man}"),
       (str_store_string,s13,"@{reg3?woman:man}"),
@@ -1279,7 +1280,7 @@ game_menus = [
 ## hospitality of the peasantry was always generous to a rising {s13} of God."),
 ##	(jump_to_menu,"mnu_start_character_4"),
 ##        ]),
-      ("go_back",[],"Go back.",
+      ("go_back",[],"-后退。",
        [(jump_to_menu,"mnu_start_character_2"),
         ]
        ),
@@ -1288,12 +1289,12 @@ game_menus = [
 
   (
     "start_character_4",mnf_disable_all_keys,
-    "{s12}^^But soon everything changed and you decided to strike out on your own as an adventurer. What made you take this decision was...",
+    "-{s12}^^不过在一段时间以后，一切都发生了变化，你决定孤身一人去远方冒险。让你做出这个举动的原因是……",
     #Finally, what made you decide to strike out on your own as an adventurer?",
     "none",
     [],
     [
-      ("revenge",[],"Personal revenge.",[
+      ("revenge",[],"-私人恩怨。",[
         (assign,"$background_answer_4", cb4_revenge),
       (str_store_string,s13,"@Only you know exactly what caused you to give up your old life and become an adventurer.\
  Still, it was not a difficult choice to leave, with the rage burning brightly in your heart.\
@@ -1301,7 +1302,7 @@ game_menus = [
  and these debts can only be paid in blood..."),
         (jump_to_menu,"mnu_choose_skill"),
         ]),
-      ("death",[],"The loss of a loved one.",[
+      ("death",[],"-失去恋人的痛苦。",[
         (assign,"$background_answer_4",cb4_loss),
       (str_store_string,s13,"@Only you know exactly what caused you to give up your old life and become an adventurer.\
  All you can say is that you couldn't bear to stay, not with the memories of those you loved so close and so\
@@ -1309,7 +1310,7 @@ game_menus = [
  or honour the name that you can no longer bear to speak..."),
         (jump_to_menu,"mnu_choose_skill"),
         ]),
-      ("wanderlust",[],"Wanderlust.",[
+      ("wanderlust",[],"-对于探险的爱好。",[
         (assign,"$background_answer_4",cb4_wanderlust),
       (str_store_string,s13,"@Only you know exactly what caused you to give up your old life and become an adventurer.\
  You're not even sure when your home became a prison, when the familiar became mundane, but your dreams of\
@@ -1326,14 +1327,14 @@ game_menus = [
 ## glory of God by the time you're done..."),
 ##        (jump_to_menu,"mnu_choose_skill"),
 ##        ]),
-      ("disown",[],"Being forced out of your home.",[
+      ("disown",[],"-从家中被驱赶了出来。",[
         (assign,"$background_answer_4",cb4_disown),
       (str_store_string,s13,"@Only you know exactly what caused you to give up your old life and become an adventurer.\
  However, you know you cannot go back. There's nothing to go back to. Whatever home you may have had is gone\
  now, and you must face the fact that you're out in the wide wide world. Alone to sink or swim..."),
         (jump_to_menu,"mnu_choose_skill"),
         ]),
-     ("greed",[],"Lust for money and power.",[
+     ("greed",[],"-对于权力与财富的渴望。",[
         (assign,"$background_answer_4",cb4_greed),
       (str_store_string,s13,"@Only you know exactly what caused you to give up your old life and become an adventurer.\
  To everyone else, it's clear that you're now motivated solely by personal gain.\
@@ -1343,7 +1344,7 @@ game_menus = [
  You want everything, and you won't let anyone stop you from having it..."),
         (jump_to_menu,"mnu_choose_skill"),
         ]),
-      ("go_back",[],"Go back.",
+      ("go_back",[],"-后退。",
        [(jump_to_menu,"mnu_start_character_3"),
         ]
        ),
@@ -1353,7 +1354,7 @@ game_menus = [
 
   (
     "choose_skill",mnf_disable_all_keys,
-    "{s13}", 
+    "-{s13}", 
     "none",
     [(assign,"$current_string_reg",10),
 	 (assign, ":difficulty", 0),
@@ -1401,7 +1402,7 @@ game_menus = [
 ##        (str_store_string, s14, "@You are particularly talented at medicine."),
 ##        (jump_to_menu,"mnu_past_life_explanation"),
 ##        ]),
-      ("begin_adventuring",[],"Become an adventurer and ride to your destiny.",[
+      ("begin_adventuring",[],"-你成为了一名冒险者追寻自己的命运。",[
            (set_show_messages, 0),
            (try_begin),
              (eq,"$character_gender",0),
@@ -1971,7 +1972,7 @@ game_menus = [
            (try_end),
            (set_show_messages, 1),
         ]),
-      ("go_back_dot",[],"Go back.",[
+      ("go_back_dot",[],"-后退。",[
         (jump_to_menu,"mnu_start_character_4"),
         ]),
     ]
@@ -1979,7 +1980,7 @@ game_menus = [
 
   (
     "past_life_explanation",mnf_disable_all_keys,
-    "{s3}",
+    "-{s3}",
     "none",
     [
      (try_begin),
@@ -1995,14 +1996,14 @@ game_menus = [
      (try_end),
      ],
     [
-      ("view_next",[],"{s5}",[
+      ("view_next",[],"-{s5}",[
         (val_add,"$current_string_reg",1),
         (jump_to_menu, "mnu_past_life_explanation"),
         ]),
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
         ]),
-      ("go_back_dot",[],"Go back.",[
+      ("go_back_dot",[],"-后退。",[
         (jump_to_menu, "mnu_choose_skill"),
         ]),
     ]
@@ -2017,7 +2018,7 @@ game_menus = [
     ]
   ),
   ("morale_report",0,
-   "{s1}",
+   "-{s1}",
    "none",
    [
      (call_script, "script_get_player_party_morale_values"),     
@@ -2085,7 +2086,7 @@ game_menus = [
      (try_end),        
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
       [
         (jump_to_menu, "mnu_reports"),
       ]),
@@ -2094,7 +2095,7 @@ game_menus = [
 
 
   ("courtship_relations",0,
-   "{s1}",
+   "-{s1}",
    "none",
    [(str_store_string, s1, "str_courtships_in_progress_"),
     (try_for_range, ":lady", kingdom_ladies_begin, kingdom_ladies_end),
@@ -2138,7 +2139,7 @@ game_menus = [
 	
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2147,7 +2148,7 @@ game_menus = [
 
 
   ("lord_relations",0,
-   "{s1}",
+   "-{s1}",
    "none",
    [   
     (try_for_range, ":active_npc", active_npcs_begin, active_npcs_end),
@@ -2181,7 +2182,7 @@ game_menus = [
 	
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2191,7 +2192,7 @@ game_menus = [
 
   
   ("companion_report",0,
-   "{s7}{s1}",
+   "-{s7}{s1}",
    "none",
    [
    (str_clear, s1),
@@ -2357,7 +2358,7 @@ game_menus = [
 
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2684,7 +2685,7 @@ game_menus = [
 
   
   ("character_report",0,
-   "{s9}",
+   "-{s9}",
    "none",
    [(try_begin),
       (gt, "$g_player_reading_book", 0),
@@ -2853,7 +2854,7 @@ game_menus = [
 	   
 
 
-	("continue",[],"Continue...",
+	("continue",[],"-继续",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2864,7 +2865,7 @@ game_menus = [
   ),
 
   ("party_size_report",0,
-   "{s1}",
+   "-{s1}",
    "none",
    [(call_script, "script_game_get_party_companion_limit"),
     (assign, ":party_size_limit", reg0),
@@ -2900,7 +2901,7 @@ game_menus = [
     (str_store_string, s1, "@Current party size limit is {reg5}.^Current party size modifiers are:^^Base size:  +30^Leadership: {s2}{reg1}^Charisma: {s3}{reg2}^Renown: {s4}{reg3}^TOTAL:  {reg5}"),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2908,7 +2909,7 @@ game_menus = [
   ),
 
   ("faction_relations_report",0,
-   "{s1}",
+   "-{s1}",
    "none",
    [(str_clear, s2),
     (try_for_range, ":cur_kingdom", kingdoms_begin, kingdoms_end),
@@ -2979,7 +2980,7 @@ game_menus = [
 
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2988,7 +2989,7 @@ game_menus = [
 
 
   ("camp",mnf_scale_picture,
-   "You set up camp. What do you want to do?",
+   "-营地已经建好了，你想要做什么？",
    "none",
    [
      (assign, "$g_player_icon_state", pis_normal),
@@ -3001,11 +3002,11 @@ game_menus = [
         (change_screen_mission),
         ]
        ),
-      ("camp_action",[],"Take an action.",
+      ("camp_action",[],"-干点事情。",
        [(jump_to_menu, "mnu_camp_action"),
         ]
        ),
-      ("camp_wait_here",[],"Wait here for some time.",
+      ("camp_wait_here",[],"-在这里待一会儿。",
        [
            (assign,"$g_camp_mode", 1),
            (assign, "$g_infinite_camping", 0),
@@ -3031,7 +3032,7 @@ game_menus = [
        [(jump_to_menu, "mnu_camp_cheat"),
         ],
        ),
-      ("resume_travelling",[],"Resume travelling.",
+      ("resume_travelling",[],"-继续旅程。",
        [
            (change_screen_return),
         ]
@@ -3039,18 +3040,18 @@ game_menus = [
       ]
   ),
   ("camp_cheat",0,
-   "Select a cheat:",
+   "-选择作弊项目：",
    "none",
    [
      ],
     [
-      ("camp_cheat_find_item",[], "Find an item...",
+      ("camp_cheat_find_item",[], "-改变天气……",
        [
          (jump_to_menu, "mnu_cheat_find_item"),
 	   ]
        ),	   
 
-      ("camp_cheat_find_item",[], "Change weather..",
+      ("camp_cheat_find_item",[], "-改变天气……",
        [
          (jump_to_menu, "mnu_cheat_change_weather"),
 	   ]
@@ -3239,7 +3240,7 @@ game_menus = [
   ),
 
   ("camp_action",0,
-   "Choose an action:",
+   "-选择你要做的事：",
    "none",
    [
      ],
@@ -3257,12 +3258,12 @@ game_menus = [
           (assign, "$g_prisoner_recruit_size", 0),
           (assign, "$g_prisoner_recruit_last_time", 0),
         (try_end),
-        ], "Recruit some of your prisoners to your party.",
+        ], "-从俘虏中募兵。",
        [(jump_to_menu, "mnu_camp_recruit_prisoners"),
         ],
        ),
        
-      ("action_read_book",[],"Select a book to read.",
+      ("action_read_book",[],"-选一本书读。",
        [(jump_to_menu, "mnu_camp_action_read_book"),
         ]
        ),
@@ -3271,7 +3272,7 @@ game_menus = [
          (eq, "$players_kingdom_name_set", 1),
          (faction_slot_eq, "fac_player_supporters_faction", slot_faction_state, sfs_active),
          (faction_slot_eq, "fac_player_supporters_faction", slot_faction_leader, "trp_player"),
-         ],"Rename your kingdom.",
+         ],"-重命名你的王国",
        [(start_presentation, "prsnt_name_kingdom"),
         ]
        ),
@@ -3282,11 +3283,11 @@ game_menus = [
            #(start_presentation, "prsnt_custom_banner"),
         ]
        ),
-      ("action_retire",[],"Retire from adventuring.",
+      ("action_retire",[],"-从冒险中退出。",
        [(jump_to_menu, "mnu_retirement_verify"),
         ]
        ),
-      ("camp_action_4",[],"Back to camp menu.",
+      ("camp_action_4",[],"-退回营地菜单。",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -3294,7 +3295,7 @@ game_menus = [
   ),
 
   ("camp_recruit_prisoners",0,
-   "You offer your prisoners freedom if they agree to join you as soldiers. {s18}",
+   "-你答应这些俘虏，如果他们加入你的话，你就给他们以自由。{s18}",
    "none",
    [(assign, ":num_regular_prisoner_slots", 0),
     (party_get_num_prisoner_stacks, ":num_stacks", "p_main_party"),
@@ -3356,7 +3357,7 @@ game_menus = [
     (try_end),
     ],
     [
-      ("camp_recruit_prisoners_accept",[(gt, "$g_prisoner_recruit_troop_id", 0)],"Take them.",
+      ("camp_recruit_prisoners_accept",[(gt, "$g_prisoner_recruit_troop_id", 0)],"-接受。",
        [(remove_troops_from_prisoners, "$g_prisoner_recruit_troop_id", "$g_prisoner_recruit_size"),
         (party_add_members, "p_main_party", "$g_prisoner_recruit_troop_id", "$g_prisoner_recruit_size"),
         (store_mul, ":morale_change", -3, "$g_prisoner_recruit_size"),
@@ -3364,13 +3365,13 @@ game_menus = [
         (jump_to_menu, "mnu_camp"),
         ]
        ),
-      ("camp_recruit_prisoners_reject",[(gt, "$g_prisoner_recruit_troop_id", 0)],"Reject them.",
+      ("camp_recruit_prisoners_reject",[(gt, "$g_prisoner_recruit_troop_id", 0)],"-拒绝。",
        [(jump_to_menu, "mnu_camp"),
         (assign, "$g_prisoner_recruit_troop_id", 0),
         (assign, "$g_prisoner_recruit_size", 0),
         ]
        ),
-      ("continue",[(le, "$g_prisoner_recruit_troop_id", 0)],"Go back.",
+      ("continue",[(le, "$g_prisoner_recruit_troop_id", 0)],"-后退。",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -3378,11 +3379,11 @@ game_menus = [
   ),
   
   ("camp_no_prisoners",0,
-   "You have no prisoners to recruit from.",
+   "-你没有俘虏可以招募。",
    "none",
    [],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -3390,14 +3391,14 @@ game_menus = [
   ),
 
   ("camp_action_read_book",0,
-   "Choose a book to read:",
+   "-选一本书读：",
    "none",
    [],
     [
       ("action_read_book_1",[(player_has_item, "itm_book_tactics"),
                              (item_slot_eq, "itm_book_tactics", slot_item_book_read, 0),
                              (str_store_item_name, s1, "itm_book_tactics"),
-                             ],"{s1}.",
+                             ],"-{s1}。",
        [(assign, "$temp", "itm_book_tactics"),
         (jump_to_menu, "mnu_camp_action_read_book_start"),
         ]
@@ -3405,7 +3406,7 @@ game_menus = [
       ("action_read_book_2",[(player_has_item, "itm_book_persuasion"),
                              (item_slot_eq, "itm_book_persuasion", slot_item_book_read, 0),
                              (str_store_item_name, s1, "itm_book_persuasion"),
-                             ],"{s1}.",
+                             ],"-{s1}。",
        [(assign, "$temp", "itm_book_persuasion"),
         (jump_to_menu, "mnu_camp_action_read_book_start"),
         ]
@@ -3413,7 +3414,7 @@ game_menus = [
       ("action_read_book_3",[(player_has_item, "itm_book_leadership"),
                              (item_slot_eq, "itm_book_leadership", slot_item_book_read, 0),
                              (str_store_item_name, s1, "itm_book_leadership"),
-                             ],"{s1}.",
+                             ],"-{s1}。",
        [(assign, "$temp", "itm_book_leadership"),
         (jump_to_menu, "mnu_camp_action_read_book_start"),
         ]
@@ -3421,7 +3422,7 @@ game_menus = [
       ("action_read_book_4",[(player_has_item, "itm_book_intelligence"),
                              (item_slot_eq, "itm_book_intelligence", slot_item_book_read, 0),
                              (str_store_item_name, s1, "itm_book_intelligence"),
-                             ],"{s1}.",
+                             ],"-{s1}。",
        [(assign, "$temp", "itm_book_intelligence"),
         (jump_to_menu, "mnu_camp_action_read_book_start"),
         ]
@@ -3429,7 +3430,7 @@ game_menus = [
       ("action_read_book_5",[(player_has_item, "itm_book_trade"),
                              (item_slot_eq, "itm_book_trade", slot_item_book_read, 0),
                              (str_store_item_name, s1, "itm_book_trade"),
-                             ],"{s1}.",
+                             ],"-{s1}。",
        [(assign, "$temp", "itm_book_trade"),
         (jump_to_menu, "mnu_camp_action_read_book_start"),
         ]
@@ -3437,7 +3438,7 @@ game_menus = [
       ("action_read_book_6",[(player_has_item, "itm_book_weapon_mastery"),
                              (item_slot_eq, "itm_book_weapon_mastery", slot_item_book_read, 0),
                              (str_store_item_name, s1, "itm_book_weapon_mastery"),
-                             ],"{s1}.",
+                             ],"-{s1}。",
        [(assign, "$temp", "itm_book_weapon_mastery"),
         (jump_to_menu, "mnu_camp_action_read_book_start"),
         ]
@@ -3445,12 +3446,12 @@ game_menus = [
       ("action_read_book_7",[(player_has_item, "itm_book_engineering"),
                              (item_slot_eq, "itm_book_engineering", slot_item_book_read, 0),
                              (str_store_item_name, s1, "itm_book_engineering"),
-                             ],"{s1}.",
+                             ],"-{s1}。",
        [(assign, "$temp", "itm_book_engineering"),
         (jump_to_menu, "mnu_camp_action_read_book_start"),
         ]
        ),
-      ("camp_action_4",[],"Back to camp menu.",
+      ("camp_action_4",[],"-退回营地菜单。",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -3458,7 +3459,7 @@ game_menus = [
   ),
 
   ("camp_action_read_book_start",0,
-   "{s1}",
+   "-{s1}",
    "none",
    [(assign, ":new_book", "$temp"),
     (str_store_item_name, s2, ":new_book"),
@@ -3474,7 +3475,7 @@ game_menus = [
  Try as you might, it soon gives you a headache, and you're forced to give up the attempt."),
     (try_end),],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -3483,19 +3484,19 @@ game_menus = [
 
 
   ("retirement_verify",0,
-   "You are at day {reg0}. Your current luck is {reg1}. Are you sure you want to retire?",
+   "-你现在的时间是{reg0}天。运气是{reg1}。你确实想要从这场冒险中退出吗？",
    "none",
    [
      (store_current_day, reg0),
      (assign, reg1, "$g_player_luck"),
      ],
     [
-      ("retire_yes",[],"Yes.",
+      ("retire_yes",[],"-是的。",
        [
          (start_presentation, "prsnt_retirement"),
         ]
        ),
-      ("retire_no",[],"No.",
+      ("retire_no",[],"-不。",
        [
          (jump_to_menu, "mnu_camp"),
         ]
@@ -3510,7 +3511,7 @@ game_menus = [
    "none",
    [],
     [
-      ("end_game_bye",[],"Farewell.",
+      ("end_game_bye",[],"-再会。",
        [
          (change_screen_quit),
         ]
@@ -3519,13 +3520,13 @@ game_menus = [
   ),
 
   ("cattle_herd",mnf_scale_picture,
-   "You encounter a herd of cattle.",
+   "-你遇到了一群牛。",
    "none",
    [(play_sound, "snd_cow_moo"),
     (set_background_mesh, "mesh_pic_cattle"),
    ],
     [
-      ("cattle_drive_away",[],"Drive the cattle onward.",
+      ("cattle_drive_away",[],"-赶走他们。",
        [
         (party_set_slot, "$g_encountered_party", slot_cattle_driven_by_player, 1),
         (party_set_ai_behavior, "$g_encountered_party", ai_bhvr_driven_by_party),
@@ -3533,7 +3534,7 @@ game_menus = [
         (change_screen_return),
         ]
        ),
-      ("cattle_stop",[],"Bring the herd to a stop.",
+      ("cattle_stop",[],"-把他们带到一个休息点。",
        [
         (party_set_slot, "$g_encountered_party", slot_cattle_driven_by_player, 0),
         (party_set_ai_behavior, "$g_encountered_party", ai_bhvr_hold),
@@ -3546,11 +3547,11 @@ game_menus = [
                         (quest_slot_eq, "qst_move_cattle_herd", slot_quest_target_party, "$g_encountered_party"),
                         (assign, ":continue", 0),
                       (try_end),
-                      (eq, ":continue", 1)],"Slaughter some of the animals.",
+                      (eq, ":continue", 1)],"-屠宰其中的一些。",
        [(jump_to_menu, "mnu_cattle_herd_kill"),
         ]
        ),
-      ("leave",[],"Leave.",
+      ("leave",[],"-离开",
        [(change_screen_return),
         ]
        ),
@@ -3558,46 +3559,46 @@ game_menus = [
   ),
 
   ("cattle_herd_kill",0,
-   "How many animals do you want to slaughter?",
+   "-你想屠宰几头？",
    "none",
    [(party_get_num_companions, reg5, "$g_encountered_party")],
     [
-      ("cattle_kill_1",[(ge, reg5, 1),],"One.",
+      ("cattle_kill_1",[(ge, reg5, 1),],"-一。",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 1),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
         (play_sound, "snd_cow_slaughter"),
         ]
        ),
-      ("cattle_kill_2",[(ge, reg5, 2),],"Two.",
+      ("cattle_kill_2",[(ge, reg5, 2),],"-二。",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 2),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
         (play_sound, "snd_cow_slaughter"),
         ]
        ),
-      ("cattle_kill_3",[(ge, reg5, 3),],"Three.",
+      ("cattle_kill_3",[(ge, reg5, 3),],"-三。",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 3),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
         (play_sound, "snd_cow_slaughter"),
         ]
        ),
-      ("cattle_kill_4",[(ge, reg5, 4),],"Four.",
+      ("cattle_kill_4",[(ge, reg5, 4),],"-四。",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 4),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
         (play_sound, "snd_cow_slaughter"),
         ]
        ),
-      ("cattle_kill_5",[(ge, reg5, 5),],"Five.",
+      ("cattle_kill_5",[(ge, reg5, 5),],"-五。",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 5),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
         (play_sound, "snd_cow_slaughter"),
         ]
        ),
-      ("go_back_dot",[],"Go back.",
+      ("go_back_dot",[],"-后退。",
        [(jump_to_menu, "mnu_cattle_herd"),
         ]
        ),
@@ -3614,11 +3615,11 @@ game_menus = [
 
 
   ("arena_duel_fight",0,
-   "You and your opponent prepare to duel.",
+   "-你和你的对手准备决斗。",
    "none",
    [],
    [
-     ("continue",[],"Continue...",
+     ("continue",[],"-继续",
       [
         (assign, "$g_leave_encounter", 0),
         
@@ -3713,7 +3714,7 @@ game_menus = [
 	(try_end),
    ],
    [
-     ("continue",[],"Continue...",
+     ("continue",[],"-继续",
       [
         (call_script, "script_get_meeting_scene"), (assign, ":meeting_scene", reg0),
         (modify_visitors_at_site,":meeting_scene"),
@@ -3731,7 +3732,7 @@ game_menus = [
     
   (
     "simple_encounter",mnf_enable_hot_keys|mnf_scale_picture,
-    "{s2} You have {reg10} troops fit for battle against their {reg11}.",
+    "-{s2}你将以{reg10}人的部队迎战对手{reg11}人。",
     "none",
     [      
         (assign, "$g_enemy_party", "$g_encountered_party"),
@@ -3933,7 +3934,7 @@ game_menus = [
         (eq, "$encountered_party_friendly", 0),
         (neg|troop_is_wounded, "trp_player"),
       ],
-      "Charge the enemy.",
+      "-攻入敌阵！",
       [
         (assign, "$g_battle_result", 0),
         (assign, "$g_engaged_enemy", 1),
@@ -3974,7 +3975,7 @@ game_menus = [
         (eq, "$encountered_party_friendly", 0),
         (call_script, "script_party_count_members_with_full_health", "p_main_party"),(ge, reg0, 4),
       ],
-      "Order your troops to attack without you.",
+      "-坐镇指挥，让你的部队攻击。",
       [
         (jump_to_menu, "mnu_order_attack_begin"),
         #(simulate_battle,3),
@@ -3982,7 +3983,7 @@ game_menus = [
       
       ("encounter_leave",[
           (eq,"$cant_leave_encounter", 0),
-          ],"Leave.",[
+          ],"-离开",[
 
 ###NPC companion changes begin
               (try_begin),
@@ -4024,11 +4025,11 @@ game_menus = [
          (call_script, "script_party_count_fit_regulars", "p_main_party"),
          (assign, ":player_count", reg0),
          (ge, ":player_count", ":enemy_party_strength"),
-         ],"Pull back, leaving some soldiers behind to cover your retreat.",[(jump_to_menu, "mnu_encounter_retreat_confirm"),]),
+         ],"-以留下少量部队掩护为代价撤退。",[(jump_to_menu, "mnu_encounter_retreat_confirm"),]),
          
       ("encounter_surrender",[
          (eq,"$cant_leave_encounter", 1),
-          ],"Surrender.",[(assign,"$g_player_surrenders",1)]),
+          ],"-投降。",[(assign,"$g_player_surrenders",1)]),
     ]
   ),
   (
@@ -4059,7 +4060,7 @@ game_menus = [
      (try_end),
      ],
     [
-      ("leave_behind",[],"Go on. The sacrifice of these men will save the rest.",
+      ("leave_behind",[],"-实行计划。以牺牲掉那些人的代价拯救剩下的部队。",
 	  [
 	    (assign, ":num_casualties", reg4),
 		(try_for_range, ":unused", 0, ":num_casualties"),
@@ -4072,17 +4073,17 @@ game_menus = [
 		(call_script, "script_change_player_party_morale", -20),
 		(jump_to_menu, "mnu_encounter_retreat"),
       ]),
-      ("dont_leave_behind",[],"No. We leave no one behind.",[(jump_to_menu, "mnu_simple_encounter"),]),
+      ("dont_leave_behind",[],"-不，我们不会牺牲任何一个战友。",[(jump_to_menu, "mnu_simple_encounter"),]),
     ]
   ),
   (
     "encounter_retreat",0,
-    "You tell {reg4} of your troops to hold the enemy while you retreat with the rest of your party.",
+    "-你命令{reg4}名战士负责在大部队撤退的时候拖住敌人前进的步伐。",
     "none",
     [
      ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
 	  [
         ###Troop commentary changes begin
         (call_script, "script_objectionable_action", tmt_aristocratic, "str_flee_battle"),
@@ -4103,11 +4104,11 @@ game_menus = [
   ),
   (
     "order_attack_begin",0,
-    "Your troops prepare to attack the enemy.",
+    "-你的部队已经做好了战斗准备。",
     "none",
     [],
     [
-      ("order_attack_begin",[],"Order the attack to begin.", 
+      ("order_attack_begin",[],"-下令攻击。", 
       [
         (party_get_template_id, ":encountered_party_template", "$g_encountered_party"),		
         (try_begin),
@@ -4118,12 +4119,12 @@ game_menus = [
         (assign, "$g_engaged_enemy", 1),
         (jump_to_menu,"mnu_order_attack_2"),
       ]),
-      ("call_back",[],"Call them back.",[(jump_to_menu,"mnu_simple_encounter")]),
+      ("call_back",[],"-后撤。",[(jump_to_menu,"mnu_simple_encounter")]),
     ]
   ),
   (
     "order_attack_2",mnf_disable_all_keys,
-    "{s4}^^Your casualties: {s8}^^Enemy casualties: {s9}",
+    "-{s4}^^我军人员伤亡：{s8}^^敌军人员伤亡：{s9}",
     "none",
     [
       (set_background_mesh, "mesh_pic_charge"),
@@ -4269,13 +4270,13 @@ game_menus = [
     (try_end),
     ],
     [
-      ("order_attack_continue",[(eq, "$no_soldiers_left", 0)],"Order your soldiers to continue the attack.",[
+      ("order_attack_continue",[(eq, "$no_soldiers_left", 0)],"-继续攻击。",[
           (jump_to_menu,"mnu_order_attack_2"),
           ]),
-      ("order_retreat",[(eq, "$no_soldiers_left", 0)],"Call your soldiers back.",[
+      ("order_retreat",[(eq, "$no_soldiers_left", 0)],"-让你的士兵撤回来。",[
           (jump_to_menu,"mnu_simple_encounter"),
           ]),
-      ("continue",[(eq, "$no_soldiers_left", 1)],"Continue...",[
+      ("continue",[(eq, "$no_soldiers_left", 1)],"-继续",[
           (jump_to_menu,"mnu_simple_encounter"),
           ]),
     ]
@@ -4283,7 +4284,7 @@ game_menus = [
 
   (
     "battle_debrief",mnf_scale_picture|mnf_disable_all_keys,
-    "{s11}^^Your Casualties:{s8}{s10}^^Enemy Casualties:{s9}",
+    "-{s11}伤亡：^^我军伤亡：{s8}{s10}^^敌军伤亡：{s9}",
     "none",
     [
      (try_begin),
@@ -4416,7 +4417,7 @@ game_menus = [
      (try_end),
      ],
     [
-      ("continue",[],"Continue...",[(jump_to_menu, "$g_next_menu"),]),
+      ("continue",[],"-继续",[(jump_to_menu, "$g_next_menu"),]),
     ]
   ),
 
@@ -4424,7 +4425,7 @@ game_menus = [
   
   (
     "total_victory", 0,
-    "You shouldn't be reading this... {s9}",
+    "-你不该看这个……{s9}",
     "none",
     [
         # We exploit the menu condition system below.
@@ -4794,17 +4795,17 @@ game_menus = [
         (try_end),
       ],
     [
-      ("continue",[],"Continue...",[]),
+      ("continue",[],"-继续",[]),
         ]
   ),
 
   (
     "enemy_slipped_away",0,
-    "{s17}",
+    "-{s17}",
     "none",
     [],
     [
-      ("continue",[],"Continue...",[(jump_to_menu,"mnu_total_victory")]),
+      ("continue",[],"-继续",[(jump_to_menu,"mnu_total_victory")]),
     ]
   ),
 
@@ -4881,7 +4882,7 @@ game_menus = [
 
   (
     "permanent_damage",mnf_disable_all_keys,
-    "{s0}",
+    "-{s0}",
     "none",
     [
       (assign, ":end_cond", 1),
@@ -4946,7 +4947,7 @@ game_menus = [
            (try_end),
          (try_end),
          ],
-       "{s0}",
+       "-{s0}",
        [
          (try_begin),
            (eq, "$g_next_menu", -1),
@@ -4961,7 +4962,7 @@ game_menus = [
   
   (
     "pre_join",0,
-    "You come across a battle between {s2} and {s1}. You decide to...",
+    "-你遇到{s2}正在攻击{s1}，你决定……",
     "none",
     [
         (str_store_party_name, 1,"$g_encountered_party"),
@@ -4976,7 +4977,7 @@ game_menus = [
           (ge, ":attacker_relation", 0),
           (lt, ":defender_relation", 0),
           ],
-          "Move in to help the {s2}.",[
+          "-对{s2}施以援手。",[
               (select_enemy,0),
               (assign,"$g_enemy_party","$g_encountered_party"),
               (assign,"$g_ally_party","$g_encountered_party_2"),
@@ -4989,18 +4990,18 @@ game_menus = [
           (ge, ":defender_relation", 0),
           (lt, ":attacker_relation", 0),
           ],
-          "Rush to the aid of the {s1}.",[
+          "-对{s1}施以援手。",[
               (select_enemy,1),
               (assign,"$g_enemy_party","$g_encountered_party_2"),
               (assign,"$g_ally_party","$g_encountered_party"),
               (jump_to_menu,"mnu_join_battle")]),
-      ("pre_join_leave",[],"Don't get involved.",[(leave_encounter),(change_screen_return)]),
+      ("pre_join_leave",[],"-不卷入纷争。",[(leave_encounter),(change_screen_return)]),
     ]
   ),
   
   (
     "join_battle",0,
-    "You are helping the {s2} against the {s1}. You have {reg10} troops fit for battle against the enemy's {reg11}.",
+    "-你决定帮助{s2}对抗{s1}，你将有{reg10}名士兵参加战斗对抗{reg11}个敌人。",
     "none",
     [                
         (str_store_party_name, 1,"$g_enemy_party"),
@@ -5063,7 +5064,7 @@ game_menus = [
       [
         (neg|troop_is_wounded, "trp_player"),
       ],
-      "Charge the enemy.",
+      "-攻入敌阵！",
       [
         (assign, "$g_joined_battle_to_help", 1),
         (party_set_next_battle_simulation_time, "$g_encountered_party", -1),
@@ -5084,14 +5085,14 @@ game_menus = [
         (call_script, "script_party_count_members_with_full_health", "p_main_party"),
         (ge, reg0, 3),
       ],
-      "Order your troops to attack with your allies while you stay back.",
+      "-仅仅让你的士兵加入你的盟友。",
       [
         (assign, "$g_joined_battle_to_help", 1),
         (party_set_next_battle_simulation_time, "$g_encountered_party", -1),
         (jump_to_menu,"mnu_join_order_attack"),
       ]),
       
-      ("join_leave",[],"Leave.",
+      ("join_leave",[],"-离开",
       [
         (try_begin),
            (neg|troop_is_wounded, "trp_player"),
@@ -5106,7 +5107,7 @@ game_menus = [
 
   (
     "join_order_attack",mnf_disable_all_keys,
-    "{s4}^^Your casualties: {s8}^^Allies' casualties: {s9}^^Enemy casualties: {s10}",
+    "-{s4}^^我军伤亡：{s8}^^盟军伤亡：{s9}^^敌军伤亡：{s10}",
     "none",
     [
       (call_script, "script_party_calculate_strength", "p_main_party", 1), #skip player
@@ -5188,7 +5189,7 @@ game_menus = [
        (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
       [
         (jump_to_menu,"mnu_join_battle"),
       ]),
@@ -5199,63 +5200,63 @@ game_menus = [
 # Towns
   (
     "zendar",mnf_auto_enter,
-    "You enter the town of Zendar.",
+    "-你进入了禅达镇。",
     "none",
     [(reset_price_rates,0),(set_price_rate_for_item,"itm_tools",70),(set_price_rate_for_item,"itm_salt",140)],
     [
-      ("zendar_enter",[],"_",[(set_jump_mission,"mt_town_default"),(jump_to_scene,"scn_zendar_center"),(change_screen_mission)],"Door to the town center."),
-      ("zendar_tavern",[],"_",[(set_jump_mission,"mt_town_default"),
+      ("zendar_enter",[],"-【进入】",[(set_jump_mission,"mt_town_default"),(jump_to_scene,"scn_zendar_center"),(change_screen_mission)],"Door to the town center."),
+      ("zendar_tavern",[],"-【进入】",[(set_jump_mission,"mt_town_default"),
                                                    (jump_to_scene,"scn_the_happy_boar"),
                                                    (change_screen_mission)],"Door to the tavern."),
-      ("zendar_merchant",[],"_",[(set_jump_mission,"mt_town_default"),
+      ("zendar_merchant",[],"-【进入】",[(set_jump_mission,"mt_town_default"),
                                                    (jump_to_scene,"scn_zendar_merchant"),
                                                    (change_screen_mission)],"Door to the merchant."),
-      ("zendar_arena",[],"_",[(set_jump_mission,"mt_town_default"),
+      ("zendar_arena",[],"-【进入】",[(set_jump_mission,"mt_town_default"),
                                                    (jump_to_scene,"scn_zendar_arena"),
                                                    (change_screen_mission)],"Door to the arena."),
 #      ("zendar_leave",[],"Leave town.",[[leave_encounter],[change_screen_return]]),
-      ("town_1_leave",[],"_",[(leave_encounter),(change_screen_return)]),
+      ("town_1_leave",[],"-【进入】",[(leave_encounter),(change_screen_return)]),
     ]
   ),
   (
     "salt_mine",mnf_auto_enter,
-    "You enter the salt mine.",
+    "-你进入了盐矿。",
     "none",
     [(reset_price_rates,0),(set_price_rate_for_item,"itm_salt",55)],
     [
-      ("enter",[],"Enter.",[(set_jump_mission,"mt_town_center"),(jump_to_scene,"scn_salt_mine"),(change_screen_mission)]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+      ("enter",[],"-进入",[(set_jump_mission,"mt_town_center"),(jump_to_scene,"scn_salt_mine"),(change_screen_mission)]),
+      ("leave",[],"-离开",[(leave_encounter),(change_screen_return)]),
     ]
   ),
   (
     "four_ways_inn",mnf_auto_enter,
-    "You arrive at the Four Ways Inn.",
+    "-你进入了四方客栈。",
     "none",
     [],
     [
 
-#      ("enter",[],"Enter.",[[set_jump_mission,"mt_town_default"],[jump_to_scene,"scn_conversation_scene"],[change_screen_mission]]),
-      ("enter",[],"Enter.",[(set_jump_mission,"mt_ai_training"),(jump_to_scene,"scn_four_ways_inn"),(change_screen_mission)]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+#      ("enter",[],"-进入",[[set_jump_mission,"mt_town_default"],[jump_to_scene,"scn_conversation_scene"],[change_screen_mission]]),
+      ("enter",[],"-进入",[(set_jump_mission,"mt_ai_training"),(jump_to_scene,"scn_four_ways_inn"),(change_screen_mission)]),
+      ("leave",[],"-离开",[(leave_encounter),(change_screen_return)]),
     ]
   ),
   (
     "test_scene",0,
-    "You enter the test scene.",
+    "-你进入了测试场景。",
     "none",
     [],
     [
 
-      ("enter",[],"Enter 1.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_1"],[change_screen_mission]]),
-      ("enter",[],"Enter 2.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_2"],[change_screen_mission]]),
-      ("enter",[],"Enter 3.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_3"],[change_screen_mission]]),
-      ("enter",[],"Enter 4.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_4"],[change_screen_mission]]),
-      ("enter",[],"Enter 5.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_5"],[change_screen_mission]]),
-      ("enter",[],"Enter 6.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_6"],[change_screen_mission]]),
-      ("enter",[],"Enter 7.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_test2"],[change_screen_mission]]),
-      ("enter",[],"Enter 8.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_test3"],[change_screen_mission]]),
-      ("enter",[],"Enter 9.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_13"],[change_screen_mission]]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+      ("enter",[],"-进入",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_1"],[change_screen_mission]]),
+      ("enter",[],"-进入",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_2"],[change_screen_mission]]),
+      ("enter",[],"-进入",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_3"],[change_screen_mission]]),
+      ("enter",[],"-进入",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_4"],[change_screen_mission]]),
+      ("enter",[],"-进入",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_5"],[change_screen_mission]]),
+      ("enter",[],"-进入",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_6"],[change_screen_mission]]),
+      ("enter",[],"-进入",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_test2"],[change_screen_mission]]),
+      ("enter",[],"-进入",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_test3"],[change_screen_mission]]),
+      ("enter",[],"-进入",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_multi_scene_13"],[change_screen_mission]]),
+      ("leave",[],"-离开",[(leave_encounter),(change_screen_return)]),
     ]
   ),
   (
@@ -5270,18 +5271,18 @@ game_menus = [
       ("enter_f3",[],"{!}Field 3",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_3"],[change_screen_mission]]),
       ("enter_f4",[],"{!}Field 4",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_4"],[change_screen_mission]]),
       ("enter_f5",[],"{!}Field 5",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_5"],[change_screen_mission]]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+      ("leave",[],"-离开",[(leave_encounter),(change_screen_return)]),
     ]
   ),
   (
     "dhorak_keep",0,
 #    "Dhorak Keep, the stronghold of the bandits stands overlooking the barren wilderness.",
-    "You enter the Dhorak Keep",
+    "-你进入了多拉克要塞。",
     "none",
     [],
     [
-      ("enter",[],"Enter.",[(set_jump_mission,"mt_town_center"),(jump_to_scene,"scn_dhorak_keep"),(change_screen_mission)]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+      ("enter",[],"-进入",[(set_jump_mission,"mt_town_center"),(jump_to_scene,"scn_dhorak_keep"),(change_screen_mission)]),
+      ("leave",[],"-离开",[(leave_encounter),(change_screen_return)]),
     ]
   ),
   
@@ -5312,7 +5313,7 @@ game_menus = [
 
   (
     "join_siege_outside",mnf_scale_picture,
-    "{s1} has come under siege by {s2}.",
+    "-{s1}正被{s2}围攻。",
     "none",
     [
         (str_store_party_name, s1, "$g_encountered_party"),
@@ -5332,27 +5333,27 @@ game_menus = [
                              (store_faction_of_party, ":faction_no", "$g_encountered_party"),
                              (store_relation, ":relation", ":faction_no", "fac_player_supporters_faction"),
                              (lt, ":relation", 0),
-                             ],"Approach the siege camp.",[
+                             ],"-进入围城营地。",[
           (jump_to_menu, "mnu_besiegers_camp_with_allies"),
                                 ]),
       ("pass_through_siege",[(store_faction_of_party, ":faction_no", "$g_encountered_party"),
                              (store_relation, ":relation", ":faction_no", "fac_player_supporters_faction"),
                              (ge, ":relation", 0),
-                             ],"Pass through the siege lines and enter {s1}.",
+                             ],"-穿过围城进入{s1}。",
        [
             (jump_to_menu,"mnu_cut_siege_without_fight"),
           ]),
-      ("leave",[],"Leave.",[(leave_encounter),
+      ("leave",[],"-离开",[(leave_encounter),
                             (change_screen_return)]),
     ]
   ),
   (
     "cut_siege_without_fight",0,
-    "The besiegers let you approach the gates without challenge.",
+    "-围城方放你进入了城堡。",
     "none",
     [],
     [
-      ("continue",[],"Continue...",[(try_begin),
+      ("continue",[],"-继续",[(try_begin),
                                    (this_or_next|eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
                                    (eq, "$g_encountered_party_faction", "$players_kingdom"),
                                    (jump_to_menu, "mnu_town"),
@@ -5409,7 +5410,7 @@ game_menus = [
         (try_end),
         ],
     [
-      ("talk_to_siege_commander",[],"Request a meeting with the commander.",[
+      ("talk_to_siege_commander",[],"-要求和指挥官会面。",[
                                 (call_script, "script_get_meeting_scene"), (assign, ":meeting_scene", reg0),
                                 (modify_visitors_at_site,":meeting_scene"),(reset_visitors),
                                 (set_visitor,0,"trp_player"),
@@ -5420,7 +5421,7 @@ game_menus = [
                                 (jump_to_scene,":meeting_scene"),
                                 (assign, "$talk_context", tc_siege_commander),
                                 (change_screen_map_conversation, ":siege_leader_id")]),
-      ("join_siege_with_allies",[(neg|troop_is_wounded, "trp_player")], "Join the next assault.",
+      ("join_siege_with_allies",[(neg|troop_is_wounded, "trp_player")], "-加入下一轮的攻城。",
        [
            (assign, "$g_joined_battle_to_help", 1), 
            (party_set_next_battle_simulation_time, "$g_encountered_party", -1),
@@ -5464,7 +5465,7 @@ game_menus = [
       ("join_siege_stay_back", [(call_script, "script_party_count_members_with_full_health", "p_main_party"),
                                 (ge, reg0, 3),
                                 ],
-       "Order your soldiers to join the next assault without you.",
+       "-坐镇指挥，让你的部队协助下一轮的攻城。",
        [
          (assign, "$g_joined_battle_to_help", 1), 
          (party_set_next_battle_simulation_time, "$g_encountered_party", -1),
@@ -5482,13 +5483,13 @@ game_menus = [
            (assign, "$g_player_follow_army_warnings", 0),
          (try_end),
          (jump_to_menu,"mnu_castle_attack_walls_with_allies_simulate")]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+      ("leave",[],"-离开",[(leave_encounter),(change_screen_return)]),
     ]
   ),
 
   (
     "castle_outside",mnf_scale_picture,
-    "You are outside {s2}.{s11} {s3} {s4}",
+    "-你在{s2}的外面。{s11}{s3}{s4}",
     "none",
     [
         (assign, "$g_enemy_party", "$g_encountered_party"),
@@ -5694,7 +5695,7 @@ game_menus = [
 #             ]),
       ("approach_gates",[(this_or_next|eq,"$entry_to_town_forbidden",1),
                           (party_slot_eq,"$g_encountered_party", slot_party_type,spt_castle)],
-       "Approach the gates and hail the guard.",[
+       "-走近城门，叫守卫出来。",[
                                                   (jump_to_menu, "mnu_castle_guard"),
 ##                                                   (modify_visitors_at_site,"scn_conversation_scene"),(reset_visitors),
 ##                                                   (set_visitor,0,"trp_player"),
@@ -5719,7 +5720,7 @@ game_menus = [
           (eq, "$entry_to_town_forbidden", 1),
           (eq, "$cant_sneak_into_town", 0)
         ],
-       "Disguise yourself and try to sneak into the {s7}",
+       "-伪装，偷偷溜进{s7}里去。",
        [
          (faction_get_slot, ":player_alarm", "$g_encountered_party_faction", slot_faction_player_alarm),
          (party_get_num_companions, ":num_men", "p_main_party"),
@@ -5758,7 +5759,7 @@ game_menus = [
              (assign, reg6, 0),
            (try_end),
            ],
-       "Besiege the {reg6?town:castle}.",
+       "-围攻{reg6?城镇:城堡}",
        [
          (assign,"$g_player_besiege_town","$g_encountered_party"),
          (store_relation, ":relation", "fac_player_supporters_faction", "$g_encountered_party_faction"),
@@ -5791,7 +5792,7 @@ game_menus = [
            (jump_to_menu, "mnu_castle_besiege"),
            ]),
 
-      ("castle_leave",[],"Leave.",[(change_screen_return,0)]),
+      ("castle_leave",[],"-离开",[(change_screen_return,0)]),
       ("castle_cheat_interior",[(eq, "$cheat_mode", 1)], "{!}CHEAT! Interior.",[(set_jump_mission,"mt_ai_training"),
                                                        (party_get_slot, ":castle_scene", "$current_town", slot_town_castle),
                                                        (jump_to_scene,":castle_scene"),
@@ -5813,7 +5814,7 @@ game_menus = [
   ),
    (
     "castle_guard",mnf_scale_picture,
-    "You approach the gate. The men on the walls watch you closely.",
+    "-你走近了城门。城墙上的守卫正紧盯着你。",
     "none",
     [
 		(call_script, "script_set_town_picture"),
@@ -5821,7 +5822,7 @@ game_menus = [
     [
       ("request_shelter",[(party_slot_eq, "$g_encountered_party",slot_party_type, spt_castle),
                           (ge, "$g_encountered_party_relation", 0)],
-       "Request entry to the castle.",
+       "-要求进入城堡。",
        [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
         (try_begin),
           (lt, ":castle_lord", 0),
@@ -5839,25 +5840,25 @@ game_menus = [
         (try_end),
        ]),
       ("request_meeting_commander",[],
-       "Request a meeting with someone.",
+       "-要求和城堡中的某人会面。",
        [
           (jump_to_menu, "mnu_castle_meeting"),
        ]),
       ("guard_leave",[],
-       "Leave.",
+       "-离开",
        [(change_screen_return,0)]),
     ]
   ),
   (
     "castle_entry_granted",mnf_scale_picture,
-    "After a brief wait, the guards open the gates for you and allow your party inside.",
+    "-简短的等待之后，守卫打开了城门，允许你和你的部队进入城中。",
     "none",
     [
 		(call_script, "script_set_town_picture"),
     ],
     [
       ("continue",[],
-       "Continue...",
+       "-继续",
        [(jump_to_menu,"mnu_town")]),
     ]
   ),
@@ -5871,13 +5872,13 @@ game_menus = [
     ],
     [
       ("continue",[],
-       "Continue...",
+       "-继续",
        [(jump_to_menu,"mnu_castle_guard")]),
     ]
   ),
   (
     "castle_meeting",mnf_scale_picture,
-    "With whom do you want to meet?",
+    "-你想要见谁？",
     "none",
     [
         (assign, "$num_castle_meeting_troops", 0),
@@ -5892,39 +5893,39 @@ game_menus = [
     ],
     [
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 0),(troop_get_slot, ":troop_no", "trp_temp_array_a", 0),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 0),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 0),(jump_to_menu,"mnu_castle_meeting_selected")]),
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 1),(troop_get_slot, ":troop_no", "trp_temp_array_a", 1),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 1),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 1),(jump_to_menu,"mnu_castle_meeting_selected")]),
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 2),(troop_get_slot, ":troop_no", "trp_temp_array_a", 2),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 2),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 2),(jump_to_menu,"mnu_castle_meeting_selected")]),
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 3),(troop_get_slot, ":troop_no", "trp_temp_array_a", 3),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 3),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 3),(jump_to_menu,"mnu_castle_meeting_selected")]),
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 4),(troop_get_slot, ":troop_no", "trp_temp_array_a", 4),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 4),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 4),(jump_to_menu,"mnu_castle_meeting_selected")]),
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 5),(troop_get_slot, ":troop_no", "trp_temp_array_a", 5),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 5),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 5),(jump_to_menu,"mnu_castle_meeting_selected")]),
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 6),(troop_get_slot, ":troop_no", "trp_temp_array_a", 6),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 6),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 6),(jump_to_menu,"mnu_castle_meeting_selected")]),
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 7),(troop_get_slot, ":troop_no", "trp_temp_array_a", 7),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 7),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 7),(jump_to_menu,"mnu_castle_meeting_selected")]),
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 8),(troop_get_slot, ":troop_no", "trp_temp_array_a", 8),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 8),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 8),(jump_to_menu,"mnu_castle_meeting_selected")]),
       ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 9),(troop_get_slot, ":troop_no", "trp_temp_array_a", 9),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 9),(jump_to_menu,"mnu_castle_meeting_selected")]),
+       "-{s5}。",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 9),(jump_to_menu,"mnu_castle_meeting_selected")]),
       
       ("forget_it",[],
-       "Forget it.",
+       "-算了。",
        [(jump_to_menu,"mnu_castle_guard")]),
     ]
   ),
   (
     "castle_meeting_selected",0,
-    "Your request for a meeting is relayed inside, and finally {s6} appears in the courtyard to speak with you.",
+    "-你的申请被传递上去了，最终{s6}出现在你面前与你进行交涉。",
     "none",
     [(str_store_troop_name, s6, "$castle_meeting_selected_troop")],
     [
       ("continue",[],
-       "Continue...",
+       "-继续",
        [(jump_to_menu, "mnu_castle_outside"),
         (modify_visitors_at_site,"scn_conversation_scene"),(reset_visitors),
         (set_visitor,0,"trp_player"),
@@ -5940,7 +5941,7 @@ game_menus = [
 
    (
     "castle_besiege",mnf_scale_picture,
-    "You are laying siege to {s1}. {s2} {s3}",
+    "-你已经在围攻{s1}。{s2}{s3}",
     "none",
     [
         (troop_get_type, ":is_female", "trp_player"),
@@ -6073,7 +6074,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("siege_request_meeting",[(eq, "$cant_talk_to_enemy", 0)],"Call for a meeting with the castle commander.", [
+      ("siege_request_meeting",[(eq, "$cant_talk_to_enemy", 0)],"-要求和城堡的指挥官会面。", [
           (assign, "$cant_talk_to_enemy", 1),
           (assign, "$g_enemy_surrenders",0),
           (assign, "$g_castle_left_to_player",0),
@@ -6088,7 +6089,7 @@ game_menus = [
           (try_end),
            ]),
         
-      ("wait_24_hours",[],"Wait until tomorrow.", [
+      ("wait_24_hours",[],"-等到明天。", [
           (assign,"$auto_besiege_town","$g_encountered_party"),
           (assign, "$g_siege_force_wait", 1),
           (store_time_of_day,":cur_time_of_day"),
@@ -6111,7 +6112,7 @@ game_menus = [
          (store_current_hours, ":cur_hours"),
          (ge, ":cur_hours", "$g_siege_method_finish_hours"),
        ],
-       "Lead your soldiers in an assault.", 
+       "-亲自率领攻城。", 
        [
            (try_begin),
              (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
@@ -6161,13 +6162,13 @@ game_menus = [
          (store_current_hours, ":cur_hours"),
          (ge, ":cur_hours",  "$g_siege_method_finish_hours"),
          ],
-       "Order your soldiers to attack while you stay back...", [(assign, "$cant_talk_to_enemy", 0),(jump_to_menu,"mnu_castle_attack_walls_simulate")]),
+       "-坐镇指挥，让你的部队攻击……", [(assign, "$cant_talk_to_enemy", 0),(jump_to_menu,"mnu_castle_attack_walls_simulate")]),
 
       ("build_ladders",[(party_slot_eq, "$current_town", slot_center_siege_with_belfry, 0),(eq, "$g_siege_method", 0)],
-       "Prepare ladders to attack the walls.", [(jump_to_menu,"mnu_construct_ladders")]),
+       "-准备攻击城墙。", [(jump_to_menu,"mnu_construct_ladders")]),
 
       ("build_siege_tower",[(party_slot_eq, "$current_town", slot_center_siege_with_belfry, 1),(eq, "$g_siege_method", 0)],
-       "Build a siege tower.", [(jump_to_menu,"mnu_construct_siege_tower")]),
+       "-建立攻城塔。", [(jump_to_menu,"mnu_construct_siege_tower")]),
 
       ("cheat_castle_lead_attack",[(eq, "$cheat_mode", 1),
                                    (eq, "$g_siege_method", 0)],
@@ -6186,7 +6187,7 @@ game_menus = [
         (jump_to_menu, "mnu_total_victory"),
        ]),
 	   
-      ("lift_siege",[],"Abandon the siege.",
+      ("lift_siege",[],"-放弃围城。",
        [
          (call_script, "script_lift_siege", "$g_player_besiege_town", 0),
          (assign,"$g_player_besiege_town", -1),
@@ -6196,14 +6197,14 @@ game_menus = [
   
   (
     "siege_attack_meets_sally",mnf_scale_picture,
-    "The defenders sally out to meet your assault.",
+    "-守城方派了部队来对你进行还击。",
     "none",
     [
         (set_background_mesh, "mesh_pic_sally_out"),
     ],
     [
       ("continue",[],
-       "Continue...",
+       "-继续",
        [
              (jump_to_menu, "mnu_battle_debrief"),
              (change_screen_mission),
@@ -6213,7 +6214,7 @@ game_menus = [
 
    (
     "castle_besiege_inner_battle",mnf_scale_picture,
-    "{s1}",
+    "-{s1}",
     "none",
     [
         (troop_get_type, ":is_female", "trp_player"),
@@ -6276,7 +6277,7 @@ game_menus = [
     ],
     [
       ("continue",[],
-       "Continue...",
+       "-继续",
        [
            (try_begin),
              (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
@@ -6329,7 +6330,7 @@ game_menus = [
     ],
     [
       ("build_ladders_cont",[],
-       "Do it.", [
+       "-继续。", [
            (assign, "$g_siege_method", 1),
            (store_current_hours, ":cur_hours"),
            (call_script, "script_get_max_skill_of_player_party", "skl_engineer"),
@@ -6342,7 +6343,7 @@ game_menus = [
            (change_screen_return),
            ]),
       ("go_back",[],
-       "Go back.", [(jump_to_menu,"mnu_castle_besiege")]),
+       "-后退。", [(jump_to_menu,"mnu_castle_besiege")]),
         ],
   ),
 
@@ -6370,7 +6371,7 @@ game_menus = [
     ],
     [
       ("build_siege_tower_cont",[],
-       "Start building.", [
+       "-开始建造。", [
            (assign, "$g_siege_method", 2),
            (store_current_hours, ":cur_hours"),
            (call_script, "script_get_max_skill_of_player_party", "skl_engineer"),
@@ -6382,13 +6383,13 @@ game_menus = [
            (change_screen_return),
            ]),
       ("go_back",[],
-       "Go back.", [(jump_to_menu,"mnu_castle_besiege")]),
+       "-后退。", [(jump_to_menu,"mnu_castle_besiege")]),
         ],
   ),
 
    (
     "castle_attack_walls_simulate",mnf_scale_picture|mnf_disable_all_keys,
-    "{s4}^^Your casualties:{s8}^^Enemy casualties were: {s9}",
+    "-{s4}^^我军伤亡：{s8}^^敌军伤亡：{s9}",
     "none",
     [
         (try_begin),
@@ -6439,14 +6440,14 @@ game_menus = [
 ##      ("continue_attacking",[(eq, "$no_soldiers_left", 0)],"Order your soldiers to keep attacking...", [
 ##                                    (jump_to_menu,"mnu_castle_attack_walls_3"),
 ##                                    ]),
-##      ("call_soldiers_back",[(eq, "$no_soldiers_left", 0)],"Call your soldiers back.",[(jump_to_menu,"mnu_castle_outside")]),
-      ("continue",[],"Continue...",[(jump_to_menu,"mnu_castle_besiege")]),
+##      ("call_soldiers_back",[(eq, "$no_soldiers_left", 0)],"-让你的士兵撤回来。",[(jump_to_menu,"mnu_castle_outside")]),
+      ("continue",[],"-继续",[(jump_to_menu,"mnu_castle_besiege")]),
     ]
   ),
   
    (
     "castle_attack_walls_with_allies_simulate",mnf_scale_picture|mnf_disable_all_keys,
-    "{s4}^^Your casualties: {s8}^^Allies' casualties: {s9}^^Enemy casualties: {s10}",
+    "-{s4}^^我军伤亡：{s8}^^盟军伤亡：{s9}^^敌军伤亡：{s10}",
     "none",
     [
         (try_begin),
@@ -6517,13 +6518,13 @@ game_menus = [
         (try_end),
      ],
     [
-      ("continue",[],"Continue...",[(jump_to_menu,"mnu_besiegers_camp_with_allies")]),
+      ("continue",[],"-继续",[(jump_to_menu,"mnu_besiegers_camp_with_allies")]),
     ]
   ),
 
   (
     "castle_taken_by_friends",0,
-    "Nothing to see here.",
+    "-这里已经没什么好看的了。",
     "none",
     [
         (party_clear, "$g_encountered_party"),
@@ -6613,7 +6614,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [         
          (assign, "$auto_enter_town", "$g_encountered_party"),                  
          (change_screen_return),
@@ -6642,7 +6643,7 @@ game_menus = [
     ],
     [
         ("castle_taken_claim",[(eq, "$player_has_homage", 1)],
-		"Request that {s3} be awarded to you.",
+		"-要求他把{s3}封给你。",
         [
         (party_set_slot, "$g_encountered_party", slot_center_last_taken_by_troop, "trp_player"),
         (assign, "$g_castle_requested_by_player", "$current_town"),
@@ -6670,7 +6671,7 @@ game_menus = [
 		
 		
 		
-      ("castle_taken_no_claim",[],"Ask no rewards.",
+      ("castle_taken_no_claim",[],"-什么也不要求。",
        [
         (party_set_slot, "$g_encountered_party", slot_center_last_taken_by_troop, -1),
         (assign, "$auto_enter_town", "$g_encountered_party"),
@@ -6704,7 +6705,7 @@ game_menus = [
 	 
    ],
     [
-		("continue",[],"Continue.",
+		("continue",[],"-继续",
 			[
 			(call_script, "script_give_center_to_lord", "$g_center_to_give_to_player", "trp_player", 0),
 			(jump_to_menu, "mnu_give_center_to_player_2"),
@@ -6742,7 +6743,7 @@ game_menus = [
 		(str_store_string, s7, "str_to_your_husband_s11"),	 
     ],
     [
-		("continue",[],"Continue.",
+		("continue",[],"-继续",
 			[
 			(troop_get_slot, ":spouse", "trp_player", slot_troop_spouse),
 			(call_script, "script_give_center_to_lord", "$g_center_to_give_to_player", ":spouse", 0),
@@ -6779,13 +6780,13 @@ game_menus = [
 	 
     ],
     [
-      ("accept_decision",[],"Accept the decision.",
+      ("accept_decision",[],"-接受你的君主的决定。",
        [
        (call_script, "script_troop_add_gold", "trp_player", reg6),
        (change_screen_return),
        ]),
 	   
-       ("leave_faction",[],"You have been wronged! Renounce your oath to your liege! ",
+       ("leave_faction",[],"-你受到了不公正的对待！你决定放弃你对你的君主所发的誓言！",
        [
          (jump_to_menu, "mnu_leave_faction"),
          (call_script, "script_troop_add_gold", "trp_player", reg6),
@@ -6816,7 +6817,7 @@ game_menus = [
     ],
 	
     [
-		("accept_decision",[],"Accept the decision.",
+		("accept_decision",[],"-接受你的君主的决定。",
         [
         (call_script, "script_troop_add_gold", "trp_player", reg6),
         (change_screen_return),
@@ -6835,7 +6836,7 @@ game_menus = [
     [
     ],
     [
-      ("leave_faction_give_back", [], "Renounce your oath and give up your holdings.",
+      ("leave_faction_give_back", [], "-我交出我的土地与城堡给我的君主，但是我放弃我的誓言。",
        [
 #Troop commentary changes begin
 #        (call_script, "script_add_log_entry", logent_renounced_allegiance,   "trp_player",  -1, "$g_talk_troop", "$g_talk_troop_faction"),
@@ -6845,14 +6846,14 @@ game_menus = [
         ]),
       ("leave_faction_hold", [
           (str_store_party_name, s2, "$g_center_to_give_to_player"),
-          ], "Renounce your oath and rule your lands, including {s2}, in your own name.",
+          ], "-我放弃我的誓言。并以自己的名义占有我的城堡，包括{s2}。",
        [
         (call_script, "script_give_center_to_lord", "$g_center_to_give_to_player", "trp_player", 0), #this should activate the player faction (it does not)
         (call_script, "script_player_leave_faction", 0), #"1" would mean give back fiefs
 		(call_script, "script_activate_player_faction", "trp_player"), #Activating player faction should now work
         (change_screen_return),
         ]),
-      ("leave_faction_cancel", [], "Remain loyal and accept the decision.",
+      ("leave_faction_cancel", [], "-我改变主意了。我还是对我的君主效忠。",
        [
         (change_screen_return),
         ]),
@@ -6872,11 +6873,11 @@ game_menus = [
      (str_store_party_name, s2, "$g_center_to_give_to_player"),
     ],
     [
-      ("give_center_to_player_accept",[],"Accept the offer.",
+      ("give_center_to_player_accept",[],"-接受这个建议。",
        [(call_script, "script_give_center_to_lord", "$g_center_to_give_to_player", "trp_player", 0),
         (jump_to_menu, "mnu_give_center_to_player_2"),
         ]),
-      ("give_center_to_player_reject",[],"Reject. You have no interest in holding {s2}.",
+      ("give_center_to_player_reject",[],"-拒绝，你不想要{s2}。",
        [(party_set_slot, "$g_center_to_give_to_player", slot_town_lord, stl_rejected_by_player),
         (change_screen_return),
         ]),
@@ -6905,7 +6906,7 @@ game_menus = [
       (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
     ],
@@ -6923,13 +6924,13 @@ game_menus = [
      ],
     [
       ("renew_oath",[(faction_get_slot, ":faction_leader", "$players_kingdom", slot_faction_leader),
-                     (str_store_troop_name, s1, ":faction_leader")], "Renew your contract with {s1} for another month.",
+                     (str_store_troop_name, s1, ":faction_leader")], "-继续向{s1}发誓，再服务一个月。",
        [
          (store_current_day, ":cur_day"),
          (store_add, "$mercenary_service_next_renew_day", ":cur_day", 30),
          (change_screen_return),
          ]),
-      ("dont_renew_oath",[],"Become free of your bond.",
+      ("dont_renew_oath",[],"-恢复自由身。",
        [
          (call_script, "script_player_leave_faction", 1), #1 means give back fiefs
          (change_screen_return),
@@ -6941,7 +6942,7 @@ game_menus = [
 ##  (
 ##    "castle_garrison_stationed",0,
 ###    "The rest of the castle garrison recognizes that their situation is hopeless and surrenders. {s1} is at your mercy now. What do you want to do with this castle?",
-##    "_",
+##    "-【进入】",
 ##    "none",
 ##    [
 ##        (jump_to_menu, "mnu_town"),
@@ -6968,37 +6969,37 @@ game_menus = [
 ##    ],
 ##    [
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 0),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 0),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 0),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 1),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 1),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 1),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 2),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 2),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 2),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 3),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 3),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 3),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 4),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 4),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 4),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 5),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 5),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 5),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 6),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 6),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 6),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 7),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 7),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 7),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 8),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 8),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 8),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 9),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 9),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 9),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 10),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 10),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 10),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 11),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 11),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 11),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 12),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 12),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 12),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 13),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 13),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 13),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 14),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 14),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 14),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 15),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 15),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "-{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 15),(jump_to_menu,"mnu_castle_captain_chosen")]),
 ##      
 ##      ("cancel",[],
 ##         "Cancel...",
@@ -7025,7 +7026,7 @@ game_menus = [
 
 ##  (
 ##    "under_siege_attacked_continue",0,
-##    "Nothing to see here.",
+##    "-这里已经没什么好看的了。",
 ##    "none",
 ##    [
 ##        (assign, "$g_enemy_party", "$g_encountered_party_2"),
@@ -7095,7 +7096,7 @@ game_menus = [
 
   (
     "siege_started_defender",0,
-    "{s1} is launching an assault against the walls of {s2}. You have {reg10} troops fit for battle against the enemy's {reg11}. You decide to...",
+    "-{s1}正在攻击{s2}的城墙。你有{reg10}人可以参战对抗敌人的{reg11}人。你决定……",
     "none",
     [
         (select_enemy,1),
@@ -7202,7 +7203,7 @@ game_menus = [
        [
          (neg|troop_is_wounded, "trp_player"),
          ],
-          "Join the battle.",[              
+          "-参加战斗。",[              
               (party_set_next_battle_simulation_time, "$g_encountered_party", -1),
               (assign, "$g_battle_result", 0),
               (try_begin),
@@ -7229,7 +7230,7 @@ game_menus = [
       ("siege_defender_troops_join_battle",[(call_script, "script_party_count_members_with_full_health", "p_main_party"),
                                             (this_or_next|troop_is_wounded,  "trp_player"),
                                             (ge, reg0, 3)],
-          "Order your men to join the battle without you.",[
+          "-坐镇指挥，让你的部队攻击。",[
               (party_set_next_battle_simulation_time, "$g_encountered_party", -1),
               (select_enemy,1),
               (assign,"$g_enemy_party","$g_encountered_party_2"),
@@ -7241,7 +7242,7 @@ game_menus = [
 
   (
     "siege_join_defense",mnf_disable_all_keys,
-    "{s4}^^Your casualties: {s8}^^Allies' casualties: {s9}^^Enemy casualties: {s10}",
+    "-{s4}^^我军伤亡：{s8}^^盟军伤亡：{s9}^^敌军伤亡：{s10}",
     "none",
     [
         (try_begin),
@@ -7299,7 +7300,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("continue",[],"Continue...",[
+      ("continue",[],"-继续",[
           (jump_to_menu,"mnu_siege_started_defender"),
           ]),
     ]
@@ -7307,7 +7308,7 @@ game_menus = [
 
   (
     "enter_your_own_castle",0,
-    "{s10}",
+    "-{s10}",
     "none",
     [
       (try_begin),
@@ -7322,7 +7323,7 @@ game_menus = [
       (str_store_party_name, s2, "$current_town"),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [ (jump_to_menu,"mnu_town"),
         ]),
     ],
@@ -7330,7 +7331,7 @@ game_menus = [
 
   (
     "village",mnf_enable_hot_keys,
-    "{s10} {s12}^{s11}^{s6}{s7}",
+    "-{s10}{s12}^{s11}^{s6}{s7}",
     "none",
     [
         (assign, "$current_town", "$g_encountered_party"),
@@ -7518,7 +7519,7 @@ game_menus = [
         (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),
         (party_slot_eq, "$current_town", slot_town_lord, "trp_player")
         ]
-       ,"Manage this village.",
+       ,"-管理这个村庄。",
        [
            (assign, "$g_next_menu", "mnu_village"),
            (jump_to_menu, "mnu_center_manage"),
@@ -7527,7 +7528,7 @@ game_menus = [
       [
         (call_script, "script_cf_village_recruit_volunteers_cond"),
        ]
-       ,"Recruit Volunteers.",
+       ,"-征募志愿兵。",
        [
          (try_begin),
            (call_script, "script_cf_enter_center_location_bandit_check"),
@@ -7538,7 +7539,7 @@ game_menus = [
       ("village_center",[(neg|party_slot_eq, "$current_town", slot_village_state, svs_looted),
                          (neg|party_slot_eq, "$current_town", slot_village_state, svs_being_raided),
                          (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),]
-       ,"Go to the village center.",
+       ,"-前往村中心。",
        [
          (try_begin),
            (call_script, "script_cf_enter_center_location_bandit_check"),
@@ -7567,7 +7568,7 @@ game_menus = [
         ],"Door to the village center."),
       ("village_buy_food",[(party_slot_eq, "$current_town", slot_village_state, 0),
                            (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),
-                           ],"Buy supplies from the peasants.",
+                           ],"-向村民购买给养。",
        [
          (try_begin),
            (call_script, "script_cf_enter_center_location_bandit_check"),
@@ -7592,7 +7593,7 @@ game_menus = [
          ]),
 
       ("village_attack_bandits",[(party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),],
-       "Attack the bandits.",
+       "-进攻强盗。",
        [(party_get_slot, ":bandit_troop", "$current_town", slot_village_infested_by_bandits),
         (party_get_slot, ":scene_to_use", "$current_town", slot_castle_exterior),
         (modify_visitors_at_site,":scene_to_use"),
@@ -7614,7 +7615,7 @@ game_menus = [
        [(party_slot_eq, "$current_town", slot_center_has_manor, 1),
         (party_slot_eq, "$current_town", slot_town_lord, "trp_player"),
         ],
-         "Wait here for some time.",
+         "-在这里待一会儿。",
          [
            (assign,"$auto_enter_town","$current_town"),
            (assign, "$g_last_rest_center", "$current_town"),
@@ -7642,7 +7643,7 @@ game_menus = [
                             (neg|quest_slot_eq, "qst_collect_taxes", slot_quest_current_state, 4),
                             (str_store_troop_name, s1, ":quest_giver_troop"),
                             (quest_get_slot, reg5, "qst_collect_taxes", slot_quest_current_state),
-                            ], "{reg5?Continue collecting taxes:Collect taxes} due to {s1}.",
+                            ], "-为{s1}{reg5?继续征税:征税}。",
        [(jump_to_menu, "mnu_collect_taxes"),]),
 
       ("train_peasants_against_bandits_qst",
@@ -7651,27 +7652,27 @@ game_menus = [
          (check_quest_active, "qst_train_peasants_against_bandits"),
          (neg|check_quest_concluded, "qst_train_peasants_against_bandits"),
          (quest_slot_eq, "qst_train_peasants_against_bandits", slot_quest_target_center, "$current_town"),
-         ], "Train the peasants.",
+         ], "-训练这些农民。",
        [(jump_to_menu, "mnu_train_peasants_against_bandits"),]),
 
       ("village_hostile_action",[(party_slot_eq, "$current_town", slot_village_state, 0),
                                  (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),
 								 (neq, "$players_kingdom", "$g_encountered_party_faction"),
-								 ], "Take a hostile action.",
+								 ], "-做一些带有敌意的事情。",
        [(jump_to_menu,"mnu_village_hostile_action"),
            ]),
       
       ("village_reports",[(eq, "$cheat_mode", 1),], "{!}CHEAT! Show reports.",
        [(jump_to_menu,"mnu_center_reports"),
            ]),
-      ("village_leave",[],"Leave...",[(change_screen_return,0)]),
+      ("village_leave",[],"-离开……",[(change_screen_return,0)]),
       
     ],
   ),
 
   (
     "village_hostile_action",0,
-    "What action do you have in mind?",
+    "-你现在打算做些什么？",
     "none",
     [],
     [
@@ -7686,7 +7687,7 @@ game_menus = [
             (assign, ":town_stores_not_empty", 1),
           (try_end),
           (eq, ":town_stores_not_empty", 1),
-          ],"Force the peasants to give you supplies.",
+          ],"-强征给养。",
        [
            (jump_to_menu, "mnu_village_take_food_confirm")
         ]),
@@ -7698,7 +7699,7 @@ game_menus = [
           (party_get_slot, ":num_cattle", "$current_town", slot_village_number_of_cattle),
           (neg|party_slot_eq, "$current_town", slot_town_lord, "trp_player"),
           (gt, ":num_cattle", 0),
-          ],"Steal cattle.",
+          ],"-偷一些牛。",
        [
            (jump_to_menu, "mnu_village_steal_cattle_confirm")
         ]),
@@ -7708,20 +7709,20 @@ game_menus = [
                        (store_relation, ":reln", "fac_player_supporters_faction", ":center_faction"),
                        (lt, ":reln", 0),
                        ],
-       "Loot and burn this village.",
+       "-抢劫这个村子，然后把它夷为平地！",
        [
 #           (party_clear, "$current_town"),
 #           (party_add_template, "$current_town", "pt_villagers_in_raid"),
            (jump_to_menu, "mnu_village_start_attack"),
            ]),
       ("forget_it",[],
-      "Forget it.",[(jump_to_menu,"mnu_village")]),
+      "-算了。",[(jump_to_menu,"mnu_village")]),
     ],
   ),
   
   (
     "recruit_volunteers",0,
-    "{s18}",
+    "-{s18}",
     "none",
     [(party_get_slot, ":volunteer_troop", "$current_town", slot_center_volunteer_troop_type),
      (party_get_slot, ":volunteer_amount", "$current_town", slot_center_volunteer_troop_amount),
@@ -7760,7 +7761,7 @@ game_menus = [
       [
         (eq, reg7, 1),
       ],
-      "I don't have enough money...",
+      "-我没有足够的钱……",
       [
         (jump_to_menu,"mnu_village"),
       ]),
@@ -7770,7 +7771,7 @@ game_menus = [
         (eq, reg7, 0),
         (eq, reg5, 0),
       ], #noone willing to join                   
-      "Continue...",
+      "-继续",
       [
         (party_set_slot, "$current_town", slot_center_volunteer_troop_amount, -1),
         (jump_to_menu,"mnu_village"),
@@ -7781,7 +7782,7 @@ game_menus = [
         (eq, reg7, 0),
         (gt, reg5, 0),
       ],
-      "Recruit them ({reg6} denars).",
+      "-收编他们（{reg6}第纳尔）。",
       [
         (call_script, "script_village_recruit_volunteers_recruit"),
                         
@@ -7793,7 +7794,7 @@ game_menus = [
         (eq, reg7, 0),
         (gt, reg5, 0),
       ],
-      "Forget it.",
+      "-算了。",
       [
         (jump_to_menu,"mnu_village"),
       ]),
@@ -7808,13 +7809,13 @@ game_menus = [
     "none",
     [],
     [
-      ("continue",[],"Continue...",[(jump_to_menu, "mnu_village"),]),
+      ("continue",[],"-继续",[(jump_to_menu, "mnu_village"),]),
     ],
   ),
 
   (
     "village_infest_bandits_result",mnf_scale_picture,
-    "{s9}",
+    "-{s9}",
     "none",
     [(try_begin),
        (eq, "$g_battle_result", 1),
@@ -7827,7 +7828,7 @@ game_menus = [
      (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(party_set_slot, "$g_encountered_party", slot_village_infested_by_bandits, 0),
         (call_script, "script_village_set_state",  "$current_town", svs_looted),
         (party_set_slot, "$current_town", slot_village_raid_progress, 0),
@@ -7888,13 +7889,13 @@ game_menus = [
      (try_end),
     ],
     [
-      ("village_bandits_defeated_accept",[],"Take it as your just due.",[(jump_to_menu, "mnu_village"),
+      ("village_bandits_defeated_accept",[],"-我接受你们的赠品。",[(jump_to_menu, "mnu_village"),
                                                                          (party_get_slot, ":merchant_troop", "$current_town", slot_town_elder),
                                                                          (troop_sort_inventory, ":merchant_troop"),
                                                                          (change_screen_loot, ":merchant_troop"),
                                                                        ]),
 																	   
-      ("village_bandits_defeated_cont",[],  "Refuse, stating that they need these items more than you do.",
+      ("village_bandits_defeated_cont",[],  "-你们比我更需要这些东西。你们的感谢已经足够了。",
 	  [	(call_script, "script_change_player_relation_with_center", "$g_encountered_party", 3),
 		(call_script, "script_change_player_honor", 1),	  
 		(jump_to_menu, "mnu_village")]),
@@ -7961,40 +7962,40 @@ game_menus = [
                              (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
                              (party_slot_eq, "$g_encountered_party", slot_center_has_manor, 0),
                                   ],
-       "Build a manor.",[(assign, "$g_improvement_type", slot_center_has_manor),
+       "-建造一个庄园。",[(assign, "$g_improvement_type", slot_center_has_manor),
                          (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_fish_pond",[(eq, reg6, 0),
                                  (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
                                  (party_slot_eq, "$g_encountered_party", slot_center_has_fish_pond, 0),
                                   ],
-       "Build a mill.",[(assign, "$g_improvement_type", slot_center_has_fish_pond),
+       "-建造一个磨坊。",[(assign, "$g_improvement_type", slot_center_has_fish_pond),
                              (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_watch_tower",[(eq, reg6, 0),
                                    (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
                                    (party_slot_eq, "$g_encountered_party", slot_center_has_watch_tower, 0),
                                   ],
-       "Build a watch tower.",[(assign, "$g_improvement_type", slot_center_has_watch_tower),
+       "-建造一个了望塔。",[(assign, "$g_improvement_type", slot_center_has_watch_tower),
                                (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_school",[(eq, reg6, 0),
                               (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
                               (party_slot_eq, "$g_encountered_party", slot_center_has_school, 0),
                                   ],
-       "Build a school.",[(assign, "$g_improvement_type", slot_center_has_school),
+       "-建造一个学校。",[(assign, "$g_improvement_type", slot_center_has_school),
                           (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_messenger_post",[(eq, reg6, 0),
                                       (party_slot_eq, "$g_encountered_party", slot_center_has_messenger_post, 0),
                                        ],
-       "Build a messenger post.",[(assign, "$g_improvement_type", slot_center_has_messenger_post),
+       "-建造一个驿站。",[(assign, "$g_improvement_type", slot_center_has_messenger_post),
                                   (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_prisoner_tower",[(eq, reg6, 0),
                                       (this_or_next|party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
                                       (party_slot_eq, "$g_encountered_party", slot_party_type, spt_castle),
                                       (party_slot_eq, "$g_encountered_party", slot_center_has_prisoner_tower, 0),
                                        ],
-       "Build a prisoner tower.",[(assign, "$g_improvement_type", slot_center_has_prisoner_tower),
+       "-建造一个监狱。",[(assign, "$g_improvement_type", slot_center_has_prisoner_tower),
                                   (jump_to_menu, "mnu_center_improve"),]),
                            
-      ("go_back_dot",[],"Go back.",[(jump_to_menu, "$g_next_menu")]),
+      ("go_back_dot",[],"-后退。",[(jump_to_menu, "$g_next_menu")]),
     ],
   ),
 
@@ -8033,7 +8034,7 @@ game_menus = [
     [
       ("improve_cont",[(store_troop_gold, ":cur_gold", "trp_player"),
                        (ge, ":cur_gold", reg5)],
-       "Go on.", [(troop_remove_gold, "trp_player", reg5),
+       "-继续。", [(troop_remove_gold, "trp_player", reg5),
                   (party_set_slot, "$g_encountered_party", slot_center_current_improvement, "$g_improvement_type"),
                   (store_current_hours, ":cur_hours"),
                   (store_mul, ":hours_takes", reg6, 24),
@@ -8043,16 +8044,16 @@ game_menus = [
                   ]),
       ("forget_it",[(store_troop_gold, ":cur_gold", "trp_player"),
                     (ge, ":cur_gold", reg5)],
-       "Forget it.", [(jump_to_menu,"mnu_center_manage")]),
+       "-算了。", [(jump_to_menu,"mnu_center_manage")]),
       ("improve_not_enough_gold",[(store_troop_gold, ":cur_gold", "trp_player"),
                                   (lt, ":cur_gold", reg5)],
-       "I don't have enough money for that.", [(jump_to_menu, "mnu_center_manage"),]),
+       "-没钱。", [(jump_to_menu, "mnu_center_manage"),]),
     ],
   ),
 
   (
     "town_bandits_failed",mnf_disable_all_keys,
-    "{s4} {s5}",
+    "-{s4}{s5}",
     "none",
     [
 #      (call_script, "script_loot_player_items", 0),
@@ -8075,7 +8076,7 @@ game_menus = [
       (try_end),
     ],
     [
-      ("continue",[],"Continue...",[(change_screen_return)]),
+      ("continue",[],"-继续",[(change_screen_return)]),
     ],
   ),
 
@@ -8101,14 +8102,14 @@ game_menus = [
       (call_script, "script_troop_add_gold","trp_player",":gold_reward"),
     ],
     [
-      ("continue",[],"Continue...",[(change_screen_return)]),
+      ("continue",[],"-继续",[(change_screen_return)]),
     ],
   ),
 
   
    (
     "village_steal_cattle_confirm",0,
-    "As the party member with the highest looting skill ({reg2}), {reg3?you reckon:{s1} reckons} that you can steal as many as {reg4} heads of village's cattle.",
+    "-队员中最高掠夺技能为{reg2}级，由此{reg3?你预期:{s1}预期}你最多可以偷到{reg4}头牛。",
     "none",
     [
       (call_script, "script_get_max_skill_of_player_party", "skl_looting"),
@@ -8125,19 +8126,19 @@ game_menus = [
       (assign, reg4, reg0),
       ],
     [
-      ("village_steal_cattle_confirm",[],"Go on.",
+      ("village_steal_cattle_confirm",[],"-继续。",
        [
          (rest_for_hours_interactive, 3, 5, 1), #rest while attackable
          (assign, "$auto_menu", "mnu_village_steal_cattle"),
          (change_screen_return),
        ]),
-      ("forget_it",[],"Forget it.",[(change_screen_return)]),
+      ("forget_it",[],"-算了。",[(change_screen_return)]),
     ],
   ),
 
   (
     "village_steal_cattle",mnf_disable_all_keys,
-    "{s1}",
+    "-{s1}",
     "none",
     [
       (call_script, "script_calculate_amount_of_cattle_can_be_stolen", "$current_town"),
@@ -8173,7 +8174,7 @@ game_menus = [
       (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
          (change_screen_return),
          ]),
@@ -8183,12 +8184,12 @@ game_menus = [
 
    (
     "village_take_food_confirm",0,
-    "It will be difficult to force and threaten the peasants into giving their precious supplies. You think you will need at least one hour.",
+    "-强迫农民们准备好补给品需要花费至少一个小时。",
     #TODO: mention looting skill?
     "none",
     [],
     [
-      ("village_take_food_confirm",[],"Go ahead.",
+      ("village_take_food_confirm",[],"-可以。",
        [
          (rest_for_hours_interactive, 1, 5, 0), #rest while not attackable
          (assign, "$auto_enter_town", "$current_town"),
@@ -8196,13 +8197,13 @@ game_menus = [
          (assign, "$auto_enter_menu_in_center", "mnu_village_take_food"),
          (change_screen_return),
          ]),
-      ("forget_it",[],"Forget it.",[(jump_to_menu, "mnu_village_hostile_action")]),
+      ("forget_it",[],"-算了。",[(jump_to_menu, "mnu_village_hostile_action")]),
     ],
   ),
 
   (
     "village_take_food",0,
-    "The villagers grudgingly bring out what they have for you.",
+    "-村民们勉强交出了一些给养。",
     "none",
     [
        (call_script, "script_party_count_members_with_full_health","p_main_party"),
@@ -8217,7 +8218,7 @@ game_menus = [
        (try_end),
     ],
     [
-      ("take_supplies",[],"Take the supplies.",
+      ("take_supplies",[],"-带走。",
        [
          (try_begin),
            (party_slot_ge, "$current_town", slot_center_player_relation, -55),
@@ -8256,7 +8257,7 @@ game_menus = [
          (troop_sort_inventory, ":merchant_troop"),
          (change_screen_loot, ":merchant_troop"),       
          ]),
-      ("let_them_keep_it",[],"Let them keep it.",[(jump_to_menu, "mnu_village")]),
+      ("let_them_keep_it",[],"-算了。",[(jump_to_menu, "mnu_village")]),
     ],
   ),
 
@@ -8294,7 +8295,7 @@ game_menus = [
        (try_end),
     ],
     [
-      ("village_raid_attack",[],"Charge them.",[
+      ("village_raid_attack",[],"-镇压他们。",[
           (store_random_in_range, ":enmity", -10, -5),
           (call_script, "script_change_player_relation_with_center", "$current_town", ":enmity"),
           (try_begin),
@@ -8320,7 +8321,7 @@ game_menus = [
           (jump_to_menu, "mnu_battle_debrief"),
           (change_screen_mission),
           ]),
-      ("village_raid_leave",[],"Leave this village alone.",[(change_screen_return)]),
+      ("village_raid_leave",[],"-离开。",[(change_screen_return)]),
     ],
   ),
   
@@ -8331,7 +8332,7 @@ game_menus = [
     "none",
     [],
     [
-      ("village_loot",[], "Plunder the village, then raze it.",
+      ("village_loot",[], "-抢劫这个村子，然后把它夷为平地！",
        [
           (call_script, "script_village_set_state", "$current_town", svs_being_raided),
           (party_set_slot, "$current_town", slot_village_raided_by, "p_main_party"),
@@ -8347,7 +8348,7 @@ game_menus = [
           (rest_for_hours, 3, 5, 1), #rest while attackable (3 hours will be extended by the trigger)
           (change_screen_return),
            ]),
-      ("village_raid_leave",[],"Leave this village alone.",[(change_screen_return)]),
+      ("village_raid_leave",[],"-离开。",[(change_screen_return)]),
     ],
   ),
   (
@@ -8407,7 +8408,7 @@ game_menus = [
         (assign, reg1, ":money_gained"),
       ],
     [
-      ("continue",[], "Continue...",
+      ("continue",[], "-继续",
        [
           (jump_to_menu, "mnu_close"),
           (call_script, "script_calculate_amount_of_cattle_can_be_stolen", "$current_town"),
@@ -8478,26 +8479,26 @@ game_menus = [
   ),
   (
     "village_loot_defeat",mnf_scale_picture,
-    "Fighting with courage and determination, the villagers manage to hold together and drive off your forces.",
+    "-村民们以极大的勇气和决心，团结一致，赶跑了你的军队。",
     "none",
     [
         (set_background_mesh, "mesh_pic_villageriot"),
 	],
     [
-      ("continue",[],"Continue...",[(change_screen_return)]),
+      ("continue",[],"-继续",[(change_screen_return)]),
     ],
   ),
   
   (
     "village_loot_continue",0,
-    "Do you wish to continue looting this village?",
+    "-你还想继续洗劫这个村子吗？",
     "none",
     [],
     [
-      ("disembark_yes",[],"Yes.",[ (rest_for_hours, 3, 5, 1), #rest while attackable (3 hours will be extended by the trigger)
+      ("disembark_yes",[],"-是的。",[ (rest_for_hours, 3, 5, 1), #rest while attackable (3 hours will be extended by the trigger)
                               (change_screen_return),
                               ]),
-      ("disembark_no",[],"No.",[(call_script, "script_village_set_state", "$current_town", 0),
+      ("disembark_no",[],"-不。",[(call_script, "script_village_set_state", "$current_town", 0),
                             (party_set_slot, "$current_town", slot_village_raided_by, -1),
                             (assign, "$g_player_raiding_village", 0),
                             (change_screen_return)]),
@@ -8506,7 +8507,7 @@ game_menus = [
   
   (
     "close",0,
-    "Nothing.",
+    "-没事。",
     "none",
     [
         (change_screen_return),
@@ -8516,7 +8517,7 @@ game_menus = [
  
   (
     "town",mnf_enable_hot_keys|mnf_scale_picture,
-    "{s10} {s14}^{s11}{s12}{s13}",
+    "-{s10}{s14}^{s11}{s12}{s13}",
     "none",
     [    
         (try_begin),
@@ -8746,7 +8747,7 @@ game_menus = [
           (faction_slot_eq, ":center_faction", slot_faction_ai_object, "$current_town"),
           (str_store_string, s1, "str__join_the_feast"),
         (try_end),
-        ],"Go to the Lord's hall{s1}.",
+        ],"-进入领主大厅{s1}。",
        [          
            (try_begin),
              (this_or_next|eq, "$all_doors_locked", 1),
@@ -8774,7 +8775,7 @@ game_menus = [
         ], "Door to the castle."),
 		
       ("join_tournament", [(neg|is_currently_night),(party_slot_ge, "$current_town", slot_town_has_tournament, 1),]
-       ,"Join the tournament.",
+       ,"-加入竞技大会。",
        [
            (call_script, "script_fill_tournament_participants_troop", "$current_town", 1),
            (assign, "$g_tournament_cur_tier", 0),
@@ -8798,7 +8799,7 @@ game_menus = [
             (str_store_string, s1, "str__join_the_feast"),
           (try_end),
 
-          ],"Go to the castle{s1}.",
+          ],"-进入城堡{s1}。",
        [           
            (try_begin),
              (this_or_next|eq, "$all_doors_locked", 1),
@@ -8831,7 +8832,7 @@ game_menus = [
         (this_or_next|eq,"$entry_to_town_forbidden",0),
         (eq, "$sneaked_into_town",1)
       ],
-      "Take a walk around the streets.",
+      "-去街上转转。",
        [
          #If the player is fighting his or her way out
          (try_begin),
@@ -8990,7 +8991,7 @@ game_menus = [
 #          (party_get_slot, ":scene", "$current_town", slot_town_tavern),
 #          (scene_slot_eq, ":scene", slot_scene_visited, 1), #check if scene has been visited before to allow entry from menu. Otherwise scene will only be accessible from the town center.
           ]
-       ,"Visit the tavern.",
+       ,"-去酒馆。",
        [
            (try_begin),
              (eq,"$all_doors_locked",1),
@@ -9259,7 +9260,7 @@ game_menus = [
 #           (party_get_slot, ":scene", "$current_town", slot_town_store),
 #           (scene_slot_eq, ":scene", slot_scene_visited, 1), #check if scene has been visited before to allow entry from menu. Otherwise scene will only be accessible from the town center.
            ],
-       "Speak with the merchant.",
+       "-与商人交谈。",
        [           
            (try_begin),
              (this_or_next|eq,"$all_doors_locked",1),
@@ -9286,7 +9287,7 @@ game_menus = [
 #           (party_get_slot, ":scene", "$current_town", slot_town_arena),
 #           (scene_slot_eq,  ":scene", slot_scene_visited, 1), #check if scene has been visited before to allow entry from menu. Otherwise scene will only be accessible from the town center.
            ],
-       "Enter the arena.",
+       "-进入竞技场。",
        [
            (try_begin),
              (this_or_next|eq,"$all_doors_locked",1),
@@ -9309,7 +9310,7 @@ game_menus = [
         ],"Door to the arena."),
       ("town_dungeon",
        [(eq, 1, 0)],
-       "Never: Enter the prison.",
+       "-永无可能：进入地牢。",
        [	   
            (try_begin),
 		    (eq, "$talk_context", tc_prison_break),
@@ -9346,7 +9347,7 @@ game_menus = [
       [
          (party_slot_eq,"$current_town",slot_party_type, spt_castle),
       ],
-       "Take a walk around the courtyard.",
+       "-视察城堡。",
        [
          (try_begin),
            (eq, "$talk_context", tc_prison_break),
@@ -9463,7 +9464,7 @@ game_menus = [
 		(call_script, "script_get_enterprise_name", ":item_produced"),
 		(str_store_string, s3, reg0),
       ],	
-      "Visit your {s3}.",
+      "-访问你的{s3}。",
       [
         (store_sub, ":town_order", "$current_town", towns_begin),
 		(store_add, ":master_craftsman", "trp_town_1_master_craftsman", ":town_order"),
@@ -9569,7 +9570,7 @@ game_menus = [
 	
 	(gt, "$love_interest_in_town", 0),
 	],
-	  "Attempt to visit a lady",
+	  "-尝试拜访一位女士。",
        [
         (jump_to_menu, "mnu_lady_visit"),
         ], "Door to the garden."),										
@@ -9578,7 +9579,7 @@ game_menus = [
        [
            (party_slot_eq,"$current_town",slot_party_type, spt_town)
         ],
-         "Go to the marketplace.",
+         "-去市场。",
          [
            (try_begin),
              (call_script, "script_cf_enter_center_location_bandit_check"),
@@ -9597,7 +9598,7 @@ game_menus = [
           (assign, reg0, 0),
         (try_end),
        ],
-       "Manage this {reg0?town:castle}.",
+       "-管理这个{reg0?城镇:城堡}。",
        [
            (assign, "$g_next_menu", "mnu_town"),
            (jump_to_menu, "mnu_center_manage"),
@@ -9611,7 +9612,7 @@ game_menus = [
         (eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
         (neq, "$g_player_court", "$current_town"),
       ],
-      "Move your court here.",
+      "-移都到这里。",
       [
         (jump_to_menu, "mnu_establish_court"),
       ]),
@@ -9662,7 +9663,7 @@ game_menus = [
 
         (eq, ":player_can_draw_from_garrison", 1),
       ],
-      "Manage the garrison {s10}",
+      "-管理{s10}驻军",
       [
         (change_screen_exchange_members,1),
       ]),
@@ -9692,7 +9693,7 @@ game_menus = [
         (try_end),
         (eq, ":can_rest", 1),
       ],
-      "Wait here for some time{s1}.",
+      "-在这里休息一会儿{s1}。",
       [
         (assign, "$auto_enter_town", "$current_town"),
         (assign, "$g_town_visit_after_rest", 1),
@@ -9770,7 +9771,7 @@ game_menus = [
         (str_store_troop_name, s1, ":quest_giver_troop"),
         (quest_get_slot, reg5, "qst_collect_taxes", slot_quest_current_state),
       ],
-      "{reg5?Continue collecting taxes:Collect taxes} due to {s1}.",
+      "-为{s1}{reg5?继续征税:征税}。",
       [
         (jump_to_menu, "mnu_collect_taxes"),
       ]),
@@ -9779,7 +9780,7 @@ game_menus = [
 
 
       
-      ("town_leave",[],"Leave...",
+      ("town_leave",[],"-离开……",
       [
         (assign, "$g_permitted_to_center",0),
         (change_screen_return,0),
@@ -9892,11 +9893,11 @@ game_menus = [
 
   (
     "cannot_enter_court",0,
-    "There is a feast in progress in the lord's hall, but you are not of sufficient status to be invited inside. Perhaps increasing your renown would win you admittance -- or you might also try distinguishing yourself at a tournament while the feast is in progress...",
+    "-领主的大厅里正在举行一场宴会，但是你还没有足够资格进入。或者想办法增加声望来赢得入场劵，或者在竞技大会上胜出也是个捷径。",
     "none",
     [],
     [
-	("continue", [],"Continue",
+	("continue", [],"-继续",
        [
         (jump_to_menu, "mnu_town"),
         ]),
@@ -9905,7 +9906,7 @@ game_menus = [
   
   (
     "lady_visit",0,
-    "Whom do you wish to visit?",
+    "-你想要拜访谁呢？",
     "none",
     [],
     [		
@@ -9914,7 +9915,7 @@ game_menus = [
 	(gt, "$love_interest_in_town", 0),
 	(str_store_troop_name, s12, "$love_interest_in_town"),
 	],
-	  "Visit {s12}",
+	  "-拜访{s12}",
        [
 	    (assign, "$love_interest_in_town", "$love_interest_in_town"),
         (jump_to_menu, "mnu_garden"),
@@ -9926,7 +9927,7 @@ game_menus = [
 	(gt, "$love_interest_in_town_2", 0),
 	(str_store_troop_name, s12, "$love_interest_in_town_2"),
 	],
-	  "Visit {s12}",
+	  "-拜访{s12}",
        [
 	    (assign, "$love_interest_in_town", "$love_interest_in_town_2"),
         (jump_to_menu, "mnu_garden"),
@@ -9936,29 +9937,29 @@ game_menus = [
 	(gt, "$love_interest_in_town_3", 0),
 	(str_store_troop_name, s12, "$love_interest_in_town_3"),
 	],
-	  "Visit {s12}",
+	  "-拜访{s12}",
        [
 	    (assign, "$love_interest_in_town", "$love_interest_in_town_3"),
         (jump_to_menu, "mnu_garden")], "Door to the garden."),
 
 		
 	("visit_lady_4", [(gt, "$love_interest_in_town_4", 0),(str_store_troop_name, s12, "$love_interest_in_town_4"),],
-	"Visit {s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_4"),(jump_to_menu, "mnu_garden"),]),
+	"-拜访{s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_4"),(jump_to_menu, "mnu_garden"),]),
 		
 	("visit_lady_5", [(gt, "$love_interest_in_town_5", 0),(str_store_troop_name, s12, "$love_interest_in_town_5"),],
-	"Visit {s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_5"),(jump_to_menu, "mnu_garden"),]),
+	"-拜访{s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_5"),(jump_to_menu, "mnu_garden"),]),
 
 	("visit_lady_6",[(gt, "$love_interest_in_town_6", 0),(str_store_troop_name, s12, "$love_interest_in_town_6"),],
-	"Visit {s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_6"),(jump_to_menu, "mnu_garden"),]),
+	"-拜访{s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_6"),(jump_to_menu, "mnu_garden"),]),
 	
 	("visit_lady_7",[(gt, "$love_interest_in_town_7", 0),(str_store_troop_name, s12, "$love_interest_in_town_7"),],
-	"Visit {s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_7"),(jump_to_menu, "mnu_garden"),]),
+	"-拜访{s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_7"),(jump_to_menu, "mnu_garden"),]),
 
 	("visit_lady_8",[(gt, "$love_interest_in_town_8", 0),(str_store_troop_name, s12, "$love_interest_in_town_8"),],
-	"Visit {s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_8"),(jump_to_menu, "mnu_garden"),]),
+	"-拜访{s12}",[(assign, "$love_interest_in_town", "$love_interest_in_town_8"),(jump_to_menu, "mnu_garden"),]),
 
 	
-	("leave",[], "Leave",[(jump_to_menu, "mnu_town")]),
+	("leave",[], "-离开",[(jump_to_menu, "mnu_town")]),
 
     ]
 	),
@@ -9966,7 +9967,7 @@ game_menus = [
 	
   (
     "town_tournament_lost",0,
-    "You have been eliminated from the tournament.{s8}",
+    "-你在竞技大会中被淘汰了。{s8}",
     "none",
     [
 	(str_clear, s8),
@@ -9982,7 +9983,7 @@ game_menus = [
 	
         ],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [(jump_to_menu, "mnu_town_tournament_won_by_another"),
         ]),
     ]
@@ -10028,7 +10029,7 @@ game_menus = [
         (unlock_achievement, ACHIEVEMENT_MEDIEVAL_TIMES),
         ],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [(jump_to_menu, "mnu_town"),
         ]),
     ]
@@ -10036,7 +10037,7 @@ game_menus = [
   
   (
     "town_tournament_won_by_another",mnf_disable_all_keys,
-    "As the only {reg3?fighter:man} to remain undefeated this day, {s1} wins the lists and the glory of this tournament.",
+    "-作为当日最终的胜利的{reg3?人:人}，{s1}赢得了该场竞技大会的奖金以及荣誉。",
     "none",
     [
       (call_script, "script_get_num_tournament_participants"),
@@ -10057,7 +10058,7 @@ game_menus = [
         (troop_get_type, reg3, ":winner_troop"),
         ],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [(jump_to_menu, "mnu_town"),
         ]),
     ]
@@ -10065,7 +10066,7 @@ game_menus = [
 
   (
     "town_tournament",mnf_disable_all_keys,
-    "{s1}You are at tier {reg0} of the tournament, with {reg1} participants remaining. In the next round, there will be {reg2} teams with {reg3} {reg4?fighters:fighter} each.",
+    "-{s1}你现在处于竞技大会中的第{reg0}轮，现在还剩有{reg1}名参与者。下一轮中，将会有{reg2}队，其中每队有{reg3}{reg4?人:人}参加战斗。",
     "none",
     [
         (party_set_slot, "$current_town", slot_town_has_tournament, 0), #No way to return back if this menu is left
@@ -10109,13 +10110,13 @@ game_menus = [
         (try_end),
         ],
     [
-      ("tournament_view_participants", [], "View participants.",
+      ("tournament_view_participants", [], "-察看参与者名单。",
        [(jump_to_menu, "mnu_tournament_participants"),
         ]),
-      ("tournament_bet", [(neq, "$g_tournament_cur_tier", "$g_tournament_last_bet_tier")], "Place a bet on yourself.",
+      ("tournament_bet", [(neq, "$g_tournament_cur_tier", "$g_tournament_last_bet_tier")], "-在自己身上下注。",
        [(jump_to_menu, "mnu_tournament_bet"),
         ]),
-      ("tournament_join_next_fight", [], "Fight in the next round.",
+      ("tournament_join_next_fight", [], "-进入下一轮。",
        [
            (party_get_slot, ":arena_scene", "$current_town", slot_town_arena),
            (modify_visitors_at_site, ":arena_scene"),
@@ -10258,7 +10259,7 @@ game_menus = [
            (jump_to_scene, ":arena_scene"),
            (change_screen_mission),
         ]),
-      ("leave_tournament",[],"Withdraw from the tournament.",
+      ("leave_tournament",[],"-从竞技大会中退出。",
        [
            (jump_to_menu, "mnu_tournament_withdraw_verify"),
         ]),
@@ -10267,11 +10268,11 @@ game_menus = [
 
   (
     "tournament_withdraw_verify",0,
-    "Are you sure you want to withdraw from the tournament?",
+    "-你确认要从竞技大会中退出吗？",
     "none",
     [],
     [
-      ("tournament_withdraw_yes", [], "Yes. This is a pointless affectation.",
+      ("tournament_withdraw_yes", [], "-是的，这是毫无希望的努力。",
        [(jump_to_menu, "mnu_town_tournament_won_by_another"),
         ]),
       ("tournament_withdraw_no", [], "No, not as long as there is a chance of victory!",
@@ -10282,7 +10283,7 @@ game_menus = [
 
   (
     "tournament_bet",0,
-    "The odds against you are {reg5} to {reg6}.{reg1? You have already bet {reg1} denars on yourself, and if you win, you will earn {reg2} denars.:} How much do you want to bet?",
+    "-现在的比率是{reg5}比{reg6}。{reg1?你已经在自己身上下了{reg1}第纳尔的赌注，如果你获得优胜的话，你将会赢得{reg2}第纳尔。:}你还想再赌多少？",
     "none",
     [
       (assign, reg1, "$g_tournament_bet_placed"),
@@ -10311,7 +10312,7 @@ game_menus = [
       ("bet_100_denars", [(store_troop_gold, ":gold", "trp_player"),
                           (ge, ":gold", 100)
                           ],
-       "100 denars.",
+       "-100第纳尔。",
        [
          (assign, "$temp", 100),
          (jump_to_menu, "mnu_tournament_bet_confirm"),
@@ -10319,7 +10320,7 @@ game_menus = [
       ("bet_50_denars", [(store_troop_gold, ":gold", "trp_player"),
                          (ge, ":gold", 50)
                          ],
-       "50 denars.",
+       "-50第纳尔。",
        [
          (assign, "$temp", 50),
          (jump_to_menu, "mnu_tournament_bet_confirm"),
@@ -10327,7 +10328,7 @@ game_menus = [
       ("bet_20_denars", [(store_troop_gold, ":gold", "trp_player"),
                          (ge, ":gold", 20)
                          ],
-       "20 denars.",
+       "-20第纳尔。",
        [
          (assign, "$temp", 20),
          (jump_to_menu, "mnu_tournament_bet_confirm"),
@@ -10335,7 +10336,7 @@ game_menus = [
       ("bet_10_denars", [(store_troop_gold, ":gold", "trp_player"),
                          (ge, ":gold", 10)
                          ],
-       "10 denars.",
+       "-10第纳尔。",
        [
          (assign, "$temp", 10),
          (jump_to_menu, "mnu_tournament_bet_confirm"),
@@ -10343,12 +10344,12 @@ game_menus = [
       ("bet_5_denars", [(store_troop_gold, ":gold", "trp_player"),
                         (ge, ":gold", 5)
                         ],
-       "5 denars.",
+       "-5第纳尔。",
        [
          (assign, "$temp", 5),
          (jump_to_menu, "mnu_tournament_bet_confirm"),
         ]),
-      ("go_back_dot", [], "Go back.",
+      ("go_back_dot", [], "-后退。",
        [
          (jump_to_menu, "mnu_town_tournament"),
         ]),
@@ -10357,7 +10358,7 @@ game_menus = [
 
   (
     "tournament_bet_confirm",0,
-    "If you bet {reg1} denars, you will earn {reg2} denars if you win the tournament. Is that all right?",
+    "-如果你下{reg1}第纳尔的赌注的话，在你获得优胜时，你将会赢得{reg2}第纳尔。这样可以吗？",
     "none",
     [
       (call_script, "script_get_win_amount_for_tournament_bet"),
@@ -10369,13 +10370,13 @@ game_menus = [
       ],
     [
       ("tournament_bet_accept", [],
-       "Go ahead.",
+       "-可以。",
        [
          (call_script, "script_tournament_place_bet", "$temp"),
          (jump_to_menu, "mnu_town_tournament"),
          ]),
       ("tournament_bet_cancel", [],
-       "Forget it.",
+       "-算了。",
        [
          (jump_to_menu, "mnu_tournament_bet"),
          ]),
@@ -10384,7 +10385,7 @@ game_menus = [
   
   (
     "tournament_participants",0,
-    "You ask one of the criers for the names of the tournament participants. They are:^{s11}",
+    "-你从一位正在哭泣的失败者那里打听到了这场竞技大赛中参与者的名单。他们是:^{s11}",
     "none",
     [
         (str_clear, s11),
@@ -10398,7 +10399,7 @@ game_menus = [
         (try_end),
         ],
     [
-      ("go_back_dot", [], "Go back.",
+      ("go_back_dot", [], "-后退。",
        [(jump_to_menu, "mnu_town_tournament"),
         ]),
     ]
@@ -10407,7 +10408,7 @@ game_menus = [
 
   (
     "collect_taxes",mnf_disable_all_keys,
-    "As the party member with the highest trade skill ({reg2}), {reg3?you expect:{s1} expects} that collecting taxes from here will take {reg4} days...",
+    "-队员中最高交易技能为{reg2}级，由此{reg3?你预期:{s1}预期}需要{reg4}天来完成征税……",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_trade"),
      (assign, ":max_skill", reg0),
@@ -10468,7 +10469,7 @@ game_menus = [
      (assign, reg4, ":target_days"),
      ],
     [
-      ("start_collecting", [], "Start collecting.",
+      ("start_collecting", [], "-开始征收。",
        [(assign, "$qst_collect_taxes_currently_collecting", 1),
         (try_begin),
           (quest_slot_eq, "qst_collect_taxes", slot_quest_current_state, 0),
@@ -10479,7 +10480,7 @@ game_menus = [
         (assign, "$g_town_visit_after_rest", 1),
         (change_screen_return),
         ]),
-      ("collect_later", [], "Put it off until later.",
+      ("collect_later", [], "-待会再说。",
        [(try_begin),
           (party_slot_eq, "$current_town", slot_party_type, spt_town),
           (jump_to_menu, "mnu_town"),
@@ -10492,7 +10493,7 @@ game_menus = [
 
   (
     "collect_taxes_complete",mnf_disable_all_keys,
-    "You've collected {reg3} denars in taxes from {s3}. {s19} will be expecting you to take the money to him.",
+    "-你从{s3}征收了{reg3}第纳尔的税款。{s19}期待你把这些钱带去给他。",
     "none",
     [(str_store_party_name, s3, "$current_town"),
      (quest_get_slot, ":quest_giver", "qst_collect_taxes", slot_quest_giver_troop),
@@ -10505,7 +10506,7 @@ game_menus = [
      (call_script, "script_succeed_quest", "qst_collect_taxes"),
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [(change_screen_return),
         ]),
     ]
@@ -10519,7 +10520,7 @@ game_menus = [
     [
     ],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [(change_screen_map),
         ]),
     ]
@@ -10539,7 +10540,7 @@ game_menus = [
      (rest_for_hours, 0, 0, 0), #stop resting
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [(change_screen_map),
         ]),
     ]
@@ -10553,11 +10554,11 @@ game_menus = [
     [(str_store_party_name, s3, "$current_town"),
      ],
     [
-      ("continue_collecting_taxes", [], "Ignore them and continue.",
+      ("continue_collecting_taxes", [], "-依然像以前那样征税。",
        [(change_screen_return),]),
       ("halve_taxes", [(quest_get_slot, ":quest_giver_troop", "qst_collect_taxes", slot_quest_giver_troop),
                        (str_store_troop_name, s1, ":quest_giver_troop"),],
-       "Agree to reduce your collection by half. ({s1} may be upset)",
+       "-同意减轻一半的税款。（{s1}也许会不满）。",
        [(assign, "$qst_collect_taxes_halve_taxes", 1),
         (change_screen_return),
         ]),
@@ -10577,7 +10578,7 @@ game_menus = [
      (try_end),
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [(set_jump_mission,"mt_back_alley_revolt"),
         (quest_get_slot, ":target_center", "qst_collect_taxes", slot_quest_target_center),
         (try_begin),
@@ -10602,7 +10603,7 @@ game_menus = [
 # They must learn field discipline and the steadiness to follow orders in combat before they can be thought to use arms.",
   (
     "train_peasants_against_bandits",0,
-    "As the party member with the highest training skill ({reg2}), {reg3?you expect:{s1} expects} that getting some peasants ready for practice will take {reg4} hours.",
+    "-队员中最高训练技能为{reg2}级，由此{reg3?你预期:{s1}预期}需要{reg4}小时来进行理论讲解，使这些农民变成英勇的战士。在这期间他们将会学到战斗的基本知识以及如何去沉着冷静地应对一切战斗。",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_trainer"),
      (assign, ":max_skill", reg0),
@@ -10621,7 +10622,7 @@ game_menus = [
      (store_sub, reg4, ":needed_hours", "$qst_train_peasants_against_bandits_num_hours_trained"),
      ],
     [
-      ("make_preparation", [], "Train them.",
+      ("make_preparation", [], "-训练他们。",
        [
          (assign, "$qst_train_peasants_against_bandits_currently_training", 1),
          (rest_for_hours_interactive, 1000, 5, 0), #rest while not attackable
@@ -10629,7 +10630,7 @@ game_menus = [
          (assign, "$g_town_visit_after_rest", 1),
          (change_screen_return),
          ]),
-      ("train_later", [], "Put it off until later.",
+      ("train_later", [], "-待会再说。",
        [
          (jump_to_menu, "mnu_village"),
         ]),
@@ -10658,7 +10659,7 @@ game_menus = [
       (str_store_troop_name_by_count, s0, "trp_trainee_peasant", ":random_number"),
      ],
     [
-      ("peasant_start_practice", [], "Start the practice fight.",
+      ("peasant_start_practice", [], "-开始演习。",
        [
          (set_jump_mission,"mt_village_training"),
          (quest_get_slot, ":target_center", "qst_train_peasants_against_bandits", slot_quest_target_center),
@@ -10678,7 +10679,7 @@ game_menus = [
 
   (
     "train_peasants_against_bandits_training_result",mnf_disable_all_keys,
-    "{s0}",
+    "-{s0}",
     "none",
     [
       (assign, reg5, "$g_train_peasants_against_bandits_num_peasants"),
@@ -10694,7 +10695,7 @@ game_menus = [
       (try_end),
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [
          (try_begin),
            (quest_get_slot, ":quest_current_state", "qst_train_peasants_against_bandits", slot_quest_current_state),
@@ -10755,7 +10756,7 @@ game_menus = [
 
   (
     "train_peasants_against_bandits_attack_result",mnf_scale_picture|mnf_disable_all_keys,
-    "{s9}",
+    "-{s9}",
     "none",
     [
       (try_begin),
@@ -10774,7 +10775,7 @@ game_menus = [
       (try_end),
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [(try_begin),
           (call_script, "script_village_set_state",  "$current_town", svs_looted),
           (party_set_slot, "$current_town", slot_village_raid_progress, 0),
@@ -10808,12 +10809,12 @@ game_menus = [
      (call_script, "script_add_log_entry", logent_helped_peasants, "trp_player",  "$current_town", -1, -1),
     ],
     [
-      ("village_bandits_defeated_accept",[],"Take it as your just due.",[(jump_to_menu, "mnu_auto_return_to_map"),
+      ("village_bandits_defeated_accept",[],"-我接受你们的赠品。",[(jump_to_menu, "mnu_auto_return_to_map"),
                                                                          (party_get_slot, ":merchant_troop", "$current_town", slot_town_elder),
                                                                          (troop_sort_inventory, ":merchant_troop"),
                                                                          (change_screen_loot, ":merchant_troop"),
                                                                        ]),
-      ("village_bandits_defeated_cont",[],  "Refuse, stating that they need these items more than you do.",[
+      ("village_bandits_defeated_cont",[],  "-你们比我更需要这些东西。你们的感谢已经足够了。",[
 	  (call_script, "script_change_player_relation_with_center", "$g_encountered_party", 3),
       (call_script, "script_change_player_honor", 1),
       (change_screen_map)]),
@@ -10823,11 +10824,11 @@ game_menus = [
 
   (
     "disembark",0,
-    "Do you wish to disembark?",
+    "-想上岸吗？",
     "none",
     [],
     [
-      ("disembark_yes", [], "Yes.",
+      ("disembark_yes", [], "-是的。",
        [(assign, "$g_player_icon_state", pis_normal),
         (party_set_flags, "p_main_party", pf_is_ship, 0),
         (party_get_position, pos1, "p_main_party"),
@@ -10849,7 +10850,7 @@ game_menus = [
         (assign, "$g_main_ship_party", -1),
         (change_screen_return),
         ]),
-      ("disembark_no", [], "No.",
+      ("disembark_no", [], "-不。",
        [(change_screen_return),
         ]),
     ]
@@ -10857,11 +10858,11 @@ game_menus = [
 
   (
     "ship_reembark",0,
-    "Do you wish to embark?",
+    "-想上船吗？",
     "none",
     [],
     [
-      ("reembark_yes", [], "Yes.",
+      ("reembark_yes", [], "-是的。",
        [(assign, "$g_player_icon_state", pis_ship),
         (party_set_flags, "p_main_party", pf_is_ship, 1),
         (party_get_position, pos1, "p_main_party"),
@@ -10871,7 +10872,7 @@ game_menus = [
         (disable_party, "$g_encountered_party"),
         (change_screen_return),
         ]),
-      ("reembark_no", [], "No.",
+      ("reembark_no", [], "-不。",
        [(change_screen_return),
         ]),
     ]
@@ -10879,7 +10880,7 @@ game_menus = [
 
   (
     "center_reports",0,
-    "Town Name: {s1}^Rent Income: {reg1} denars^Tariff Income: {reg2} denars^Food Stock: for {reg3} days",
+    "-镇名：{s1}^租金收入：{reg1}第纳尔^税收：{reg2}第纳尔^食物储备：供应{reg3}日",
     "none",
     [(party_get_slot, ":town_food_store", "$g_encountered_party", slot_party_food_store),
      (call_script, "script_center_get_food_consumption", "$g_encountered_party"),
@@ -10895,11 +10896,11 @@ game_menus = [
      (party_get_slot, reg2, "$g_encountered_party", slot_center_accumulated_tariffs),
      ],
     [
-      ("to_price_and_productions", [], "Show prices and productions.",
+      ("to_price_and_productions", [], "-报告价格与产品。",
        [(jump_to_menu, "mnu_price_and_production"),
         ]),
       
-      ("go_back_dot",[],"Go back.",
+      ("go_back_dot",[],"-后退。",
        [(try_begin),
           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
           (jump_to_menu, "mnu_village"),
@@ -11025,7 +11026,7 @@ game_menus = [
 	 
      ],
     [
-      ("go_back_dot",[],"Go back.",
+      ("go_back_dot",[],"-后退。",
        [(try_begin),
           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
           (jump_to_menu, "mnu_village"),
@@ -11038,7 +11039,7 @@ game_menus = [
   
   (
     "town_trade",0,
-    "You head towards the marketplace.",
+    "-你向市场走去。",
     "none",
     [],
     [
@@ -11048,35 +11049,35 @@ game_menus = [
          (store_relation, ":reln", ":current_town_faction", "fac_player_supporters_faction"),
          (ge, ":reln", 0),
          ],
-       "Assess the local prices.",
+       "-估价。",
        [
            (jump_to_menu,"mnu_town_trade_assessment_begin"),
         ]),
       ("trade_with_arms_merchant",[(party_slot_ge, "$current_town", slot_town_weaponsmith, 1)],
-       "Trade with the arms merchant.",
+       "-与武器商人交易。",
        [
            (party_get_slot, ":merchant_troop", "$current_town", slot_town_weaponsmith),
            (change_screen_trade, ":merchant_troop"),
         ]),
       ("trade_with_armor_merchant",[(party_slot_ge, "$current_town", slot_town_armorer, 1)],
-       "Trade with the armor merchant.",
+       "-与盔甲商人交易。",
        [
            (party_get_slot, ":merchant_troop", "$current_town", slot_town_armorer),
            (change_screen_trade, ":merchant_troop"),
         ]),
       ("trade_with_horse_merchant",[(party_slot_ge, "$current_town", slot_town_horse_merchant, 1)],
-       "Trade with the horse merchant.",
+       "-与马匹贩子交易。",
        [
            (party_get_slot, ":merchant_troop", "$current_town", slot_town_horse_merchant),
            (change_screen_trade, ":merchant_troop"),
         ]),
       ("trade_with_goods_merchant",[(party_slot_ge, "$current_town", slot_town_merchant, 1)],
-       "Trade with the goods merchant.",
+       "-与杂货商人交易。",
        [
            (party_get_slot, ":merchant_troop", "$current_town", slot_town_merchant),
            (change_screen_trade, ":merchant_troop"),
         ]),
-      ("back_to_town_menu",[],"Head back.",
+      ("back_to_town_menu",[],"-返回。",
        [
            (jump_to_menu,"mnu_town"),
         ]),
@@ -11086,7 +11087,7 @@ game_menus = [
   (
    "town_trade_assessment_begin",0, 
    #"You overhear the following details about the roads out of town :^(experimental feature -- this may go into dialogs)^{s42}^You also overhear several discussions about the price of trade goods across the local area.^You listen closely, trying to work out the best deals around.",
-   "You overhear several discussions about the price of trade goods across the local area.^You listen closely, trying to work out the best deals around.",
+   "-你偶然听到了一些关于物品价格的情报。^你试着从这些情报中寻找到一些有用的东西。",
     "none",
     [
 	(str_clear, s42),
@@ -11095,7 +11096,7 @@ game_menus = [
     ],
 
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (assign,"$auto_enter_town", "$current_town"),
            (assign, "$g_town_assess_trade_goods_after_rest", 1),
@@ -11107,7 +11108,7 @@ game_menus = [
            (rest_for_hours, ":num_hours", 5, 0), #rest while not attackable
            (change_screen_return),
         ]),
-      ("go_back_dot",[],"Go back.",
+      ("go_back_dot",[],"-后退。",
        [
            (jump_to_menu,"mnu_town_trade"),
         ]),
@@ -11116,7 +11117,7 @@ game_menus = [
 
   (
     "town_trade_assessment",mnf_disable_all_keys,
-    "As the party member with the highest trade skill ({reg2}), {reg3?you try to figure out:{s1} tries to figure out} the best goods to trade in. {s2}",
+    "-队员中最高交易技能为{reg2}级，{reg3?你尝试算出利润最高的商品:{s1}尝试算出利润最高的商品}。{s2}",
     "none",
     [
 
@@ -11376,7 +11377,7 @@ game_menus = [
      (try_end),
      ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (jump_to_menu,"mnu_town_trade"),
         ]),
@@ -11388,11 +11389,11 @@ game_menus = [
   
   (
     "sneak_into_town_suceeded",0,
-    "Disguised in the garments of a poor pilgrim, you fool the guards and make your way into the town.",
+    "-假装成穿着破烂的朝圣者，你骗过了守卫，顺利的混入城里。",
     "none",
     [],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (assign, "$sneaked_into_town",1),
            (jump_to_menu,"mnu_town"),
@@ -11456,7 +11457,7 @@ game_menus = [
            (jump_to_scene,":sneak_scene"),
            (change_screen_mission),
         ]),
-      ("sneak_caught_surrender",[],"Surrender.",
+      ("sneak_caught_surrender",[],"-投降。",
        [
            (jump_to_menu,"mnu_captivity_start_castle_surrender"),
         ]),
@@ -11464,11 +11465,11 @@ game_menus = [
   ),
   (
     "sneak_into_town_caught_dispersed_guards",0,
-    "You drive off the guards and cover your trail before running off, easily losing your pursuers in the maze of streets.",
+    "-你轻易的甩掉了守卫，消失在街道的深处。",
     "none",
     [],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (assign, "$sneaked_into_town",1),
            (assign, "$town_entered", 1),
@@ -11479,7 +11480,7 @@ game_menus = [
   
   (
     "sneak_into_town_caught_ran_away",0,
-    "You make your way back through the gates and quickly retreat to the safety of the countryside.{s11}",
+    "-你杀开一条血路终于夺关而走，迅速逃到了郊外的安全地带。{s11}",
     "none",
     [
     
@@ -11516,7 +11517,7 @@ game_menus = [
 	(try_end),
 	],
     [      
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (assign,"$auto_menu",-1),
            (store_encountered_party,"$last_sneak_attempt_town"),
@@ -11529,7 +11530,7 @@ game_menus = [
 
   (
     "enemy_offer_ransom_for_prisoner",0,
-    "{s2} offers you a sum of {reg12} denars in silver if you are willing to sell him {s1}.",
+    "-{s2}想用{reg12}第纳尔与你交换{s1}。",
     "none",
     [(call_script, "script_calculate_ransom_amount_for_troop", "$g_ransom_offer_troop"),
      (assign, reg12, reg0),
@@ -11538,7 +11539,7 @@ game_menus = [
      (str_store_faction_name, s2, ":faction_no"),
      ],
     [
-      ("ransom_accept",[],"Accept the offer.",
+      ("ransom_accept",[],"-接受这个建议。",
        [(troop_add_gold, "trp_player", reg12),
         (party_remove_prisoners, "$g_ransom_offer_party", "$g_ransom_offer_troop", 1),        
         (call_script, "script_remove_troop_from_prison", "$g_ransom_offer_troop"),		
@@ -11556,7 +11557,7 @@ game_menus = [
 
         (change_screen_return),
         ]),
-      ("ransom_reject",[],"Reject the offer.",
+      ("ransom_reject",[],"-拒绝这个建议。",
        [
         (call_script, "script_change_player_relation_with_troop", "$g_ransom_offer_troop", -4),
         (call_script, "script_change_player_honor", -1),
@@ -11569,7 +11570,7 @@ game_menus = [
 
   (
     "training_ground",0,
-    "You approach a training field where you can practice your martial skills. What kind of training do you want to do?",
+    "-你到达了训练场。在这里你可以提升你的战斗技巧。你想要进行哪种训练？",
     "none",
     [
       (store_add, "$g_training_ground_melee_training_scene", "scn_training_ground_ranged_melee_1", "$g_encountered_party"),
@@ -11584,7 +11585,7 @@ game_menus = [
       ],
     [
       ("camp_trainer",
-       [], "Speak with the trainer.",
+       [], "-和教练交谈。",
        [
          (set_jump_mission, "mt_training_ground_trainer_talk"),
          (modify_visitors_at_site, "$g_training_ground_melee_training_scene"),
@@ -11599,18 +11600,18 @@ game_menus = [
          (neg|troop_is_wounded, "trp_player"),
          (call_script, "script_party_count_fit_for_battle", "p_main_party"),
          (gt, reg0, 1),
-         ], "Sparring practice.",
+         ], "-对战练习。",
        [
          (assign, "$g_mt_mode", ctm_melee),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_1"),
          (music_set_situation, 0),
          ]),
-      ("camp_train_archery",[], "Ranged weapon practice.",
+      ("camp_train_archery",[], "-射击练习。",
        [
          (jump_to_menu, "mnu_training_ground_selection_details_ranged_1"),
          (music_set_situation, 0),
          ]),
-      ("camp_train_mounted",[], "Horseback practice.",
+      ("camp_train_mounted",[], "-骑乘练习。",
        [
          (assign, "$g_mt_mode", ctm_mounted),
          (jump_to_menu, "mnu_training_ground_selection_details_mounted"),
@@ -11633,14 +11634,14 @@ game_menus = [
          (change_screen_mission),
         ]
        ),
-      ("leave",[],"Leave.",
+      ("leave",[],"-离开",
        [(change_screen_return),
         ]),
     ]
   ),
 
   ("training_ground_selection_details_melee_1",0,
-   "How many opponents will you go against?",
+   "-你想要同时面对几个对手？",
    "none",
    [
      (call_script, "script_write_fit_party_members_to_stack_selection", "p_main_party", 1),
@@ -11648,27 +11649,27 @@ game_menus = [
      (assign, "$temp_2", 1),
      ],
     [
-      ("camp_train_melee_num_men_1",[(ge, "$temp", 1)], "One.",
+      ("camp_train_melee_num_men_1",[(ge, "$temp", 1)], "-一。",
        [
          (assign, "$temp", 1),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_2"),
          ]),
-      ("camp_train_melee_num_men_2",[(ge, "$temp", 2)], "Two.",
+      ("camp_train_melee_num_men_2",[(ge, "$temp", 2)], "-二。",
        [
          (assign, "$temp", 2),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_2"),
          ]),
-      ("camp_train_melee_num_men_3",[(ge, "$temp", 3)], "Three.",
+      ("camp_train_melee_num_men_3",[(ge, "$temp", 3)], "-三。",
        [
          (assign, "$temp", 3),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_2"),
          ]),
-      ("camp_train_melee_num_men_4",[(ge, "$temp", 4)], "Four.",
+      ("camp_train_melee_num_men_4",[(ge, "$temp", 4)], "-四。",
        [
          (assign, "$temp", 4),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_2"),
          ]),
-      ("go_back_dot",[],"Cancel.",
+      ("go_back_dot",[],"-后退。",
        [
          (jump_to_menu, "mnu_training_ground"),
         ]),
@@ -11676,56 +11677,56 @@ game_menus = [
   ),
 
   ("training_ground_selection_details_melee_2",0,
-   "Choose your opponent #{reg1}:",
+   "-选择你的{reg1}号对手：",
    "none",
    [
      (assign, reg1, "$temp_2"),
      (troop_get_slot, "$temp_3", "trp_stack_selection_amounts", 0), #number of slots
      ],
     [
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 1),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 1),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 1),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 2),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 2),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 2),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 3),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 3),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 3),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 4),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 4),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 4),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 5),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 5),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 5),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 6),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 6),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 6),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 7),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 7),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 7),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 8),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 8),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 8),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 9),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 9),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 9),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 10),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 10),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 10),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 11),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 11),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 11),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 12),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 12),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 12),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 13),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 13),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 13),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 14),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 14),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 14),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 15),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 15),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 15),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 16),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 16),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 16),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 17),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 17),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 17),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 18),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 18),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 18),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 19),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 19),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 19),]),
-      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 20),], "{s0}",
+      ("s0", [(call_script, "script_cf_training_ground_sub_routine_1_for_melee_details", 20),], "-{s0}",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", 20),]),
-      ("training_ground_selection_details_melee_random", [], "Choose randomly.",
+      ("training_ground_selection_details_melee_random", [], "-随机选择。",
        [(call_script, "script_training_ground_sub_routine_2_for_melee_details", -1),]),
-      ("go_back_dot",[],"Go back.",
+      ("go_back_dot",[],"-后退。",
        [(jump_to_menu, "mnu_training_ground"),
         ]
        ),
@@ -11734,27 +11735,27 @@ game_menus = [
 
 
   ("training_ground_selection_details_mounted",0,
-   "What kind of weapon do you want to train with?",
+   "-你想要用哪种武器进行训练？",
    "none",
    [],
     [
-      ("camp_train_mounted_details_1",[], "One handed weapon.",
+      ("camp_train_mounted_details_1",[], "-单手。",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_one_handed_wpn, 0),
          ]),
-      ("camp_train_mounted_details_2",[], "Polearm.",
+      ("camp_train_mounted_details_2",[], "-长杆。",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_polearm, 0),
          ]),
-      ("camp_train_mounted_details_3",[], "Bow.",
+      ("camp_train_mounted_details_3",[], "-弓箭。",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_bow, 0),
          ]),
-      ("camp_train_mounted_details_4",[], "Thrown weapon.",
+      ("camp_train_mounted_details_4",[], "-投掷。",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_thrown, 0),
          ]),
-      ("go_back_dot",[],"Go back.",
+      ("go_back_dot",[],"-后退。",
        [(jump_to_menu, "mnu_training_ground"),
         ]
        ),
@@ -11763,29 +11764,29 @@ game_menus = [
 
 
   ("training_ground_selection_details_ranged_1",0,
-   "What kind of ranged weapon do you want to train with?",
+   "-你想要用哪种远程武器进行训练？",
    "none",
    [],
     [
-      ("camp_train_ranged_weapon_bow",[], "Bow and arrows.",
+      ("camp_train_ranged_weapon_bow",[], "-弓箭。",
        [
          (assign, "$g_mt_mode", ctm_ranged),
          (assign, "$temp", itp_type_bow),
          (jump_to_menu, "mnu_training_ground_selection_details_ranged_2"),
          ]),
-      ("camp_train_ranged_weapon_crossbow",[], "Crossbow.",
+      ("camp_train_ranged_weapon_crossbow",[], "-弩。",
        [
          (assign, "$g_mt_mode", ctm_ranged),
          (assign, "$temp", itp_type_crossbow),
          (jump_to_menu, "mnu_training_ground_selection_details_ranged_2"),
          ]),
-      ("camp_train_ranged_weapon_thrown",[], "Throwing Knives.",
+      ("camp_train_ranged_weapon_thrown",[], "-飞刀。",
        [
          (assign, "$g_mt_mode", ctm_ranged),
          (assign, "$temp", itp_type_thrown),
          (jump_to_menu, "mnu_training_ground_selection_details_ranged_2"),
          ]),
-      ("go_back_dot",[],"Go back.",
+      ("go_back_dot",[],"-后退。",
        [(jump_to_menu, "mnu_training_ground"),
         ]
        ),
@@ -11794,39 +11795,39 @@ game_menus = [
 
 
   ("training_ground_selection_details_ranged_2",0,
-   "What range do you want to practice at?",
+   "-你想要在距标靶多远的距离练习？",
    "none",
    [],
     [
-      ("camp_train_ranged_details_1",[], "10 yards.",
+      ("camp_train_ranged_details_1",[], "-10码。",
        [
          (call_script, "script_start_training_at_training_ground", "$temp", 10),
          ]),
-      ("camp_train_ranged_details_2",[], "20 yards.",
+      ("camp_train_ranged_details_2",[], "-20码。",
        [
          (call_script, "script_start_training_at_training_ground", "$temp", 20),
          ]),
-      ("camp_train_ranged_details_3",[], "30 yards.",
+      ("camp_train_ranged_details_3",[], "-30码。",
        [
          (call_script, "script_start_training_at_training_ground", "$temp", 30),
          ]),
-      ("camp_train_ranged_details_4",[], "40 yards.",
+      ("camp_train_ranged_details_4",[], "-40码。",
        [
          (call_script, "script_start_training_at_training_ground", "$temp", 40),
          ]),
-      ("camp_train_ranged_details_5",[(eq, "$g_mt_mode", ctm_ranged),], "50 yards.",
+      ("camp_train_ranged_details_5",[(eq, "$g_mt_mode", ctm_ranged),], "-50码。",
        [
          (call_script, "script_start_training_at_training_ground", "$temp", 50),
          ]),
-      ("camp_train_ranged_details_6",[(eq, "$g_mt_mode", ctm_ranged),], "60 yards.",
+      ("camp_train_ranged_details_6",[(eq, "$g_mt_mode", ctm_ranged),], "-60码。",
        [
          (call_script, "script_start_training_at_training_ground", "$temp", 60),
          ]),
-      ("camp_train_ranged_details_7",[(eq, "$g_mt_mode", ctm_ranged),], "70 yards.",
+      ("camp_train_ranged_details_7",[(eq, "$g_mt_mode", ctm_ranged),], "-70码。",
        [
          (call_script, "script_start_training_at_training_ground", "$temp", 70),
          ]),
-      ("go_back_dot",[],"Go back.",
+      ("go_back_dot",[],"-后退。",
        [(jump_to_menu, "mnu_training_ground"),
         ]
        ),
@@ -11835,11 +11836,11 @@ game_menus = [
 
 
   ("training_ground_description",0,
-   "{s0}",
+   "-{s0}",
    "none",
    [],
     [
-      ("continue", [], "Continue...",
+      ("continue", [], "-继续",
        [
          (jump_to_scene, "$g_training_ground_training_scene"),
          (change_screen_mission),
@@ -11849,7 +11850,7 @@ game_menus = [
   ),
 
   ("training_ground_training_result",mnf_disable_all_keys,
-   "{s7}{s2}",
+   "-{s7}{s2}",
    "none",
    [
      (store_skill_level, ":trainer_skill", "skl_trainer", "trp_player"),
@@ -11942,7 +11943,7 @@ game_menus = [
      
      ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(jump_to_menu, "mnu_training_ground"),
         ]
        ),
@@ -11950,7 +11951,7 @@ game_menus = [
    ),
   
   ("marshall_selection_candidate_ask",0,
-   "{s15} will soon select a new marshall for {s23}. Some of the lords have suggested your name as a likely candidate.",
+   "-{s15}马上要为{s23}选择一个元帅。一些领主提名让你做候选人。",
    "none",
    [
      (try_begin),
@@ -11962,12 +11963,12 @@ game_menus = [
      (str_store_faction_name, s23, "$players_kingdom"),
      ],
     [
-      ("marshall_candidate_accept", [], "Let {s15} learn that you are willing to serve as marshall.",
+      ("marshall_candidate_accept", [], "-让{s15}知道你想做元帅。",
        [
          (start_presentation, "prsnt_marshall_selection"),
         ]
        ),
-      ("marshall_candidate_reject", [], "Tell everyone that you are too busy these days.",
+      ("marshall_candidate_reject", [], "-告诉所有人这些天你太忙了。",
        [
          (try_begin),
            (eq, "$g_presentation_marshall_selection_max_renown_2_troop", "trp_player"),
@@ -11993,7 +11994,7 @@ game_menus = [
 ##          (store_current_day, ":cur_day"),
 ##          (store_add, "$g_oath_end_day", ":cur_day", 30),
 ##          (change_screen_return)]),
-##      ("dont_renew_oath",[],"Become free of your bond.",[
+##      ("dont_renew_oath",[],"-恢复自由身。",[
 ##          (assign, "$players_kingdom",0),
 ##          (assign, "$g_player_permitted_castles", 0),
 ##          (change_screen_return)]),
@@ -12023,7 +12024,7 @@ game_menus = [
 
   (
     "captivity_start_wilderness",0,
-    "Stub",
+    "-Stub",
     "none",
     [
           (assign, "$g_player_is_captive", 1),
@@ -12039,7 +12040,7 @@ game_menus = [
   
   (
     "captivity_start_wilderness_surrender",0,
-    "Stub",
+    "-Stub",
     "none",
     [
        (assign, "$g_player_is_captive", 1),
@@ -12051,7 +12052,7 @@ game_menus = [
   ),
   (
     "captivity_start_wilderness_defeat",0,
-    "Your enemies take you prisoner.",
+    "-你被敌人俘虏了。",
     "none",
     [
        (assign, "$g_player_is_captive", 1),
@@ -12072,7 +12073,7 @@ game_menus = [
   ),
   (
     "captivity_start_castle_surrender",0,
-    "Stub",
+    "-Stub",
     "none",
     [
        (assign, "$g_player_is_captive", 1),
@@ -12084,7 +12085,7 @@ game_menus = [
   ),
   (
     "captivity_start_castle_defeat",0,
-    "Stub",
+    "-Stub",
     "none",
     [
        (assign, "$g_player_is_captive", 1),
@@ -12096,7 +12097,7 @@ game_menus = [
   ),
   (
     "captivity_start_under_siege_defeat",0,
-    "Your enemies take you prisoner.",
+    "-你被敌人俘虏了。",
     "none",
     [
        (assign, "$g_player_is_captive", 1),
@@ -12109,13 +12110,13 @@ game_menus = [
   
   (
     "captivity_wilderness_taken_prisoner",mnf_scale_picture,
-    "Your enemies take you prisoner.",
+    "-你被敌人俘虏了。",
     "none",
     [
         (set_background_mesh, "mesh_pic_prisoner_wilderness"),
      ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
 	     # Explanation of removing below code : heros are already being removed with 50% (was 75%, I decreased it) probability in mnu_total_defeat, why here there is additionally 30% removing of heros?
 		 # See codes linked to "mnu_captivity_start_wilderness_surrender" and "mnu_captivity_start_wilderness_defeat" which is connected with here they all also enter 
@@ -12158,7 +12159,7 @@ game_menus = [
   ),
   (
     "captivity_wilderness_check",0,
-    "stub",
+    "-Stub",
     "none",
     [(jump_to_menu,"mnu_captivity_end_wilderness_escape")],
     []
@@ -12178,7 +12179,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (assign, "$g_player_is_captive", 0),
            (try_begin),
@@ -12195,7 +12196,7 @@ game_menus = [
   ),
   (
     "captivity_castle_taken_prisoner",0,
-    "You are quickly surrounded by guards who take away your weapons. With curses and insults, they throw you into the dungeon where you must while away the miserable days of your captivity.",
+    "-卫兵们包围了你，夺下了你的武器。他们咒骂着把你丢进了地牢，接下来有你受的了。",
     "none",
     [
         (troop_get_type, ":is_female", "trp_player"),
@@ -12207,7 +12208,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (assign, "$g_player_is_captive", 1),
            (store_random_in_range, ":random_hours", 16, 22),
@@ -12233,7 +12234,7 @@ game_menus = [
         (try_end),
    ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (assign, "$g_player_is_captive", 1),
            (store_random_in_range, ":random_hours", 16, 22),
@@ -12246,7 +12247,7 @@ game_menus = [
   ),
   (
     "captivity_castle_check",0,
-    "stub",
+    "-Stub",
     "none",
     [
         (store_random_in_range, reg(7), 0, 10),
@@ -12280,13 +12281,13 @@ game_menus = [
   ),
   (
     "captivity_end_exchanged_with_prisoner",0,
-    "After days of imprisonment, you are finally set free when your captors exchange you with another prisoner.",
+    "-经过了数天的关押，抓你的人用你交换了他们的一名俘虏，你自由了。",
     "none",
     [
       (play_cue_track, "track_escape"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (assign, "$g_player_is_captive", 0),
            (try_begin),
@@ -12315,7 +12316,7 @@ game_menus = [
       [
         (store_troop_gold,":player_gold", "trp_player"),
         (ge, ":player_gold","$player_ransom_amount")
-      ],"Accept the offer.",
+      ],"-接受这个建议。",
       [
         (play_cue_track, "track_escape"),
         (assign, "$g_player_is_captive", 0),
@@ -12332,7 +12333,7 @@ game_menus = [
       ]),
       ("captivity_end_ransom_deny",
       [
-      ],"Refuse him, wait for something better.",
+      ],"-等待更好的机会。",
       [
         (assign, "$g_player_is_captive", 1),
         (store_random_in_range, reg(8), 16, 22),
@@ -12361,7 +12362,7 @@ game_menus = [
         
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (assign, "$g_player_is_captive", 1),
            (change_screen_return),
@@ -12390,7 +12391,7 @@ game_menus = [
 		(troop_get_type, reg4, ":quest_target_troop"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (quest_get_slot, ":quest_target_troop", "qst_report_to_army", slot_quest_target_troop),
            (quest_get_slot, ":quest_target_amount", "qst_report_to_army", slot_quest_target_amount),
@@ -12416,7 +12417,7 @@ game_menus = [
         (str_store_troop_name, s8, ":faction_marshall"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -12435,7 +12436,7 @@ game_menus = [
         (str_store_party_name, s9, ":quest_target_center"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
            (call_script, "script_end_quest", "qst_follow_army"),
            (quest_get_slot, ":quest_target_center", "qst_join_siege_with_army", slot_quest_target_center),
@@ -12452,7 +12453,7 @@ game_menus = [
 
   (
     "kingdom_army_follow_failed",mnf_scale_picture,
-    "You have failed to follow {s8}. The marshal assumes that you were otherwise engaged, but would have appreciated your support.",
+    "-你和{s8}走散了。元帅认为你可能另有要务，不过他对于你的支持还是表示感激。",
     "none",
     [
         (set_background_mesh, "mesh_pic_messenger"),
@@ -12462,7 +12463,7 @@ game_menus = [
 #        (call_script, "script_change_player_relation_with_troop", ":faction_marshall", -3),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -12500,7 +12501,7 @@ game_menus = [
         (call_script, "script_report_quest_troop_positions", "qst_join_faction", "$g_invite_faction_lord", 3),
         (jump_to_menu, "mnu_invite_player_to_faction_accepted"),
         ]),
-      ("faction_reject",[],"Decline the invitation.",
+      ("faction_reject",[],"-拒绝邀请。",
        [(call_script, "script_change_player_relation_with_troop", "$g_invite_faction_lord", -3),
         (call_script, "script_change_player_relation_with_faction", "$g_invite_faction", -10),
         (assign, "$g_invite_faction", 0),
@@ -12542,7 +12543,7 @@ game_menus = [
         (call_script, "script_report_quest_troop_positions", "qst_join_faction", "$g_invite_faction_lord", 3),
         (jump_to_menu, "mnu_invite_player_to_faction_accepted"),
         ]),
-      ("faction_reject",[],"Decline the invitation.",
+      ("faction_reject",[],"-拒绝邀请。",
        [(call_script, "script_change_player_relation_with_troop", "$g_invite_faction_lord", -3),
         (assign, "$g_invite_faction", 0),
         (assign, "$g_invite_faction_lord", 0),
@@ -12563,7 +12564,7 @@ game_menus = [
         (str_store_string, s5, "@{!}{s1}"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -12571,7 +12572,7 @@ game_menus = [
 
   (
     "question_peace_offer",0,
-    "You Receive a Peace Offer^^The {s1} offers you a peace agreement. What is your answer?",
+    "-你收到了一份停战的邀请^^{s1}发给你一份停战邀请。你将如何回复？",
     "none",
     [
       (str_store_faction_name, s1, "$g_notification_menu_var1"),
@@ -12582,12 +12583,12 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("peace_offer_accept",[],"Accept",
+      ("peace_offer_accept",[],"-接受",
        [
          (call_script, "script_diplomacy_start_peace_between_kingdoms", "fac_player_supporters_faction", "$g_notification_menu_var1", 1),
          (change_screen_return),
         ]),
-      ("peace_offer_reject",[],"Reject",
+      ("peace_offer_reject",[],"-拒绝",
        [
          (call_script, "script_change_player_relation_with_faction", "$g_notification_menu_var1", -5),
          (change_screen_return),
@@ -12597,7 +12598,7 @@ game_menus = [
 
   (
     "notification_truce_expired",0,
-    "Truce Has Expired^^The truce between {s1} and {s2} has expired.",
+    "-停战协定到期^^{s1}和{s2}之间的停战协定已经到期。",
     "none",
     [
       (str_store_faction_name, s1, "$g_notification_menu_var1"),
@@ -12610,7 +12611,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue",
+      ("continue",[],"-继续",
        [
 	   (change_screen_return),
         ]),
@@ -12619,13 +12620,13 @@ game_menus = [
   
   (
     "notification_feast_quest_expired",0,
-    "{s10}",
+    "-{s10}",
     "none",
     [
     (str_store_string, s10, "str_feast_quest_expired"),
     ],
     [
-      ("continue",[],"Continue",
+      ("continue",[],"-继续",
        [
 	   (change_screen_return),
         ]),
@@ -12634,7 +12635,7 @@ game_menus = [
 
   (
     "notification_sortie_possible",0,
-    "Enemy Sighted: Enemies have been sighted outside the walls of {s4}, and {s5} and others are preparing for a sortie. You may join them if you wish.",
+    "-敌报：已经在{s4}的城墙外发现敌人。{s5}和其他领主正准备出击。如果愿意的话你可以加入他们。",
     "none",
     [
 	(str_store_party_name, s4, "$g_notification_menu_var1"),
@@ -12642,7 +12643,7 @@ game_menus = [
 	(str_store_troop_name, s5, ":leader"),
       ],
     [
-      ("continue",[],"Continue",
+      ("continue",[],"-继续",
        [
 	   #stop auto-clock
 	   
@@ -12656,7 +12657,7 @@ game_menus = [
   
   (
     "notification_casus_belli_expired",0,
-    "Kingdom Fails to Respond^^The {s1} has not responded to the {s2}'s provocations, and {s3} suffers a loss of face among {reg4?her:his} more bellicose subjects...^",
+    "-王国没有回应^^{s1}没有回应{s2}的挑衅，这导致{s3}在{reg4?她:他}手下的好战派中威信扫地……^",
     "none",
     [
       (str_store_faction_name, s1, "$g_notification_menu_var1"),
@@ -12672,7 +12673,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue",
+      ("continue",[],"-继续",
        [
 	   (call_script, "script_faction_follows_controversial_policy", "$g_notification_menu_var1", logent_policy_ruler_ignores_provocation),
 	   (change_screen_return),
@@ -12682,7 +12683,7 @@ game_menus = [
 
   (
     "notification_lord_defects",0,
-    "Defection: {s4} has abandoned the {s5} and joined the {s7}, taking {reg4?her:his} his fiefs with him",
+    "-背叛：{s4}已经抛弃了{s5}并且加入了{s7}，带着{reg4?她:他}的封地一起",
     "none",
 	[
 	  (assign, ":defecting_lord", "$g_notification_menu_var1"),
@@ -12695,7 +12696,7 @@ game_menus = [
 	  
 	],
     [
-      ("continue",[],"Continue",
+      ("continue",[],"-继续",
        [
 	   (change_screen_return),
         ]),
@@ -12705,7 +12706,7 @@ game_menus = [
 	
   (
     "notification_treason_indictment",0,
-    "Treason Indictment^^{s9}",
+    "-叛国控告^^{s9}",
     "none",
     [
 	  (assign, ":indicted_lord", "$g_notification_menu_var1"),
@@ -12737,7 +12738,7 @@ game_menus = [
 	  
 	],
     [
-      ("continue",[],"Continue",
+      ("continue",[],"-继续",
        [
 	   (change_screen_return),
         ]),
@@ -12748,7 +12749,7 @@ game_menus = [
 	
   (
     "notification_border_incident",0,
-    "Border incident^^Word reaches you that {s9}. Though you don't know whether or not the rumors are true, you do know one thing -- this seemingly minor incident has raised passions among the {s4}, making it easier for them to go to war against the {s3}, if they want it...",
+    "-边界冲突^^有消息传来，{s9}。虽然传言真假未知，但有件事是确定的——这件看来很小的事件在{s4}内部已经掀起轩然大波，使得与{s3}的战争一触即发……",
     "none",
     [
 	  (assign, ":acting_village", "$g_notification_menu_var1"),
@@ -12818,7 +12819,7 @@ game_menus = [
 	  
       ],
     [
-      ("continue",[],"Continue",
+      ("continue",[],"-继续",
        [
 	   (change_screen_return),
         ]),
@@ -12830,7 +12831,7 @@ game_menus = [
   
   (
     "notification_player_faction_active",0,
-    "You now possess land in your name, without being tied to any kingdom. This makes you a monarch in your own right, with your court temporarily located at {s12}. However, the other kings in Calradia will at first consider you a threat, for if any upstart warlord can grab a throne, then their own legitimacy is called into question.^^You may find it desirable at this time to pledge yourself to an existing kingdom. If you want to continue as a sovereign monarch, then your first priority should be to establish an independent right to rule. You can establish your right to rule through several means -- marrying into a high-born family, recruiting new lords, governing your lands, treating with other kings, or dispatching your companions on missions.^^At any rate, your first step should be to appoint a chief minister from among your companions, to handle affairs of state. Different companions have different capabilities.^You may appoint new ministers from time to time. You may also change the location of your court, by speaking to the minister.",
+    "-现在，这片土地被冠以你的名字，而不跟其他王国有任何关系。你成为了一位能独立行使权力的君王，你的宫廷暂时坐落在{s12}。然而，卡拉迪亚其他国王的第一反应，是把你当做一个威胁，因为，如果每一个强势的军阀，都可以夺取王位，那么国王的权威无疑会受到质疑。^^你可能觉得这个时候宣誓效忠于一个现有的国家，是个非常不错的选择。如果你想继续当一个拥有主权的君王，那么首先你必须建立自己独立的统治权。这可以通过多个办法进行，比如与出身高贵的家族联姻，吸纳新的领主，管理你的领地，应付其他国王，以及派遣你的盟友去执行任务。^^无论如何，你首先要从你的盟友当中，任命一位首席大臣，来处理各种事务。不同的盟友有不同的才能。^你可以不时地更换你的大臣人选，还可以通过与大臣对话，改变你的宫廷的所在地。",
     "none",
     [
       (set_fixed_point_multiplier, 100),
@@ -12864,7 +12865,7 @@ game_menus = [
 	  (troop_get_slot, ":player_spouse", "trp_player", slot_troop_spouse),
 	  (neg|troop_slot_eq, ":player_spouse", slot_troop_occupation, slto_kingdom_hero),
 	  (str_store_troop_name, s10, ":player_spouse"),
-	  ],"Appoint your wife, {s10}...",
+	  ],"-任命你的夫人，{s10}……",
        [
 	   (troop_get_slot, ":player_spouse", "trp_player", slot_troop_spouse),
 	   (assign, "$g_player_minister", ":player_spouse"),
@@ -12874,7 +12875,7 @@ game_menus = [
       ("appoint_npc1",[
 	  (main_party_has_troop, "trp_npc1"),
 	  (str_store_troop_name, s10, "trp_npc1"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc1"),
 	   (jump_to_menu, "mnu_minister_confirm"),
@@ -12882,7 +12883,7 @@ game_menus = [
 	   
       ("appoint_npc2",[
 	  (main_party_has_troop, "trp_npc2"),
-	  (str_store_troop_name, s10, "trp_npc2"),],"Appoint {s10}",
+	  (str_store_troop_name, s10, "trp_npc2"),],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc2"),
 	   (jump_to_menu, "mnu_minister_confirm"),]),
@@ -12890,7 +12891,7 @@ game_menus = [
       ("appoint_npc3",[
 	  (main_party_has_troop, "trp_npc3"),
 	  (str_store_troop_name, s10, "trp_npc3"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc3"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12898,7 +12899,7 @@ game_menus = [
       ("appoint_npc4",[
 	  (main_party_has_troop, "trp_npc4"),
 	  (str_store_troop_name, s10, "trp_npc4"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc4"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12906,7 +12907,7 @@ game_menus = [
       ("appoint_npc5",[
 	  (main_party_has_troop, "trp_npc5"),
 	  (str_store_troop_name, s10, "trp_npc5"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc5"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12914,7 +12915,7 @@ game_menus = [
       ("appoint_npc6",[
 	  (main_party_has_troop, "trp_npc6"),
 	  (str_store_troop_name, s10, "trp_npc6"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc6"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12922,7 +12923,7 @@ game_menus = [
       ("appoint_npc7",[
 	  (main_party_has_troop, "trp_npc7"),
 	  (str_store_troop_name, s10, "trp_npc7"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc7"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12930,7 +12931,7 @@ game_menus = [
       ("appoint_npc8",[
 	  (main_party_has_troop, "trp_npc8"),
 	  (str_store_troop_name, s10, "trp_npc8"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc8"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12938,7 +12939,7 @@ game_menus = [
       ("appoint_npc9",[
 	  (main_party_has_troop, "trp_npc9"),
 	  (str_store_troop_name, s10, "trp_npc9"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc9"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12946,7 +12947,7 @@ game_menus = [
       ("appoint_npc10",[ #was npc9
 	  (main_party_has_troop, "trp_npc10"),
 	  (str_store_troop_name, s10, "trp_npc10"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc10"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12954,7 +12955,7 @@ game_menus = [
       ("appoint_npc11",[
 	  (main_party_has_troop, "trp_npc11"),
 	  (str_store_troop_name, s10, "trp_npc11"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc11"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12962,7 +12963,7 @@ game_menus = [
       ("appoint_npc12",[
 	  (main_party_has_troop, "trp_npc12"),
 	  (str_store_troop_name, s10, "trp_npc12"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc12"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12970,7 +12971,7 @@ game_menus = [
       ("appoint_npc13",[
 	  (main_party_has_troop, "trp_npc13"),
 	  (str_store_troop_name, s10, "trp_npc13"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc13"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12978,7 +12979,7 @@ game_menus = [
       ("appoint_npc14",[
 	  (main_party_has_troop, "trp_npc14"),
 	  (str_store_troop_name, s10, "trp_npc14"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc14"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12986,7 +12987,7 @@ game_menus = [
       ("appoint_npc15",[
 	  (main_party_has_troop, "trp_npc15"),
 	  (str_store_troop_name, s10, "trp_npc15"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc15"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
@@ -12994,12 +12995,12 @@ game_menus = [
       ("appoint_npc16",[
 	  (main_party_has_troop, "trp_npc16"),
 	  (str_store_troop_name, s10, "trp_npc16"),
-	  ],"Appoint {s10}",
+	  ],"-任命{s10}",
        [
 	   (assign, "$g_player_minister", "trp_npc16"),
 	   (jump_to_menu, "mnu_minister_confirm"), ]),
 
-      ("appoint_default",[],"Appoint a prominent citizen from the area...",
+      ("appoint_default",[],"-任命当地的杰出人才。",
        [
 	   (assign, "$g_player_minister", "trp_temporary_minister"),
 	   (troop_set_faction, "trp_temporary_minister", "fac_player_supporters_faction"),
@@ -13010,7 +13011,7 @@ game_menus = [
 
   (
     "minister_confirm",0,
-    "{s9}can be found at your court in {s12}. You should consult periodically, to avoid the accumulation of unresolved issues that may sap your authority...",
+    "-{s9}正在你{s12}的大厅里。你要时时考虑避免一些未确定的，会削弱你的权力的争议。",
     "none",
     [
     (try_begin),
@@ -13032,7 +13033,7 @@ game_menus = [
 	(try_end),
 	],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
          (start_presentation, "prsnt_name_kingdom"),
         ]),
@@ -13043,7 +13044,7 @@ game_menus = [
   
   (
   "notification_court_lost",0,
-  "{s12}",
+  "-{s12}",
   "none",
   [
     (try_begin),
@@ -13106,7 +13107,7 @@ game_menus = [
 	(str_store_string, s12, s14),
   ],
   [
-      ("continue",[],"Continue...",[
+      ("continue",[],"-继续",[
 	  (change_screen_return),
 	  ]),
      ],
@@ -13116,7 +13117,7 @@ game_menus = [
   
   (
     "notification_player_faction_deactive",0,
-    "Your kingdom no longer holds any land.",
+    "-你的王国失去了所有的领地。",
     "none",
     [
       (set_fixed_point_multiplier, 100),
@@ -13126,7 +13127,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "fac_player_supporters_faction", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
 	   
 	   (try_begin),
@@ -13146,7 +13147,7 @@ game_menus = [
   
   (
     "notification_player_wedding_day",mnf_scale_picture,
-    "{s8} wishes to inform you that preparations for your wedding at {s10} have been complete, and that your presence is expected imminently .",
+    "-{s8}想告诉你，将于{s10}举行的你的婚礼，已经准备就绪，期待你尽快出席。",
     "none",
     [
 		(set_background_mesh, "mesh_pic_messenger"),
@@ -13154,7 +13155,7 @@ game_menus = [
 		(str_store_party_name, s10, "$g_notification_menu_var2"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13163,7 +13164,7 @@ game_menus = [
   
   (
     "notification_player_kingdom_holds_feast",mnf_scale_picture,
-    "{s11}",
+    "-{s11}",
     "none",
     [
 		(set_background_mesh, "mesh_pic_messenger"),
@@ -13204,7 +13205,7 @@ game_menus = [
 		
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13227,7 +13228,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_center_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13249,7 +13250,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_center_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13271,7 +13272,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_center_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13279,7 +13280,7 @@ game_menus = [
 
   (
     "notification_one_faction_left",0,
-    "Calradia Conquered by One Kingdom^^{s1} has defeated all rivals and stands as the sole kingdom.",
+    "-卡拉迪亚大陆被一个王国征服了^^{s1}击败所有对手，建立了一个统一的王国。",
     "none",
     [
       (str_store_faction_name, s1, "$g_notification_menu_var1"),
@@ -13307,7 +13308,7 @@ game_menus = [
         (try_end),	  
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13315,7 +13316,7 @@ game_menus = [
   
   (
     "notification_oath_renounced_faction_defeated",0,
-    "Your Old Faction was Defeated^^You won the battle against {s1}! This ends your struggle which started after you renounced your oath to them.",
+    "-你从前属于的势力被击败了^^你赢得了对于{s1}的战斗！你从这个势力中脱离了出去。",
     "none",
     [
       (str_store_faction_name, s1, "$g_notification_menu_var1"),
@@ -13331,7 +13332,7 @@ game_menus = [
       (try_end),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13339,7 +13340,7 @@ game_menus = [
 
   (
     "notification_center_lost",0,
-    "An Estate was Lost^^You have lost {s1} to {s2}.",
+    "-领地失去^^因为{s2}你失去了{s1}。",
     "none",
     [
       (str_store_party_name, s1, "$g_notification_menu_var1"),
@@ -13351,7 +13352,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_center_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13373,7 +13374,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_troop_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13394,7 +13395,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_troop_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13441,7 +13442,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":faction_1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13474,7 +13475,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":faction_1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13499,7 +13500,7 @@ game_menus = [
       (try_end),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
          (try_begin),
            (is_between, "$supported_pretender", pretenders_begin, pretenders_end),
@@ -13584,7 +13585,7 @@ game_menus = [
   
   (
     "notification_rebels_switched_to_faction",0,
-    "Rebellion Success^^ Your rebellion is victorious! Your faction now has the sole claim to the title of {s11}, with {s12} as the single ruler.",
+    "-成功叛变^^你的叛变十分成功！现在你的势力将{s12}定为{s11}唯一的领主。",
     "none",
     [
       (str_store_faction_name, s11, "$g_notification_menu_var1"),
@@ -13601,7 +13602,7 @@ game_menus = [
       (try_end),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
          (assign, "$talk_context", tc_rebel_thanks),
          (start_map_conversation, "$g_notification_menu_var2", -1),
@@ -13613,12 +13614,12 @@ game_menus = [
 
   (
     "notification_player_should_consult",0,
-    "Your minister send words that there are problems brewing in the realm which, if left untreated, could sap your authority. You should consult with him at your earliest convenience",
+    "-你的首席大臣传话来说，王国内部有些问题正在酝酿，如果不处理的话会逐渐威胁到你的王权。你必须尽早与他磋商一下。",
     "none",
     [
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
 	    (setup_quest_text, "qst_consult_with_minister"),
 
@@ -13646,13 +13647,13 @@ game_menus = [
   
   (
     "notification_player_feast_in_progress",0,
-    "Feast in Preparation^^Your wife has started preparations for a feast in your hall in {s11}",
+    "-筹备宴会^^你的夫人正在{s11}的大厅里筹备宴会。",
     "none",
     [
     (str_store_party_name, s11, "$g_notification_menu_var1"),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(change_screen_return),
         ]),
      ]
@@ -13661,7 +13662,7 @@ game_menus = [
 
   (
     "notification_lady_requests_visit",0, #add this once around seven days after the last visit, or three weeks, or three months
-    "An elderly woman approaches your party and passes one of your men a letter, sealed in plain wax. It is addressed to you. When you break the seal, you see it is from {s15}. It reads, 'I so enjoyed your last visit. {s14} I am currently in {s10}.{s12}'",
+    "-一位老妇人找到了你的部队，给了你手下一封纯蜡密封着的信。地址是写给你的。当你打这封信时，发现是{s15}写来的。上面说：“上次来访，相聚甚欢。{s14}。我现在{s10}，{s12}。”",
     "none",
     [
 
@@ -13721,7 +13722,7 @@ game_menus = [
       ],
     [
 	
-      ("continue",[],"Tell the woman to inform her mistress that you will come shortly",
+      ("continue",[],"-继续",
        [
 
      	(assign, ":lady_to_visit", "$g_notification_menu_var1"),
@@ -13743,7 +13744,7 @@ game_menus = [
 	    (change_screen_return),
         ]),
 	
-      ("continue",[],"Tell the woman to inform her mistress that you are indisposed",
+      ("continue",[],"-继续",
        [
 	    (troop_set_slot, "$g_notification_menu_var1", slot_lady_no_messages, 1),
 	    (change_screen_return),
@@ -13755,7 +13756,7 @@ game_menus = [
   
   ( #pre lady visit
     "garden",0,
-    "{s12}",
+    "-{s12}",
     "none",
     [
 	
@@ -13825,7 +13826,7 @@ game_menus = [
 	[
     (call_script, "script_get_kingdom_lady_social_determinants", "$love_interest_in_town"),
 	(troop_slot_eq, reg0, slot_lord_granted_courtship_permission, 1)
-	], "Enter",
+	], "-进入",
 	[
 	(jump_to_menu, "mnu_town"),
 	(call_script, "script_setup_meet_lady", "$love_interest_in_town", "$g_encountered_party"),
@@ -13835,7 +13836,7 @@ game_menus = [
 	("nurse",
 	[
     (eq, "$nurse_assists_entry", 1),
-	], "Go with the nurse",
+	], "-在泉水边等待",
 	[
 	(jump_to_menu, "mnu_town"),
 	(call_script, "script_setup_meet_lady", "$love_interest_in_town", "$g_encountered_party"),
@@ -13846,7 +13847,7 @@ game_menus = [
 	("nurse",
 	[
     (eq, "$nurse_assists_entry", 2),
-	], "Wait by the spring",
+	], "-在泉水边等待",
 	[
 	(jump_to_menu, "mnu_town"),
 	(call_script, "script_setup_meet_lady", "$love_interest_in_town", "$g_encountered_party"),
@@ -13855,7 +13856,7 @@ game_menus = [
 	
 	("leave",
 	[], 
-	"Leave",
+	"-离开",
 	[(jump_to_menu, "mnu_town")]),
 
     ]
@@ -13872,7 +13873,7 @@ game_menus = [
     [
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [(set_jump_mission,"mt_back_alley_kill_local_merchant"),
         (party_get_slot, ":town_alley", "$qst_kill_local_merchant_center", slot_town_alley),
         (modify_visitors_at_site,":town_alley"),
@@ -13889,12 +13890,12 @@ game_menus = [
   
     (
     "debug_alert_from_s65",0,
-    "DEBUG ALERT: {s65}",
+    "-调试警报：{s65}",
     "none",
     [
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [
 		(assign, "$debug_message_in_queue", 0),
         (change_screen_return),
@@ -13904,7 +13905,7 @@ game_menus = [
       
   (
     "auto_return_to_map",0,
-    "stub",
+    "-Stub",
     "none",
     [(change_screen_map)],
     []
@@ -13912,7 +13913,7 @@ game_menus = [
 
     (
     "bandit_lair",0,
-    "{s3}",
+    "-{s3}",
     "none",
     [
       (try_begin),
@@ -13981,7 +13982,7 @@ game_menus = [
       [
         (party_slot_eq, "$g_encountered_party", slot_party_ai_substate, 0), #used in place of global variable
 	  ],
-	  "Attack the hideout...",
+	  "-进攻贼巢……",
 	  
 	  [
 	    (party_set_slot, "$g_encountered_party", slot_party_ai_substate, 1),
@@ -14066,7 +14067,7 @@ game_menus = [
       [
 	    (party_slot_eq, "$g_encountered_party", slot_party_ai_substate, 0),
 	  ],
-	  "Leave...",
+	  "-离开……",
       [
         (change_screen_return),
       ]),            
@@ -14075,7 +14076,7 @@ game_menus = [
 	  [
 	    (party_slot_eq, "$g_encountered_party", slot_party_ai_substate, 2),
 	  ],
-	  "Continue...",
+	  "-继续",
       [      
         (try_for_range, ":bandit_template", "pt_steppe_bandits", "pt_deserters"),
           (party_template_slot_eq, ":bandit_template", slot_party_template_lair_party, "$g_encountered_party"),
@@ -14140,7 +14141,7 @@ game_menus = [
 	  [
 	    (party_slot_eq, "$g_encountered_party", slot_party_ai_substate, 1),
 	  ],
-	  "Continue...",
+	  "-继续",
       [
         (try_for_range, ":bandit_template", "pt_steppe_bandits", "pt_deserters"),
           (party_template_slot_eq, ":bandit_template", slot_party_template_lair_party, "$g_encountered_party"),
@@ -14179,7 +14180,7 @@ game_menus = [
 
   (
     "notification_player_faction_political_issue_resolved",0,
-    "After consulting with the peers of the realm, {s10} has decided to confer {s11} on {s12}.",
+    "-经过和王国贵族们的商议，{s10}已经决定授予{s12}{s11}。",
     "none",
     [
 	(assign, ":faction_issue_resolved", "$g_notification_menu_var1"),
@@ -14197,7 +14198,7 @@ game_menus = [
 	],
     [
 	   ("continue",
-	   [],"Continue...",
+	   [],"-继续",
        [
         (change_screen_return),
         ]),		
@@ -14208,7 +14209,7 @@ game_menus = [
   
   (
     "notification_player_faction_political_issue_resolved_for_player",0,
-    "After consulting with the peers of the realm, {s10} has decided to confer {s11} on you. You may decline the honor, but it will probably mean that you will not receive other awards for a little while.{s12}",
+    "-经过和王国贵族们的商议，{s10}已经决定授予你{s11}。你可以拒绝这项任命，但是这也许意味着短时间内你不会再收到其它任何授予。{s12}",
     "none",
     [
 	(faction_get_slot, ":leader", "$players_kingdom", slot_faction_leader),
@@ -14225,7 +14226,7 @@ game_menus = [
 	],
     [
 	   ("accept",
-	   [],"Accept the honor",
+	   [],"-接受任命",
        [
 	    (faction_get_slot, ":issue", "$players_kingdom", slot_faction_political_issue),
 		
@@ -14248,7 +14249,7 @@ game_menus = [
         ]),	
 
 	   ("decline",
-	   [],"Decline the honor",
+	   [],"-拒绝任命",
        [
 	    (faction_get_slot, ":issue", "$players_kingdom", slot_faction_political_issue),
 		(try_begin),
@@ -14276,7 +14277,7 @@ game_menus = [
       (str_store_string, s16, "$g_journey_string"),
     ],
     [
-      ("continue",[], "Continue...",
+      ("continue",[], "-继续",
        [
 		 (jump_to_menu, "mnu_start_phase_3"),
        ]),
@@ -14285,7 +14286,7 @@ game_menus = [
 
   
   ("start_phase_3",mnf_disable_all_keys,
-    "{s16}^^You are exhausted by the time you find the inn in {s1}, and fall asleep quickly. However, you awake before dawn and are eager to explore your surroundings. You venture out onto the streets, which are still deserted. All of a sudden, you hear a sound that stands the hairs of your neck on end -- the rasp of a blade sliding from its scabbard...",
+    "-{s16}^^当来到{s1}的旅馆的时候，你已经疲惫不堪，很快就睡着了。然而，在黎明来临之前你就醒来了，迫不及待地打量着四周的环境。你大胆地走上了无人的街头。突然，你听到了一个声音，脖子上的汗毛不由得全竖了起来——那是刀剑出鞘的刺耳的声音……",
     "none",
     [      
       (assign, ":continue", 1),
@@ -14316,7 +14317,7 @@ game_menus = [
       (eq, ":continue", 1),
     ],
     [
-      ("continue",[], "Continue...",
+      ("continue",[], "-继续",
        [         
          (assign, "$g_starting_town", "$current_town"),
          (call_script, "script_player_arrived"),
@@ -14328,7 +14329,7 @@ game_menus = [
   ),
 
   ("start_phase_4",mnf_disable_all_keys,
-    "{s11}",
+    "-{s11}",
     "none",
     [      
       (assign, ":continue", 1),
@@ -14357,7 +14358,7 @@ game_menus = [
         (this_or_next|eq, "$current_startup_quest_phase", 1),
         (eq, "$current_startup_quest_phase", 4),
       ],
-      "Continue...",
+      "-继续",
       [         
         (assign, "$town_entered", 1),
          
@@ -14406,7 +14407,7 @@ game_menus = [
       [
         (eq, "$current_startup_quest_phase", 3),
       ],
-      "Continue...",
+      "-继续",
       [         
         (call_script, "script_prepare_town_to_fight"),
       ]),              
@@ -14415,7 +14416,7 @@ game_menus = [
  
 
   ("lost_tavern_duel",mnf_disable_all_keys,
-    "{s11}",
+    "-{s11}",
     "none",
     [
 	(try_begin),
@@ -14430,7 +14431,7 @@ game_menus = [
 	(troop_set_slot, "trp_hired_assassin", slot_troop_cur_center, -1),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue",[],"-继续",
        [         
          (jump_to_menu, "mnu_town"),         
        ]),       
@@ -14439,7 +14440,7 @@ game_menus = [
 
 
   ("establish_court",mnf_disable_all_keys,
-    "To establish {s4} as your court will require a small refurbishment. In particular, you will need a set of tools and a bolt of velvet. it may also take a short while for some of your followers to relocate here. Do you wish to proceed?",
+    "-要将{s4}建为你的都城需要重新翻修一番。具体来说，你需要一套工具以及一卷天鹅绒。也许还需要花点时间来让你的一些部下重新部署一下这里。你要继续吗？",
     "none",
     [
 	(str_store_party_name, s4, "$g_encountered_party"),
@@ -14449,7 +14450,7 @@ game_menus = [
       ("establish",[
 	  (player_has_item, "itm_tools"),
 	  (player_has_item, "itm_velvet"),
-	  ],"Establish {s4} as your court",
+	  ],"-将{s4}建为你的都城",
        [         
 		(assign, "$g_player_court", "$current_town"),
 	    (troop_remove_item, "trp_player", "itm_tools"),
@@ -14458,7 +14459,7 @@ game_menus = [
        ]),       
 	
 	
-      ("continue",[],"Hold off...",
+      ("continue",[],"-继续",
        [         
          (jump_to_menu, "mnu_town"),         
        ]),       
@@ -14466,7 +14467,7 @@ game_menus = [
   ),
 
   ("notification_relieved_as_marshal", mnf_disable_all_keys,
-    "{s4} wishes to inform you that your services as marshal are no longer required. In honor of valiant efforts on behalf of the realm over the last {reg4} days, however, {reg8?she:he} offers you a purse of {reg5} denars.",
+    "-{s4}想要通知你不再需要你继续担当元帅之职了。不过，在过去的{reg4}天里你为了国家的利益表现英勇，为了表示对你的敬意，{reg8?她:他}赏赐给你{reg5}第纳尔。",
     "none",
     [
 	(assign, reg4, "$g_player_days_as_marshal"),
@@ -14490,7 +14491,7 @@ game_menus = [
 	],
 	
 	 [
-      ("continue",[],"Continue",
+      ("continue",[],"-继续",
        [         
          (change_screen_return),         
        ]),         

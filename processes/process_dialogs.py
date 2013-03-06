@@ -160,10 +160,10 @@ def create_auto_id2(sentence,auto_ids):
     auto_ids[auto_id] = text
     return auto_id
 
-## happy begin ##
-def upgrade_sentences(sentences):
-  lfile = open("data/languages/cns/dialogs.csv", "r")
-  csv = {"a":"b"}
+## iNad begin ##
+def upgrade_sentences():
+  lfile = open("data/languages/cns/dialogs_native.csv", "r")
+  csv = {}
   for line in lfile:
     dialog_id = ""
     part = 1
@@ -184,22 +184,24 @@ def upgrade_sentences(sentences):
     sentence = sentences[i]
     try:
       dialog_id = create_auto_id2(sentence,auto_ids)
-      if csv[dialog_id] != '':
-        file.write("sed -i \"s/\\\"%s\\\"/\\\"-%s\\\"/\" ./module_dialogs.py\n"%(string.replace(sentence[text_pos],"'","\\'"),string.replace(csv[dialog_id]," ","")))
+      if dialog_id in csv.keys():
+        if sentence[text_pos][0] != '-':
+          file.write("sed -i \"s/\\\"%s\\\"/\\\"-%s\\\"/\" ./module_dialogs.py\n"%(sentence[text_pos],string.replace(csv[dialog_id]," ","")))
+      else:
+        print "Missing key:%s"%(dialog_id)
     except:
       print "Error in dialog line:"
       print sentence
       #print dialog_id
       #print csv[dialog_id]
   file.close()
-
-## happy end ##
+## iNad end ##
 
 def save_sentences(variable_list,variable_uses,sentences,tag_uses,quick_strings,input_states,output_states):
+  #upgrade_sentences()
   file = open(export_dir + "conversation.txt","w")
   file.write("dialogsfile version 2\n")
   file.write("%d\n"%len(sentences))
-  #upgrade_sentences(sentences)
   cnfile = open("data/languages/cns/dialogs.csv", "w")
   # Create an empty dictionary
   auto_ids = {}
@@ -217,7 +219,7 @@ def save_sentences(variable_list,variable_uses,sentences,tag_uses,quick_strings,
         k = 0
         for j in xrange(1, len(sentence[text_pos])):
           char = sentence[text_pos][j]
-          cnfile.write("%s"%(char))
+          cnfile.write(char)
           if (ord(char) & 128 == 128):
             if (ord(char) & 192 == 128):
               if j == k:
